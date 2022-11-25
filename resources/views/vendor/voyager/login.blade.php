@@ -12,7 +12,7 @@
     <div class="login-card-container">
         <div class="login-card">
            <div class="login-card-logo">
-             <img src="{{ asset('img/logo.jpg') }}" alt="Logo">
+             <img src="{{ asset('img/LOGO.png') }}" alt="Logo">
            </div>
            <div class="login-card-header">
                 <h1>Ingresa</h1>
