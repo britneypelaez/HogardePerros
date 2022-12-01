@@ -12,7 +12,8 @@
     <div class="login-card-container">
         <div class="login-card">
            <div class="login-card-logo">
-             <img src="{{ asset('img/LOGO.png') }}" alt="Logo">
+            <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
+             <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo">
            </div>
            <div class="login-card-header">
                 <h1>Ingresa</h1>
@@ -38,7 +39,7 @@
             <button type="submit">Ingresar</button>
            </form>
            <div class="login-card-footer">
-            No tienes una cuenta?<a href="#">Create una cuenta</a>
+            No tienes una cuenta?<a href="{{ route('admin/register') }}">Create una cuenta</a>
            </div>
         </div>
     </div>
