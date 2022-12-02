@@ -48,7 +48,7 @@ class RegisterController extends Controller
             [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:5', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed', 'max:20'],
             ],
             [
                 'required'  => 'Te falto ingresar el/la :attribute.',
