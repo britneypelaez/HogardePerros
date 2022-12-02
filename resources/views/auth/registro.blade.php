@@ -46,7 +46,8 @@
                </form>
             </div>
             <div class="login-right">
-                <img src="/IMG/LOGO.png" alt="Logo">
+                <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
+                <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo">
             </div>
         </div>
     </div>
