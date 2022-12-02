@@ -19,6 +19,7 @@
                 <div>Por favor inicie sesión para usar la plataforma</div>
            </div>
            <form action="" class="login-card-form" method="post">
+            @csrf
             <div class="form-item">
                 <span class="form-item-icon material-symbols-outlined">email</span>
                 <input type="email" name="email" id="email" placeholder="Ingresa Email" required autofocus>
