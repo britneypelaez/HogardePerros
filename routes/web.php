@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 use TCG\Voyager\Facades\Voyager;
 
 /*
@@ -32,3 +34,31 @@ Route::group(['prefix' => 'admin'], function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Google login
+Route::get('/login-google', function () {
+    return Socialite::driver('google')->redirect();
+});
+ 
+Route::get('/google-callback', function () {
+    $user = Socialite::driver('google')->user();
+
+    $userExiste = User::where('external_id', $user->id)->where('external_auth', 'google')->first();
+
+    if ($userExiste) {
+        Auth::login($userExiste);
+    } else {
+        $userNew = User::create([
+            'name' => $user->name,
+            'email' => $user->email,
+            'role_id' => 2,
+            'avatar' => $user->avatar,
+            'external_id' => $user->id,
+            'external_auth' => 'google',
+        ]);
+
+        Auth::login($userNew);
+    }
+    
+    return redirect('/admin');
+});
