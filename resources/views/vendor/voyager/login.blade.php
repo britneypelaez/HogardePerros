@@ -33,7 +33,7 @@
             <button type="submit">Ingresar</button>
            </form>
            <div class="login-card-footer">
-            No tienes una cuenta?<a href="{{ route('password.request') }}">Create una cuenta</a>
+            No tienes una cuenta?<a href="{{ route('admin/register') }}">Create una cuenta</a>
            </div>
            <div class="login-card-social">
             <div>Inicio de sesión con google</div>
