@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Support\Facades\Session;
-
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Exception;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -70,61 +66,6 @@ class RegisterController extends Controller
             ]
         );
         
-        // try {
-        //     $rules = [
-        //         'name' => [
-        //             'required',
-        //             'string',
-        //             'max:20',
-        //         ],
-        //         'email' => [
-        //             'required',
-        //             'string',
-        //             'email',
-        //             'max:20',
-        //             'unique:users'
-        //         ],
-        //         'password' => [
-        //             'required',
-        //             'string',
-        //             'min:8',
-        //             'confirmed'
-        //         ]
-        //     ];
-
-        //     $messages = [
-        //         'required' => 'El campo :attribute es obligatorio',
-        //         'string'    => ':attribute debe ser texto.',
-        //         'min'       => 'La :attribute debe tener minimo :min caracteres.',
-        //         'max'       => 'El :attribute debe tener maximo :max caracteres.',
-        //         'email'     => 'Parece que no es un nombre de :attribute valido .',
-        //         'unique'    => 'El :attribute no es unico.',
-        //         'confirmed' => ':attribute debe ser confirmado.'
-        //     ];
-
-        //     $customAttributes = [
-        //         'name' => 'Nombre completo',
-        //         'email' => 'Correo eletrónico',
-        //         'password' => 'Contraseña',
-        //     ];
-            
-        //     $validator = Validator::make($data, $rules, $messages);
-        //     if ($validator->fails()) {
-        //         return Response::json([
-        //             'code' => '2001',
-        //             'status' => 'error',
-        //             'message' => 'Datos Recibidos Incorrectos',
-        //             'errors' => $validator->messages()
-        //         ], 400, [], 0);
-        //     }
-        // } catch (Exception $exeption) {
-        //         return Response::json([
-        //             'code' => '1001',
-        //             'status' => 'error',
-        //             'message' => 'Error En La Generación De La Solicitud'
-        //             'message' => $exeption->getMessage() . ' ' . $exeption->getLine()
-        //         ], 500, [], JSON_PRETTY_PRINT);
-        // }
     }
 
     /**
