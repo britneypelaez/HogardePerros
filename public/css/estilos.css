@@ -69,6 +69,14 @@ body{
 .login-card-form .form-item{
     position: relative;
 }
+.login-card-form .form-item-other{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: calc(17px * .8);
+    margin-bottom: 10px;
+    margin-left: 90px;
+}
 
 .login-card-form .form-item .form-item-icon{
     position: absolute;
