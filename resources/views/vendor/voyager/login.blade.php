@@ -15,7 +15,7 @@
              <img src="/IMG/LOGO.png" alt="Logo">
            </div> 
            <div class="login-card-header">
-                <h1>Ingresa</h1>
+                <h2>Ingresa</h2>
                 <div>Por favor inicie sesión para usar la plataforma</div>
            </div>
            <form action="" class="login-card-form" method="post">
@@ -26,6 +26,9 @@
             <div class="form-item">
                 <span class="form-item-icon material-symbols-outlined">lock</span>
                 <input type="password" name="password" id="password" placeholder="Ingresa Contraseña" required>
+            </div>
+            <div class="form-item-other">
+                <a href="{{ route('password.request') }}">Olvidé mi contraseña</a>
             </div>
             <button type="submit">Ingresar</button>
            </form>
