@@ -34,7 +34,7 @@
                         <span class="form-item-icon material-symbols-outlined">lock</span>
                         <input type="password" name="password" id="password" placeholder="Contraseña" required>
                         <div class="input-group-append">
-                            <span class="input-group-text" id="basic-addon2">Usa de 8 a 20 caracteres con minimo 1 mayuscula</span>
+                            <span class="input-group-text" id="basic-addon2">Usa de 8 a 20 caracteres con mínimo 1 mayúscula</span>
                         </div>
                     </div>
                     <div class="form-item">
