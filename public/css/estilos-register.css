@@ -1,46 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-body{
-    padding: 0;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background:linear-gradient(to right,orange,rgba(0, 0, 255, 0.779));
-    padding: 40px;
+* {
+  box-sizing: border-box;
 }
 
-.login-card-container{
-    margin: 4rem;
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(to right, orange, rgba(0, 0, 255, 0.779));
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  padding: 16px;  
 }
-.login-card{
-    min-height: calc(70vh - 40px*2);
-    display: grid;
-    grid-template-columns: 50% 50%;
+.container {
+    width: 1000px;
     background: rgba(255, 255, 255, .5);
     /*1rem-16px*/
     padding: 1rem;
     border-radius: 10px;
     position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
-
-.login-right{
-    background: rgba(238, 238, 238, 0.345);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 30px;
-    position: relative;
-}
-.login-right img{
-    position: absolute;
-    width: 60%;
-    height: 100%;
-}
-.login-card::before{
+.container::before{
     content: '';
     position: absolute;
     background:rgba(255, 255, 255, .15);
@@ -48,122 +31,99 @@ body{
     transform: rotate(-5deg);
     z-index: -1;
 }
-
-.login-card-logo img{
-    width: 150px;
-}
-.login-card-logo,
-.login-card-header,
-.login-card-footer{
+.register-header{
     text-align: center;
+    font-size: 15px;
 }
-.login-card a{
-    text-decoration: none;
-    color: #35339a;
+.register-formc{
+    padding-left: 40px;
+    padding-right: 40px;
 }
-.login-card a:hover{
-    text-decoration: underline;
-}
-.login-card-header{
-    margin-bottom: 0px;    
-}
-.login-card-header h1{
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 0px;
-    margin-bottom:10px;
-}
-div.input-group-append{
-    text-align: center;
-    padding-top: 9px;
-}
-.login-card-header div{
-    font-size: calc(17px * .8);
-    opacity: .8;
-}
-.login-card-form{
+.register-left{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: content;
+    background-color: white;
+}
+.register-right {
+  background: #eee;
+  display: flex;
+  justify-content: center;
+}
+.register-right img{
+    width: 100%;
+}
+.register-form-content{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
 }
 
-.login-card-form .form-item{
+.register-form-content .form-item{
     position: relative;
 }
-.login-card-form .form-item-other{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(17px * .8);
-    margin-bottom: 10px;
-}
-
-.login-card-form .form-item .form-item-icon{
+.register-form-content .form-item .form-item-icon{
     position: absolute;
     top: 12.5px;
     left: 22px;
     font-size: 20px;
     opacity: .4;
+    color: #8c8383;
+}
+.register-form-content .form-item .input-group-append{
+    font-size: 15px;
 }
 
-.login-card-footer{
-    margin-top: 10px;
-    font-size: calc(17px * .8);
-
-}
-.login-card input[type="text"],
-.login-card input[type="email"],
-.login-card input[type="password"]{
+.register-left input[type="text"],
+.register-left input[type="email"],
+.register-left input[type="password"]{
     border: none;
     outline: none;
-    background: rgba(255, 255, 255, .3);
+    background: rgba(147, 122, 122, 0.3);
     padding: 15px 24px;
     padding-left: calc(20px*3.5);
-    border-radius: 100px;
+    border-radius: 10px;
     width: 100%;
     transition: background .5s;
 }
-.login-card input:focus{
-    background: white;
+.register-left input:focus{
+    background: rgb(29, 28, 28);
+    color: white;
 }
-.login-card input[type="checkbox"]{
-    width: 16px;
-    height: 16px;
-    accent-color: black;
-}
-.login-card-form button{
+.register-form button{
     background: black;
     color: white;
     padding: 10px;
+    margin-bottom: 10px;
     border-radius: 100px;
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: background .5s;
 }
-.login-card-form button:hover{
+.register-form button:hover{
     background-color: rgba(0, 0, 0, .85);
     cursor: pointer;
 }
-.login-card-social {
+.register-social {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     text-align: center;
-    margin-top: 9px;
+    margin-top: 5px;
 }
-.login-card-social > div{
+.register-social > div{
     opacity: .8;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: calc(1rem*.8);
 }
-.login-card-social-btn{
+.register-social-btn{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
 }
-.login-card-social-btn a{
+.register-social-btn a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,18 +133,54 @@ div.input-group-append{
     border-radius: 100px;
     transition: all .5s;
 }
-.login-card-social-btn a:hover{
-background: white;
+.register-social-btn a:hover{
+background: #8c8383;
 transform: scale(1.1);
 
 }
-/*responsive*/
-@media(max-width:499px){
-    body{
-        padding: 2rem 0;
+/*Resposive*/
+@media (max-width:1350px){
+    .register-left{
+        padding: 10px !important;
     }
-    .login-card{
-        width: 300px;
-        padding:2rem;
+    .register-form{
+        width: 100%;
+    }
+    .register-form-content{
+        flex-direction: column;
+        gap: 15px;
     }
 }
+@media (max-width:768px){
+    body{
+        padding: 20px;
+    }
+    .container{
+        grid-template-columns: auto;
+    }
+    .register-right{
+        display: none;
+    } 
+}
+@media (max-width:438px){
+    .register-left{
+        width: 351px ;
+    }
+    .container{
+        position: relative;
+        left: 30px;
+    }
+}  
+@media (max-width:348px){
+    .container{
+        position: relative;
+        left: 50px;
+    }
+    
+}    
+@media (max-width:306px){
+   .container{
+        position: relative;
+        left: 60px;
+    }
+}   

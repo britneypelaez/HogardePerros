@@ -12,8 +12,9 @@
 <div class="login-card-container">
         <div class="login-card">
            <div class="login-card-logo">
-            <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
-            <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo">
+            <!-- <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
+            <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo"> -->
+            <img src="{{ asset('img/Logo.png') }}" alt="Logo">
            </div> 
            <div class="login-card-header">
                 <h2>Ingresa</h2>
