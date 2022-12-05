@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +23,11 @@
                 <button type="submit">Enviar correo de restablecimiento</button>
             </form>
             <div class="reset-footer">
-                <a href="login.html">Iniciar Sesión</a>
+                <a href="{{ route('voyager.login') }}">Iniciar Sesión</a>
             </div>
+            @csrf
         </div>
     </div>
 </body>
 </html>
-@endsection
+

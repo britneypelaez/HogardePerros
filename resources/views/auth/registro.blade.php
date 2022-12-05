@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Registrarse</title>
     <link rel="stylesheet" href="{{ asset('css/estilos-register.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
@@ -13,6 +13,15 @@
         <div class="register-left">
             <div class="register-header">
                 <h1>Regístrate</h1>
+            </div>
+            <div  class="errores">
+                @if ($errors->any())
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
             </div>
             <div class="register-formc">
                 <form action="{{ url('register') }}" class="register-form" method="post">

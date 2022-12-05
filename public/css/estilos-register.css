@@ -10,8 +10,8 @@ body {
   background: linear-gradient(to right, orange, rgba(0, 0, 255, 0.779));
   display: flex;
   align-items: center;
-  justify-content: center;  
-  padding: 16px;  
+  justify-content: center;
+  padding: 16px;
 }
 .container {
     width: 1000px;
@@ -160,7 +160,7 @@ transform: scale(1.1);
     }
     .register-right{
         display: none;
-    } 
+    }
 }
 @media (max-width:438px){
     .register-left{
@@ -170,17 +170,17 @@ transform: scale(1.1);
         position: relative;
         left: 30px;
     }
-}  
+}
 @media (max-width:348px){
     .container{
         position: relative;
         left: 50px;
     }
-    
-}    
+
+}
 @media (max-width:306px){
    .container{
         position: relative;
         left: 60px;
     }
-}   
+}

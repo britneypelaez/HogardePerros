@@ -39,7 +39,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/login-google', function () {
     return Socialite::driver('google')->redirect();
 });
- 
+
 Route::get('/google-callback', function () {
     $user = Socialite::driver('google')->user();
 
@@ -59,6 +59,6 @@ Route::get('/google-callback', function () {
 
         Auth::login($userNew);
     }
-    
+
     return redirect('/admin');
 });

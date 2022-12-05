@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class RegisterController extends Controller
 {
@@ -46,26 +47,28 @@ class RegisterController extends Controller
         return Validator::make(
             $data,
             [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'not_regex:/[@$!%*#?&]/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed', 'max:20'],
+            'password' => ['required', 'string', 'regex:/[a-z]/', 'regex:/[0-9]/', 'regex:/[A-Z]/', 'min:8', 'confirmed', 'max:20'],
             ],
             [
                 'required'  => 'Te falto ingresar el/la :attribute.',
-                'string'    => ':attribute debe ser texto.',
+                'string'    => ':attribute debe tener texto.',
+                'name.not_regex' => 'El :attribute es invalido',
+                'password.regex' => 'La contraseña debe contener letras, números y al menos una letra mayúscula',
                 'min'       => 'La :attribute debe tener minimo :min caracteres.',
                 'max'       => 'El :attribute debe tener maximo :max caracteres.',
-                'email'     => 'Parece que no es un nombre de :attribute valido .',
+                'email'     => 'Parece que no es un :attribute de :attribute valido .',
                 'unique'    => 'El :attribute no es unico.',
-                'confirmed' => ':attribute debe ser confirmado.'
+                'confirmed' => 'La :attribute no se confirmo correctamente.'
             ],
             [
-                'name'     => 'Nombre de usuario',
-                'email'    => 'Correo eletronico',
-                'password' => 'Contraseña'
+                'name'     => 'nombre de usuario',
+                'email'    => 'correo eletronico',
+                'password' => 'contraseña'
             ]
         );
-        
+
     }
 
     /**
