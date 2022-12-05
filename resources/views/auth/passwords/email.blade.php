@@ -21,11 +21,11 @@
                     <input type="email" name="email-reset" id="email-reset" placeholder="Ingresa Email" required autofocus>
                 </div>
                 <button type="submit">Enviar correo de restablecimiento</button>
+                @csrf
             </form>
             <div class="reset-footer">
                 <a href="{{ route('voyager.login') }}">Iniciar Sesión</a>
             </div>
-            @csrf
         </div>
     </div>
 </body>
