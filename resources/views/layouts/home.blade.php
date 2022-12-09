@@ -14,7 +14,8 @@
     <header>
         <div class="conten">
             <div class="logo">
-                <img src="{{ asset('img/Home/LOGO.png') }}" alt="Logo">
+                <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
+                <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo">
                 <div class="curva" style="height: 80px; overflow: hidden;"><svg viewBox="0 0 500 150"
                         preserveAspectRatio="none" style="height: 100%; width: 100%;">
                         <path d="M0.00,49.99 C150.00,150.00 349.21,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z"
@@ -30,7 +31,8 @@
                     <img src="{{ asset('img/Home/menublack.png') }}" alt="menu">
                 </label>
                 <a>
-                    <img src="IMG/LOGO.png" alt="Logo">
+                    <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
+                    <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo">
                 </a>
                 <ul class="lista">
                     <li>
@@ -82,6 +84,11 @@
                                 <img class="sesion" src="{{ asset('img/Home/banner.jpg') }}" alt="">
                             </label>
                             <ul class="sublista">
+                                @can('browse_admin')
+                                <li>
+                                    <a href="{{ route('home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Administracion</a>
+                                </li>
+                                @endcan
                                 <li>
                                     <a href="">Cambiar Imagen </a>
                                 </li>
