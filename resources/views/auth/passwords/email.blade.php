@@ -18,7 +18,7 @@
                 <div>Por favor ingrese el correo electrónico con el que se registró</div>
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                        El correo ha sido enviado, se demora entre 1-5 minutos
                     </div>
                 @endif
             </div>
