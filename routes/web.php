@@ -21,6 +21,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/servicios', function () {
+    return view('Home.ServiciosVeterinario');
+})->name('servicios');
+
+Route::get('/InicioAdmin', function () {
+    return view('HomeAdministrador.InicioAdmin');
+})->name('InicioAdmin');
+
 Route::get('admin/register', function () {
     auth()->logout();
     return view('auth.registro');
@@ -62,3 +70,4 @@ Route::get('/google-callback', function () {
 
     return redirect('/admin');
 });
+
