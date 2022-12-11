@@ -16,13 +16,12 @@
             <div class="login-card-logo">
                 <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
                 <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo">
-                {{-- <img src="{{ asset('img/Logo.png') }}" alt="Logo"> --}}
             </div>
             <div class="login-card-header">
                 <h2>Ingresa</h2>
                 <div>Por favor inicie sesión para usar la plataforma</div>
                 @error('email')
-                    <p>{{ $message }}</p>
+                    <div>{{ $message }}</div>
                 @enderror
             </div>
             <form action="{{ route('login') }}" class="login-card-form" method="post">
