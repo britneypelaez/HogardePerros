@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -36,5 +38,25 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function showLoginForm(Request $request)
+    {
+        if ($request->has('redirect_to')) {
+            session()->put('redirect_to', $request->input('redirect_to'));
+        }
+
+        return view('HomeFundacion.home');
+    }
+
+    public function redirectTo()
+    {
+        if (session()->has('redirect_to'))
+            return session()->pull('redirect_to');
+
+        if (Auth::user()->role_id == 3) {
+            $this->redirectTo = '/fundacion/home';
+        }
+        return $this->redirectTo;
     }
 }

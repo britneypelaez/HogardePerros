@@ -34,6 +34,9 @@ Route::get('admin/register', function () {
     return view('auth.registro');
 })->name('admin/register');
 
+Route::get('/fundacion/home', function () {
+    return view('HomeFundacion.home');
+})->name('fundacion.home');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
