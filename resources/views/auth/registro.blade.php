@@ -26,6 +26,7 @@
             <div class="register-formc">
                 <form action="{{ url('register') }}" class="register-form" method="post">
                     <div class="register-form-content">
+                        <h5>Nombre Completo:</h5>
                         <div class="form-item">
                             <span class="form-item-icon material-symbols-outlined">person</span>
                             <input type="text" class="form-control" name="name" id="name" placeholder="Ingresa Nombre Completo" required autofocus>
@@ -33,6 +34,7 @@
                                 <span class="input-group-text" id="basic-addon2">Nombre completo sin símbolos</span>
                             </div>
                         </div>
+                        <h5>Dirección de correo:</h5>
                         <div class="form-item">
                             <span class="form-item-icon material-symbols-outlined">email</span>
                             <input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Correo Electrónico" required>
@@ -40,6 +42,7 @@
                                 <span class="input-group-text" id="basic-addon2">Puedes usar letras, números y signos de puntación </span>
                             </div>
                         </div>
+                        <h5>Contraseña:</h5>
                         <div class="form-item">
                             <span class="form-item-icon material-symbols-outlined">lock</span>
                             <input type="password" name="password" id="password" placeholder="Ingresa Contraseña" required>
@@ -47,6 +50,7 @@
                                 <span class="input-group-text" id="basic-addon2">Usa de 8 a 20 caracteres con mínimo 1 mayúscula</span>
                             </div>
                         </div>
+                        <h5>Confirmar Contraseña:</h5>
                         <div class="form-item">
                             <span class="form-item-icon material-symbols-outlined">lock</span>
                             <input type="password" name="password_confirmation" id="password_confirmation   " placeholder="Confirme Contraseña" required>

@@ -24,7 +24,7 @@ header{
 
 .conten{
     height: 250px;
-    background-image: linear-gradient(to top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%), url(./../img/Home/banner.jpg);
+    background-image: linear-gradient(to top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%), url(../IMG/banner.jpg);
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -84,7 +84,7 @@ header{
     display:block;
 }
 
-.navbar {
+.navbar, .navbar_r {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,12 +92,12 @@ header{
     width: 100%;
 }
 
-.nav {
+.nav, .nav_v  {
     float: right;
     width: 100%;
 }
 
-.nav a img{
+.nav a img, .nav_v a img{
     left: 0;
     padding-left: 5%;
     padding-right: 5%;
@@ -105,7 +105,7 @@ header{
     width: 75px;
 }
 
-.nav li ul{
+.nav li ul, .nav_v li ul{
     display:none;
     position:absolute;
 }
@@ -448,6 +448,8 @@ footer ul{
     height: 100%;
     width: 100%;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .whatsapp{
@@ -464,10 +466,199 @@ footer ul li .redes{
     width: 35px;
     height: 35px;
 }
+.contene{
+    width: 80%;
+    background: rgba(255, 255, 255, .5);
+    /*1rem-16px*/
+    padding: 1rem;
+    border-radius: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 80px auto 30px auto;
 
+}
+.contene::before{
+    content: '';
+    position: absolute;
+    background:rgba(255, 255, 255, 0.11);
+    inset:0;
+    transform: rotate(2deg);
+    z-index: -1;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background:rgba(161, 136, 127) ;
+    border-radius: 10px;
+    border: 1px solid black;
+    -webkit-box-shadow: 13px -2px 60px 2px rgba(97,97,99,1);
+    -moz-box-shadow: 13px -2px 60px 2px rgb(173, 173, 196);
+    box-shadow: 13px -2px 60px 2px rgb(255, 255, 255);
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background:rgb(174, 182, 191);
+    border-radius: 10px;
+    border: 1px solid black;
+    -webkit-box-shadow: 13px -2px 60px 2px rgba(97,97,99,1);
+    -moz-box-shadow: 13px -2px 60px 2px rgba(97,97,99,1);
+    box-shadow: 13px -2px 60px 2px rgba(97,97,99,1);
+}
+.right img{
+    width: 100%;
+}
+.left img{
+    width: 100%;
+}
+.right .p-text, .left .p-text{
+    font-weight: 600;
+    font-size: 19px;
+}
+.carousel.carousel-dark.slide{
+    width: 80%;
+    border: 2px solid;
+    border-radius: 20px;
+    margin: 100px auto 50px auto;  
+    -webkit-box-shadow: 13px -2px 60px 2px rgba(97,97,99,1);
+    -moz-box-shadow: 13px -2px 60px 2px rgba(97,97,99,1);
+    box-shadow: 13px -2px 60px 2px rgba(97,97,99,1);
+}
+.carousel-inner img{
+    width: 100%;
+    height: 400px;
+}
+.infoQuinesSomos{
+    text-align: center;
+    width: 80%;
+    margin: auto auto;
+}
+.infoQuinesSomos h1 {
+    font-weight: 600;
+}
+.infoQuinesSomos p{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.carousel-inner{
+    border-radius: 20px;
+}
+.right h1, .left h1 , .right p, .left p{
+    text-align: center;
+}
+.info-form{
+    text-align: center;
+    margin: 100px auto;
+}
+.info-form h1{
+    font-weight: 600;
+}
+.info-form p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.body-form{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-card{
+    width: 450px;
+    background: rgba(255, 255, 255, .5);
+    /*1rem-16px*/
+    padding: 1rem;
+    border-radius: 10px;
+    position: relative;
+}
+.form-card::before{
+    content: '';
+    position: absolute;
+    background:rgba(255, 255, 255, .15);
+    inset:0;
+    transform: rotate(-5deg);
+    z-index: -1;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form .form-item{
+    position: relative;
+}
+.form .form-item .form-item-icon{
+    position: absolute;
+    top: 12.5px;
+    left: 22px;
+    font-size: 20px;
+    opacity: .4;
+    color: #8c8383;
+}
+.form-card input[type="text"],
+.form-card input[type="email"],
+.form-card input[type="number"],
+.form-card textarea{
+    border: none;
+    outline: none;
+    background: rgba(147, 122, 122, 0.3);
+    padding: 15px 24px;
+    padding-left: calc(20px*3.5);
+    border-radius: 10px;
+    width: 100%;
+    transition: background .5s;
+}
+.form-card input:focus, .form-card textarea:focus{
+    background: rgb(29, 28, 28);
+    color: white;
+}
+.form button{
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+}
+.form button:hover{
+    background-color: rgba(0, 0, 0, .85);
+    cursor: pointer;
+}
+.form input[type=number]::-webkit-inner-spin-button, 
+.form input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.form input[type=number]{ -moz-appearance:textfield; }
 /*responsive*/
+@media(max-width:768px){
+    .body-form{
+        padding: 2rem 0;
+    }
+    .form-card{
+        width: 300px;
+        padding:2rem;
+    }
+    .contene{
+        grid-template-columns: auto;
+        width: 92%;
+    }
+    .infoQuinesSomos{
+        width: 100%;
+    }
+}
 @media(max-width:1400px){
-    .nav a img{
+    .nav a img, .nav_v a img{
         left: 0;
         padding-left: 5px;
         padding-right: 0;
@@ -478,9 +669,8 @@ footer ul li .redes{
         margin-left: 0;
     }
 }
-
 @media(max-width:1060px){
-    .nav a img{
+    .nav a img, .nav_v a img{
         display: none;
     }
     .ultimo{
@@ -542,10 +732,28 @@ footer ul li .redes{
         bottom: 0;
         left: 250px;
     }
-    .nav li:hover > ul{
+    .nav li:hover > ul, .nav_v li:hover > ul{
         display:none;
     }
 }
+@media (max-width:1350px){
+    .form{
+        width: 100%;
+    }
+    .register-form-content{
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+@media (max-width:400px){
+   
+    .cont-form{
+        width: 350px;
+        padding:2rem;
+    }
+
+}
+
 .contenedorServicios{
     display: flex;
     width: 100%;

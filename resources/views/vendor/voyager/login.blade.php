@@ -19,7 +19,7 @@
             </div>
             <div class="login-card-header">
                 <h2>Ingresa</h2>
-                <div>Por favor inicie sesión para usar la plataforma</div>
+                <div>Por favor ingrese los datos requeridos para iniciar sesión</div>
                 @error('email')
                     <div>{{ $message }}</div>
                 @enderror
@@ -49,7 +49,7 @@
                 <button type="submit">Ingresar</button>
             </form>
             <div class="login-card-footer">
-                No tienes una cuenta?<a href="{{ route('admin/register') }}">Create una cuenta</a>
+                ¿No tienes una cuenta? <a href="{{ route('admin/register') }}">Créate una cuenta</a>
             </div>
             <div class="login-card-social">
                 <div>Inicio de sesión con google</div>

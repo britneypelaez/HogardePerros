@@ -5,7 +5,7 @@
 @section('content')
 <div class="info">
     <div class="info_bar">
-        <h2>Fundacion Hogar de Perros</h2>
+        <h2>Fundación Hogar de Perros</h2>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid repudiandae, mollitia dolore laboriosam magni, in alias ullam itaque dolorem eius obcaecati fuga reiciendis
             sed, tempora omnis minus delectus praesentium ipsam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum consequatur saepe labore deserunt! Veritatis ratione

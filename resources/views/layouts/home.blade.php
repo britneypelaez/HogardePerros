@@ -8,7 +8,7 @@
     <title>Hogar de perros</title>
     <link rel="stylesheet" href="{{ asset('css/estilos-Home.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <?php $admin_favicon = Voyager::setting('admin.icon_image', ''); ?>
     @if($admin_favicon == '')
         <link rel="shortcut icon" href="{{ voyager_asset('images/logo-icon.png') }}" type="image/png">
@@ -31,8 +31,8 @@
             </div>
     </header>
     <div class="stick">
-        <div class="navbar">
-            <div class="nav">
+        <div class="navbar_r">
+            <div class="nav_v">
                 <input type="checkbox" id="check">
                 <label for="check" class="checkbtn">
                     <img src="{{ asset('img/Home/menublack.png') }}" alt="menu">
@@ -44,7 +44,7 @@
                 <ul class="lista">
                     <li>
                         <div class="opciones">
-                            <a href="">Quienes Somos</a>
+                            <a href="{{ route('QuienesSomos') }}">Quiénes Somos</a>
                             <img src="{{ asset('img/Home/information.png') }}" alt="" id="miniaturas"
                                 style="left:60px">
                         </div>
@@ -79,7 +79,7 @@
                     </li>
                     <li>
                         <div class="opciones">
-                            <a href="">Preguntas Frecuentes </a>
+                            <a href="{{ route('PreguntasFrecuentes') }}">Preguntas Frecuentes </a>
                             <img id="miniaturas" src="{{ asset('img/Home/ask.png') }}" alt="" style="left:80px">
                         </div>
                     </li>

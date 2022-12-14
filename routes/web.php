@@ -25,6 +25,14 @@ Route::get('/servicios', function () {
     return view('Home.ServiciosVeterinario');
 })->name('servicios');
 
+Route::get('/QuienesSomos', function () {
+    return view('Home.QuienesSomos');
+})->name('QuienesSomos');
+
+Route::get('/PreguntasFrecuentes', function () {
+    return view('Home.PreguntasFrecuentes');
+})->name('PreguntasFrecuentes');
+
 Route::get('/InicioAdmin', function () {
     return view('HomeAdministrador.InicioAdmin');
 })->name('InicioAdmin');

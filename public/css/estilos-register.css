@@ -35,6 +35,9 @@ body {
     text-align: center;
     font-size: 15px;
 }
+.register-header h1{
+    margin: 10px auto;
+}
 .register-formc{
     padding-left: 40px;
     padding-right: 40px;
@@ -71,9 +74,11 @@ body {
     color: #8c8383;
 }
 .register-form-content .form-item .input-group-append{
-    font-size: 15px;
+    font-size: 12px;
 }
-
+.register-form-content h5{
+    margin: 0;
+}   
 .register-left input[type="text"],
 .register-left input[type="email"],
 .register-left input[type="password"]{
@@ -148,7 +153,7 @@ transform: scale(1.1);
     }
     .register-form-content{
         flex-direction: column;
-        gap: 15px;
+        gap: 8px;
     }
 }
 @media (max-width:768px){
@@ -160,27 +165,5 @@ transform: scale(1.1);
     }
     .register-right{
         display: none;
-    }
-}
-@media (max-width:438px){
-    .register-left{
-        width: 351px ;
-    }
-    .container{
-        position: relative;
-        left: 30px;
-    }
-}
-@media (max-width:348px){
-    .container{
-        position: relative;
-        left: 50px;
-    }
-
-}
-@media (max-width:306px){
-   .container{
-        position: relative;
-        left: 60px;
     }
 }
