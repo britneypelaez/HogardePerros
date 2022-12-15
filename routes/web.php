@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CertificadoController;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\MascotaPerdidaController;
 use App\Http\Controllers\ServicioController;
@@ -106,6 +107,8 @@ Route::resources([
     'Servicios' => ServicioController::class,
     'ServiciosPrestados' => ServicioPrestadoController::class,
 ]);
+
+Route::get('Certificado', [CertificadoController::class, 'index']);
 
 Route::get('/InicioAdmin', function () {
     return view('HomeAdministrador.InicioAdmin');

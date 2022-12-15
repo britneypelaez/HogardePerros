@@ -14,7 +14,7 @@ class ServicioPrestadoController extends Controller
      */
     public function index()
     {
-        //
+        return view('HomeFundacion.ServiciosPrestados.index');
     }
 
     /**
