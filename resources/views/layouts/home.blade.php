@@ -21,8 +21,10 @@
     <header>
         <div class="conten">
             <div class="logo">
-                <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
+                <a href="{{ route('/') }}">
+                    <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
                 <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo">
+                </a>
                 <div class="curva" style="height: 80px; overflow: hidden;"><svg viewBox="0 0 500 150"
                         preserveAspectRatio="none" style="height: 100%; width: 100%;">
                         <path d="M0.00,49.99 C150.00,150.00 349.21,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z"
@@ -37,7 +39,7 @@
                 <label for="check" class="checkbtn">
                     <img src="{{ asset('img/Home/menublack.png') }}" alt="menu">
                 </label>
-                <a>
+                <a href="{{ route('/') }}">
                     <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
                     <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo">
                 </a>
@@ -58,7 +60,7 @@
                     </li>
                     <li>
                         <div class="opciones">
-                            <a href="">Adopción</a>
+                            <a href="{{ route('Adopcion') }}">Adopción</a>
                             <img src="{{ asset('img/Home/adoption.png') }}" alt="" id="miniaturas"
                                 style="left:70px">
                         </div>
@@ -114,9 +116,10 @@
                     @else
                         <li class="ultimo">
                             <div class="opciones">
-                                <a href="{{ route('voyager.login') }}">Iniciar Sesion </a>
+                                <a href="{{ route('voyager.login') }}">
                                 <img id="miniaturas" src="{{ asset('img/Home/login.png') }}""IMG/" alt=""
-                                    style="left:50px">
+                                    style="left:50px">Iniciar Sesion
+                                </a>
                             </div>
                         </li>
                     @endif

@@ -448,24 +448,104 @@ footer ul{
     height: 100%;
     width: 100%;
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
 .whatsapp{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 10px;
 }
 
 .whatsapp p{
     margin-left: 5px;
 }
 
+footer ul li{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 footer ul li .redes{
     width: 35px;
     height: 35px;
 }
+
+.filtro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    width: 900px;
+    height: 50px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+.filtro p{
+    margin-right: 10px;
+}
+
+.filtro select{
+    margin-right: 30px;
+}
+
+h3{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 27px;
+    text-align: center;
+}
+
+.contenedor-modal{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 600ms;
+    z-index: 50;
+}
+
+.contenedor-modal:target{
+    visibility: visible;
+    opacity: 1;
+}
+
+.contenedor-modal:target .modal{
+    top: 50%;
+    left: 50%;
+    transform: rotate(0deg) translate(-50%,-50%);
+    visibility: visible;
+}
+
+.modal{
+    width: 100%;
+    max-width: 75%;
+    height: 100%;
+    position: relative;
+    top: -80%;
+    left: -80%;
+    transform: rotate(98deg) translate(-150%,230%);
+    transition: all 600ms;
+    background: red;
+}
+
+.btn-close-modal{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    padding: 20px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    line-height: 10px;
+    text-decoration: none;
+}
+
 .contene{
     width: 80%;
     background: rgba(255, 255, 255, .5);
@@ -527,7 +607,7 @@ footer ul li .redes{
     width: 80%;
     border: 2px solid;
     border-radius: 20px;
-    margin: 100px auto 50px auto;  
+    margin: 100px auto 50px auto;
     -webkit-box-shadow: 13px -2px 60px 2px rgba(97,97,99,1);
     -moz-box-shadow: 13px -2px 60px 2px rgba(97,97,99,1);
     box-shadow: 13px -2px 60px 2px rgba(97,97,99,1);
@@ -634,10 +714,10 @@ footer ul li .redes{
     background-color: rgba(0, 0, 0, .85);
     cursor: pointer;
 }
-.form input[type=number]::-webkit-inner-spin-button, 
-.form input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+.form input[type=number]::-webkit-inner-spin-button,
+.form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .form input[type=number]{ -moz-appearance:textfield; }
 /*responsive*/
@@ -681,6 +761,25 @@ footer ul li .redes{
 }
 
 @media(max-width:980px){
+    .filtro{
+        width: 95%;
+        height: 100%;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(10rem,1fr));
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .filtro p{
+        padding-left: 50px;
+        font-size: 75%;
+    }
+
+    .filtro select{
+        font-size: 75%;
+    }
+
     #checke{
         display: none;
     }
@@ -732,8 +831,14 @@ footer ul li .redes{
         bottom: 0;
         left: 250px;
     }
-    .nav li:hover > ul, .nav_v li:hover > ul{
+    .nav li:hover > .sublista{
         display:none;
+    }
+    .redes{
+        display: grid;
+    }
+    footer{
+        height: 120px;
     }
 }
 @media (max-width:1350px){
@@ -745,8 +850,13 @@ footer ul li .redes{
         gap: 8px;
     }
 }
+@media(max-width:600px){
+    .whatsapp p{
+        display: none;
+    }
+}
 @media (max-width:400px){
-   
+
     .cont-form{
         width: 350px;
         padding:2rem;

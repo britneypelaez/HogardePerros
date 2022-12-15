@@ -19,7 +19,7 @@ use TCG\Voyager\Facades\Voyager;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
 
 Route::get('/servicios', function () {
     return view('Home.ServiciosVeterinario');
@@ -33,6 +33,10 @@ Route::get('/PreguntasFrecuentes', function () {
     return view('Home.PreguntasFrecuentes');
 })->name('PreguntasFrecuentes');
 
+Route::get('/Adopcion', function () {
+    return view('Home.Adopcion');
+})->name('Adopcion');
+
 Route::get('/InicioAdmin', function () {
     return view('HomeAdministrador.InicioAdmin');
 })->name('InicioAdmin');
@@ -45,6 +49,10 @@ Route::get('admin/register', function () {
 Route::get('/fundacion/home', function () {
     return view('HomeFundacion.home');
 })->name('fundacion.home');
+
+Route::get('/fundacion/mascotas/index', function () {
+    return view('HomeFundacion.Mascotas.index');
+})->name('mascotas.index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

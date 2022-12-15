@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.Home')
 
 @section('title', 'Servicios Veterinarios')
 
@@ -6,7 +6,7 @@
     <div class="contene">
         <div class="left">
             <h1>
-                No más huellitas en la calle.               
+                No más huellitas en la calle.
             </h1>
             <br>
             <h3>
@@ -15,7 +15,7 @@
         </div>
         <div class="right">
             <h5>
-                Garantizar que todos los animalitos de la calle consigan un hogar, y sean sometidos a 
+                Garantizar que todos los animalitos de la calle consigan un hogar, y sean sometidos a
                 esterilización para reducir la tasa de natalidad de callejeros.
             </h5>
         </div>
@@ -49,9 +49,9 @@
     <div class="infoQuinesSomos">
         <h1>QUIÉNES SOMOS</h1>
         <p>
-            Hogar de perros y gatos es una fundación sin ánimo de lucro, nuestro objetivo principal es la 
-            acogida y la restauración de vida de perros y gatos, brindando servicios veterinarios y 
-            cuidados que cada animalito requiere, así mismo brindamos nuestros mayores esfuerzos en que cada 
+            Hogar de perros y gatos es una fundación sin ánimo de lucro, nuestro objetivo principal es la
+            acogida y la restauración de vida de perros y gatos, brindando servicios veterinarios y
+            cuidados que cada animalito requiere, así mismo brindamos nuestros mayores esfuerzos en que cada
             uno consiga un hogar de por vida asegurándonos  de que no vuelvan a quedar en condición de abandono.
         </p>
     </div>
@@ -61,8 +61,8 @@
         </div>
         <div class="right">
             <h1>Visión</h1>
-            <p class="p-text">Para el 2020 convertirnos en la organización líder y la mejor opción veterinaria, 
-                contando con instalaciones propias para seguir perseverando la protección, 
+            <p class="p-text">Para el 2020 convertirnos en la organización líder y la mejor opción veterinaria,
+                contando con instalaciones propias para seguir perseverando la protección,
                 esterilización y adopción de los animales en condiciones menos favorables.
             </p>
         </div>
@@ -70,9 +70,9 @@
     <div class="contene">
         <div class="left">
             <h1>Misión</h1>
-            <p class="p-text">Otorgar condiciones dignas a los animales en estado de abandono, desamparo y maltrato; 
+            <p class="p-text">Otorgar condiciones dignas a los animales en estado de abandono, desamparo y maltrato;
                brindando alimentos, albergue y medicamentos. sensibilizar a ciudadanía a la tenencia responsable y
-               trato digno; brindar una segunda oportunidad mediante campañas de adopción y esterilización como 
+               trato digno; brindar una segunda oportunidad mediante campañas de adopción y esterilización como
                medida efectiva de reducir las tasas de natalidad.
             </p>
         </div>
@@ -85,10 +85,10 @@
         <p>
             Si quieres participar con nosotros, contáctanos, puedes ayudarnos en algunos de nuestros
             planes, tu apoyo es esencial para la fundación.
-        </p> 
+        </p>
         <div class="body-form">
             <div class="form-card-container">
-                <div class="form-card"> 
+                <div class="form-card">
                    <form action="" class="form" method="post">
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-outlined">person</span>
