@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\MascotaController;
+use App\Http\Controllers\MascotaPerdidaController;
+use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\ServicioPrestadoController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +21,11 @@ use TCG\Voyager\Facades\Voyager;
 |
 */
 
+/**
+ * 
+ * Dashboard Usuarios
+ *
+ */
 Route::get('/', function () {
     return view('welcome');
 })->name('/');
@@ -37,22 +46,10 @@ Route::get('/Adopcion', function () {
     return view('Home.Adopcion');
 })->name('Adopcion');
 
-Route::get('/InicioAdmin', function () {
-    return view('HomeAdministrador.InicioAdmin');
-})->name('InicioAdmin');
-
 Route::get('admin/register', function () {
     auth()->logout();
     return view('auth.registro');
 })->name('admin/register');
-
-Route::get('/fundacion/home', function () {
-    return view('HomeFundacion.home');
-})->name('fundacion.home');
-
-Route::get('/fundacion/mascotas/index', function () {
-    return view('HomeFundacion.Mascotas.index');
-})->name('mascotas.index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -62,7 +59,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//Google login
+/**
+ * 
+ * Google login
+ *
+ */
 Route::get('/login-google', function () {
     return Socialite::driver('google')->redirect();
 });
@@ -90,3 +91,22 @@ Route::get('/google-callback', function () {
     return redirect('/admin');
 });
 
+/**
+ * 
+ * Dashboard Fundaciones
+ *
+ */
+Route::get('/fundacion/home', function () {
+    return view('HomeFundacion.home');
+})->name('fundacion.home');
+
+Route::resources([
+    'Mascotas' => MascotaController::class,
+    'MascotasPerdidas' => MascotaPerdidaController::class,
+    'Servicios' => ServicioController::class,
+    'ServiciosPrestados' => ServicioPrestadoController::class,
+]);
+
+Route::get('/InicioAdmin', function () {
+    return view('HomeAdministrador.InicioAdmin');
+})->name('InicioAdmin');

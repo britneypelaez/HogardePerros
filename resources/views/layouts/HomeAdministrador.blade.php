@@ -39,9 +39,9 @@
                 <label for="check" class="checkbtn">
                     <img src="{{ asset('img/Home/menublack.png') }}" alt="menu" />
                 </label>
-                <a>
+                {{-- <a>
                     <img src="{{ asset('img/Home/LOGO.png') }}" alt="Logo" />
-                </a>
+                </a> --}}
                 <ul class="lista">
                     <li>
                         <div class="opciones">
