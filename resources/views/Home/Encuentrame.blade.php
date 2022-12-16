@@ -5,13 +5,7 @@
 @section('content')
 <div class="info">
     <div class="info_bar">
-        <h2>Adopta una mascota de nuestra Fundacion Hogar de Perros</h2>
-        <p>
-        ¡Bienvenidos a nuestra sección de mascotas en adopción! Estamos encantados de presentarles a nuestros queridos amigos peludos que están buscando un hogar para siempre. 
-        Si estás buscando a tu nuevo compañero de vida, ¡has llegado al lugar correcto! Tenemos una gran variedad de mascotas en adopción, tanto perros como gatos.Todos ellos 
-        están esperando encontrar a alguien que los quiera y los cuide. Si ves a alguien que te interese, no dudes en ponerte en contacto con nosotros para obtener más información 
-        y tomar una cita para conocerlos en persona. Juntos, podemos darles a estas mascotas el hogar que merecen. ¡Gracias por visitarnos!
-        </p>
+        <h2>Mascotas Perdidas</h2>
     </div>
 
     <h3>Selecciona la clase de mascota que quieres:</h3>
@@ -50,7 +44,7 @@
         <div class="contenedor-modal" id="popup">
             <div class="moda">
                 <div class="informacion">
-                    <img src="{{ asset('img/Home/foto1.jpeg')}}" alt="Adopta">
+                    <img src="{{ asset('img/Home/banner.jpg')}}" alt="Adopta">
                     <div class="descripcion">
                         <div class="con">
                             <p>Raza:</p>
@@ -101,12 +95,12 @@
         </div> -->
 
         <div class="adopciones">
-            @foreach ($Mascotas as $mascota)
+            @foreach ($MascotasPerdidas as $mascotaperdida)
             <div class="adopcion">
                 <div class="img">
-                    <img src="{{ asset($mascota->imagen_mascota) }}" alt="">
+                    <img src="{{ asset($mascotaperdida->imagen_mascota) }}" alt="">
                     <div class="descrip">
-                        <h2>{{ $mascota->nombre_mascota }}</h2>
+                        <h2>{{ $mascotaperdida->nombre_mascota}}</h2>
                     </div>
                 </div>
                 <div class="more"><a href="#popup" style="text-decoration: none; color: #fff;">Mas Informacion</a></div>
@@ -114,6 +108,6 @@
             @endforeach
         </div>
     </div>
-    <div class="paginacion">{{ $Mascotas->links() }}</div>
+    <div class="paginacion">{{ $MascotasPerdidas->links() }}</div>
 </div>
 @endsection

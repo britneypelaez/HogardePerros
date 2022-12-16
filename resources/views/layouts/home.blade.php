@@ -74,7 +74,7 @@
                     </li>
                     <li>
                         <div class="opciones">
-                            <a href="">Encuéntrame</a>
+                            <a href="{{ route('encuentrame') }}">Encuéntrame</a>
                             <img src="{{ asset('img/Home/findme.png') }}" alt="" id="miniaturas"
                                 style="left:90px">
                         </div>
@@ -117,7 +117,7 @@
                         <li class="ultimo">
                             <div class="opciones">
                                 <a href="{{ route('voyager.login') }}">
-                                <img id="miniaturas" src="{{ asset('img/Home/login.png') }}""IMG/" alt=""
+                                <img id="miniaturas" src="{{ asset('img/Home/login.png') }}" alt=""
                                     style="left:50px">Iniciar Sesion
                                 </a>
                             </div>
@@ -140,8 +140,7 @@
             <li>
                 <a href=""><img class="redes" src="{{ asset('img/Home/facebook.png') }}". alt=""></a>
                 <a href=""><img class="redes" src="{{ asset('img/Home/instagram.png') }}". alt=""></a>
-                <a href=""><img class="redes" src="{{ asset('img/Home/twitter.png') }}".
-                        alt=""></a>
+                <a href=""><img class="redes" src="{{ asset('img/Home/twitter.png') }}". alt=""></a>
             </li>
         </ul>
     </footer>
