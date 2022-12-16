@@ -1,4 +1,4 @@
-@extends('layouts.Home')
+@extends('layouts.home')
 
 @section('title', 'Servicios Veterinarios')
 

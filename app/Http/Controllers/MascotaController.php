@@ -14,7 +14,8 @@ class MascotaController extends Controller
      */
     public function index()
     {
-        return view('HomeFundacion.Mascotas.index');
+        $mascotas = Mascota::paginate(5);
+        return view('HomeFundacion.Mascotas.index', compact('mascotas'));
     }
 
     /**
@@ -24,7 +25,8 @@ class MascotaController extends Controller
      */
     public function create()
     {
-        //
+        $mascotas = Mascota::all();
+        return view('HomeFundacion.Mascotas.crear', compact('mascotas',));
     }
 
     /**

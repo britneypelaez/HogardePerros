@@ -1,160 +1,63 @@
-@extends('layouts.HomeAdministrador')
-
-@section('title', 'Home Admin')
+@extends('layouts.HomeFundacion.app')
 
 @section('content')
-    <article>
-        <div class="contenedorServicios">
-            <div class="filtro">
-                <label for="filtros">Selecciona la clase de animal por la que quieres filtrar</label>
+    <section class="section">
+        <div class="section-header">
+            <h3 class="page__heading">Adopción</h3>
+        </div>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body table-responsive">
+                        <a class="btn btn-warning" href="{{ route('Mascotas.create')}}">Nuevo</a>
+                        
+                        <table class="table table-striped mt-2">
+                                <thead style="background-color: #6777ef;">
+                                    <th style="display: none;">ID</th>
+                                    <th style="color: #fff;">Nombre Mascota</th>
+                                    <th style="color: #fff;">Descripcion</th>
+                                    <th style="color: #fff;">Raza</th>
+                                    <th style="color: #fff;">Color</th>
+                                    <th style="color: #fff;">Estado</th>
+                                    <th style="color: #fff;">Tamaño</th>
+                                    <th style="color: #fff;">Tipo</th>
+                                    <th style="color: #fff;">Edad</th>
+                                </thead>
+                            <tbody>
+                            @foreach($mascotas as $mascota)
+                            <tr>
+                                <td style="display: none;">{{ $mascota->id }}</td>
+                                <td>{{ $mascota->nombre_mascota }}</td>
+                                <td>{{ $mascota->descripcion }}</td>
+                                <td>{{ $mascota->raza }}</td>
+                                <td>{{ $mascota->color }}</td>
+                                <td>{{ $mascota->estado }}</td>
+                                <td>{{ $mascota->tamanio }}</td>
+                                <td>{{ $mascota->tipo }}</td>
+                                <td>{{ $mascota->edad }}</td>
+                                <td>
+                                    <form action="{{ route('Mascotas.destroy', $mascota->id) }}" method="POST">
+                                        <a class="btn btn-info" href="{{ route('Mascotas.edit', $habitacion->id) }}">Editar</a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" >Borrar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
 
-                <select name="filtrosAnimal" id="filtros">
-                    <option value=""> Elije una opcion </option>
-                    <option value="Perro">Perro</option>
-                    <option value="Gato">Gato</option>
-                </select>
-
-            </div>
-            <div class="añadir">
-                <button>Añadir Mascotas</button>
-            </div>
-            <div class="services">
-                <div class="cards">
-                    <div class="cards1">
-                        <div class="picture"><img src="{{ asset('img/Home/banner.jpg') }}" alt="" /></div>
-                        <div class="description">
-                            <h1>Nombre del Animal</h1>
-                            <div class="opcionesAdmin">
-                                <a href=""><img src="{{ asset('img/Home/edit.png') }}" alt="" href="#" /></a>
-                                <a href=""><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
+                        <!-- Centramos la paginación a la derecha-->
+                        <div class="pagination justify-content-end">
+                                {!! $mascotas->links() !!}
                             </div>
                         </div>
-                    </div>
-                    <div class="more">
-                        <a href="" style="text-decoration: none; color: #fff">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="cards1">
-                        <div class="picture"><img src="{{ asset('img/Home/banner.jpg') }}" alt="" /></div>
-                        <div class="description">
-                            <h1>Nombre del Animal</h1>
-                            <div class="opcionesAdmin">
-                                <a href=""><img src="{{ asset('img/Home/edit.png') }}" alt="" href="#" /></a>
-                                <a href=""><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="more">
-                        <a href="" style="text-decoration: none; color: #fff">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="cards1">
-                        <div class="picture"><img src="{{ asset('img/Home/banner.jpg') }}" alt="" /></div>
-                        <div class="description">
-                            <h1>Nombre del Animal</h1>
-                            <div class="opcionesAdmin">
-                                <a href=""><img src="{{ asset('img/Home/edit.png') }}" alt="" href="#" /></a>
-                                <a href=""><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="more">
-                        <a href="" style="text-decoration: none; color: #fff">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="cards1">
-                        <div class="picture"><img src="{{ asset('img/Home/banner.jpg') }}" alt="" /></div>
-                        <div class="description">
-                            <h1>Nombre del Animal</h1>
-                            <div class="opcionesAdmin">
-                                <a href=""><img src="{{ asset('img/Home/edit.png') }}" alt="" href="#" /></a>
-                                <a href=""><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="more">
-                        <a href="" style="text-decoration: none; color: #fff">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="cards1">
-                        <div class="picture"><img src="{{ asset('img/Home/banner.jpg') }}" alt="" /></div>
-                        <div class="description">
-                            <h1>Nombre del Animal</h1>
-                            <div class="opcionesAdmin">
-                                <a href=""><img src="{{ asset('img/Home/edit.png') }}" alt="" href="#" /></a>
-                                <a href=""><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="more">
-                        <a href="" style="text-decoration: none; color: #fff">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="cards1">
-                        <div class="picture"><img src="{{ asset('img/Home/banner.jpg') }}" alt="" /></div>
-                        <div class="description">
-                            <h1>Nombre del Animal</h1>
-                            <div class="opcionesAdmin">
-                                <a href=""><img src="{{ asset('img/Home/edit.png') }}" alt="" href="#" /></a>
-                                <a href=""><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="more">
-                        <a href="" style="text-decoration: none; color: #fff">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="cards1">
-                        <div class="picture"><img src="{{ asset('img/Home/banner.jpg') }}" alt="" /></div>
-                        <div class="description">
-                            <h1>Nombre del Animal</h1>
-                            <div class="opcionesAdmin">
-                                <a href=""><img src="{{ asset('img/Home/edit.png') }}" alt="" href="#" /></a>
-                                <a href=""><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="more">
-                        <a href="" style="text-decoration: none; color: #fff">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="cards1">
-                        <div class="picture"><img src="{{ asset('img/Home/banner.jpg') }}" alt="" /></div>
-                        <div class="description">
-                            <h1>Nombre del Animal</h1>
-                            <div class="opcionesAdmin">
-                                <a href=""><img src="{{ asset('img/Home/edit.png') }}" alt="" href="#" /></a>
-                                <a href=""><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="more">
-                        <a href="" style="text-decoration: none; color: #fff">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <div class="cards1">
-                        <div class="picture"><img src="{{ asset('img/Home/banner.jpg') }}" alt="" /></div>
-                        <div class="description">
-                            <h1>Nombre del Animal</h1>
-                            <div class="opcionesAdmin">
-                                <a href=""><img src="{{ asset('img/Home/edit.png') }}" alt="editar" /></a>
-                                <a href=""><img src="{{ asset('img/Home/delete.png') }}" alt="Eliminar" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="more">
-                        <a href="" style="text-decoration: none; color: #fff">Mas Informacion</a>
                     </div>
                 </div>
             </div>
         </div>
-    </article>
+    </section>
 @endsection
+
