@@ -86,6 +86,9 @@ Route::get('/google-callback', function () {
 
     if ($userExiste) {
         Auth::login($userExiste);
+        if ($userExiste->role_id == 3) {
+            return redirect('/fundacion/home');
+        }
     } else {
         $userNew = User::create([
             'name' => $user->name,
