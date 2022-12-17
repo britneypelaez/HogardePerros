@@ -25,6 +25,11 @@ use TCG\Voyager\Facades\Voyager;
 |
 */
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 /**
  * 
  * Dashboard Usuarios
@@ -66,9 +71,6 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /**
  * 

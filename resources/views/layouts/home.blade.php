@@ -93,9 +93,14 @@
                                 <img class="sesion" src="{{ asset('img/Home/banner.jpg') }}" alt="">
                             </label>
                             <ul class="sublista">
+                                @can('browse_fundaciones')
+                                <li>
+                                    <a href="{{ route('fundacion.home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Administracion</a>
+                                </li>
+                                @endcan
                                 @can('browse_admin')
                                 <li>
-                                    <a href="{{ route('home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Administracion</a>
+                                    <a href="{{ route('home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Admin</a>
                                 </li>
                                 @endcan
                                 <li>

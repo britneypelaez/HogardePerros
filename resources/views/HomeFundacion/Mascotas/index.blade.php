@@ -23,6 +23,7 @@
                                     <th style="color: #fff;">Tamaño</th>
                                     <th style="color: #fff;">Tipo</th>
                                     <th style="color: #fff;">Edad</th>
+                                    <th style="color: #fff;">acciones</th>
                                 </thead>
                             <tbody>
                             @foreach($mascotas as $mascota)
@@ -38,7 +39,7 @@
                                 <td>{{ $mascota->edad }}</td>
                                 <td>
                                     <form action="{{ route('Mascotas.destroy', $mascota->id) }}" method="POST">
-                                        <a class="btn btn-info" href="{{ route('Mascotas.edit', $habitacion->id) }}">Editar</a>
+                                        <a class="btn btn-info" href="{{ route('Mascotas.edit', $mascota->id) }}">Editar</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger" >Borrar</button>
