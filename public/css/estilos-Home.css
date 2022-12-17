@@ -754,7 +754,63 @@ h3{
   margin: 0;
 }
 .form input[type=number]{ -moz-appearance:textfield; }
+#html-pre{
+    height: 100%;
+}
+#body-pre{
+    min-height: 100%;
+}
+.bodyBlocks > *{
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius:4px ;
+    padding: 10px;
+    height: 100%;
+}
 
+.blockiz{
+    grid-area: blockiz;
+     height: 100%;
+     background-repeat:no-repeat ;
+     background: url(../img/Home/Fondo.jpg) no-repeat center center fixed;
+     background-size: 100% 100%;
+
+}
+.main{
+    grid-area: main;
+}
+.main h1{
+    font-weight: 600;
+    margin: 30px auto 50px auto;
+    text-align: center;
+}
+.main h2{
+    text-align:justify;
+    font-weight: 600;
+}
+.main p{
+    text-align: justify;
+    font-size: 20px;
+    font-weight: 600;
+}
+.preguntas{
+    margin: 90px auto 90px auto;
+}
+.blockdere{
+    grid-area:blockdere;
+    height: 100%;
+    background-repeat:no-repeat ;
+    background: url(../img/Home/Fondo.jpg) no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+.bodyBlocks{
+    display: grid;
+    gap: 0px;
+    height: 100%;
+    grid-template: 
+     "blockiz   main     blockdere"  auto /
+     auto       75%      auto;
+}
 /*responsive*/
 @media(max-width:1400px){
     .nav a img, .nav_v a img{
@@ -930,6 +986,24 @@ h3{
 
     .informacion{
         height: 120%;
+    }
+
+}
+@media (max-width:695px){
+    .blockdere{
+        grid-area:blockdere ;
+        display: none;
+    }
+    .blockiz{
+        grid-area: blockiz;
+        display: none;
+    }
+    .bodyBlocks{
+        display: grid;
+        gap: 1px;
+        grid-template: 
+         "main" auto/
+          auto;
     }
 
 }

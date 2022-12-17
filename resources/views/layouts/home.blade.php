@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}" dir="{{ __('voyager::generic.is_rtl') == 'true' ? 'rtl' : 'ltr' }}">
+<html lang="{{ config('app.locale') }}" dir="{{ __('voyager::generic.is_rtl') == 'true' ? 'rtl' : 'ltr' }}" id="html-pre">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
     @endif
 </head>
 
-<body>
+<body id="body-pre">
     <header>
         <div class="conten">
             <div class="logo">
