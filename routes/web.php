@@ -6,7 +6,6 @@ use App\Http\Controllers\MascotaPerdidaController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\ServicioPrestadoController;
 use App\Models\User;
-use App\Models\Mascota;
 use App\Models\MascotaPerdida;
 use App\Models\Servicio;
 use Illuminate\Support\Facades\Auth;
@@ -31,18 +30,15 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /**
- * 
+ *
  * Dashboard Usuarios
  *
  */
-Route::get('/', function () {
-    return view('welcome');
-})->name('/');
+Route::get('/', [App\Http\Controllers\MascotaController::class, 'indexHome'])->name('/');
 
-Route::get('/servicios', function () {
-    $Servicios=Servicio::all();
-    return view('Home.ServiciosVeterinario',compact('Servicios'));
-})->name('servicios');
+Route::get('/Adopcion', [App\Http\Controllers\MascotaController::class, 'indexAdopcionCliente'])->name('Adopcion');
+
+Route::get('/servicios', [App\Http\Controllers\ServicioController::class, 'indexServicioCliente'])->name('servicios');
 
 Route::get('/QuienesSomos', function () {
     return view('Home.QuienesSomos');
@@ -51,11 +47,6 @@ Route::get('/QuienesSomos', function () {
 Route::get('/PreguntasFrecuentes', function () {
     return view('Home.PreguntasFrecuentes');
 })->name('PreguntasFrecuentes');
-
-Route::get('/Adopcion', function () {
-    $Mascotas=Mascota::paginate(12);
-    return view('Home.Adopcion',compact('Mascotas'));
-})->name('Adopcion');
 
 Route::get('/encuentrame', function () {
     $MascotasPerdidas=MascotaPerdida::paginate(12);
@@ -73,7 +64,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 /**
- * 
+ *
  * Google login
  *
  */
@@ -108,7 +99,7 @@ Route::get('/google-callback', function () {
 });
 
 /**
- * 
+ *
  * Dashboard Fundaciones
  *
  */

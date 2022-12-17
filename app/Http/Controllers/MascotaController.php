@@ -18,6 +18,18 @@ class MascotaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function indexAdopcionCliente()
+    {
+        $Mascotas = Mascota::paginate(12);
+        return view('Home.Adopcion', compact('Mascotas'));
+    }
+
+    public function indexHome()
+    {
+        $Mascotas = Mascota::inRandomOrder()->limit(6)->get();
+        return view('welcome', compact('Mascotas'));
+    }
+
     public function index()
     {
         $mascotas = Mascota::paginate(5);

@@ -17,6 +17,12 @@ class ServicioController extends Controller
         return view('HomeFundacion.Servicios.index');
     }
 
+    public function indexServicioCliente()
+    {
+        $Servicios=Servicio::all();
+        return view('Home.ServiciosVeterinario',compact('Servicios'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

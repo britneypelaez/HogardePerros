@@ -16,16 +16,16 @@
 
         <div class="tabla-servicios">
             <div class="servicio">
-                <p>BRINDANOS TU AYUDA</p>
+                <a href=""><p>BRINDANOS TU AYUDA</p></a>
             </div>
             <div class="servicio">
-                <p>SERVICIO VETERINARIO DE BUENA CALIDAD</p>
+                <a href=""><p>SERVICIO VETERINARIO DE BUENA CALIDAD</p></a>
             </div>
             <div class="servicio">
-                <p>ADOPTA UN PERRO DE LA FUNDACION</p>
+                <a href=""><p>ADOPTA UN PERRO DE LA FUNDACION</p></a>
             </div>
             <div class="servicio">
-                <p>ANIMALES PERDIDOS</p>
+                <a href=""><p>ANIMALES PERDIDOS</p></a>
             </div>
         </div>
 
@@ -33,86 +33,20 @@
 
         <div class="contenedor">
             <div class="adopciones">
+                @foreach ($Mascotas as $mascota)
                 <div class="adopcion">
                     <div class="img">
-                        <img src="{{ asset('img/Home/banner.jpg') }}". alt="">
+                        <img src="{{ asset($mascota->imagen_mascota) }}" alt="">
                         <div class="descrip">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Doloremque adipisci, aliquid quibusdam quae iste similique
-                                corporis, quo dolorem quisquam tempora vel, alias illo recusandae
-                                sequi in voluptas officiis enim consequatur!</p>
+                            <h2>{{ $mascota->nombre_mascota }}</h2>
+                            <p>{{ $mascota->descripcion }}</p>
                         </div>
                     </div>
-                    <div class="more"><a href="" style="text-decoration: none; color: #fff;">Mas Informacion</a>
-                    </div>
+                    <div class="more"><a href="#popup" style="text-decoration: none; color: #fff;">Mas Informacion</a></div>
                 </div>
-                <div class="adopcion">
-                    <div class="img">
-                        <img src="{{ asset('img/Home/banner.jpg') }}". alt="">
-                        <div class="descrip">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Doloremque adipisci, aliquid quibusdam quae iste similique
-                                corporis, quo dolorem quisquam tempora vel, alias illo recusandae
-                                sequi in voluptas officiis enim consequatur!</p>
-                        </div>
-                    </div>
-                    <div class="more"><a href="" style="text-decoration: none; color: #fff;">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="adopcion">
-                    <div class="img">
-                        <img src="{{ asset('img/Home/banner.jpg') }}". alt="">
-                        <div class="descrip">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Doloremque adipisci, aliquid quibusdam quae iste similique
-                                corporis, quo dolorem quisquam tempora vel, alias illo recusandae
-                                sequi in voluptas officiis enim consequatur!</p>
-                        </div>
-                    </div>
-                    <div class="more"><a href="" style="text-decoration: none; color: #fff;">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="adopcion">
-                    <div class="img">
-                        <img src="{{ asset('img/Home/banner.jpg') }}". alt="">
-                        <div class="descrip">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Doloremque adipisci, aliquid quibusdam quae iste similique
-                                corporis, quo dolorem quisquam tempora vel, alias illo recusandae
-                                sequi in voluptas officiis enim consequatur!</p>
-                        </div>
-                    </div>
-                    <div class="more"><a href="" style="text-decoration: none; color: #fff;">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="adopcion">
-                    <div class="img">
-                        <img src="{{ asset('img/Home/banner.jpg') }}". alt="">
-                        <div class="descrip">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Doloremque adipisci, aliquid quibusdam quae iste similique
-                                corporis, quo dolorem quisquam tempora vel, alias illo recusandae
-                                sequi in voluptas officiis enim consequatur!</p>
-                        </div>
-                    </div>
-                    <div class="more"><a href="" style="text-decoration: none; color: #fff;">Mas Informacion</a>
-                    </div>
-                </div>
-                <div class="adopcion">
-                    <div class="img">
-                        <img src="{{ asset('img/Home/banner.jpg') }}". alt="">
-                        <div class="descrip">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Doloremque adipisci, aliquid quibusdam quae iste similique
-                                corporis, quo dolorem quisquam tempora vel, alias illo recusandae
-                                sequi in voluptas officiis enim consequatur!</p>
-                        </div>
-                    </div>
-                    <div class="more"><a href="" style="text-decoration: none; color: #fff;">Mas Informacion</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 
-        <button type="submit"><span>Mas mascotas en adopcion</span></button>
+        <a href="{{ route('Adopcion') }}"><button type="submit"><span>Mas mascotas en adopcion</span></button></a>
     @endsection

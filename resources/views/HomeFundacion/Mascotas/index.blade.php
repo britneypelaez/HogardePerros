@@ -11,7 +11,7 @@
                     <div class="card">
                         <div class="card-body table-responsive">
                         <a class="btn btn-warning" href="{{ route('Mascotas.create')}}">Nuevo</a>
-                        
+
                         <table class="table table-striped mt-2">
                                 <thead style="background-color: #6777ef;">
                                     <th style="display: none;">ID</th>
