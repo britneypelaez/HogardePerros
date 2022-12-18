@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Color;
+use App\Models\Especie;
+use App\Models\Estado;
 use App\Models\MascotaPerdida;
+use App\Models\Raza;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class MascotaPerdidaController extends Controller
 {
@@ -14,7 +20,8 @@ class MascotaPerdidaController extends Controller
      */
     public function index()
     {
-        //
+        $MascotasPerdidas = MascotaPerdida::paginate(5);
+        return view('HomeFundacion.MascotasPerdidas.index', compact('MascotasPerdidas'));
     }
 
     /**
@@ -24,7 +31,10 @@ class MascotaPerdidaController extends Controller
      */
     public function create()
     {
-        //
+        $razas = Raza::all();
+        $colores = Color::all();
+        $especies = Especie::all();
+        return view('HomeFundacion.MascotasPerdidas.crear', compact('razas', 'colores', 'especies'));
     }
 
     /**
@@ -35,7 +45,30 @@ class MascotaPerdidaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validaciendo de los campos enviados desde la vista crear
+        request()->validate([
+            'nombre_mascota' => 'required',
+            'descripcion' => 'required',
+            'raza' => 'required',
+            'color' => 'required',
+            'tamanio' => 'required',
+            'especie' => 'required',
+            'imagen_mascota' => 'required',
+        ]);
+        $profileImage = time() . '.' . $request->file('imagen_mascota')->getClientOriginalExtension();
+        Storage::disk('public')->put($profileImage,file_get_contents($request->file('imagen_mascota')->getPathName()) );
+        $mascota = new MascotaPerdida();
+        $mascota->nombre_mascota = request()->nombre_mascota;
+        $mascota->descripcion = request()->descripcion;
+        $mascota->raza = request()->raza;
+        $mascota->color = request()->color;
+        $mascota->estado = 4;
+        $mascota->tamanio = request()->tamanio;
+        $mascota->especie = request()->especie;
+        $mascota->imagen_mascota = $profileImage;
+        $mascota->id_user = Auth::user()->id;
+        $mascota->save();
+        return redirect()->route('MascotasPerdidas.index');
     }
 
     /**
@@ -55,9 +88,14 @@ class MascotaPerdidaController extends Controller
      * @param  \App\Models\MascotaPerdida  $mascotaPerdida
      * @return \Illuminate\Http\Response
      */
-    public function edit(MascotaPerdida $mascotaPerdida)
+    public function edit(MascotaPerdida $MascotasPerdida)
     {
-        //
+        $razas = Raza::all();
+        $colores = Color::all();
+        $estados = Estado::all();
+        $especies = Especie::all();
+
+        return view('HomeFundacion.MascotasPerdidas.editar', compact('MascotasPerdida', 'razas', 'colores', 'estados', 'especies'));
     }
 
     /**
@@ -67,9 +105,34 @@ class MascotaPerdidaController extends Controller
      * @param  \App\Models\MascotaPerdida  $mascotaPerdida
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MascotaPerdida $mascotaPerdida)
+    public function update(Request $request, MascotaPerdida $MascotasPerdida)
     {
-        //
+        //Validaciendo de los campos enviados desde la vista crear
+        request()->validate([
+            'nombre_mascota' => 'required',
+            'descripcion' => 'required',
+            'raza' => 'required',
+            'color' => 'required',
+            'tamanio' => 'required',
+            'especie' => 'required',
+        ]);
+        //Recibiendo un archivo de tipo imagen y tranformadolo en una ruta para así guardarlo en la base de datos
+        if ($request->has('imagen_mascota')){
+            $profileImage = time() . '.' . $request->file('imagen_mascota')->getClientOriginalExtension();
+            Storage::disk('public')->put($profileImage,file_get_contents($request->file('imagen_mascota')->getPathName()) );
+            $MascotasPerdida->imagen_mascota = $profileImage;
+        }
+        //operador ternario, siempre preguntará si le llega algo de ese dato, de ser así reemplacelo, sino, deje el anterior
+        $MascotasPerdida->nombre_mascota = $request->has('nombre_mascota') ?  $request->nombre_mascota : $MascotasPerdida->nombre_mascota;
+        $MascotasPerdida->descripcion = $request->has('descripcion') ?  $request->descripcion : $MascotasPerdida->descripcion;
+        $MascotasPerdida->raza = $request->has('raza') ?  $request->raza : $MascotasPerdida->raza;
+        $MascotasPerdida->color = $request->has('color') ?  $request->color : $MascotasPerdida->color;
+        $MascotasPerdida->estado = $request->has('estado') ?  $request->estado : $MascotasPerdida->estado;
+        $MascotasPerdida->tamanio = $request->has('tamanio') ?  $request->tamanio : $MascotasPerdida->tamanio;
+        $MascotasPerdida->especie = $request->has('especie') ?  $request->especie : $MascotasPerdida->especie;
+        $MascotasPerdida->save();
+
+        return redirect()->route('MascotasPerdidas.index');
     }
 
     /**
@@ -78,8 +141,9 @@ class MascotaPerdidaController extends Controller
      * @param  \App\Models\MascotaPerdida  $mascotaPerdida
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MascotaPerdida $mascotaPerdida)
+    public function destroy(MascotaPerdida $MascotasPerdida)
     {
-        //
+        $MascotasPerdida->delete();
+        return redirect()->route('MascotasPerdidas.index');
     }
 }

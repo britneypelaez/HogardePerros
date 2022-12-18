@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ServicioPrestado;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\ServicioPrestado;
 
 class ServicioPrestadoController extends Controller
 {
@@ -14,7 +15,8 @@ class ServicioPrestadoController extends Controller
      */
     public function index()
     {
-        return view('HomeFundacion.ServiciosPrestados.index');
+        $ServiciosPrestados = ServicioPrestado::paginate(5);
+        return view('HomeFundacion.ServiciosPrestados.index', compact('ServiciosPrestados'));
     }
 
     /**
@@ -24,7 +26,8 @@ class ServicioPrestadoController extends Controller
      */
     public function create()
     {
-        //
+        $usuarios = User::all();
+        return view('HomeFundacion.ServiciosPrestados.crear', compact('usuarios'));
     }
 
     /**
@@ -35,7 +38,22 @@ class ServicioPrestadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validaciendo de los campos enviados desde la vista crear
+        request()->validate([
+            'nombre_servicio' => 'required',
+            'id_cliente' => 'required',
+            'descripcion' => 'required',
+            'fecha' => 'required',
+        ]);
+
+        $mascota = new ServicioPrestado();
+        $mascota->nombre_servicio = request()->nombre_servicio;
+        $mascota->id_cliente = request()->id_cliente;
+        $mascota->descripcion = request()->descripcion;
+        $mascota->fecha = request()->fecha;
+        $mascota->id_fundacion = 1;
+        $mascota->save();
+        return redirect()->route('ServiciosPrestados.index');
     }
 
     /**
@@ -55,9 +73,10 @@ class ServicioPrestadoController extends Controller
      * @param  \App\Models\ServicioPrestado  $servicioPrestado
      * @return \Illuminate\Http\Response
      */
-    public function edit(ServicioPrestado $servicioPrestado)
+    public function edit(ServicioPrestado $ServiciosPrestado)
     {
-        //
+        $usuarios = User::all();
+        return view('HomeFundacion.ServiciosPrestados.editar', compact('ServiciosPrestado', 'usuarios'));
     }
 
     /**
@@ -67,9 +86,22 @@ class ServicioPrestadoController extends Controller
      * @param  \App\Models\ServicioPrestado  $servicioPrestado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ServicioPrestado $servicioPrestado)
+    public function update(Request $request, ServicioPrestado $ServiciosPrestado)
     {
-        //
+        //Validaciendo de los campos enviados desde la vista crear
+        request()->validate([
+            'nombre_servicio' => 'required',
+            'id_cliente' => 'required',
+            'descripcion' => 'required',
+            'fecha' => 'required',
+        ]);
+        $ServiciosPrestado->nombre_servicio = $request->has('nombre_servicio') ?  $request->nombre_servicio : $ServiciosPrestado->nombre_servicio;
+        $ServiciosPrestado->id_cliente = $request->has('id_cliente') ?  $request->id_cliente : $ServiciosPrestado->id_cliente;
+        $ServiciosPrestado->descripcion = $request->has('descripcion') ?  $request->descripcion : $ServiciosPrestado->descripcion;
+        $ServiciosPrestado->fecha = $request->has('fecha') ?  $request->fecha : $ServiciosPrestado->fecha;
+        $ServiciosPrestado->save();
+
+        return redirect()->route('ServiciosPrestados.index');
     }
 
     /**
@@ -78,8 +110,9 @@ class ServicioPrestadoController extends Controller
      * @param  \App\Models\ServicioPrestado  $servicioPrestado
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ServicioPrestado $servicioPrestado)
+    public function destroy(ServicioPrestado $ServiciosPrestado)
     {
-        //
+        $ServiciosPrestado->delete();
+        return redirect()->route('ServiciosPrestados.index');
     }
 }

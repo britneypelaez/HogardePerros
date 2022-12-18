@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CampaniaController;
 use App\Http\Controllers\CertificadoController;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\MascotaPerdidaController;
@@ -110,6 +111,7 @@ Route::get('/fundacion/home', function () {
 Route::resources([
     'Mascotas' => MascotaController::class,
     'MascotasPerdidas' => MascotaPerdidaController::class,
+    'Campanias' => CampaniaController::class,
     'Servicios' => ServicioController::class,
     'ServiciosPrestados' => ServicioPrestadoController::class,
 ]);

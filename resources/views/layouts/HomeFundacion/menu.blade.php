@@ -9,7 +9,7 @@
         <i class=" fas fa-solid fa-ambulance"></i><span>Servicios Veterinarios</span>
     </a>
     <br>
-    <a class="nav-link" href="">
+    <a class="nav-link" href="{{url('Campanias')}}">
         <i class=" fas fa-solid fa-compass"></i><span>Campañas</span>
     </a>
     <br>

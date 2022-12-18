@@ -20,9 +20,8 @@
                                     <th style="color: #fff;">Raza</th>
                                     <th style="color: #fff;">Color</th>
                                     <th style="color: #fff;">Estado</th>
-                                    <th style="color: #fff;">Tamaño</th>
-                                    <th style="color: #fff;">Tipo</th>
                                     <th style="color: #fff;">Edad</th>
+                                    <th style="color: #fff;">Foto</th>
                                     <th style="color: #fff;">acciones</th>
                                 </thead>
                             <tbody>
@@ -31,15 +30,14 @@
                                 <td style="display: none;">{{ $mascota->id }}</td>
                                 <td>{{ $mascota->nombre_mascota }}</td>
                                 <td>{{ $mascota->descripcion }}</td>
-                                <td>{{ $mascota->raza }}</td>
-                                <td>{{ $mascota->color }}</td>
-                                <td>{{ $mascota->estado }}</td>
-                                <td>{{ $mascota->tamanio }}</td>
-                                <td>{{ $mascota->tipo }}</td>
+                                <td>{{ $mascota->Raza->descripcion }}</td>
+                                <td>{{ $mascota->Color->descripcion }}</td>
+                                <td>{{ $mascota->Estado->descripcion }}</td>
                                 <td>{{ $mascota->edad }}</td>
+                                <td><img src="{{ asset("storage/$mascota->imagen_mascota") }}" width="70px" height="70px"></td>
                                 <td>
-                                    <form action="{{ route('Mascotas.destroy', $mascota->id) }}" method="POST">
-                                        <a class="btn btn-info" href="{{ route('Mascotas.edit', $mascota->id) }}">Editar</a>
+                                    <form action="{{ route('Mascotas.destroy', $mascota) }}" method="POST">
+                                        <a class="btn btn-info" href="{{ route('Mascotas.edit', $mascota) }}">Editar</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger" >Borrar</button>
