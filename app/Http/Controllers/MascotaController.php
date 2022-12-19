@@ -267,6 +267,3 @@ class MascotaController extends Controller
         return response()->json($result);
     }
 }
-
-
-}
