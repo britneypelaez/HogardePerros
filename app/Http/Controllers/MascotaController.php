@@ -20,7 +20,9 @@ class MascotaController extends Controller
     public function indexAdopcionCliente()
     {
         $Mascotas = Mascota::paginate(12);
-        return view('Home.Adopcion', compact('Mascotas'));
+        $Colores = Color::all();
+        $Especies = Especie::all();
+        return view('Home.Adopcion', compact('Mascotas', 'Colores', 'Especies'));
     }
 
     public function indexHome()

@@ -6,6 +6,7 @@ use App\Models\Color;
 use App\Models\Especie;
 use App\Models\Estado;
 use App\Models\MascotaPerdida;
+use App\Models\Mascota;
 use App\Models\Raza;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,14 @@ class MascotaPerdidaController extends Controller
     {
         $MascotasPerdidas = MascotaPerdida::paginate(5);
         return view('HomeFundacion.MascotasPerdidas.index', compact('MascotasPerdidas'));
+    }
+
+    public function indexEncuentrameCliente()
+    {
+        $Mascotas = Mascota::paginate(12);
+        $Colores = Color::all();
+        $Especies = Especie::all();
+        return view('Home.Adopcion', compact('Mascotas', 'Colores', 'Especies'));
     }
 
     /**

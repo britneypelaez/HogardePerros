@@ -31,9 +31,6 @@
             <p id="razaParrafo">Raza:</p>
             <select name="" id="raza">
                 <option value="0">Todas</option>
-                {{-- @foreach ($Razas as $raza)
-            <option value="{{ $raza->raza }}">{{ $raza->descripcion }}</option>
-            @endforeach --}}
             </select>
             <p>Color:</p>
             <select name="" id="color">
