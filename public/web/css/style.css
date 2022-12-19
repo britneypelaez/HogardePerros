@@ -54,6 +54,16 @@
 /* 3. Bootstrap Override */
 /* 3.1 Misc */
 @import url("//fonts.googleapis.com/css?family=Nunito:400,600,700,800");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*{
+    font-family: "Poppins", sans-serif;
+    font-weight: 80;
+
+}
+::-webkit-scrollbar {
+    display: none;
+    }
 
 .btn:focus,
 .btn:active,
@@ -65,7 +75,7 @@
 }
 
 a {
-    color: #6777ef;
+    color: #fff;
     font-weight: 500;
     transition: all .5s;
     -webkit-transition: all .5s;
@@ -787,6 +797,8 @@ select.form-control:not([size]):not([multiple]) {
     border: none;
     position: relative;
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .card .card-header, .card .card-body, .card .card-footer {
@@ -2102,18 +2114,17 @@ h6 .badge {
 }
 
 /* 3.18 Navbar */
+.main-sidebar, a > .nav-link{
+    background: rgb(0, 0, 0, 0.85);
+}
+
 .navbar {
     height: 70px;
     left: 250px;
     right: 5px;
     position: absolute;
     z-index: 890;
-    background-color: transparent;
-}
-
-.navbar.active {
-    background-color: #6777ef;
-    box-shadow: rgba(103, 119, 239, 0.2) rgba(0, 0, 0, 0.03);
+    align-items: center;
 }
 
 .navbar-bg {
@@ -2122,32 +2133,14 @@ h6 .badge {
     top: 0;
     left: 0;
     width: 100%;
-    height: 115px;
-    background-color: #6777ef;
+    height: 70px;
     z-index: -1;
+    background: rgb(0, 0, 0, 0.85);
 }
-
-.navbar {
-    align-items: center;
-}
-
 .navbar .navbar-brand {
-    color: #fff;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 700;
-}
-
-.navbar .form-inline .form-control {
-    background-color: #fff;
-    border-color: transparent;
-    padding-left: 20px;
-    padding-right: 0;
-    margin-right: -6px;
-    min-height: 46px;
-    font-weight: 500;
-    border-radius: 3px 0 0 3px;
-    transition: all 1s;
 }
 
 .navbar .form-inline .form-control:focus,
@@ -2205,7 +2198,6 @@ h6 .badge {
     left: 34px;
     content: '\f0d8';
     font-weight: 600;
-    font-family: 'Font Awesome 5 Free';
     color: #fff;
     font-size: 30px;
 }
@@ -2227,7 +2219,7 @@ h6 .badge {
     display: block;
     padding: 13px 18px;
     text-decoration: none;
-    color: #34395e;
+    color: #fff;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -2254,21 +2246,16 @@ h6 .badge {
 }
 
 .navbar .active .nav-link {
-    color: #fff;
     font-weight: 700;
 }
 
-.navbar .navbar-text {
-    color: #fff;
-}
-
 .navbar .nav-link {
-    color: #f2f2f2;
     padding-left: 15px !important;
     padding-right: 15px !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     height: 100%;
+    
 }
 
 .navbar .nav-link.nav-link-lg div {
@@ -2282,7 +2269,6 @@ h6 .badge {
 }
 
 .navbar .nav-link.nav-link-user {
-    color: #fff;
     padding-top: 4px;
     padding-bottom: 4px;
     font-weight: 600;
@@ -2391,7 +2377,8 @@ h6 .badge {
         top: 40px;
         left: 0;
         width: 200px;
-        display: none;
+
+        display:none;
     }
 
     .nav-collapse .navbar-nav.show {
@@ -2737,7 +2724,6 @@ body {
     background-color: #f4f6f9;
     font-size: 14px;
     font-weight: 400;
-    font-family: "Nunito", "Segoe UI", arial;
     color: #6c757d;
 }
 
@@ -2878,7 +2864,6 @@ blockquote {
     background-color: #f9f9f9;
     border-radius: 3px;
     position: relative;
-    font-family: 'Time new Romans';
     font-size: 16px;
     letter-spacing: .3px;
 }
@@ -2905,7 +2890,7 @@ blockquote .blockquote-footer {
 }
 
 .fas, .far, .fab, .fal {
-    font-size: 13px;
+    font-size: 20px;
 }
 
 #visitorMap {
@@ -3403,7 +3388,6 @@ pre {
     top: 0;
     height: 100%;
     width: 250px;
-    background-color: #fff;
     z-index: 880;
     left: 0;
 }
@@ -3544,7 +3528,6 @@ body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li a {
 
 body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li a.has-dropdown:after {
     content: "";
-    font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     position: absolute;
     top: 50%;
@@ -3671,7 +3654,7 @@ body.layout-3 .navbar.navbar-secondary {
 }
 
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item.active > .nav-link {
-    color: #6777ef;
+    color: #fff;
 }
 
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item.active > .nav-link:before {
@@ -3706,7 +3689,6 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link.has-d
 
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link.has-dropdown:after {
     content: "";
-    font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     position: absolute;
     top: 50%;
@@ -3756,7 +3738,6 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
 
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item .nav-link.has-dropdown:after {
     content: "";
-    font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     position: absolute;
     top: 50%;
@@ -3780,7 +3761,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
 
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item.active > .nav-link,
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item .nav-link:focus {
-    background-color: #6777ef;
+    background-color: #fff;
     color: #fff;
 }
 
@@ -3843,7 +3824,6 @@ body.layout-3 .main-footer {
 
 .main-sidebar .sidebar-menu li.menu-header {
     padding: 3px 15px;
-    color: #a1a8ae;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 1.3px;
@@ -3862,7 +3842,6 @@ body.layout-3 .main-footer {
     padding: 0 20px;
     width: 100%;
     letter-spacing: .3px;
-    color: #78828a;
     text-decoration: none;
 }
 
@@ -3884,13 +3863,12 @@ body.layout-3 .main-footer {
 }
 
 .main-sidebar .sidebar-menu li a:hover {
-    background-color: #f8fafb;
+    background-color: rgb(0, 0, 0, 0.5);
 }
 
 .main-sidebar .sidebar-menu li.active a {
-    color: #6777ef;
+    color: #fff;
     font-weight: 600;
-    background-color: #f8fafb;
 }
 
 .main-sidebar .sidebar-menu li.active a.has-dropdown:after {
@@ -3903,7 +3881,6 @@ body.layout-3 .main-footer {
 
 .main-sidebar .sidebar-menu li a.has-dropdown:after {
     content: "";
-    font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     position: absolute;
     top: 50%;

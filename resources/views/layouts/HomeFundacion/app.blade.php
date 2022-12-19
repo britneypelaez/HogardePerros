@@ -13,18 +13,18 @@
     <link rel="stylesheet" href="{{ asset('assets/css/iziToast.min.css') }}">
     <link href="{{ asset('assets/css/sweetalert.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
-
+    
 @yield('page_css')
 <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('web/css/styleAdopcion.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/components.css')}}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/estilos-HomeAdmin.css') }}" /> --}}
+
     @yield('page_css')
 
     @yield('css')
 </head>
 <body>
-
 <div id="app">
     <div class="main-wrapper main-wrapper-1">
         <div class="navbar-bg"></div>
@@ -33,15 +33,19 @@
 
         </nav>
         <div class="main-sidebar main-sidebar-postion">
+            <div class="sidebar-brand">
+
+                <img class="navbar-brand-full app-header-logo" src="{{ asset('img/logo.png') }}" width="100"
+                    alt="Infyom Logo"> </img>
+
+                <a href="{{ url('/') }}"></a>
+            </div>
             @include('layouts.HomeFundacion.sidebar')
         </div>
         <!-- Main Content -->
         <div class="main-content">
             @yield('content')
         </div>
-        <footer class="main-footer">
-            @include('layouts.HomeFundacion.footer')
-        </footer>
     </div>
 </div>
 

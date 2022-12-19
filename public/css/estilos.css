@@ -4,11 +4,12 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body{
     font-family: 'Poppins', sans-serif;
     /*1vh-10px*/
-    padding: 16px;
     min-height: 100vh;
     background:linear-gradient(to right,orange,rgba(0, 0, 255, 0.779));
     display: flex;
@@ -18,12 +19,16 @@ body{
 
 .login-card,
 .reset{
-    width: 450px;
+    width: 400px;
+    height: 550px;
     background: rgba(255, 255, 255, .5);
     /*1rem-16px*/
     padding: 1rem;
     border-radius: 10px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .login-card::before,
 .reset::before{
@@ -53,9 +58,10 @@ body{
     text-decoration: underline;
 }
 .login-card-header{
+    margin-top: 20px;
     margin-bottom: 0px;    
 }
-.login-card-header h1{
+.login-card-header h2{
     font-size: 20px;
     font-weight: 600;
     margin-top: 0px;
@@ -70,6 +76,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 40px;
 }
 
 .login-card-form .form-item,

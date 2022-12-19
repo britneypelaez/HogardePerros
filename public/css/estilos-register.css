@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
