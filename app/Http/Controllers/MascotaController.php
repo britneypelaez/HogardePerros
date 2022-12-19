@@ -163,4 +163,110 @@ class MascotaController extends Controller
         $Mascota->delete();
         return redirect()->route('Mascotas.index');
     }
+
+    public function search(Request $request)
+    {
+        $especie = $request->especie;
+        $raza = $request->raza;
+        $color = $request->color;
+        $tamaño = $request->tamaño;
+        $edad = $request->edad;
+        //trae todas las mascotas
+        if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño == '0' && $edad == '0') {
+            $result = Mascota::paginate(12);
+        }
+        //filtra las mascotas solo por especie
+        if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño == '0' && $edad == '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->paginate(12);
+        }
+        //filtra las mascotas solo por color
+        if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño == '0' && $edad == '0') {
+            $result = Mascota::where('color', 'like', "%$color%")->paginate(12);
+        }
+        //filtra las mascotas solo por tamaño
+        if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño != '0' && $edad == '0') {
+            $result = Mascota::where('tamanio', 'like', "%$tamaño%")->paginate(12);
+        }
+        //filtra las mascotas solo por edad
+        if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño == '0' && $edad != '0') {
+            $result = Mascota::where('edad', 'like', "%$edad%")->paginate(12);
+        }
+        //filtra las mascotas por especie y raza
+        if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño == '0' && $edad == '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->paginate(12);
+        }
+        //filtra las mascotas por especie y color
+        if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño == '0' && $edad == '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('color', 'like', "%$color%")->paginate(12);
+        }
+        //filtra las mascotas por especie y tamaño
+        if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño != '0' && $edad == '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+        }
+        //filtra las mascotas por especie y edad
+        if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño == '0' && $edad != '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('edad', 'like', "%$edad%")->paginate(12);
+        }
+        //filtra las mascotas por color y tamaño
+        if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
+            $result = Mascota::where('color', 'like', "%$raza%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+        }
+        //filtra las mascotas por color y edad
+        if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño == '0' && $edad != '0') {
+            $result = Mascota::where('color', 'like', "%$raza%")->where('edad', 'like', "%$edad%")->paginate(12);
+        }
+        //filtra las mascotas por tamaño y edad
+        if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño != '0' && $edad != '0') {
+            $result = Mascota::where('tamanio', 'like', "%$tamaño%")->where('edad', 'like', "%$edad%")->paginate(12);
+        }
+        //filtra las mascotas por especie,raza y color
+        if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño == '0' && $edad == '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('color', 'like', "%$color%")->paginate(12);
+        }
+        //filtra las mascotas por especie,raza y tamaño
+        if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño != '0' && $edad == '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+        }
+        //filtra las mascotas por especie,raza y edad
+        if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño == '0' && $edad != '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('edad', 'like', "%$edad%")->paginate(12);
+        }
+        //filtra las mascotas por especie,color y tamaño
+        if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('color', 'like', "%$color%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+        }
+        //filtra las mascotas por especie,color y edad
+        if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño == '0' && $edad != '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('color', 'like', "%$color%")->where('edad', 'like', "%$edad%")->paginate(12);
+        }
+        //filtra las mascotas por especie,tamaño y edad
+        if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño != '0' && $edad != '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('tamanio', 'like', "%$tamaño%")->where('edad', 'like', "%$edad%")->paginate(12);
+        }
+        //filtra las mascotas por color,tamaño y edad
+        if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño != '0' && $edad != '0') {
+            $result = Mascota::where('color', 'like', "%$color%")->where('tamanio', 'like', "%$tamaño%")->where('edad', 'like', "%$edad%")->paginate(12);
+        }
+        //filtra las mascotas por especie,raza,color y tamaño
+        if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('color', 'like', "%$color%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+        }
+        //filtra las mascotas por especie,raza,color y edad
+        if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('color', 'like', "%$color%")->where('edad', 'like', "%$edad%")->paginate(12);
+        }
+        //filtra las mascotas por especie,raza,tamaño y edad
+        if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('tamanio', 'like', "%$tamaño%")->where('edad', 'like', "%$edad%")->paginate(12);
+        }
+        //filtra las mascotas por especie,raza,color,tamaño y edad
+        if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad != '0') {
+            $result = Mascota::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('color', 'like', "%$color%")->where('tamanio', 'like', "%$tamaño%")->where('edad', 'like', "%$edad%")->paginate(12);
+        }
+
+        return response()->json($result);
+    }
+}
+
+
 }

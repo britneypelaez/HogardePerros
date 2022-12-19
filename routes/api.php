@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('adopcion/search', [App\Http\Controllers\MascotaController::class, 'search']);
+
+Route::get('encuentrame/search', [App\Http\Controllers\MascotaPerdidaController::class, 'search']);
+
+Route::get('raza/search', [App\Http\Controllers\RazaController::class, 'search']);

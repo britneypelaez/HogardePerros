@@ -7,8 +7,6 @@ use App\Http\Controllers\MascotaPerdidaController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\ServicioPrestadoController;
 use App\Models\User;
-use App\Models\MascotaPerdida;
-use App\Models\Servicio;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
@@ -41,6 +39,8 @@ Route::get('/Adopcion', [App\Http\Controllers\MascotaController::class, 'indexAd
 
 Route::get('/servicios', [App\Http\Controllers\ServicioController::class, 'indexServicioCliente'])->name('servicios');
 
+Route::get('/encuentrame', [App\Http\Controllers\MascotaPerdidaController::class, 'indexEncuentrameCliente'])->name('encuentrame');
+
 Route::get('/QuienesSomos', function () {
     return view('Home.QuienesSomos');
 })->name('QuienesSomos');
@@ -48,11 +48,6 @@ Route::get('/QuienesSomos', function () {
 Route::get('/PreguntasFrecuentes', function () {
     return view('Home.PreguntasFrecuentes');
 })->name('PreguntasFrecuentes');
-
-Route::get('/encuentrame', function () {
-    $MascotasPerdidas=MascotaPerdida::paginate(12);
-    return view('Home.Encuentrame',compact('MascotasPerdidas'));
-})->name('encuentrame');
 
 Route::get('admin/register', function () {
     auth()->logout();

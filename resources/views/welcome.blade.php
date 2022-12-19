@@ -36,7 +36,7 @@
                 @foreach ($Mascotas as $mascota)
                 <div class="adopcion">
                     <div class="img">
-                        <img src="{{ asset($mascota->imagen_mascota) }}" alt="">
+                        <img src="{{ asset("storage/$mascota->imagen_mascota") }}" alt="">
                         <div class="descrip">
                             <h2>{{ $mascota->nombre_mascota }}</h2>
                             <p>{{ $mascota->descripcion }}</p>
