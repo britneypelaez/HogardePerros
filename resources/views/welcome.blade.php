@@ -48,5 +48,5 @@
             </div>
         </div>
 
-        <a href="{{ route('Adopcion') }}"><button type="submit"><span>Mas mascotas en adopcion</span></button></a>
+        <a href="{{ route('Adopcion') }}"><button class="transicion" type="submit"><span>Mas mascotas en adopcion</span></button></a>
     @endsection

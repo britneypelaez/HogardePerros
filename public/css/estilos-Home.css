@@ -8,9 +8,12 @@
     font-size: 15px;
     padding: 0;
     margin: 0;
+    box-sizing:content-box !important;
 }
 
-
+a{
+    text-decoration: none !important;
+}
 
 ::-webkit-scrollbar {
     display: none;
@@ -18,7 +21,8 @@
 
 body {
     display: block;
-    background: linear-gradient(to right, orange, rgba(0, 0, 255, 0.779));
+    /*background: linear-gradient(to right, orange, rgba(0, 0, 255, 0.779));*/
+    background: #b6c7eae3;
 }
 
 header {
@@ -394,7 +398,7 @@ h2 {
     border: solid #e2dfe198 0.5px;
 }
 
-.info button {
+.transicion {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -412,13 +416,13 @@ h2 {
     overflow: hidden;
 }
 
-.info button span {
+.transicion span {
     position: relative;
     z-index: 2;
     transition: 0.3s ease all;
 }
 
-.info button::after {
+.transicion::after {
     content: "";
     width: 100%;
     position: absolute;
@@ -430,7 +434,47 @@ h2 {
     transition: 0.4s ease-in-out all;
 }
 
-.info button:hover::after {
+.transicion:hover::after {
+    left: 0;
+}
+
+.transicion2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 60px;
+    background: #141414;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.transicion2 span {
+    position: relative;
+    z-index: 2;
+    transition: 0.3s ease all;
+}
+
+.transicion2::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: calc(-100% - 60px);
+    border-bottom: 60px solid rgb(24, 90, 99);
+    border-right: 60px solid transparent;
+    transition: 0.4s ease-in-out all;
+}
+
+.transicion2:hover::after {
     left: 0;
 }
 
@@ -462,7 +506,7 @@ h2 {
     width: 100%;
 }
 
-.con {
+.cont{
     color: white;
     display: flex;
 }
@@ -556,6 +600,7 @@ h3 {
     position: absolute;
     width: 80%;
     height: 100%;
+    min-height: 700px;
     visibility: hidden;
     opacity: 0;
     transition: all 600ms;
@@ -567,14 +612,14 @@ h3 {
     opacity: 1;
 }
 
-.contenedor-modal:target .moda {
+.contenedor-modal:target .moda{
     top: 50%;
     left: 50%;
     transform: rotate(0deg) translate(-50%, -50%);
     visibility: visible;
 }
 
-.moda {
+.moda{
     width: 70%;
     height: 100%;
     position: relative;
@@ -611,7 +656,7 @@ h3 {
 .contene::before {
     content: "";
     position: absolute;
-    background: rgba(255, 255, 255, 0.11);
+    background: rgba(255, 255, 255, 0.11);  
     inset: 0;
     transform: rotate(2deg);
     z-index: -1;
@@ -993,10 +1038,10 @@ h3 {
     .tener-en-cuenta p {
         font-size: 11px;
     }
-    .con p {
+    .cont p {
         font-size: 12px;
     }
-    .descripcion button {
+    .transicion2 {
         width: 160px;
         height: 50px;
     }
