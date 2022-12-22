@@ -81,6 +81,8 @@
         const color = document.getElementById('color');
         const tamaño = document.getElementById('tamaño');
         const edad = document.getElementById('edad');
+        let ruta = '{{ env('APP_URL') }}' + '/';
+        console.log(especie.value);
 
         if (especie.value == '0') {
             document.getElementById('raza').style.display = 'none';
@@ -88,8 +90,12 @@
         }
 
         const search = async (especie, raza, color, tamaño, edad, page = 1) => {
-            let ruta = '{{ env('APP_URL') }}'
-            console.log(ruta);
+
+            console.log(especie);
+            console.log(raza);
+            console.log(color);
+            console.log(tamaño);
+            console.log(edad);
             const result = await fetch(ruta +
                 `api/adopcion/search?especie=${especie}&raza=${raza}&color=${color}&tamaño=${tamaño}&edad=${edad}&page=${page}`
                 );
@@ -130,15 +136,13 @@
             search(especie, raza, color, tamaño, edad, page).then(response => {
                 response.data.map(mascota => {
                     saveResult.innerHTML +=
-                        `<x-card imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" />`
+                        `<x-card imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" color="${mascota.colorin}" raza="${mascota.rasa}" edad="${mascota.edad}" descripcion="${mascota.descripcion}"/>`
                 });
                 paginate(response, especie, raza, color, tamaño, edad);
             });
         }
 
         const searchRaza = async (especie) => {
-            let ruta = '{{ env('APP_URL') }}'
-            console.log(ruta);
             const resultRaza = await fetch(ruta + `api/raza/search?especie=${especie}`)
                 .then(res => res.json())
                 .then(res => {

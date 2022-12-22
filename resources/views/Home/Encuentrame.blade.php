@@ -104,6 +104,7 @@
     const raza = document.getElementById('raza');
     const color = document.getElementById('color');
     const tamaño = document.getElementById('tamaño');
+    let ruta = '{{ env('APP_URL') }}' + '/';
 
     if(especie.value == '0' ){
         document.getElementById('raza').style.display = 'none';
@@ -111,8 +112,6 @@
     }
 
     const search = async (especie,raza,color,tamaño, page = 1) => {
-        let ruta = '{{ env('APP_URL') }}'
-        console.log(ruta);
         const result = await fetch(ruta+`api/encuentrame/search?especie=${especie}&raza=${raza}&color=${color}&tamaño=${tamaño}&page=${page}`);
 
         const data = result.json();
@@ -150,15 +149,13 @@
         saveResult.innerHTML = '';
         search(especie,raza,color,tamaño,page).then(response => {
         response.data.map(mascota => {
-            saveResult.innerHTML += `<x-cardEncuentrame imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" />`
+            saveResult.innerHTML += `<x-cardEncuentrame imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" color="${mascota.colorin}" raza="${mascota.rasa}" descripcion="${mascota.descripcion}" />`
         });
         paginate(response,especie,raza,color,tamaño);
     });
     }
 
     const searchRaza = async (especie) => {
-            let ruta = '{{ env('APP_URL') }}'
-            console.log(ruta);
             const resultRaza = await fetch(ruta + `api/raza/search?especie=${especie}`)
                 .then(res => res.json())
                 .then(res => {

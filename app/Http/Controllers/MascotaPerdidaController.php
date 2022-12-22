@@ -167,53 +167,54 @@ class MascotaPerdidaController extends Controller
         $raza = $request->raza;
         $color = $request->color;
         $tamaño = $request->tamaño;
+
         //trae todas las mascotas
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño == '0') {
-            $result = MascotaPerdida::paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->paginate(12);
         }
         //filtra las Mascotas Perdidas solo por especie
         if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño == '0') {
-            $result = MascotaPerdida::where('especie', 'like', "%$especie%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('especie', 'like', "%$especie%")->paginate(12);
         }
         //filtra las Mascotas Perdidas solo por color
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño == '0') {
-            $result = MascotaPerdida::where('color', 'like', "%$color%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('color', 'like', "%$color%")->paginate(12);
         }
         //filtra las Mascotas Perdidas solo por tamaño
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño != '0') {
-            $result = MascotaPerdida::where('tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('tamanio', 'like', "%$tamaño%")->paginate(12);
         }
         //filtra las Mascotas Perdidas por especie y raza
         if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño == '0') {
-            $result = MascotaPerdida::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->paginate(12);
         }
         //filtra las Mascotas Perdidas por especie y color
         if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño == '0') {
-            $result = MascotaPerdida::where('especie', 'like', "%$especie%")->where('color', 'like', "%$color%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('especie', 'like', "%$especie%")->where('color', 'like', "%$color%")->paginate(12);
         }
         //filtra las Mascotas Perdidas por especie y tamaño
         if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño != '0') {
-            $result = MascotaPerdida::where('especie', 'like', "%$especie%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('especie', 'like', "%$especie%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
         }
         //filtra las Mascotas Perdidas por color y tamaño
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño != '0') {
-            $result = MascotaPerdida::where('color', 'like', "%$raza%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('color', 'like', "%$raza%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
         }
         //filtra las Mascotas Perdidas por especie,raza y color
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño == '0') {
-            $result = MascotaPerdida::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('color', 'like', "%$color%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('color', 'like', "%$color%")->paginate(12);
         }
         //filtra las Mascotas Perdidas por especie,raza y tamaño
         if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño != '0') {
-            $result = MascotaPerdida::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
         }
         //filtra las Mascotas Perdidas por especie,color y tamaño
         if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño != '0') {
-            $result = MascotaPerdida::where('especie', 'like', "%$especie%")->where('color', 'like', "%$color%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('especie', 'like', "%$especie%")->where('color', 'like', "%$color%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
         }
         //filtra las Mascotas Perdidas por especie,raza,color y tamaño
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0') {
-            $result = MascotaPerdida::where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('color', 'like', "%$color%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = MascotaPerdida::select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('color', 'like', "%$color%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
         }
 
         return response()->json($result);

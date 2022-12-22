@@ -5,48 +5,32 @@
             <h2>{{ $mascota }}</h2>
         </div>
     </div>
-    <div class="more"><a href="#popup" style="text-decoration: none; color: #fff;">Mas Informacion</a></div>
+    <div class="more"><a href="#modalsEditMascotas{{ $mascota}}" style="text-decoration: none; color: #fff;">Mas Informacion</a></div>
 </div>
-<div class="contenedor-modal" id=popup>
+<div class="contenedor-modal" id="modalsEditMascotas{{ $mascota }}">
     <div class="moda">
         <div class="informacion">
             <img src="{{ asset("storage/$imagen") }}" alt="Adopta">
             <div class="descripcion">
                 <div class="cont">
                     <p>Nombre:</p>
-                    <p>(nombre)</p>
+                    <p>{{ $mascota }}</p>
                 </div>
                 <div class="cont">
                     <p>Raza:</p>
-                    <p>(raza)</p>
+                    <p>{{ $raza }}</p>
                 </div>
                 <div class="cont">
                     <p>Color:</p>
-                    <p>(color)</p>
+                    <p>{{ $color }}</p>
                 </div>
                 <div class="cont">
-                    <p>Caracteristicas:</p>
-                    <p>(caracteristicas)</p>
+                    <p>Caracteristicas: </p>
+                    <p>  {{ $descripcion }}</p>
                 </div>
                 <div class="cont">
                     <p>Edad:</p>
-                    <p>(edad)</p>
-                </div>
-                <div class="cont">
-                    <p>Enfermedades:</p>
-                    <p>(enfermedades)</p>
-                </div>
-                <div class="cont">
-                    <p>Tamaño:</p>
-                    <p>(tamaño)</p>
-                </div>
-                <div class="cont">
-                    <p>Esterilizado:</p>
-                    <p>(si/no)</p>
-                </div>
-                <div class="cont">
-                    <p>Estado:</p>
-                    <p>(en adopcion)</p>
+                    <p> {{ $edad }} años</p>
                 </div>
 
                 <button class="transicion2" type="submit"><span>Solicitar Adopcion</span></button>
