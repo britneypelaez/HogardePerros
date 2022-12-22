@@ -172,8 +172,8 @@
 
 .btn-close-modal {
     position: absolute;
-    right: -20px;
-    top: -20px;
+    right: -15px;
+    top: -15px;
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
@@ -196,11 +196,11 @@
 } */
 
 .informacion {
-    background: black;
+    background: rgb(221, 223, 240);
     display: grid;
     justify-content: stretch;
     grid-template-columns: 30% 35% 35%;
-    grid-template-rows: 10% 80% 10%;
+    grid-template-rows: 12% 78% 10%;
     height: 100%;
     width: 100%;
 }
@@ -208,7 +208,7 @@
 .informacion > h3{
     text-align: center;
     grid-column: 1/4;
-    margin-top: 15px
+    margin: 20px 0px 0px 0px;
 }
 
 .informacion img {
@@ -223,16 +223,17 @@
 
 .informacion > button{
     grid-column: 1/4;
+    margin-top: 10px;
 }
 
 .form-group > input, select{
-    height: 50px !important;
+    height: 40px !important;
 }
 .cont{
     color: white;
     display: flex;
 }
 
-.actualizar{
-    grid-column: 2/3;
+.actualizar, .actualizar1, .actualizar2{
+    margin-top: 5px;
 }

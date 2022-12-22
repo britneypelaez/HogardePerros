@@ -10,21 +10,22 @@
 </div>
 @endif
 
-<div class="contenedor-modal" id="modalsCreate">
+<div class="contenedor-modal" id="modalsCreateMascota">
     <div class="moda">
-            <form action="{{ route('Mascotas.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="informacion">
-
+        <form action="{{ route('Mascotas.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="informacion">
 
                 <h3 class="page__heading">Nuevo Animal</h3>
-                <div class="actualizar1">
-                <img src="" alt=""> <!-- Tratar de implementar la img q se selecciona ¡-->
+
+                <div class="actualizar">
+                    <img src="" alt=""> <!-- Tratar de implementar la img q se selecciona ¡-->
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="">Subir foto</label><br>
-                            <input type="file" name="imagen_mascota" id="" accept="image/*" required style="width: 150px;">
+                            <input type="file" name="imagen_mascota" id="" accept="image/*" required
+                                style="width: 150px;">
                             @error('imagen_mascota')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -32,7 +33,7 @@
                     </div>
                 </div>
 
-                <div class="actualizar2">
+                <div class="actualizar1">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="nombre_mascota">Nombre de la mascota</label>
@@ -44,10 +45,15 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="descripcion">Descripcion</label>
-                            <input type="text" name="descripcion" class="form-control" required
-                                value="{{ old('descripcion') }}">
+                            <textarea type="text" name="descripcion" class="form-control" required value=""
+                                style="height:230px;"> {{ old('descripcion') }}</textarea>
                         </div>
                     </div>
+
+                </div>
+
+
+                <div class="actualizar2">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -70,10 +76,6 @@
                             </select>
                         </div>
                     </div>
-                </div>
-
-
-                <div>
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -108,10 +110,9 @@
 
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
-        </div>
+            </div>
         </form>
+        <a href="#" class="btn-close-modal">X</a>
 
     </div>
-    <a href="#" class="btn-close-modal">X</a>
-
 </div>

@@ -22,7 +22,11 @@ class MascotaPerdidaController extends Controller
     public function index()
     {
         $MascotasPerdidas = MascotaPerdida::paginate(5);
-        return view('HomeFundacion.MascotasPerdidas.index', compact('MascotasPerdidas'));
+        $razas = Raza::all();
+        $colores = Color::all();
+        $especies = Especie::all();
+        $estados = Estado::all();
+        return view('HomeFundacion.MascotasPerdidas.index', compact('MascotasPerdidas', 'razas', 'colores', 'especies', 'estados'));
     }
 
     public function indexEncuentrameCliente()

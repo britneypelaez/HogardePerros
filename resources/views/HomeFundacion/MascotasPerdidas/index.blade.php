@@ -11,15 +11,13 @@
                 <div class="card">
                     <div class="controles Cont_serviciosVeterinarios">
                         <div>
-                            <a class="btn btn-warning" href="{{ route('MascotasPerdidas.create')}}  ">Nuevo</a>
+                            <a class="btn btn-warning" href="#modalsCreatePerdidas">Nuevo</a>
                         </div>
                     </div>
                 </div>
-                <div class="card">
 
+                <div class="card">
                     <div class="services">
-                        <!-- <div class="card-body table-responsive">
-                        <a class="btn btn-warning" href="{{ route('MascotasPerdidas.create')}}">Nuevo</a> -->
 
                         @foreach($MascotasPerdidas as $MascotasPerdida)
 
@@ -34,8 +32,7 @@
                                     <div class="opcionesAdmin">
                                         <form action="{{ route('MascotasPerdidas.destroy', $MascotasPerdida) }}"
                                             method="POST">
-                                            <a href="{{ route('MascotasPerdidas.edit', $MascotasPerdida) }}"><img
-                                                    src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
+                                            <a href="#modalsEditPerdidas{{ $MascotasPerdidas }}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
                                             @csrf
                                             @method('DELETE')
                                             <a><button type="submit" style="background:none; border: none;"><img
@@ -45,6 +42,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        @include('HomeFundacion.MascotasPerdidas.editar')
                         <!-- <tr>
                                 <td style="display: none;">{{ $MascotasPerdida->id }}</td>
                                 <td>{{ $MascotasPerdida->nombre_mascota }}</td>
@@ -66,8 +65,10 @@
                         </tbody>
                         </table> -->
                         @endforeach
-                    </div>
 
+                        @include('HomeFundacion.MascotasPerdidas.crear')
+
+                    </div>
 
                     <!-- Centramos la paginación a la derecha-->
                     <div class="pagination justify-content-end">
@@ -76,7 +77,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 @endsection

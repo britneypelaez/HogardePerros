@@ -8,7 +8,6 @@
     <div class="section-body">
         <div class="row">
             <div class="col-lg-12">
-
                 <div class="card">
                     <div class="controles Cont_adopcion">
                         <div>
@@ -19,7 +18,7 @@
                             </select>
                         </div>
                         <div>
-                            <a class="btn btn-warning" href="#modalsCreate">Nuevo</a>
+                            <a class="btn btn-warning" href="#modalsCreateMascota">Nuevo</a>
                         </div>
                     </div>
                 </div>
@@ -39,7 +38,7 @@
                                     <a style="display: none;">{{ $mascota->id }}</a>
                                     <div class="opcionesAdmin">
                                         <form action="{{ route('Mascotas.destroy', $mascota) }}" method="POST">
-                                        <a href="#modalsEdit{{ $mascota}}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
+                                        <a href="#modalsEditMascotas{{ $mascota}}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
                                             @csrf
                                             @method('DELETE')
                                             <a><button type="submit" style="background:none; border: none;"><img

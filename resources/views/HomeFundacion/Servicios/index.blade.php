@@ -12,7 +12,7 @@
 
                     <div class="controles Cont_serviciosVeterinarios">
                         <div>
-                            <a class="btn btn-warning" href="{{ route('Servicios.create')}}">Nuevo</a>
+                            <a class="btn btn-warning" href="#modalsCreateServicios">Nuevo</a>
                         </div>
                     </div>
 
@@ -20,16 +20,6 @@
                 <div class="card">
                     <div class="services">
 
-
-                        <!-- <table class="table table-striped mt-2 text-center">
-                                <thead style="background-color: #6777ef;">
-                                    <th style="display: none;">ID</th>
-                                    <th style="color: #fff;">Servicio</th>
-                                    <th style="color: #fff;">Descripcion</th>
-                                    <th style="color: #fff;">Foto</th>
-                                    <th style="color: #fff;">acciones</th>
-                                </thead>
-                            <tbody> -->
                         @foreach($servicios as $servicio)
 
                         <div class="cards">
@@ -42,7 +32,7 @@
                                     <a style="display: none;">{{ $servicio->id }}</a>
                                     <div class="opcionesAdmin">
                                         <form action="{{ route('Servicios.destroy', $servicio) }}" method="POST">
-                                            <a href="{{ route('Servicios.edit', $servicio) }}"><img
+                                            <a href="#modalsEditServicios{{ $servicio }}"><img
                                                     src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
                                             @csrf
                                             @method('DELETE')
@@ -67,9 +57,12 @@
                                     </form>
                                 </td>
                             </tr> -->
+                            @include('HomeFundacion.Servicios.editar')
+
+
                         @endforeach
-                        <!-- </tbody>
-                        </table> -->
+
+                        @include('HomeFundacion.Servicios.crear')
 
                         <!-- Centramos la paginación a la derecha-->
                         <div class="pagination justify-content-end">
