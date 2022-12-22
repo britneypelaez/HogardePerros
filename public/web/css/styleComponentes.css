@@ -108,9 +108,10 @@
 }
 
 .opcionesAdmin img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-top: 10px;
+    
 }
 
 .more {
@@ -155,7 +156,7 @@
 }
 
 .contenedor-modal:target .moda{
-    left: 42%;
+    left: 50%;
     transform: rotate(0deg) translate(-50%, -50%);
     visibility: visible;
 }
@@ -198,8 +199,8 @@
     background: black;
     display: grid;
     justify-content: stretch;
-    grid-template-columns: 40% 40% 20%;
-    grid-template-rows: 10% 90%;
+    grid-template-columns: 30% 35% 35%;
+    grid-template-rows: 10% 80% 10%;
     height: 100%;
     width: 100%;
 }
@@ -212,12 +213,26 @@
 
 .informacion img {
     width: 85%;
-    height: 85%;
+    height: 75%;
     justify-self: center;
     align-self: center;
+    margin: 15px;
+    object-fit:cover;
+
 }
 
+.informacion > button{
+    grid-column: 1/4;
+}
+
+.form-group > input, select{
+    height: 50px !important;
+}
 .cont{
     color: white;
     display: flex;
+}
+
+.actualizar{
+    grid-column: 2/3;
 }
