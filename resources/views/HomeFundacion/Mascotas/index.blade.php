@@ -50,6 +50,8 @@
                             </div>
                         </div>
 
+                        @endforeach
+
                         <div class="contenedor-modal" id=modals>
                             <div class="moda">
                                 <div class="informacion">
@@ -57,7 +59,7 @@
                                     <img src="{{ asset("storage/$mascota->imagen_mascota") }}" alt="Adopta">
                                     <div class="descripcion">
                                         <form action="">
-                                        <div class="row">
+                                            <div class="row">
                                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                                     <div class="form-group">
                                                         <label for="nombre_mascota">Nombre de la mascota</label>
@@ -147,47 +149,18 @@
                                                         @enderror
                                                     </div> 
                                                 </div>
+                                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                            </div>
                                         </form>
                                     </div>
-                                    <button class="transicion2" type="submit"><span>Solicitar Adopcion</span></button>
+                                    {{-- <button class="transicion2" type="submit"><span>Solicitar Adopcion</span></button> --}}
                                 </div>
-                <a href="#" class="btn-close-modal">X</a>
-            </div>
-        </div>
-                        <!--
-                            <tr>
-                                <td style="display: none;">{{ $mascota->id }}</td>
-                                <td>{{ $mascota->nombre_mascota }}</td>
-                                <td>{{ $mascota->descripcion }}</td>
-                                <td>{{ $mascota->Raza->descripcion }}</td>
-                                <td>{{ $mascota->Color->descripcion }}</td>
-                                <td>{{ $mascota->Estado->descripcion }}</td>
-                                <td>{{ $mascota->edad }}</td>
-                                <td><img src="{{ asset("storage/$mascota->imagen_mascota") }}" width="70px" height="70px"></td>
-                                <td>
-                                    <form action="{{ route('Mascotas.destroy', $mascota) }}" method="POST">
-                                        <a class="btn btn-info" href="{{ route('Mascotas.edit', $mascota) }}">Editar</a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" >Borrar</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            </tbody>
-                            </table>¡-->
-                        @endforeach
-
-                        <!-- Centramos la paginación a la derecha-->
-                        <div class="pagination justify-content-end">
-                            {!! $mascotas->links() !!}
-                        </div>
+                                {{-- <a href="#" class="btn-close-modal">X</a> --}}
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        
-
     </div>
 </section>
 @endsection
