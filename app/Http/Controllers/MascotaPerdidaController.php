@@ -30,7 +30,8 @@ class MascotaPerdidaController extends Controller
         $Mascotas = Mascota::paginate(12);
         $Colores = Color::all();
         $Especies = Especie::all();
-        return view('Home.Adopcion', compact('Mascotas', 'Colores', 'Especies'));
+        $Razas = Raza::all();
+        return view('Home.Encuentrame', compact('Mascotas', 'Colores', 'Especies','Razas' ));
     }
 
     /**

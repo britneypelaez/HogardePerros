@@ -1,8 +1,16 @@
 .controles{
     display: flex;
     align-items:baseline;
-    justify-content: space-evenly;
     width: 100%;
+}
+
+.Cont_adopcion{
+    justify-content: space-evenly;
+}
+
+.Cont_serviciosVeterinarios{
+    flex-direction: row-reverse;
+    margin: 5px 0 5px 0;
 }
 
 .controles div{
@@ -17,7 +25,6 @@
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    grid-auto-rows: 380px;
     grid-gap: 25px;
     width: 82.5%;
 }
@@ -31,6 +38,19 @@
     align-items: center;
     position: relative;
     display: flex;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.cards::before {
+    content: "";
+    position: absolute;
+    background: #EAC9B644;
+    border: 1px solid #EAC9B6AA;
+
+    transform: rotate(3deg);
+    inset: 0;
+    z-index: 0;
     border-radius: 5px;
 }
 
@@ -67,6 +87,14 @@
     margin-top: 5px;
     text-align: justify;
     justify-self: center;
+}
+
+.description p {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: justify;
+    justify-self: center;
+    line-height: 100%
 }
 
 .opcionesAdmin {
@@ -110,3 +138,86 @@
     border: solid #e2dfe198 0.5px;
 }
 
+.contenedor-modal {
+    position:fixed;
+    top: 54%;
+    width: 90%;
+    height: 95%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 600ms;
+    z-index: 500;
+}
+
+.contenedor-modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.contenedor-modal:target .moda{
+    left: 42%;
+    transform: rotate(0deg) translate(-50%, -50%);
+    visibility: visible;
+}
+
+.moda{
+    width: 70%;
+    height: 90%;
+    position: relative;
+    left: -80%;
+    transform: rotate(98deg) translate(-150%, 230%);
+    transition: all 600ms;
+}
+
+.btn-close-modal {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 9005;
+
+}
+.descripcion {
+    padding: 10px;
+    display: grid;
+}
+
+/* .descripcion button {
+    background: rgba(24, 90, 99, 0.6);
+    justify-self: center;
+    align-self: center;
+} */
+
+.informacion {
+    background: black;
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 40% 40% 20%;
+    grid-template-rows: 10% 90%;
+    height: 100%;
+    width: 100%;
+}
+
+.informacion > h3{
+    text-align: center;
+    grid-column: 1/4;
+    margin-top: 15px
+}
+
+.informacion img {
+    width: 85%;
+    height: 85%;
+    justify-self: center;
+    align-self: center;
+}
+
+.cont{
+    color: white;
+    display: flex;
+}

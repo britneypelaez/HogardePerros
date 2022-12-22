@@ -8,12 +8,18 @@
         <div class="section-body">
             <div class="row">
                 <div class="col-lg-12">
+                <div class="card">
+                    <div class="controles Cont_serviciosVeterinarios">
+                        <div>
+                            <a class="btn btn-warning" href="{{ route('ServiciosPrestados.create')}}">Nuevo</a>
+                        </div>
+                    </div>
+                </div>
+
                     <div class="card">
                         <div class="card-body table-responsive">
-                        <a class="btn btn-warning" href="{{ route('ServiciosPrestados.create')}}">Nuevo</a>
-
                         <table class="table table-striped mt-2">
-                                <thead style="background-color: #6777ef;">
+                                <thead style="background-color: #e1986e;">
                                     <th style="display: none;">ID</th>
                                     <th style="color: #fff;">Servicio</th>
                                     <th style="color: #fff;">Cliente</th>

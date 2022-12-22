@@ -8,7 +8,6 @@
     font-size: 15px;
     padding: 0;
     margin: 0;
-    box-sizing:content-box !important;
 }
 
 a{
@@ -22,7 +21,7 @@ a{
 body {
     display: block;
     /*background: linear-gradient(to right, orange, rgba(0, 0, 255, 0.779));*/
-    background: #b6c7eae3;
+    background: #b6c7eae3 !important;
 }
 
 header {
@@ -432,6 +431,7 @@ h2 {
     border-bottom: 60px solid rgb(24, 90, 99);
     border-right: 60px solid transparent;
     transition: 0.4s ease-in-out all;
+    box-sizing: content-box;
 }
 
 .transicion:hover::after {
@@ -442,12 +442,12 @@ h2 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: 150px;
     height: 60px;
-    background: #141414;
+    background: rgba(24, 90, 99, 0.6);
     color: #fff;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin: 10px 0 15px 0;
     border: none;
     cursor: pointer;
     transition: 0.3s ease all;
@@ -472,6 +472,7 @@ h2 {
     border-bottom: 60px solid rgb(24, 90, 99);
     border-right: 60px solid transparent;
     transition: 0.4s ease-in-out all;
+    box-sizing: content-box;
 }
 
 .transicion2:hover::after {
@@ -490,17 +491,17 @@ h2 {
     display: grid;
 }
 
-.descripcion button {
+/* .descripcion button {
     background: rgba(24, 90, 99, 0.6);
     justify-self: center;
     align-self: center;
-}
+} */
 
 .informacion {
     background: black;
     display: grid;
     justify-content: stretch;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 40% 40% 20%;
     grid-template-rows: 50% 50%;
     height: 100%;
     width: 100%;
@@ -512,7 +513,7 @@ h2 {
 }
 
 .tener-en-cuenta {
-    grid-column: 1/3;
+    grid-column: 1/4;
     color: white;
     padding: 35px;
 }
@@ -523,6 +524,7 @@ h2 {
     background: rgb(24, 90, 99);
     border-radius: 10px;
     padding: 5px;
+    line-height: 100%
 }
 
 .tener-en-cuenta h4 {
@@ -597,14 +599,14 @@ h3 {
 }
 
 .contenedor-modal {
-    position: absolute;
-    width: 80%;
-    height: 100%;
-    min-height: 700px;
+    position:fixed;
+    top: 43%;
+    width: 70%;
+    height: 90%;
     visibility: hidden;
     opacity: 0;
     transition: all 600ms;
-    z-index: 50;
+    z-index: 500;
 }
 
 .contenedor-modal:target {
@@ -613,7 +615,6 @@ h3 {
 }
 
 .contenedor-modal:target .moda{
-    top: 50%;
     left: 50%;
     transform: rotate(0deg) translate(-50%, -50%);
     visibility: visible;
@@ -621,9 +622,8 @@ h3 {
 
 .moda{
     width: 70%;
-    height: 100%;
+    height: 90%;
     position: relative;
-    top: -80%;
     left: -80%;
     transform: rotate(98deg) translate(-150%, 230%);
     transition: all 600ms;
