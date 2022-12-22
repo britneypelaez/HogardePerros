@@ -32,7 +32,7 @@
                                     <div class="opcionesAdmin">
                                         <form action="{{ route('MascotasPerdidas.destroy', $MascotasPerdida) }}"
                                             method="POST">
-                                            <a href="#modalsEditPerdidas{{ $MascotasPerdidas }}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
+                                            <a href="#modalsEditPerdidas{{ $MascotasPerdida }}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
                                             @csrf
                                             @method('DELETE')
                                             <a><button type="submit" style="background:none; border: none;"><img

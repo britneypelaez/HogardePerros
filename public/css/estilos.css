@@ -11,7 +11,7 @@ body{
     font-family: 'Poppins', sans-serif;
     /*1vh-10px*/
     min-height: 100vh;
-    background:linear-gradient(to right,orange,rgba(0, 0, 255, 0.779));
+    background: #b6c7eae3 !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +34,7 @@ body{
 .reset::before{
     content: '';
     position: absolute;
-    background:rgba(255, 255, 255, .15);
+    background:rgba(255, 255, 255, .25);
     inset:0;
     transform: rotate(-5deg);
     z-index: -1;
@@ -77,6 +77,8 @@ body{
     flex-direction: column;
     gap: 10px;
     margin-top: 40px;
+    justify-content: space-between;
+
 }
 
 .login-card-form .form-item,
@@ -177,7 +179,7 @@ transform: scale(1.1);
 }
 .reset-header{
     text-align: center;
-    margin-bottom: 30px; 
+    margin-bottom: 15px; 
 }
 .reset-header div{
     font-size: calc(18px * .8);
@@ -185,7 +187,7 @@ transform: scale(1.1);
 }
 .reset-header h1{
     font-weight: 600;
-    margin-bottom:10px;
+    margin-bottom:30px;
 }
 .reset-footer{
     margin-top: 10px;

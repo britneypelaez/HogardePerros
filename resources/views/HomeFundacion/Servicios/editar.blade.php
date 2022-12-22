@@ -12,7 +12,7 @@
             </button>
         </div>
         @endif
-        <form action="{{ route('Servicios.update', $servicio) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('Servicios.update', $servicio->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="informacion">

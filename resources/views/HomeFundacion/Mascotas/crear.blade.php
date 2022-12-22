@@ -19,7 +19,6 @@
                 <h3 class="page__heading">Nuevo Animal</h3>
 
                 <div class="actualizar">
-                    <img src="" alt=""> <!-- Tratar de implementar la img q se selecciona ¡-->
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">

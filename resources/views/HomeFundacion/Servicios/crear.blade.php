@@ -21,7 +21,6 @@
 
                 <div class="actualizar">
 
-                    <img src="" alt="">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="">Subir foto</label><br>
