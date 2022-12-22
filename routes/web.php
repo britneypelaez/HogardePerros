@@ -41,6 +41,10 @@ Route::get('/servicios', [App\Http\Controllers\ServicioController::class, 'index
 
 Route::get('/encuentrame', [App\Http\Controllers\MascotaPerdidaController::class, 'indexEncuentrameCliente'])->name('encuentrame');
 
+Route::get('/Publicaciones', [App\Http\Controllers\MascotaPerdidaController::class, 'publicacionUsuario'])->name('Publicaciones');
+
+Route::get('/eliminarUsuario', [App\Http\Controllers\MascotaPerdidaController::class, 'destroyUsuario'])->name('eliminarUsuario');
+
 Route::get('/QuienesSomos', function () {
     return view('Home.QuienesSomos');
 })->name('QuienesSomos');
