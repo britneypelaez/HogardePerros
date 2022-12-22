@@ -34,7 +34,11 @@ class MascotaController extends Controller
     public function index()
     {
         $mascotas = Mascota::paginate(5);
-        return view('HomeFundacion.Mascotas.index', compact('mascotas'));
+        $razas = Raza::all();
+        $colores = Color::all();
+        $especies = Especie::all();
+        $estados = Estado::all();
+        return view('HomeFundacion.Mascotas.index', compact('mascotas', 'razas', 'colores', 'especies', 'estados'));
     }
 
     /**
