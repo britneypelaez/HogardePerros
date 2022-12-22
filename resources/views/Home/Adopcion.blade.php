@@ -21,38 +21,52 @@
         <h3>Selecciona la clase de mascota que quieres:</h3>
 
         <div class="filtro">
-            <p>Especie:</p>
-            <select name="" id="especie">
-                <option value="0">Todas</option>
-                @foreach ($Especies as $especie)
-                    <option value="{{ $especie->especie }}">{{ $especie->descripcion }}</option>
-                @endforeach
-            </select>
-            <p id="razaParrafo">Raza:</p>
-            <select name="" id="raza">
-                <option value="0">Todas</option>
-            </select>
-            <p>Color:</p>
-            <select name="" id="color">
-                <option value="0">Todos</option>
-                @foreach ($Colores as $color)
-                    <option value="{{ $color->color }}">{{ $color->descripcion }}</option>
-                @endforeach
-            </select>
-            <p>Tamaño:</p>
-            <select name="" id="tamaño">
-                <option value="0">Todos</option>
-                @for ($i = 20; $i <= 110; $i = $i + 5)
-                    <option value="{{ $i }}">{{ $i }}cm</option>
-                @endfor
-            </select>
-            <p>Edad:</p>
-            <select name="" id="edad">
-                <option value="0">Todas</option>
-                @for ($i = 0; $i <= 14; $i++)
-                    <option value="{{ $i }}">{{ $i }}</option>
-                @endfor
-            </select>
+            <div class="caja">
+                <p>Especie:</p>
+                <select name="" id="especie">
+                    <option value="0">Todas</option>
+                    @foreach ($Especies as $especie)
+                        <option value="{{ $especie->especie }}">{{ $especie->descripcion }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="caja">
+                <p>Color:</p>
+                <select name="" id="color">
+                    <option value="0">Todos</option>
+                    @foreach ($Colores as $color)
+                        <option value="{{ $color->color }}">{{ $color->descripcion }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="caja">
+                <p>Tamaño:</p>
+                <select name="" id="tamaño">
+                    <option value="0">Todos</option>
+                    @for ($i = 20; $i <= 110; $i = $i + 5)
+                        <option value="{{ $i }}">{{ $i }}cm</option>
+                    @endfor
+                </select>
+            </div>
+
+            <div class="caja">
+                <p>Edad:</p>
+                <select name="" id="edad">
+                    <option value="0">Todas</option>
+                    @for ($i = 0; $i <= 14; $i++)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
+                </select>
+            </div>
+
+            <div class="caja">
+                <p id="razaParrafo">Raza:</p>
+                <select name="" id="raza">
+                    <option value="0">Todas</option>
+                </select>
+            </div>
         </div>
 
         <h2 class="animate__animated animate__bounce animate__slow">Perros/Gatos en adopcion</h2>

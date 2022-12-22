@@ -1,23 +1,46 @@
 @extends('layouts.home')
 
-@section('title', 'Encuentrame')
+@section('title', 'Mis Publicaciones')
 
 @section('content')
 <div class="info">
-    @if (Auth::user())
-    <div class="botones">
-        <a href="#popup2"><button class="transicion2" type="submit"><span>Agregar Publicacion</span></button></a>
-        <a href="{{ route('Publicaciones') }}"><button class="transicion2" type="submit"><span>Mis Publicaciones</span></button></a>
+    <h2>Publicaciones</h2>
+
+    <div class="adopciones">
+        @foreach($mascotas as $mascota)
+        <div class="adopcion">
+            <div class="img">
+                <img src="{{ asset("storage/$mascota->imagen_mascota") }}" alt="">
+                <div class="descrip">
+                    <h2>{{ $mascota->nombre_mascota }}</h2>
+                    <a style="display: none;">{{ $mascota->id }}</a>
+                    <div class="opcionesAdmin">
+                        <form action="{{ route('MascotasPerdidas.destroy', $mascota) }}" method="POST">
+                            <a href="{{ route('MascotasPerdidas.edit', $mascota) }}"><img
+                                    src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
+                            @csrf
+                            @method('DELETE')
+                            <a><button type="submit" style="background:none; border: none;"><img
+                                        src="{{ asset('img/Home/delete.png') }}" alt="" /></button></a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+
+        <!-- Centramos la paginación a la derecha-->
+        <div class="pagination justify-content-end">
+            {!! $mascotas->links() !!}
+        </div>
     </div>
-    @endif
-    <div class="contenedor-modal" id=popup2>
+    
+
+    <div class="contenedor-modal" id=popup>
         <div class="moda">
             <div class="informacion">
+                <img src="{{ asset("storage/$imagen") }}" alt="Adopta">
                 <div class="descripcion">
-                    <div class="cont">
-                        <p>Nombre:</p>
-                        <p>(nombre)</p>
-                    </div>
                     <div class="cont">
                         <p>Especie:</p>
                         <p>(especie)</p>
@@ -30,6 +53,7 @@
                         <p>Color:</p>
                         <p>(color)</p>
                     </div>
+
                     <div class="cont">
                         <p>Edad:</p>
                         <p>(edad)</p>
@@ -40,61 +64,13 @@
                     </div>
                 </div>
                 <div class="tener-en-cuenta">
-                    <h4>sikas:</h4>
+                    <h4>Descripcion:</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam ducimus reprehenderit. Deserunt dolor soluta sapiente, voluptates porro qui debitis, quis dicta praesentium quo fuga facere vero non nihil quam!</p>
                 </div>
             </div>
             <a href="#" class="btn-close-modal">X</a>
         </div>
     </div>
-    <h3>Selecciona la clase de mascota que quieres:</h3>
-
-    <div class="filtro">
-        <div class="caja">
-        <p>Especie:</p>
-        <select name="" id="especie">
-            <option value="0">Todas</option>
-            @foreach ($Especies as $especie)
-            <option value="{{ $especie->especie }}">{{ $especie->descripcion }}</option>
-            @endforeach
-        </select>
-        </div>
-
-        <div class="caja">
-        <p>Color:</p>
-        <select name="" id="color">
-            <option value="0">Todos</option>
-            @foreach ($Colores as $color)
-            <option value="{{ $color->color }}">{{ $color->descripcion }}</option>
-            @endforeach
-        </select>
-        </div>
-
-        <div class="caja">
-        <p>Tamaño:</p>
-        <select name="" id="tamaño">
-            <option value="0">Todos</option>
-            @for ($i = 20; $i <=110; $i = $i + 5)
-            <option value="{{ $i }}">{{ $i }}cm</option>
-            @endfor
-        </select>
-        </div>
-
-        <div class="caja">
-        <p id="razaParrafo">Raza:</p>
-        <select name="" id="raza">
-            <option value="0">Todas</option>
-            @foreach ($Razas as $raza)
-            <option value="{{ $raza->raza }}">{{ $raza->descripcion }}</option>
-            @endforeach
-        </select>
-        </div>
-    </div>
-
-    <h2>Mascotas Perdidas</h2>
-
-    <div class="adopciones" id="result"></div>
-    <div id="paginate" class="paginacion"></div>
 </div>
 @endsection
 @section('scripts')
@@ -150,7 +126,7 @@
         saveResult.innerHTML = '';
         search(especie,raza,color,tamaño,page).then(response => {
         response.data.map(mascota => {
-            saveResult.innerHTML += `<x-cardEncuentrame imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" />`
+            saveResult.innerHTML += `<x-card imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" />`
         });
         paginate(response,especie,raza,color,tamaño);
     });

@@ -42,7 +42,6 @@
                             <p>{{ $mascota->descripcion }}</p>
                         </div>
                     </div>
-                    <div class="more"><a href="#popup" style="text-decoration: none; color: #fff;">Mas Informacion</a></div>
                 </div>
                 @endforeach
             </div>

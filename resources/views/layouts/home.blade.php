@@ -30,8 +30,10 @@
                         preserveAspectRatio="none" style="height: 100%; width: 100%;">
                         <path d="M0.00,49.99 C150.00,150.00 349.21,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z"
                             style="stroke: none; fill: #000;"></path>
-                    </svg></div>
+                    </svg>
+                </div>
             </div>
+        </div>
     </header>
     <div class="stick">
         <div class="navbar_r">
