@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     
-@yield('page_css')
-<!-- Template CSS -->
+    @yield('page_css')
+    <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/styleComponentes.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/components.css')}}">
@@ -33,32 +33,33 @@
 <div id="app">
     <div class="main-wrapper main-wrapper-1">
         <div class="navbar-bg"></div>
-        <nav class="navbar navbar-expand-lg main-navbar">
-            @include('layouts.HomeFundacion.header')
+            <nav class="navbar navbar-expand-lg main-navbar">
+                @include('layouts.HomeFundacion.header')
 
-        </nav>
-        <nav class="navbar navbar-expand-lg navv  fixed-top">
-            <div class="container-fluid">
-                <button class="navbar-toggler menuu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon" ></span>
-                </button>
-                <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="main-sidebar main-sidebar-postion">
-                        <div class="offcanvas-header">
-                            <span class="material-symbols-outlined cerrar" data-bs-dismiss="offcanvas" aria-label="Close">close</span>
+            </nav>
+            <nav class="navbar navbar-expand-lg navv  fixed-top">
+                <div class="container-fluid">
+                    <button class="navbar-toggler menuu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon" ></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="main-sidebar main-sidebar-postion">
+                            <div class="offcanvas-header">
+                                <span class="material-symbols-outlined cerrar" data-bs-dismiss="offcanvas" aria-label="Close">close</span>
+                            </div>
+                            <div class="sidebar-brand">
+                                <a href="{{ url('/') }}"><img class="navbar-brand-full app-header-logo" src="{{ asset('img/Home/fundacion.png') }}" width="100"
+                                    alt="Infyom Logo"></a>
+                            </div>
+                            @include('layouts.HomeFundacion.sidebar')
                         </div>
-                        <div class="sidebar-brand">
-                            <a href="{{ url('/') }}"><img class="navbar-brand-full app-header-logo" src="{{ asset('img/Home/fundacion.png') }}" width="100"
-                                alt="Infyom Logo"></a>
-                        </div>
-                        @include('layouts.HomeFundacion.sidebar')
                     </div>
                 </div>
+            </nav>
+            <!-- Main Content -->
+            <div class="main-content">
+                @yield('content')
             </div>
-        </nav>
-        <!-- Main Content -->
-        <div class="main-content">
-            @yield('content')
         </div>
     </div>
 </div>

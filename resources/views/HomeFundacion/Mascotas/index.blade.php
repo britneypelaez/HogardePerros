@@ -61,6 +61,5 @@
             {!! $mascotas->links() !!}
         </div>
     </div>
-    </div>
 </section>
 @endsection

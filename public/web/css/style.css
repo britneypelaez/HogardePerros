@@ -4017,7 +4017,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 }
 .offcanvas-backdrop.show{
     opacity: 0;
-    display: none;
+    /*display: none;*/
 }
 
 @media (max-width: 1024px) {
