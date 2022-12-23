@@ -24,10 +24,8 @@
                         <h1>{{ $MascotasPerdida->nombre_mascota }}</h1>
                         <a style="display: none;">{{ $MascotasPerdida->id }}</a>
                         <div class="opcionesAdmin">
-                        <a href="#modalsEditPerdidas{{ $MascotasPerdida }}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
-                        <a href="#modalsEliminarPerdidasUsuario{{ $MascotasPerdida }}"><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
-
-                            
+                            <a href="#modalsEditPerdidas{{ $MascotasPerdida }}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
+                            <a href="#modalsEliminarPerdidasUsuario{{ $MascotasPerdida }}"><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
                         </div>
                     </div>
                 </div>

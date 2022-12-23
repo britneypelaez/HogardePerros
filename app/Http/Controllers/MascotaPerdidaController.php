@@ -21,7 +21,7 @@ class MascotaPerdidaController extends Controller
      */
     public function index()
     {
-        $MascotasPerdidas = MascotaPerdida::paginate(5);
+        $MascotasPerdidas = MascotaPerdida::paginate(6);
         $razas = Raza::all();
         $colores = Color::all();
         $especies = Especie::all();
