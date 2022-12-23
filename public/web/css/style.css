@@ -4154,6 +4154,8 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 
 .card .card-blok{
     padding: 25px;
+    width: 400px;
+    height: 150px;
 }
 
 .order-card{

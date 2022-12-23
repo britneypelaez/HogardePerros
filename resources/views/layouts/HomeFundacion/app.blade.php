@@ -48,10 +48,8 @@
                             <span class="material-symbols-outlined cerrar" data-bs-dismiss="offcanvas" aria-label="Close">close</span>
                         </div>
                         <div class="sidebar-brand">
-                            <img class="navbar-brand-full app-header-logo" src="{{ asset('img/Home/fundacion.png') }}" width="100"
-                                alt="Infyom Logo"> </img>
-
-                            <a href="{{ url('/') }}"></a>
+                            <a href="{{ url('/') }}"><img class="navbar-brand-full app-header-logo" src="{{ asset('img/Home/fundacion.png') }}" width="100"
+                                alt="Infyom Logo"></a>
                         </div>
                         @include('layouts.HomeFundacion.sidebar')
                     </div>
