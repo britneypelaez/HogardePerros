@@ -183,7 +183,7 @@ class MascotaController extends Controller
         }
         //filtra las mascotas solo por especie
         if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño == '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', "%$especie%")->paginate(12);
+            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', $especie)->paginate(12);
         }
         //filtra las mascotas solo por color
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño == '0' && $edad == '0') {
