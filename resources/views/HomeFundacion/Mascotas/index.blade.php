@@ -57,5 +57,10 @@
                 </div>
             </div>
         </div>
+        <div class="pagination justify-content-end">
+            {!! $mascotas->links() !!}
+        </div>
+    </div>
+    </div>
 </section>
 @endsection

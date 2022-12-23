@@ -33,7 +33,7 @@ class MascotaController extends Controller
 
     public function index()
     {
-        $mascotas = Mascota::paginate(5);
+        $mascotas = Mascota::paginate(6);
         $razas = Raza::all();
         $colores = Color::all();
         $especies = Especie::all();

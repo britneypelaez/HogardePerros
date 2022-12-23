@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-4 col-xl-4">
+                            <div class="col-md-12 col-xl-12">
                                 <div class="card bg-c-blue orden-card">
                                     <div class="card-blok">
                                         <h5>Mascotas</h5>
@@ -24,7 +24,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-xl-4">
+                            <div class="col-md-12 col-xl-12">
                                 <div class="card bg-c-green orden-card">
                                     <div class="card-blok">
                                         <h5>Servicios Veterinarios</h5>
@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-xl-4">
+                            <div class="col-md-12 col-xl-12">
                                 <div class="card bg-c-pink orden-card">
                                     <div class="card-blok">
                                         <h5>Mascotas Perdidas</h5>
