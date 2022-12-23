@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title', 'Servicios Veterinarios')
+@section('title', 'Donaciones')
 
 @section('content')
 <div class="construccion">

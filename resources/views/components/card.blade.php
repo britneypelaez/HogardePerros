@@ -32,16 +32,28 @@
                     <p>Edad:</p>
                     <p> {{ $edad }} años</p>
                 </div>
+                <a href="{{ route('adoptare') }}"><button class="transicion2" type="submit"><span>Seguir Adopcion</span></button></a>
             </div>
             <div class="tener-en-cuenta">
                 <h4>Antes de adoptar una mascota, ten en cuenta:</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam ducimus reprehenderit. Deserunt dolor soluta sapiente, voluptates porro qui debitis, quis dicta praesentium quo fuga facere vero non nihil quam!</p>
+                <p>
+                    Los perros adultos se entregan: </br>
+                    Esterilizados</br>
+                    Desparacitados</br>
+                    Vacunados</br>
+                    Con collar</br>
+                </p>
                 <h4>¿Como funciona el proceso de adopcion?:</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam ducimus reprehenderit. Deserunt dolor soluta sapiente, voluptates porro qui debitis, quis dicta praesentium quo fuga facere vero non nihil quam!</p>
+                <p>
+                    Los perros cachorros se entregan desparacitados y con una vacuna Puppy</br>
+                </p>
                 <h4>Requisitos para adoptar:</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam ducimus reprehenderit. Deserunt dolor soluta sapiente, voluptates porro qui debitis, quis dicta praesentium quo fuga facere vero non nihil quam!</p>
+                <p>
+                    Ser mayor de edad</br>
+                    Firmar hoja de adopcion con un compromiso de traerlos a esterilazion a los cinco meses sin costo para el adoptante</br>
+                </p>
             </div>
         </div>
-        <a href="#" class="btn-close-modal">X</a>
     </div>
+    <a href="#" class="btn-close-modal">X</a>
 </div>

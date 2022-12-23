@@ -494,15 +494,15 @@ h2 {
 }
 
 .imagina {
-    width: 85%;
-    height: 85%;
+    width: 55%;
+    height: 60%;
     justify-self: center;
     align-self: center;
 }
 
 .imaginate {
-    width: 85%;
-    height: 70%;
+    max-width: 500px;
+    max-width: 500px;
     justify-self: center;
     align-self: center;
 }
@@ -585,7 +585,6 @@ h2 {
 }
 
 .cont2 {
-    color: white;
     display: flex;
     align-items: center;
 }
@@ -614,6 +613,7 @@ h2 {
 }
 
 .tener-en-cuenta2 h4 {
+    color: black;
     font-size: 25px;
 }
 
@@ -713,8 +713,8 @@ h3 {
 .contenedor-modal {
     position: fixed;
     top: 54%;
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 85%;
     visibility: hidden;
     opacity: 0;
     transition: all 600ms;
@@ -733,17 +733,18 @@ h3 {
 }
 
 .moda {
-
+    height: 100%;
     position: relative;
     left: -80%;
     transform: rotate(98deg) translate(-150%, 230%);
     transition: all 600ms;
+    overflow: auto;
 }
 
 .btn-close-modal {
     position: absolute;
     right: -15px;
-    top: -15px;
+    top: -290px;
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;

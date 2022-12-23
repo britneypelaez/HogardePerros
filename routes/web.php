@@ -52,6 +52,10 @@ Route::get('/Donaciones', function () {
     return view('Home.Donaciones');
 })->name('Donaciones');
 
+Route::get('/adoptare', function () {
+    return view('Home.Adoptare');
+})->name('adoptare');
+
 Route::get('/PreguntasFrecuentes', function () {
     return view('Home.PreguntasFrecuentes');
 })->name('PreguntasFrecuentes');
