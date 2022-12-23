@@ -6,8 +6,8 @@
             <form action="{{ route('publicacion.delete', $MascotasPerdida->id) }}" method="POST">
                 @csrf
                 <a><button class="btn btn-outline-danger" type="submit">Eliminar</button></a>
+                <input name="mascot" type="hidden" value="{{$MascotasPerdida->id}}">
             </form>
         </div>
-
     </div>
 </div>
