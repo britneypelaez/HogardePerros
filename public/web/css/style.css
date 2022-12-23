@@ -4002,7 +4002,19 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
     padding-left: 61px;
     background-color: #fff;
 }
-
+.cerrar:hover{
+    cursor: pointer;
+}
+.offcanvas{
+    max-width: 250px;
+    background: none;
+}
+.navv{
+    max-width: 1px;
+}
+.menuu{
+    background: rgba(255, 255, 255, 0.644);
+}
 @media (max-width: 1024px) {
     .sidebar-gone-hide {
         display: none !important;

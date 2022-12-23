@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/iziToast.min.css') }}">
     <link href="{{ asset('assets/css/sweetalert.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('css/estilosfundacion.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     
 @yield('page_css')
@@ -35,16 +37,27 @@
             @include('layouts.HomeFundacion.header')
 
         </nav>
-        <div class="main-sidebar main-sidebar-postion">
-            <div class="sidebar-brand">
+        <nav class="navbar navbar-expand-lg navv  fixed-top">
+            <div class="container-fluid">
+                <button class="navbar-toggler menuu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon" ></span>
+                </button>
+                <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="main-sidebar main-sidebar-postion">
+                        <div class="offcanvas-header">
+                            <span class="material-symbols-outlined cerrar" data-bs-dismiss="offcanvas" aria-label="Close">close</span>
+                        </div>
+                        <div class="sidebar-brand">
+                            <img class="navbar-brand-full app-header-logo" src="{{ asset('img/Home/fundacion.png') }}" width="100"
+                                alt="Infyom Logo"> </img>
 
-                <img class="navbar-brand-full app-header-logo" src="{{ asset('img/Home/fundacion.png') }}" width="100"
-                    alt="Infyom Logo"> </img>
-
-                <a href="{{ url('/') }}"></a>
+                            <a href="{{ url('/') }}"></a>
+                        </div>
+                        @include('layouts.HomeFundacion.sidebar')
+                    </div>
+                </div>
             </div>
-            @include('layouts.HomeFundacion.sidebar')
-        </div>
+        </nav>
         <!-- Main Content -->
         <div class="main-content">
             @yield('content')
@@ -63,7 +76,7 @@
 <script src="{{ asset('assets/js/iziToast.min.js') }}"></script>
 <script src="{{ asset('assets/js/select2.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!-- Template JS File -->
 <script src="{{ asset('web/js/stisla.js') }}"></script>
 <script src="{{ asset('web/js/scripts.js') }}"></script>
