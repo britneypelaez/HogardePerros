@@ -38,7 +38,7 @@
         <div class="main-sidebar main-sidebar-postion">
             <div class="sidebar-brand">
 
-                <img class="navbar-brand-full app-header-logo" src="{{ asset('img/logo.png') }}" width="100"
+                <img class="navbar-brand-full app-header-logo" src="{{ asset('img/Home/fundacion.png') }}" width="100"
                     alt="Infyom Logo"> </img>
 
                 <a href="{{ url('/') }}"></a>
