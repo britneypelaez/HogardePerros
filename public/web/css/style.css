@@ -4015,6 +4015,11 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 .menuu{
     background: rgba(255, 255, 255, 0.644);
 }
+.offcanvas-backdrop.show{
+    opacity: 0;
+    display: none;
+}
+
 @media (max-width: 1024px) {
     .sidebar-gone-hide {
         display: none !important;
