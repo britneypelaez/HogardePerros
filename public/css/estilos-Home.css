@@ -422,6 +422,7 @@ h2 {
 }
 
 .transicion::after {
+    box-sizing: content-box;
     content: "";
     width: 100%;
     position: absolute;
@@ -463,6 +464,7 @@ h2 {
 }
 
 .transicion2::after {
+    box-sizing: content-box;
     content: "";
     width: 100%;
     position: absolute;
@@ -479,8 +481,15 @@ h2 {
     left: 0;
 }
 
-.informacion img {
+.imagina {
     width: 85%;
+    height: 85%;
+    justify-self: center;
+    align-self: center;
+}
+
+.imaginate{
+    width: 65%;
     height: 85%;
     justify-self: center;
     align-self: center;
@@ -498,27 +507,35 @@ h2 {
 } */
 
 .informacion {
-    background: black;
+    background: rgb(221, 223, 240);
     display: grid;
     justify-content: stretch;
-    grid-template-columns: 40% 40% 20%;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     height: 100%;
     width: 100%;
 }
 
+.informacion2 {
+    background: rgb(221, 223, 240);
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 50% 50%;
+    height: 100%;
+    width: 100%;
+}
+
 .cont{
-    color: white;
     display: flex;
 }
 
 .tener-en-cuenta {
     grid-column: 1/4;
-    color: white;
     padding: 35px;
 }
 
 .tener-en-cuenta p {
+    color: white;
     margin-bottom: 20px;
     text-align: justify;
     background: rgb(24, 90, 99);
@@ -529,6 +546,57 @@ h2 {
 
 .tener-en-cuenta h4 {
     font-size: 15px;
+}
+
+.cont2{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.cont3{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.cont2 p{
+    font-size: 25px;
+}
+
+.cont3 p{
+    font-size: 50px;
+}
+
+.tener-en-cuenta2 {
+    grid-column: 1/4;
+    color: white;
+    padding: 35px;
+}
+
+.tener-en-cuenta2 p {
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-align: justify;
+    background: rgb(24, 90, 99);
+    border-radius: 10px;
+    padding: 5px;
+    line-height: 100%
+}
+
+.tener-en-cuenta2 h4 {
+    font-size: 25px;
+}
+
+.opcionesAdmin{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.opcionesAdmin img{
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
 }
 
 footer {
@@ -571,10 +639,11 @@ footer ul li .redes {
 }
 
 .filtro {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     background-color: black;
+    grid-template-columns: repeat(auto-fill,160px);
     color: white;
     width: 900px;
     height: 50px;
@@ -583,11 +652,17 @@ footer ul li .redes {
     padding: 10;
 }
 
-.filtro p {
+.caja{
+    display: flex;
+    margin: 15px;
+    margin-top: 5px;
+}
+
+.caja p {
     margin-right: 10px;
 }
 
-.filtro select {
+.caja select {
     margin-right: 30px;
 }
 
@@ -598,10 +673,19 @@ h3 {
     text-align: center;
 }
 
+.botones{
+    display: flex;
+}
+
+.botones a{
+    margin: 20px;
+    margin-bottom: 0;
+}
+
 .contenedor-modal {
     position:fixed;
     top: 43%;
-    width: 70%;
+    width: 65%;
     height: 90%;
     visibility: hidden;
     opacity: 0;
@@ -621,7 +705,8 @@ h3 {
 }
 
 .moda{
-    width: 70%;
+    border: 3px solid #87a8eb;
+    width: 65%;
     height: 90%;
     position: relative;
     left: -80%;
@@ -922,21 +1007,20 @@ h3 {
 @media (max-width: 980px) {
     .filtro {
         width: 95%;
-        height: 100%;
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-        justify-content: center;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
-    .filtro p {
-        padding-left: 50px;
+    .caja p {
         font-size: 75%;
     }
 
-    .filtro select {
+    .caja select {
         font-size: 75%;
+    }
+
+    .transicion2{
+        width: 160px;
+        height: 60px;
     }
 
     #checke {
@@ -999,7 +1083,7 @@ h3 {
     footer {
         height: 120px;
     }
-    .informacion img {
+    .imagina {
         height: 60%;
     }
 }
@@ -1031,31 +1115,6 @@ h3 {
         font-size: 12px;
     }
 }
-@media (max-width: 600px) {
-    .whatsapp p {
-        display: none;
-    }
-    .tener-en-cuenta p {
-        font-size: 11px;
-    }
-    .cont p {
-        font-size: 12px;
-    }
-    .transicion2 {
-        width: 160px;
-        height: 50px;
-    }
-}
-@media (max-width: 400px) {
-    .cont-form {
-        width: 350px;
-        padding: 2rem;
-    }
-
-    .informacion {
-        height: 120%;
-    }
-}
 @media (max-width: 695px) {
     .blockdere {
         grid-area: blockdere;
@@ -1071,6 +1130,27 @@ h3 {
         grid-template:
             "main" auto/
             auto;
+    }
+}
+@media (max-width: 600px) {
+    .whatsapp p {
+        display: none;
+    }
+    .tener-en-cuenta p {
+        font-size: 11px;
+    }
+    .cont p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 400px) {
+    .cont-form {
+        width: 350px;
+        padding: 2rem;
+    }
+
+    .informacion {
+        height: 120%;
     }
 }
 
@@ -1175,3 +1255,89 @@ h3 {
     background: #e2dfe16c;
     border: solid #e2dfe198 0.5px;
 }
+
+.contenedor-modal2 {
+    position:fixed;
+    top: 54%;
+    width: 90%;
+    height: 95%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 600ms;
+    z-index: 500;
+}
+
+.contenedor-modal2:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.contenedor-modal2:target .moda2{
+    left: 50%;
+    transform: rotate(0deg) translate(-50%, -50%);
+    visibility: visible;
+}
+
+.moda2{
+    width: 70%;
+    height: 90%;
+    position: relative;
+    left: -80%;
+    transform: rotate(98deg) translate(-150%, 230%);
+    transition: all 600ms;
+}
+
+.btn-close-modal2 {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 9005;
+
+}
+
+.informacion2 {
+    background: rgb(221, 223, 240);
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 30% 35% 35%;
+    grid-template-rows: 12% 78% 10%;
+    height: 100%;
+    width: 100%;
+}
+
+.informacion2 > h3{
+    text-align: center;
+    grid-column: 1/4;
+    margin: 20px 0px 0px 0px;
+}
+
+.informacion2 img {
+    width: 85%;
+    height: 75%;
+    justify-self: center;
+    align-self: center;
+    margin: 15px;
+    object-fit:cover;
+
+}
+
+.informacion2 > button{
+    grid-column: 1/4;
+    margin-top: 10px;
+}
+
+.form-group2 > input, select{
+    height: 40px !important;
+}
+
+.actualizar3, .actualizar4, .actualizar5{
+    margin-top: 5px;
+}
+

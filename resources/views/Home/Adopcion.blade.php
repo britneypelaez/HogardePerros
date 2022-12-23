@@ -70,6 +70,7 @@
         </div>
 
         <h2 class="animate__animated animate__bounce animate__slow">Perros/Gatos en adopcion</h2>
+        
         <div class="adopciones" id="result"></div>
         <div id="paginate" class="paginacion"></div>
     </div>
@@ -82,7 +83,6 @@
         const tamaño = document.getElementById('tamaño');
         const edad = document.getElementById('edad');
         let ruta = '{{ env('APP_URL') }}' + '/';
-        console.log(especie.value);
 
         if (especie.value == '0') {
             document.getElementById('raza').style.display = 'none';
@@ -90,12 +90,6 @@
         }
 
         const search = async (especie, raza, color, tamaño, edad, page = 1) => {
-
-            console.log(especie);
-            console.log(raza);
-            console.log(color);
-            console.log(tamaño);
-            console.log(edad);
             const result = await fetch(ruta +
                 `api/adopcion/search?especie=${especie}&raza=${raza}&color=${color}&tamaño=${tamaño}&edad=${edad}&page=${page}`
                 );

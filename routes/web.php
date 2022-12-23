@@ -43,7 +43,6 @@ Route::get('/encuentrame', [App\Http\Controllers\MascotaPerdidaController::class
 
 Route::get('/Publicaciones', [App\Http\Controllers\MascotaPerdidaController::class, 'publicacionUsuario'])->name('Publicaciones');
 
-Route::get('/eliminarUsuario', [App\Http\Controllers\MascotaPerdidaController::class, 'destroyUsuario'])->name('eliminarUsuario');
 
 Route::get('/QuienesSomos', function () {
     return view('Home.QuienesSomos');
@@ -114,6 +113,12 @@ Route::resources([
     'Servicios' => ServicioController::class,
     'ServiciosPrestados' => ServicioPrestadoController::class,
 ]);
+
+Route::post('/Publicaciones/Delete', [MascotaPerdidaController::class, 'destroyUsuario'])->name('publicacion.delete');
+
+Route::post('/Publicaciones/Update', [MascotaPerdidaController::class, 'updateUsuario'])->name('publicacion.update');
+
+Route::post('/Publicaciones/Create', [MascotaPerdidaController::class, 'storeUsuario'])->name('publicacion.create');
 
 Route::get('Certificado', [CertificadoController::class, 'index']);
 

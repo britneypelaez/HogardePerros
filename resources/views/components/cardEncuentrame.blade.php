@@ -9,25 +9,25 @@
 </div>
 <div class="contenedor-modal" id="modalsEditMascotas{{ $mascota }}">
     <div class="moda">
-        <div class="informacion">
-            <img src="{{ asset("storage/$imagen") }}" alt="Adopta">
+        <div class="informacion2">
+            <img class="imaginate" src="{{ asset("storage/$imagen") }}" alt="Adopta">
             <div class="descripcion">
-                <div class="cont">
+                <div class="cont2">
                     <p>Nombre:</p>
                     <p>{{ $mascota }}</p>
                 </div>
-                <div class="cont">
+                <div class="cont2">
                     <p>Raza:</p>
                     <p>{{ $raza }}</p>
                 </div>
-                <div class="cont">
+                <div class="cont2">
                     <p>Color:</p>
                     <p>{{ $color }}</p>
                 </div>
             </div>
-            <div class="tener-en-cuenta">
+            <div class="tener-en-cuenta2">
                 <h4>Descripcion:</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam ducimus reprehenderit. Deserunt dolor soluta sapiente, voluptates porro qui debitis, quis dicta praesentium quo fuga facere vero non nihil quam!</p>
+                <p>{{ $descripcion }}</p>
             </div>
         </div>
         <a href="#" class="btn-close-modal">X</a>

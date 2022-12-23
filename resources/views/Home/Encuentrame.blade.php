@@ -6,47 +6,11 @@
 <div class="info">
     @if (Auth::user())
     <div class="botones">
-        <a href="#popup2"><button class="transicion2" type="submit"><span>Agregar Publicacion</span></button></a>
+        <a href="#modalsCreatePerdidas"><button class="transicion2" type="submit"><span>Agregar Publicacion</span></button></a>
         <a href="{{ route('Publicaciones') }}"><button class="transicion2" type="submit"><span>Mis Publicaciones</span></button></a>
     </div>
     @endif
-    <div class="contenedor-modal" id=popup2>
-        <div class="moda">
-            <div class="informacion">
-                <div class="descripcion">
-                    <div class="cont">
-                        <p>Nombre:</p>
-                        <p>(nombre)</p>
-                    </div>
-                    <div class="cont">
-                        <p>Especie:</p>
-                        <p>(especie)</p>
-                    </div>
-                    <div class="cont">
-                        <p>Raza:</p>
-                        <p>(raza)</p>
-                    </div>
-                    <div class="cont">
-                        <p>Color:</p>
-                        <p>(color)</p>
-                    </div>
-                    <div class="cont">
-                        <p>Edad:</p>
-                        <p>(edad)</p>
-                    </div>
-                    <div class="cont">
-                        <p>Tamaño:</p>
-                        <p>(tamaño)</p>
-                    </div>
-                </div>
-                <div class="tener-en-cuenta">
-                    <h4>sikas:</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quibusdam ducimus reprehenderit. Deserunt dolor soluta sapiente, voluptates porro qui debitis, quis dicta praesentium quo fuga facere vero non nihil quam!</p>
-                </div>
-            </div>
-            <a href="#" class="btn-close-modal">X</a>
-        </div>
-    </div>
+
     <h3>Selecciona la clase de mascota que quieres:</h3>
 
     <div class="filtro">
@@ -54,7 +18,7 @@
         <p>Especie:</p>
         <select name="" id="especie">
             <option value="0">Todas</option>
-            @foreach ($Especies as $especie)
+            @foreach ($especies as $especie)
             <option value="{{ $especie->especie }}">{{ $especie->descripcion }}</option>
             @endforeach
         </select>
@@ -64,7 +28,7 @@
         <p>Color:</p>
         <select name="" id="color">
             <option value="0">Todos</option>
-            @foreach ($Colores as $color)
+            @foreach ($colores as $color)
             <option value="{{ $color->color }}">{{ $color->descripcion }}</option>
             @endforeach
         </select>
@@ -84,7 +48,7 @@
         <p id="razaParrafo">Raza:</p>
         <select name="" id="raza">
             <option value="0">Todas</option>
-            @foreach ($Razas as $raza)
+            @foreach ($razas as $raza)
             <option value="{{ $raza->raza }}">{{ $raza->descripcion }}</option>
             @endforeach
         </select>
@@ -93,6 +57,7 @@
 
     <h2>Mascotas Perdidas</h2>
 
+    @include('Home.crearPerdido')
     <div class="adopciones" id="result"></div>
     <div id="paginate" class="paginacion"></div>
 </div>
@@ -149,7 +114,7 @@
         saveResult.innerHTML = '';
         search(especie,raza,color,tamaño,page).then(response => {
         response.data.map(mascota => {
-            saveResult.innerHTML += `<x-cardEncuentrame imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" color="${mascota.colorin}" raza="${mascota.rasa}" descripcion="${mascota.descripcion}" />`
+            saveResult.innerHTML += `<x-cardEncuentrame imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" color="${mascota.colorin}" raza="${mascota.rasa}" descripcion="${mascota.descripcion}" id="${mascota.id}" especie="${mascota.especie}" />`
         });
         paginate(response,especie,raza,color,tamaño);
     });
