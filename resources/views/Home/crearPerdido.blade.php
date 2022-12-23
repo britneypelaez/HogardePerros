@@ -19,7 +19,6 @@
 
                 <div class="actualizar3">
 
-                    <img src="" alt=""> <!-- Tratar de implementar la img q se selecciona ¡-->
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
                             <label for="">Subir foto</label><br>

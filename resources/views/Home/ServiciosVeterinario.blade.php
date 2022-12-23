@@ -18,7 +18,7 @@
         <div class="cards">
             <div class="cards1">
                 <div class="description">
-                    <h1>{{ $servicio->nombre_serviciio }}</h1>
+                    <h2 class="servir">{{ $servicio->nombre_serviciio }}</h2>
                     <a style="display: none;">{{ $servicio->id }}</a>
                 </div>
                 <div class="picture">
@@ -27,11 +27,11 @@
             </div>
             <div class="more"><a href="#modalsServicio {{$servicio->id}}" style="text-decoration: none; color: #fff;">Mas Informacion</a></div>
         </div>
-        <div class="contenedor-modal" id="modalsServicio {{$servicio->id}}">
-            <div class="moda">
-                <div class="informacion2">
+        <div class="contenedor-modal3" id="modalsServicio {{$servicio->id}}">
+            <div class="moda3">
+                <div class="informacion3">
                     <img class="imaginate" src="{{ asset("storage/$servicio->imagen_servicio") }}" alt="Adopta">
-                    <div class="descripcion">
+                    <div class="descripcion3">
                         <div class="cont3">
                             <p>{{$servicio->nombre_serviciio}}</p>
                         </div>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="btn-close-modal">X</a>
+                <a href="#" class="btn-close-modal3">X</a>
             </div>
         </div>
         @endforeach

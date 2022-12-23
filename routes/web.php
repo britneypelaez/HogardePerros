@@ -48,6 +48,10 @@ Route::get('/QuienesSomos', function () {
     return view('Home.QuienesSomos');
 })->name('QuienesSomos');
 
+Route::get('/Donaciones', function () {
+    return view('Home.Donaciones');
+})->name('Donaciones');
+
 Route::get('/PreguntasFrecuentes', function () {
     return view('Home.PreguntasFrecuentes');
 })->name('PreguntasFrecuentes');

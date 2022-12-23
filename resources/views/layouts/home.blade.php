@@ -70,7 +70,7 @@
                     </li>
                     <li>
                         <div class="opciones">
-                            <a href="">Donaciones</a>
+                            <a href="{{ route('Donaciones') }}">Donaciones</a>
                             <img src="{{ asset('img/Home/donation.png') }}" alt="" id="miniaturas"
                                 style="left:80px">
                         </div>
@@ -134,6 +134,9 @@
                 </ul>
             </div>
         </div>
+        <a class="btn-donar" href="{{ route('Donaciones') }}">
+            <img src="{{asset("img/Home/donar.png")}}" alt="">
+        </a>
     </div>
     @yield('content')
     @yield('scripts')
@@ -143,13 +146,12 @@
                 <p>Fundacion. Todos los derechos reservados</p>
             </li>
             <li class="whatsapp">
-                <a href=""><img class="redes" src="{{ asset('img/Home/whatsapp.png') }}". alt=""></a>
-                <p>+57 333 333 3333</p>
+                <a href="https://api.whatsapp.com/message/VCBGJZCG7QHXL1?autoload=1&app_absent=0" target="_blank"><img class="redes" src="{{ asset('img/Home/whatsapp.png') }}". alt=""></a>
+                <p>+57 316 303 1839</p>
             </li>
             <li>
-                <a href=""><img class="redes" src="{{ asset('img/Home/facebook.png') }}". alt=""></a>
-                <a href=""><img class="redes" src="{{ asset('img/Home/instagram.png') }}". alt=""></a>
-                <a href=""><img class="redes" src="{{ asset('img/Home/twitter.png') }}". alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100059614896338" target="_blank"><img class="redes" src="{{ asset('img/Home/facebook.png') }}". alt=""></a>
+                <a href="https://www.instagram.com/fund_perrosygatos/?hl=es-la" target="_blank"><img class="redes" src="{{ asset('img/Home/instagram.png') }}". alt=""></a>
             </li>
         </ul>
     </footer>
