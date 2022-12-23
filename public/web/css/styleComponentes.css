@@ -142,12 +142,13 @@
 .contenedor-modal {
     position:fixed;
     top: 54%;
-    width: 90%;
+    width: 80%;
     height: 95%;
     visibility: hidden;
     opacity: 0;
     transition: all 600ms;
     z-index: 500;
+
 }
 
 .contenedor-modal:target {
@@ -162,8 +163,6 @@
 }
 
 .moda{
-    width: 70%;
-    height: 90%;
     position: relative;
     left: -80%;
     transform: rotate(98deg) translate(-150%, 230%);
@@ -236,4 +235,31 @@
 
 .actualizar, .actualizar1, .actualizar2{
     margin-top: 5px;
+}
+
+.Eliminar{
+    width: 50% !important;
+    height: 25% !important;
+}
+
+.ContenedorEliminar{
+    background: rgb(221, 223, 240);
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+    justify-items: center;
+    border-radius: 5px;
+}
+
+.ContenedorEliminar > h4{
+    grid-column: 1/3;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.ContenedorEliminar > a{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

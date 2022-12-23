@@ -31,33 +31,18 @@
                                     <h1>{{ $servicio->nombre_serviciio }}</h1>
                                     <a style="display: none;">{{ $servicio->id }}</a>
                                     <div class="opcionesAdmin">
-                                        <form action="{{ route('Servicios.destroy', $servicio) }}" method="POST">
-                                            <a href="#modalsEditServicios{{ $servicio }}"><img
-                                                    src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <a><button type="submit" style="background:none; border: none;"><img
-                                                        src="{{ asset('img/Home/delete.png') }}" alt="" /></button></a>
-                                        </form>
+                                        <a href="#modalsEditServicios{{ $servicio }}"><img
+                                                src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
+                                        <a href="#modalsServiciosEliminar{{ $servicio }}"><img src="{{ asset('img/Home/delete.png') }}"
+                                                alt="" /></a>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- <tr>
-                                <td style="display: none;">{{ $servicio->id }}</td>
-                                <td>{{ $servicio->nombre_serviciio }}</td>
-                                <td>{{ $servicio->descripcion }}</td>
-                                <td><img src="{{ asset("storage/$servicio->imagen_servicio") }}" width="70px" height="70px"></td>
-                                <td WIDTH="200px">
-                                    <form action="{{ route('Servicios.destroy', $servicio) }}" method="POST">
-                                        <a class="btn btn-info" href="{{ route('Servicios.edit', $servicio) }}">Editar</a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" >Borrar</button>
-                                    </form>
-                                </td>
-                            </tr> -->
-                            @include('HomeFundacion.Servicios.editar')
+
+                        @include('HomeFundacion.Servicios.editar')
+                        @include('HomeFundacion.Servicios.Eliminar')
 
 
                         @endforeach

@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                   <h1>Panes de administrador para fundaciones</h1>
+                    <h1>Panel de administrador para fundaciones</h1>
                 </div>
             </div>
         </div>

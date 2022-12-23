@@ -37,18 +37,15 @@
                                     <h1>{{ $mascota	-> nombre_mascota }}</h1>
                                     <a style="display: none;">{{ $mascota->id }}</a>
                                     <div class="opcionesAdmin">
-                                        <form action="{{ route('Mascotas.destroy', $mascota) }}" method="POST">
-                                        <a href="#modalsEditMascotas{{ $mascota}}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <a><button type="submit" style="background:none; border: none;"><img
-                                                        src="{{ asset('img/Home/delete.png') }}" alt="" /></button></a>
-                                        </form>
+                                    <a href="#modalsEditMascotas{{ $mascota}}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
+                                    <a href="#modalsMascotasEliminar{{ $mascota}}"><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        @include('HomeFundacion.Mascotas.Eliminar')
 
                         @include('HomeFundacion.Mascotas.editar')
 

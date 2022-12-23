@@ -24,19 +24,18 @@
                         <h1>{{ $MascotasPerdida->nombre_mascota }}</h1>
                         <a style="display: none;">{{ $MascotasPerdida->id }}</a>
                         <div class="opcionesAdmin">
-                            <form action="{{ route('publicacion.delete', $MascotasPerdida) }}" method="POST">
-                                <a href="#modalsEditPerdidas{{ $MascotasPerdida }}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
-                                @csrf
-                                <a><button type="submit" style="background:none; border: none;"><img
-                                            src="{{ asset('img/Home/delete.png') }}" alt="" /></button></a>
-                                <input name="mascot" type="hidden" value="{{$MascotasPerdida->id}}">
-                            </form>
+                        <a href="#modalsEditPerdidas{{ $MascotasPerdida }}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
+                        <a href="#modalsEliminarPerdidasUsuario{{ $MascotasPerdida }}"><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
+
+                            
                         </div>
                     </div>
                 </div>
             </div>
 
         @include('Home.editarPerdido')
+        @include('Home.Eliminar')
+
         @endforeach
 
         <!-- Centramos la paginación a la derecha-->

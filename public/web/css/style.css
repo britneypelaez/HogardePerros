@@ -2260,6 +2260,7 @@ h6 .badge {
 
 .navbar .nav-link.nav-link-lg div {
     margin-top: 3px;
+    color: #fff;
 }
 
 .navbar .nav-link.nav-link-lg i {
@@ -2300,7 +2301,7 @@ h6 .badge {
 }
 
 .navbar .nav-link:hover {
-    color: #fff;
+    color: #6777ef;
 }
 
 .navbar .nav-link.disabled {

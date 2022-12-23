@@ -49,16 +49,22 @@
                         <div class="form-group">
                             <label for="descripcion">Descripcion</label>
                             <textarea type="text" name="descripcion" class="form-control" required value=""
-                                style="height:100px;">{{ old('descripcion', $MascotasPerdida->descripcion) }}</textarea>
+                                style="height:230px;">{{ old('descripcion', $MascotasPerdida->descripcion) }}</textarea>
                         </div>
                     </div>
+
+                </div>
+
+                <div class="actualizar2">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="raza">Raza</label>
                             <select name="raza" id="raza" class="form-control">
                                 @foreach($razas as $key => $raza)
-                                <option value="{{ $raza->raza }}" {{ $raza->raza == $MascotasPerdida->raza ? 'selected' : '' }}>{{ $raza['descripcion']}}</option>
+                                <option value="{{ $raza->raza }}"
+                                    {{ $raza->raza == $MascotasPerdida->raza ? 'selected' : '' }}>
+                                    {{ $raza['descripcion']}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -69,25 +75,21 @@
                             <label for="color">Color</label>
                             <select name="color" id="color" class="form-control">
                                 @foreach($colores as $color)
-                                    <option value="{{ $color->color }}" {{ $color->color == $MascotasPerdida->color ? 'selected' : '' }}>{{ $color['descripcion']}}</option>
+                                <option value="{{ $color->color }}"
+                                    {{ $color->color == $MascotasPerdida->color ? 'selected' : '' }}>
+                                    {{ $color['descripcion']}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
 
-                </div>
-
-                <div class="actualizar2">
-
-                    
-
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="tamanio">Tamaño</label>
                             <select name="tamanio" id="tamanio" class="form-control">
-                                @for ($i = 20; $i <=110; $i=$i + 5)
-                                    <option value="{{ $i }}" {{ $i == $MascotasPerdida->tamanio ? 'selected' : '' }}>{{ $i }} cm</option>
-                                @endfor
+                                @for ($i = 20; $i <=110; $i=$i + 5) <option value="{{ $i }}"
+                                    {{ $i == $MascotasPerdida->tamanio ? 'selected' : '' }}>{{ $i }} cm</option>
+                                    @endfor
                             </select>
                         </div>
                     </div>
@@ -97,24 +99,14 @@
                             <label for="especie">Especie</label>
                             <select name="especie" id="especie" class="form-control">
                                 @foreach($especies as $especie)
-                                    <option value="{{ $especie->especie }}" {{ $especie->especie == $MascotasPerdida->especie ? 'selected' : '' }}>{{ $especie['descripcion']}}</option>
+                                <option value="{{ $especie->especie }}"
+                                    {{ $especie->especie == $MascotasPerdida->especie ? 'selected' : '' }}>
+                                    {{ $especie['descripcion']}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <label for="estado">Estado</label>
-                            <select name="estado" id="estado" class="form-control">
-                                @if ($MascotasPerdida->estado)
-                                    <option value="{{$MascotasPerdida->estado}}">{{$MascotasPerdida->estado == 3 ? 'Encontrado' : 'Desaparecido'}}</option>
-                                @endif
-                                    <option value="3">Encontrado</option>
-                                    <option value="4">Desaparecido</option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Actualizar</button>
