@@ -141,9 +141,8 @@
 
 .contenedor-modal {
     position:fixed;
-    top: 54%;
-    width: 80%;
-    height: 95%;
+    top: 55%;
+    width: 75%;
     visibility: hidden;
     opacity: 0;
     transition: all 600ms;
@@ -181,8 +180,12 @@
     border-radius: 50%;
     text-decoration: none;
     z-index: 9005;
-
 }
+
+.btn-close-modal:hover{
+    text-decoration: none;
+}
+
 .descripcion {
     padding: 10px;
     display: grid;
@@ -200,8 +203,6 @@
     justify-content: stretch;
     grid-template-columns: 30% 35% 35%;
     grid-template-rows: 12% 78% 10%;
-    height: 100%;
-    width: 100%;
 }
 
 .informacion > h3{
@@ -222,19 +223,26 @@
 
 .informacion > button{
     grid-column: 1/4;
-    margin-top: 10px;
 }
 
-.form-group > input, select{
-    height: 40px !important;
+#imagenModal{
+    width: 155px;
 }
+
 .cont{
     color: white;
     display: flex;
 }
 
 .actualizar, .actualizar1, .actualizar2{
-    margin-top: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.actualizar1 textarea{
+    resize: none;
+    height: 135px !important;
 }
 
 .Eliminar{
@@ -262,4 +270,24 @@
 .ContenedorEliminar > a{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.justify-content-end{
+    justify-content: center !important;
+}
+
+@media (max-width:600px){
+    .contenedor-modal{
+        width: 95%;
+    }
+    .actualizar1, .actualizar2 > label, input, select, textarea{
+        font-size: 10px !important;
+    }
+    .actualizar > input{
+        width: 115px !important;
+    }
+    #imagenModal{
+        font-size: 8px !important;
+        width: 95px;
+    }
 }

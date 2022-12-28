@@ -49,11 +49,11 @@
 
                         @include('HomeFundacion.Servicios.crear')
 
-                        <!-- Centramos la paginación a la derecha-->
-                        <div class="pagination justify-content-end">
+                        
+                    </div>
+                    <div class="pagination justify-content-end">
                             {!! $servicios->links() !!}
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

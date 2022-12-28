@@ -37,8 +37,10 @@
                                     <h1>{{ $mascota	-> nombre_mascota }}</h1>
                                     <a style="display: none;">{{ $mascota->id }}</a>
                                     <div class="opcionesAdmin">
-                                    <a href="#modalsEditMascotas{{ $mascota}}"><img src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
-                                    <a href="#modalsMascotasEliminar{{ $mascota}}"><img src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
+                                        <a href="#modalsEditMascotas{{ $mascota}}"><img
+                                                src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
+                                        <a href="#modalsMascotasEliminar{{ $mascota}}"><img
+                                                src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
 
                                     </div>
                                 </div>
@@ -54,12 +56,15 @@
 
                         @include('HomeFundacion.Mascotas.crear')
                     </div>
+                    <div class="pagination justify-content-end">
+                        {!! $mascotas->links() !!}
+                    </div>
                 </div>
+
             </div>
+
         </div>
-        <div class="pagination justify-content-end">
-            {!! $mascotas->links() !!}
-        </div>
+
     </div>
 </section>
 @endsection

@@ -22,8 +22,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="">Subir foto</label><br>
-                            <input type="file" name="imagen_mascota" id="" accept="image/*" required
-                                style="width: 150px;">
+                            <input type="file" name="imagen_mascota" id="imagenModal" accept="image/*" required>
                             @error('imagen_mascota')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -104,6 +103,5 @@
 
         </form>
         <a href="#" class="btn-close-modal">X</a>
-
     </div>
 </div>

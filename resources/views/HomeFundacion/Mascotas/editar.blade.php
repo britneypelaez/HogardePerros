@@ -16,7 +16,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="">Subir foto</label><br>
-                            <input type="file" name="imagen_mascota" id="" accept="image/*" style="width: 150px;">
+                            <input type="file" name="imagen_mascota" id="imagenModal" accept="image/*" >
                             @error('imagen_mascota')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -39,7 +39,7 @@
                         <div class="form-group">
                             <label for="descripcion">Descripcion</label>
                             <textarea name="descripcion" class="form-control" required
-                                value="" style="height:230px;">{{ old('descripcion', $mascota->descripcion) }}</textarea>
+                                value="">{{ old('descripcion', $mascota->descripcion) }}</textarea>
                         </div>
                     </div>
 
@@ -48,7 +48,8 @@
                             <label for="raza">Raza</label>
                             <select name="raza" id="raza" class="form-control">
                                 @foreach($razas as $raza)
-                                    <option value="{{ $raza->raza }}" {{ $raza->raza == $mascota->raza ? 'selected' : '' }}>{{ $raza['descripcion']}}</option>
+                                <option value="{{ $raza->raza }}" {{ $raza->raza == $mascota->raza ? 'selected' : '' }}>
+                                    {{ $raza['descripcion']}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -58,12 +59,14 @@
 
                 <div class="actualizar2">
 
-                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="color">Color</label>
                             <select name="color" id="color" class="form-control">
                                 @foreach($colores as $color)
-                                    <option value="{{ $color->color }}" {{ $color->color == $mascota->color ? 'selected' : '' }}>{{ $color['descripcion']}}</option>
+                                <option value="{{ $color->color }}"
+                                    {{ $color->color == $mascota->color ? 'selected' : '' }}>{{ $color['descripcion']}}
+                                </option>
                                 @endforeach
                             </select>
                         </div>
@@ -73,9 +76,9 @@
                         <div class="form-group">
                             <label for="tamanio">Tamaño</label>
                             <select name="tamanio" id="tamanio" class="form-control">
-                                @for ($i = 20; $i <=110; $i=$i + 5)
-                                    <option value="{{ $i }}" {{ $i == $mascota->tamanio ? 'selected' : '' }}>{{ $i }} cm</option>
-                                @endfor
+                                @for ($i = 20; $i <=110; $i=$i + 5) <option value="{{ $i }}"
+                                    {{ $i == $mascota->tamanio ? 'selected' : '' }}>{{ $i }} cm</option>
+                                    @endfor
                             </select>
                         </div>
                     </div>
@@ -85,7 +88,9 @@
                             <label for="especie">Especie</label>
                             <select name="especie" id="especie" class="form-control">
                                 @foreach($especies as $especie)
-                                    <option value="{{ $especie->especie }}" {{ $especie->especie == $mascota->especie ? 'selected' : '' }}>{{ $especie['descripcion']}}</option>
+                                <option value="{{ $especie->especie }}"
+                                    {{ $especie->especie == $mascota->especie ? 'selected' : '' }}>
+                                    {{ $especie['descripcion']}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -95,9 +100,9 @@
                         <div class="form-group">
                             <label for="edad">Edad</label>
                             <select name="edad" id="edad" class="form-control">
-                                @for ($i = 0; $i <=14; $i++)
-                                    <option value="{{ $i }}" {{ $i == $mascota->edad ? 'selected' : '' }}>{{ $i }} años</option>
-                                @endfor
+                                @for ($i = 0; $i <=14; $i++) <option value="{{ $i }}"
+                                    {{ $i == $mascota->edad ? 'selected' : '' }}>{{ $i }} años</option>
+                                    @endfor
                             </select>
                         </div>
                     </div>
@@ -107,7 +112,9 @@
                             <label for="estado">Estado</label>
                             <select name="estado" id="estado" class="form-control">
                                 @foreach($estados as $estado)
-                                    <option value="{{ $estado->estado }}" {{ $estado->estado == $mascota->estado ? 'selected' : '' }}>{{ $estado['descripcion']}}</option>
+                                <option value="{{ $estado->estado }}"
+                                    {{ $estado->estado == $mascota->estado ? 'selected' : '' }}>
+                                    {{ $estado['descripcion']}}</option>
                                 @endforeach
                             </select>
                         </div>

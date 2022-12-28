@@ -32,8 +32,8 @@
                                     <div class="opcionesAdmin">
                                         <a href="#modalsEditPerdidas{{ $MascotasPerdida }}"><img
                                                 src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
-                                        <a href="#modalsPerdidasEliminar{{ $MascotasPerdida }}"><img src="{{ asset('img/Home/delete.png') }}"
-                                                alt="" /></a>
+                                        <a href="#modalsPerdidasEliminar{{ $MascotasPerdida }}"><img
+                                                src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
                                     </div>
                                 </div>
                             </div>
@@ -67,11 +67,10 @@
                         @include('HomeFundacion.MascotasPerdidas.crear')
 
                     </div>
-
-                    <!-- Centramos la paginación a la derecha-->
                     <div class="pagination justify-content-end">
                         {!! $MascotasPerdidas->links() !!}
                     </div>
+
                 </div>
             </div>
         </div>

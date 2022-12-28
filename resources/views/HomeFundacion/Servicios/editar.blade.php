@@ -25,7 +25,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="">Subir foto</label><br>
-                            <input type="file" name="imagen_servicio" id="" accept="image/*" style="width:150px;">
+                            <input type="file" name="imagen_servicio" id="imagenModal" accept="image/*" >
                             @error('imagen_servicio')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -48,7 +48,7 @@
                         <div class="form-group">
                             <label for="descripcion">Descripcion del Servicio Veterinario</label>
                             <textarea type="text" name="descripcion" class="form-control" required
-                                value="" style="height:240px;">{{ old('descripcion', $servicio->descripcion) }}</textarea>
+                                value="">{{ old('descripcion', $servicio->descripcion) }}</textarea>
                         </div>
                     </div>
 

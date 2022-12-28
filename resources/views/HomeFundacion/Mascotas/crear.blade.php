@@ -23,8 +23,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="">Subir foto</label><br>
-                            <input type="file" name="imagen_mascota" id="" accept="image/*" required
-                                style="width: 150px;">
+                            <input type="file" name="imagen_mascota" id="imagenModal" accept="image/*" required>
                             @error('imagen_mascota')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -44,15 +43,10 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="descripcion">Descripcion</label>
-                            <textarea type="text" name="descripcion" class="form-control" required value=""
-                                style="height:230px;"> {{ old('descripcion') }}</textarea>
+                            <textarea type="text" name="descripcion" class="form-control" required
+                                value=""> {{ old('descripcion') }}</textarea>
                         </div>
                     </div>
-
-                </div>
-
-
-                <div class="actualizar2">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -64,6 +58,11 @@
                             </select>
                         </div>
                     </div>
+
+                </div>
+
+
+                <div class="actualizar2">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -107,11 +106,23 @@
                         </div>
                     </div>
 
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select name="estado" id="estado" class="form-control">
+                                @foreach($estados as $estado)
+                                <option value="{{ $estado->estado }}"
+                                    {{ $estado->estado == $mascota->estado ? 'selected' : '' }}>
+                                    {{ $estado['descripcion']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
         </form>
         <a href="#" class="btn-close-modal">X</a>
-
     </div>
 </div>
