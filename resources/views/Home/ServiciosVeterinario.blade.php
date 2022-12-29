@@ -27,21 +27,21 @@
             </div>
             <div class="more"><a href="#modalsServicio {{$servicio->id}}" style="text-decoration: none; color: #fff;">Mas Informacion</a></div>
         </div>
-        <div class="contenedor-modal3" id="modalsServicio {{$servicio->id}}">
-            <div class="moda3">
-                <div class="informacion3">
-                    <img class="imaginate" src="{{ asset("storage/$servicio->imagen_servicio") }}" alt="Adopta">
-                    <div class="descripcion3">
-                        <div class="cont3">
-                            <p>{{$servicio->nombre_serviciio}}</p>
-                        </div>
-                        <div class="cont3">
-                            <p>Descripcion:</p>
+        <div class="contenedor-modal-servicio" id="modalsServicio {{$servicio->id}}">
+            <div class="moda-servicio">
+                <div class="informacion-servicio">
+                    <div class="titulo-servicio">
+                        <p class="negrita">{{$servicio->nombre_serviciio}}</p>
+                    </div>
+                    <img class="imagen-servicio" src="{{ asset("storage/$servicio->imagen_servicio") }}" alt="Adopta">
+                    <div class="descripcion-servicio">
+                        <div class="cont-servicio">
+                            <p class="negrita">Descripcion:</p>
                             <p>{{$servicio->descripcion}}</p>
                         </div>
                     </div>
                 </div>
-                <a href="#" class="btn-close-modal3">X</a>
+                <a href="#" class="btn-close-modal-servicio">X</a>
             </div>
         </div>
         @endforeach

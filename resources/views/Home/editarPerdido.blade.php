@@ -1,5 +1,5 @@
-<div class="contenedor-modal2" id="modalsEditPerdidas{{ $MascotasPerdida }}">
-    <div class="moda2">
+<div class="contenedor-modal-crear" id="modalsEditPerdidas{{ $MascotasPerdida }}">
+    <div class="moda-crear">
         @if($errors->any())
         <div class="alert alert-dark alert-dismissible fade show" role="alert">
             <strong>¡Revise los campos!</strong>
@@ -14,17 +14,17 @@
         <form action="{{ route('publicacion.update', $MascotasPerdida->id) }}" method="POST"
             enctype="multipart/form-data">
             @csrf
-            <div class="informacion2">
+            <div class="informacion-crear">
 
                 <h3 class="page__heading">Editar Mascota Perdida</h3>
 
-                <div class="actualizar3">
+                <div class="actualizar">
 
-                    <img src="{{ asset("storage/$MascotasPerdida->imagen_mascota") }}" alt="" />
+                    <img class="imagen-servicio" src="{{ asset("storage/$MascotasPerdida->imagen_mascota") }}" alt="" />
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
                             <label for="">Subir foto</label><br>
-                            <input type="file" name="imagen_mascota" id="" accept="image/*" style="width: 150px;">
+                            <input type="file" name="imagen_mascota" id="" accept="image/*" style="width: 165px;">
                             @error('imagen_mascota')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -34,7 +34,7 @@
                 </div>
 
 
-                <div class="actualizar4">
+                <div class="actualizar1">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
@@ -51,6 +51,9 @@
                                 style="height:100px;">{{ old('descripcion', $MascotasPerdida->descripcion) }}</textarea>
                         </div>
                     </div>
+                </div>
+
+                <div class="actualizar2">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
@@ -73,12 +76,6 @@
                             </select>
                         </div>
                     </div>
-
-                </div>
-
-                <div class="actualizar5">
-
-                    
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
@@ -110,23 +107,12 @@
                             </select>
                         </div>
                     </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group2">
-                            <label for="estado">Estado</label>
-                            <select name="estado" id="estado" class="form-control">
-                                <option value="3">Encontrado</option>
-                                <option value="4">Desaparecido</option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Actualizar</button>
             </div>
             <input name="mascot" type="hidden" value="{{$MascotasPerdida->id}}">
         </form>
-        <a href="#" class="btn-close-modal2">X</a>
-
+        <a href="#" class="btn-close-modal-crear">X</a>
     </div>
 </div>

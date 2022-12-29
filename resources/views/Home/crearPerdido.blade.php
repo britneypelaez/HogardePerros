@@ -10,20 +10,20 @@
 </div>
 @endif
 
-<div class="contenedor-modal2" id="modalsCreatePerdidas">
-    <div class="moda2">
+<div class="contenedor-modal-crear" id="modalsCreatePerdidas">
+    <div class="moda-crear">
         <form action="{{ route('publicacion.create') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="informacion2">
+            <div class="informacion-crear">
                 <h3 class="page__heading">Nuevo Animal Perdido</h3>
 
-                <div class="actualizar3">
+                <div class="actualizar">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
                             <label for="">Subir foto</label><br>
                             <input type="file" name="imagen_mascota" id="" accept="image/*" required
-                                style="width: 150px;">
+                                style="width: 165px;">
                             @error('imagen_mascota')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -32,7 +32,7 @@
 
                 </div>
 
-                <div class="actualizar4">
+                <div class="actualizar1">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
@@ -52,7 +52,7 @@
 
                 </div>
 
-                <div class="actualizar5">
+                <div class="actualizar2">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
@@ -103,7 +103,7 @@
             </div>
 
         </form>
-        <a href="#" class="btn-close-modal2">X</a>
+        <a href="#" class="btn-close-modal-crear">X</a>
 
     </div>
 </div>
