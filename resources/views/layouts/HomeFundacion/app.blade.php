@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/estilosfundacion.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    
+
     @yield('page_css')
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
@@ -59,6 +59,7 @@
             <!-- Main Content -->
             <div class="main-content">
                 @yield('content')
+                @yield('scripts')
             </div>
         </div>
     </div>
@@ -82,7 +83,6 @@
 {{-- <script src="{{ mix('assets/js/profile.js') }}"></script> --}}
 {{-- <script src="{{ mix('assets/js/custom/custom.js') }}"></script> --}}
 @yield('page_js')
-@yield('scripts')
 <script>
     let loggedInUser =@json(\Illuminate\Support\Facades\Auth::user());
     let loginUrl = '{{ route('login') }}';

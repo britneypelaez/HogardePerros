@@ -60,4 +60,34 @@ class Mascota extends Model
     {
         return $this->belongsTo(Estado::class, 'estado', 'estado');
     }
+
+    public function scopeJoinRazaColor($query)
+    {
+        return $query->select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color');
+    }
+
+    public function scopeEspecie($query, $especie){
+        if($especie)
+        return $query->where('mascotas.especie', 'like', "%$especie%");
+    }
+
+    public function scopeColor($query, $color){
+        if($color)
+        return $query->where('mascotas.color', 'like', "%$color%");
+    }
+
+    public function scopeTamaño($query, $tamaño){
+        if($tamaño)
+        return $query->where('mascotas.tamanio', 'like', "%$tamaño%");
+    }
+
+    public function scopeEdad($query, $edad){
+        if($edad)
+        return $query->where('mascotas.edad', 'like', "%$edad%");
+    }
+
+    public function scopeRaza($query, $raza){
+        if($raza)
+        return $query->where('mascotas.raza', 'like', "%$raza%");
+    }
 }

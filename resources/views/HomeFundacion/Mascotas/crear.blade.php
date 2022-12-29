@@ -51,10 +51,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="raza">Raza</label>
-                            <select name="raza" id="raza" class="form-control">
-                                @foreach($razas as $raza)
-                                <option value="{{ $raza['raza'] }}">{{ $raza['descripcion'] }}</option>
-                                @endforeach
+                            <select name="raza" id="razaCrear" class="form-control">
                             </select>
                         </div>
                     </div>
@@ -88,7 +85,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="especie">Especie</label>
-                            <select name="especie" id="especie" class="form-control">
+                            <select name="especie" id="especieCrear" class="form-control">
                                 @foreach($especies as $especie)
                                 <option value="{{ $especie['especie'] }}">{{ $especie['descripcion'] }}</option>
                                 @endforeach
@@ -126,3 +123,34 @@
         <a href="#" class="btn-close-modal">X</a>
     </div>
 </div>
+<script>
+    const especie = document.getElementById('especieCrear');
+    let ruta = '{{ env('APP_URL') }}' + '/';
+
+    const searchRazaAgregar = async (especie) => {
+        const resultRaza = await fetch(ruta + `api/raza/search?especie=${especie}`)
+            .then(res => res.json())
+            .then(res => {
+                let selector = document.getElementById('razaCrear');
+                removeAllChildNodes(selector);
+                res.forEach((element) => {
+                    let opcion = document.createElement('option');
+                    opcion.value = element.raza;
+                    opcion.text = element.descripcion;
+                    selector.add(opcion);
+                })
+            });
+    }
+
+    function removeAllChildNodes(parent) {
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+            }
+        }
+
+        searchRazaAgregar(especie.value);
+
+    especie.addEventListener('change', function(event) {
+        searchRazaAgregar(event.target.value);
+    });
+</script>

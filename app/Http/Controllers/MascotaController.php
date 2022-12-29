@@ -41,6 +41,26 @@ class MascotaController extends Controller
         return view('HomeFundacion.Mascotas.index', compact('mascotas', 'razas', 'colores', 'especies', 'estados'));
     }
 
+    public function indexFiltro(Request $request)
+    {
+        $mascotaurl = $request->mascota;
+        if($mascotaurl == 0){
+            $mascotas = Mascota::paginate(6);
+        }
+        if($mascotaurl == 1){
+            $mascotas = Mascota::where('especie', 'like', "1")->paginate(6);
+        }
+        if($mascotaurl == 2){
+            $mascotas = Mascota::where('especie', 'like', "2")->paginate(6);
+        }
+
+        $razas = Raza::all();
+        $colores = Color::all();
+        $especies = Especie::all();
+        $estados = Estado::all();
+        return view('HomeFundacion.Mascotas.index', compact('mascotas', 'razas', 'colores', 'especies', 'estados'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -179,95 +199,95 @@ class MascotaController extends Controller
         $edad = $request->edad;
         //trae todas las mascotas
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño == '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->paginate(12);
+            $result = Mascota::JoinRazaColor()->paginate(12);
         }
         //filtra las mascotas solo por especie
         if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño == '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', $especie)->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->paginate(12);
         }
         //filtra las mascotas solo por color
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño == '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.color', 'like', "%$color%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Color($color)->paginate(12);
         }
         //filtra las mascotas solo por tamaño
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño != '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Tamaño($tamaño)->paginate(12);
         }
         //filtra las mascotas solo por edad
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño == '0' && $edad != '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por especie y raza
         if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño == '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.raza', 'like', "%$raza%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->paginate(12);
         }
         //filtra las mascotas por especie y color
         if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño == '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.color', 'like', "%$color%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Color($color)->paginate(12);
         }
         //filtra las mascotas por especie y tamaño
         if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño != '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Tamaño($tamaño)->paginate(12);
         }
         //filtra las mascotas por especie y edad
         if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño == '0' && $edad != '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por color y tamaño
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.color', 'like', "%$raza%")->where('mascotas.tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Color($color)->Tamaño($tamaño)->paginate(12);
         }
         //filtra las mascotas por color y edad
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño == '0' && $edad != '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.color', 'like', "%$raza%")->where('mascotas.edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Color($color)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por tamaño y edad
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño != '0' && $edad != '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.tamanio', 'like', "%$tamaño%")->where('mascotas.edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Tamaño($tamaño)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por especie,raza y color
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño == '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.raza', 'like', "%$raza%")->where('mascotas.color', 'like', "%$color%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->Color($color)->paginate(12);
         }
         //filtra las mascotas por especie,raza y tamaño
         if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño != '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.raza', 'like', "%$raza%")->where('mascotas.tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->Tamaño($tamaño)->paginate(12);
         }
         //filtra las mascotas por especie,raza y edad
         if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño == '0' && $edad != '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.raza', 'like', "%$raza%")->where('mascotas.edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por especie,color y tamaño
         if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.color', 'like', "%$color%")->where('mascotas.tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Color($color)->Tamaño($tamaño)->paginate(12);
         }
         //filtra las mascotas por especie,color y edad
         if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño == '0' && $edad != '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.color', 'like', "%$color%")->where('mascotas.edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Color($color)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por especie,tamaño y edad
         if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño != '0' && $edad != '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.tamanio', 'like', "%$tamaño%")->where('mascotas.edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Tamaño($tamaño)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por color,tamaño y edad
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño != '0' && $edad != '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.color', 'like', "%$color%")->where('tamanio', 'like', "%$tamaño%")->where('edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Color($color)->Tamaño($tamaño)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por especie,raza,color y tamaño
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('raza', 'like', "%$raza%")->where('color', 'like', "%$color%")->where('tamanio', 'like', "%$tamaño%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->Color($color)->Tamaño($tamaño)->paginate(12);
         }
         //filtra las mascotas por especie,raza,color y edad
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.raza', 'like', "%$raza%")->where('mascotas.color', 'like', "%$color%")->where('mascotas.edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->Color($color)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por especie,raza,tamaño y edad
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.raza', 'like', "%$raza%")->where('mascotas.tamanio', 'like', "%$tamaño%")->where('mascotas.edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->Tamaño($tamaño)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por especie,raza,color,tamaño y edad
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad != '0') {
-            $result = Mascota::select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.especie', 'like', "%$especie%")->where('mascotas.raza', 'like', "%$raza%")->where('mascotas.color', 'like', "%$color%")->where('mascotas.tamanio', 'like', "%$tamaño%")->where('mascotas.edad', 'like', "%$edad%")->paginate(12);
+            $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->Color($color)->Tamaño($tamaño)->Edad($edad)->paginate(12);
         }
         return response()->json($result);
 }

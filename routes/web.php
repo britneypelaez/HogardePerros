@@ -43,6 +43,8 @@ Route::get('/encuentrame', [App\Http\Controllers\MascotaPerdidaController::class
 
 Route::get('/Publicaciones', [App\Http\Controllers\MascotaPerdidaController::class, 'publicacionUsuario'])->name('Publicaciones');
 
+Route::get('/Filtrar', [App\Http\Controllers\MascotaController::class, 'indexFiltro'])->name('Filtrar');
+
 
 Route::get('/QuienesSomos', function () {
     return view('Home.QuienesSomos');
