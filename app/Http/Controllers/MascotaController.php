@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Color;
 use App\Models\Especie;
 use App\Models\Estado;
+use App\Models\Fundacion;
 use App\Models\Mascota;
 use App\Models\Raza;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class MascotaController extends Controller
@@ -188,6 +191,21 @@ class MascotaController extends Controller
     {
         $Mascota->delete();
         return redirect()->route('Mascotas.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Mascota  $mascota
+     * @return \Illuminate\Http\Response
+     */
+    public function chageLogo(Request $request)
+    {
+        $profileImage = time() . '.' . $request->file('logo_fundacion')->getClientOriginalExtension();
+        Storage::disk('public')->put($profileImage,file_get_contents($request->file('logo_fundacion')->getPathName()));
+        Fundacion::where('id', Auth::user()->id_fundacion)->update(['logo' => $profileImage]);
+
+        return redirect()->route('fundacion.home');
     }
 
     public function search(Request $request)

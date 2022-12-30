@@ -47,8 +47,12 @@
                             <div class="offcanvas-header">
                                 <span class="material-symbols-outlined cerrar" data-bs-dismiss="offcanvas" aria-label="Close">close</span>
                             </div>
+                            @php
+                            use App\Models\User;
+                            $user = User::where('id', Auth::user()->id)->first();
+                            @endphp
                             <div class="sidebar-brand">
-                                <a href="{{ url('/') }}"><img class="navbar-brand-full app-header-logo" src="{{ asset('img/Home/fundacion.png') }}" width="100"
+                                <a href="{{ url('/') }}"><img class="navbar-brand-full app-header-logo" src="{{ asset('storage/' . $user->Fundacion->logo) }}" width="100"
                                     alt="Infyom Logo"></a>
                             </div>
                             @include('layouts.HomeFundacion.sidebar')

@@ -130,6 +130,10 @@ Route::post('/Publicaciones/Update', [MascotaPerdidaController::class, 'updateUs
 
 Route::post('/Publicaciones/Create', [MascotaPerdidaController::class, 'storeUsuario'])->name('publicacion.create');
 
+Route::view('/Fundacion/Logo', 'HomeFundacion.cambiarLogo')->name('cambiar.logo');
+
+Route::post('/Fundacion/Logo/Change', [MascotaController::class, 'chageLogo'])->name('registrar.logo');
+
 Route::get('Certificado', [CertificadoController::class, 'index']);
 
 Route::get('/InicioAdmin', function () {

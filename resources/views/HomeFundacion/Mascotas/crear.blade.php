@@ -108,9 +108,7 @@
                             <label for="estado">Estado</label>
                             <select name="estado" id="estado" class="form-control">
                                 @foreach($estados as $estado)
-                                <option value="{{ $estado->estado }}"
-                                    {{ $estado->estado == $mascota->estado ? 'selected' : '' }}>
-                                    {{ $estado['descripcion']}}</option>
+                                <option value="{{ $estado->estado }}">{{ $estado['descripcion']}}</option>
                                 @endforeach
                             </select>
                         </div>

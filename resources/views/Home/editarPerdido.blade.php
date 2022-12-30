@@ -60,7 +60,8 @@
                             <label for="raza">Raza</label>
                             <select name="raza" id="raza" class="form-control">
                                 @foreach($razas as $key => $raza)
-                                <option value="{{ $raza['raza'] }}">{{ $raza['descripcion'] }}</option>
+                                <option value="{{ $raza->raza }}" {{ $raza->raza == $MascotasPerdida->raza ? 'selected' : '' }}>
+                                    {{ $raza['descripcion']}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -71,7 +72,10 @@
                             <label for="color">Color</label>
                             <select name="color" id="color" class="form-control">
                                 @foreach($colores as $color)
-                                <option value="{{ $color['color'] }}">{{ $color['descripcion'] }}</option>
+                                <option value="{{ $color->color }}"
+                                    {{ $color->color == $MascotasPerdida->color ? 'selected' : '' }}>
+                                    {{ $color['descripcion']}}
+                                </option>
                                 @endforeach
                             </select>
                         </div>
@@ -81,7 +85,8 @@
                         <div class="form-group2">
                             <label for="tamanio">Tamaño</label>
                             <select name="tamanio" id="tamanio" class="form-control">
-                                @for ($i = 20; $i <=110; $i=$i + 5) <option value="{{ $i }}">{{ $i }} cm</option>
+                                @for ($i = 20; $i <=110; $i=$i + 5) <option value="{{ $i }}"
+                                {{ $i == $MascotasPerdida->tamanio ? 'selected' : '' }}>{{ $i }} cm</option>
                                     @endfor
                             </select>
                         </div>
@@ -92,18 +97,11 @@
                             <label for="especie">Especie</label>
                             <select name="especie" id="especie" class="form-control">
                                 @foreach($especies as $especie)
-                                <option value="{{ $especie['especie'] }}">{{ $especie['descripcion'] }}</option>
+                                <option value="{{ $especie->especie }}"
+                                    {{ $especie->especie == $MascotasPerdida->especie ? 'selected' : '' }}>
+                                    {{ $especie['descripcion']}}
+                                </option>
                                 @endforeach
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group2">
-                            <label for="edad">Edad</label>
-                            <select name="edad" id="edad" class="form-control">
-                                @for ($i = 0; $i <=14; $i++) <option value="{{ $i }}">{{ $i }} años</option>
-                                    @endfor
                             </select>
                         </div>
                     </div>

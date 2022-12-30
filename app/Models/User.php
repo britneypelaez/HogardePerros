@@ -44,4 +44,13 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relacion de llave foranea con el modelo Fundacion
+     *
+     */
+    public function Fundacion()
+    {
+        return $this->belongsTo(Fundacion::class, 'id_fundacion', 'id');
+    }
 }
