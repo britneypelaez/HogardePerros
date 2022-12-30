@@ -1540,10 +1540,18 @@ h3 {
         width: 200px;
         height: 200px;
     }
+    .imagen-encuentrame{
+        width: 150px;
+        height: 150px;
+    }
     .btn-donar img {
         width: 120px;
         height: 50px;
     }
+}
+
+@media (max-width: 300px) {
+
 }
 
 .contenedorServicios {
