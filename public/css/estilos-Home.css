@@ -635,8 +635,8 @@ h3 {
 
 .btn-close-modal-adopcion {
     position: absolute;
-    right: -20px;
-    top: -330px;
+    right: -2.5%;
+    top: -52%;
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
@@ -1257,9 +1257,6 @@ h3 {
         width: 240px;
         height: 240px;
     }
-    .btn-close-modal-adopcion{
-        top: -315px;
-    }
     .imagen-encuentrame{
         width: 250px;
         height: 250px;
@@ -1420,9 +1417,6 @@ h3 {
     .tener-en-cuenta-adopcion h4 {
         font-size: 15px;
     }
-    .btn-close-modal-adopcion{
-        top: -305px;
-    }
     .imagen-servicio{
         grid-column: 1/4;
         width: 250px;
@@ -1501,9 +1495,6 @@ h3 {
         grid-column: 1/4;
         justify-self: center;
         padding-top: 10px;
-    }
-    .btn-close-modal-adopcion{
-        top: -315px;
     }
 }
 
