@@ -20,9 +20,10 @@
         </a>
 
         <div class="dropdown-menu dropdown-menu-right">
-            <a href="{{ route('cambiar.logo') }}"  class="dropdown-item has-icon text-success">
+            <a href="#modalsCambiarLogo"  class="dropdown-item has-icon text-success">
                 <i class="fas fa-cog"></i> Cambiar Logo
             </a>
+
             <a href="{{ url('logout') }}" class="dropdown-item has-icon text-danger"
                 onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
                 <i class="fas fa-sign-out-alt"></i> Salir
@@ -51,3 +52,5 @@
     </li>
     @endif
 </ul>
+
+@include('HomeFundacion.cambiarLogo')

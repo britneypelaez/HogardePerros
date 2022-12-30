@@ -7,7 +7,6 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 4.1.1 -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <!-- Ionicons -->
     <link href="//fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -18,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/estilosfundacion.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-
+    
     @yield('page_css')
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
@@ -47,12 +46,8 @@
                             <div class="offcanvas-header">
                                 <span class="material-symbols-outlined cerrar" data-bs-dismiss="offcanvas" aria-label="Close">close</span>
                             </div>
-                            @php
-                            use App\Models\User;
-                            $user = User::where('id', Auth::user()->id)->first();
-                            @endphp
                             <div class="sidebar-brand">
-                                <a href="{{ url('/') }}"><img class="navbar-brand-full app-header-logo" src="{{ asset('storage/' . $user->Fundacion->logo) }}" width="100"
+                                <a href="{{ url('/') }}"><img class="navbar-brand-full app-header-logo" src="{{ asset('img/Home/fundacion.png') }}" width="100"
                                     alt="Infyom Logo"></a>
                             </div>
                             @include('layouts.HomeFundacion.sidebar')
@@ -63,7 +58,6 @@
             <!-- Main Content -->
             <div class="main-content">
                 @yield('content')
-                @yield('scripts')
             </div>
         </div>
     </div>
@@ -87,6 +81,7 @@
 {{-- <script src="{{ mix('assets/js/profile.js') }}"></script> --}}
 {{-- <script src="{{ mix('assets/js/custom/custom.js') }}"></script> --}}
 @yield('page_js')
+@yield('scripts')
 <script>
     let loggedInUser =@json(\Illuminate\Support\Facades\Auth::user());
     let loginUrl = '{{ route('login') }}';

@@ -1,47 +1,42 @@
-@extends('layouts.HomeFundacion.app')
+@if($errors->any())
+<div class="alert alert-dark alert-dismissible fade show" role="alert">
+    <strong>¡Revise los campos!</strong>
+    @foreach($errors->all() as $error)
+    <span class="badge badge-danger">{{$error}}</span>
+    @endforeach
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
 
-@section('content')
-<section class="section">
-    <div class="section-header">
-        <h3 class="page__heading">Cambiar logo de la fundación</h3>
-    </div>
-    <div class="section-body">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
+<div class="contenedor-modal desplazo" id="modalsCambiarLogo" style=" left: -55%; !important">
+    <div class="moda">
 
-                        @if($errors->any())
-                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
-                        <strong>¡Revise los campos!</strong>
-                            @foreach($errors->all() as $error)
-                                <span class="badge badge-danger">{{$error}}</span>
-                            @endforeach
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
+
+        <form action="{{ route('registrar.logo') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            <div class="informacion">
+
+                <h3 class="page__heading"> Cambiar Logo de la Fundacion</h3>
+
+                <div class="actualizar3">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <img class="foto" src="{{ asset('storage/' . $user->Fundacion->logo) }}" alt="Adopta">
+
+                        <div class="form-group">
+                            <input type="file" name="logo_fundacion" id="logo_fundacion" accept="image/*" required>
+                            @error('logo_fundacion')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
-                        @endif
-
-                        <form action="{{ route('registrar.logo') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <div class="form-group">
-                                        <label for="">Subir Logo</label><br>
-                                        <input type="file" name="logo_fundacion" id="logo_fundacion" accept="image/*" required>
-                                        @error('logo_fundacion')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-                                     </div> 
-                                </div>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
-                        </form> 
                     </div>
                 </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+
             </div>
-        </div>
+        </form>
+        <a href="#" class="btn-close-modal">X</a>
     </div>
-</section>
-@endsection
+</div>
