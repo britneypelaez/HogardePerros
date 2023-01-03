@@ -11,13 +11,13 @@
                 <div class="card">
                     <div class="controles Cont_serviciosVeterinarios">
                         <div>
-                            <a class="btn btn-warning" href="{{ route('Campanias.create')}}">Nuevo</a>
+                            <a class="btn btn-warning" href="#modalsCreateCampanias">Nuevo</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
-                    <div class="card-body table-responsive">
+                    <div class="card-body table-responsive Cont_Campanias ">
 
                         <table class="table table-striped mt-2 text-center">
                             <thead style="background-color: #e1986e;">
@@ -38,18 +38,25 @@
                                     <td>{{ $campania->meta_donaciones }}</td>
                                     <td>{{ $campania->actual_donado }}</td>
                                     <td><img src="{{ asset("storage/$campania->imagen_campania") }}" width="70px"
-                                            height="70px"></td>
-                                    <td WIDTH="200px">
-                                        <form action="{{ route('Campanias.destroy', $campania) }}" method="POST">
-                                            <a class="btn btn-info"
-                                                href="{{ route('Campanias.edit', $campania) }}">Editar</a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Borrar</button>
-                                        </form>
-                                    </td>
+                                            height="70px" style="border-radius:50%" ; object-fit: cover;></td>
+                                    <td width="200px">
+                                        <a class="btn btn-info" href="#modalsEditCampanias{{ $campania }}">Editar</a>
+                                        <a class="btn btn-danger"
+                                            href="#modalsCampaniasEliminar{{ $campania}}">Borrar</a>
+
+                                    </td> <br>
+
                                 </tr>
+
+                                @include('HomeFundacion.Campanias.Eliminar')
+
+                                @include('HomeFundacion.Campanias.editar')
+
+
                                 @endforeach
+
+                                @include('HomeFundacion.Campanias.crear')
+
                             </tbody>
                         </table>
 

@@ -8,6 +8,11 @@
     margin: 5px 0 5px 0;
 }
 
+.Cont_Campanias{
+    display: grid;
+    justify-items: center;
+}
+
 .controles {
     display: flex;
     align-items: baseline;

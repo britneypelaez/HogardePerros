@@ -1,3 +1,15 @@
+@if($errors->any())
+<div class="alert alert-dark alert-dismissible fade show" role="alert">
+    <strong>¡Revise los campos!</strong>
+    @foreach($errors->all() as $error)
+    <span class="badge badge-danger">{{$error}}</span>
+    @endforeach
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+
 <div class="contenedor-modal" id="modalsEditMascotas{{ $mascota }}">
     <div class="moda">
 
@@ -16,7 +28,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="">Subir foto</label><br>
-                            <input type="file" name="imagen_mascota" id="imagenModal" accept="image/*" >
+                            <input type="file" name="imagen_mascota" id="imagenModal" accept="image/*">
                             @error('imagen_mascota')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -48,8 +60,9 @@
                             <label for="raza">Raza</label>
                             <select name="razaEditar" id="{{ 'raza'.$mascota->id }}" class="form-control">
                                 {{-- @foreach($razas as $raza)
-                                <option value="{{ $raza->raza }}" {{ $raza->raza == $mascota->raza ? 'selected' : '' }}>
-                                    {{ $raza['descripcion']}}</option>
+                                <option value="{{ $raza->raza }}"
+                                {{ $raza->raza == $mascota->raza ? 'selected' : '' }}>
+                                {{ $raza['descripcion']}}</option>
                                 @endforeach --}}
                             </select>
                         </div>
@@ -130,5 +143,4 @@
         <a href="#" class="btn-close-modal">X</a>
 
     </div>
-
 </div>
