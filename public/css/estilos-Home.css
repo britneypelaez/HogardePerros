@@ -124,15 +124,21 @@ header {
     position: absolute;
 }
 
+.negrita{
+    font-weight: 700;
+}
+
 .lista {
     list-style: none;
     float: right;
     margin-bottom: 0 !important;
+    height: 80px;
 }
 
 .lista li {
     float: left;
     width: 130px;
+    height: 100%;
 }
 
 .lista li a {
@@ -149,8 +155,9 @@ header {
     justify-items: center;
     align-items: center;
     padding: 0;
-    height: 80px;
+    height: 100%;
     color: #fff;
+    margin-bottom: 0;
 }
 
 .sesion {
@@ -161,27 +168,27 @@ header {
     border-radius: 50%;
 }
 
-.submenu ul {
+.sublista {
     list-style: none;
     background: rgba(0, 0, 0, 0.7);
     padding: 0 !important;
 }
 
-.submenu ul li {
+.sublista li {
     width: 100%;
 }
 
-.submenu ul li a {
+.sublista li a {
     padding: 25px 0px 20px 0px;
     text-align: center;
 }
 
 .submenu {
     margin: 0 !important;
-    width: 200px !important;
+    width: 200px !important;    
 }
 
-.submenu ul li:hover {
+.sublista li:hover {
     background: #4c71e9;
     border-radius: 5px;
 }
@@ -282,7 +289,7 @@ header {
     z-index: -1;
 }
 
-.servicio a {
+.tabla-servicios a {
     text-align: center;
     align-self: center;
     justify-self: center;
@@ -493,32 +500,6 @@ h2 {
     left: 0;
 }
 
-.imagina {
-    width: 55%;
-    height: 60%;
-    justify-self: center;
-    align-self: center;
-}
-
-.imaginate {
-    max-width: 500px;
-    max-width: 500px;
-    justify-self: center;
-    align-self: center;
-}
-
-.descripcion {
-    padding: 10px;
-    display: grid;
-}
-
-.descripcion3 {
-    display: grid;
-    padding: 10px;
-    height: 70%;
-    align-self: center;
-}
-
 .construccion {
     display: flex;
     justify-content: center;
@@ -526,95 +507,6 @@ h2 {
 
 .construccion img {
     width: 80%;
-}
-
-/* .descripcion button {
-    background: rgba(24, 90, 99, 0.6);
-    justify-self: center;
-    align-self: center;
-} */
-
-.informacion {
-    background: rgb(221, 223, 240);
-    display: grid;
-    justify-content: stretch;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    height: 100%;
-    width: 100%;
-}
-
-.informacion2 {
-    background: rgb(221, 223, 240);
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 60% 40%;
-    height: 100%;
-    width: 100%;
-}
-
-.informacion3 {
-    background: rgb(221, 223, 240);
-    display: grid;
-    grid-template-columns: 50% 50%;
-    height: 100%;
-    width: 100%;
-}
-
-.cont {
-    display: flex;
-}
-
-.tener-en-cuenta {
-    grid-column: 1/4;
-    padding: 35px;
-}
-
-.tener-en-cuenta p {
-    color: white;
-    margin-bottom: 20px;
-    text-align: justify;
-    background: rgb(24, 90, 99);
-    border-radius: 10px;
-    padding: 5px;
-    line-height: 100%
-}
-
-.tener-en-cuenta h4 {
-    font-size: 15px;
-}
-
-.cont2 {
-    display: flex;
-    align-items: center;
-}
-
-.cont2 p {
-    font-size: 20px;
-}
-
-.cont3 p {
-    font-size: 20px;
-}
-
-.tener-en-cuenta2 {
-    grid-column: 1/4;
-    color: white;
-    padding: 10px;
-}
-
-.tener-en-cuenta2 p {
-    font-size: 20px;
-    text-align: justify;
-    background: rgb(24, 90, 99);
-    border-radius: 10px;
-    padding: 5px;
-    line-height: 100%
-}
-
-.tener-en-cuenta2 h4 {
-    color: black;
-    font-size: 25px;
 }
 
 .opcionesAdmin {
@@ -710,29 +602,29 @@ h3 {
     margin-bottom: 0;
 }
 
-.contenedor-modal {
+.contenedor-modal-adopcion {
     position: fixed;
     top: 54%;
-    width: 70%;
-    height: 85%;
+    width: 50%;
     visibility: hidden;
     opacity: 0;
     transition: all 600ms;
     z-index: 500;
 }
 
-.contenedor-modal:target {
+.contenedor-modal-adopcion:target {
     visibility: visible;
     opacity: 1;
 }
 
-.contenedor-modal:target .moda {
+.contenedor-modal-adopcion:target .moda-adopcion {
     left: 50%;
     transform: rotate(0deg) translate(-50%, -50%);
     visibility: visible;
 }
 
-.moda {
+.moda-adopcion {
+    width: 100%;
     height: 100%;
     position: relative;
     left: -80%;
@@ -741,10 +633,10 @@ h3 {
     overflow: auto;
 }
 
-.btn-close-modal {
+.btn-close-modal-adopcion {
     position: absolute;
-    right: -15px;
-    top: -290px;
+    right: -2.5%;
+    top: -52%;
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
@@ -756,37 +648,265 @@ h3 {
 
 }
 
-.contenedor-modal2 {
+.cont-adopcion-dif{
+    display: grid;
+}
+
+.cont-adopcion-dif p{
+    margin-right: 10px;
+}
+
+.cont-adopcion{
+    display: flex;
+}
+
+.cont-adopcion p{
+    margin-right: 10px;
+}
+
+.tener-en-cuenta-adopcion{
+    grid-column: 1/4;
+    background: rgb(221, 223, 240);
+}
+
+.tener-en-cuenta-adopcion p {
+    color: white;
+    margin-bottom: 20px;
+    text-align: justify;
+    background: rgb(24, 90, 99);
+    border-radius: 10px;
+    padding: 5px;
+    line-height: 100%
+}
+
+.tener-en-cuenta-adopcion h4 {
+    font-size: 15px;
+}
+
+.imagen-adopcion {
+    width: 270px;
+    height: 270px;
+    justify-self: center;
+    align-self: center;
+}
+
+.descripcion-adopcion {
+    display: grid;
+}
+
+.informacion-adopcion{
+    background: rgb(221, 223, 240);
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    padding: 10px;
+}
+
+.contenedor-modal-encuentrame {
     position: fixed;
-    top: 43%;
-    width: 70%;
-    height: 90%;
+    top: 54%;
+    width: 50%;
     visibility: hidden;
     opacity: 0;
     transition: all 600ms;
     z-index: 500;
 }
 
-.contenedor-modal2:target {
+.contenedor-modal-encuentrame:target {
     visibility: visible;
     opacity: 1;
 }
 
-.contenedor-modal2:target .moda2 {
+.contenedor-modal-encuentrame:target .moda-encuentrame {
     left: 50%;
     transform: rotate(0deg) translate(-50%, -50%);
     visibility: visible;
 }
 
-.moda2 {
-
+.moda-encuentrame {
+    width: 100%;
     position: relative;
     left: -80%;
     transform: rotate(98deg) translate(-150%, 230%);
     transition: all 600ms;
 }
 
-.btn-close-modal2 {
+.btn-close-modal-encuentrame {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 9005;
+
+}
+
+.cont-encuentrame{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.cont-encuentrame p{
+    margin-right: 10px;
+}
+
+.tener-en-cuenta-encuentrame{
+    grid-column: 1/4;
+    padding: 20px;
+}
+
+.tener-en-cuenta-encuentrame p {
+    color: white;
+    margin-bottom: 20px;
+    background: rgb(24, 90, 99);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.tener-en-cuenta-encuentrame h4 {
+    font-size: 15px;
+}
+
+.imagen-encuentrame {
+    width: 300px;
+    height: 300px;
+    justify-self: center;
+    align-self: center;
+}
+
+.descripcion-encuentrame {
+    display: grid;
+}
+
+.informacion-encuentrame{
+    background: rgb(221, 223, 240);
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    padding: 10px;
+}
+
+.contenedor-modal-servicio {
+    position: fixed;
+    top: 54%;
+    width: 50%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 600ms;
+    z-index: 500;
+}
+
+.contenedor-modal-servicio:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.contenedor-modal-servicio:target .moda-servicio {
+    left: 50%;
+    transform: rotate(0deg) translate(-50%, -50%);
+    visibility: visible;
+}
+
+.moda-servicio {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: -80%;
+    transform: rotate(98deg) translate(-150%, 230%);
+    transition: all 600ms;
+}
+
+.btn-close-modal-servicio {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 9005;
+
+}
+
+.cont-servicio{
+    display: grid;
+}
+
+.cont-servicio p{
+    margin-right: 10px;
+    text-align: justify;
+}
+
+.titulo-servicio{
+    grid-column: 1/4;
+    justify-self: center;
+}
+
+.titulo-servicio p{
+    font-size: 30px;
+}
+
+.imagen-servicio {
+    width: 300px;
+    height: 300px;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.descripcion-servicio p{
+    font-size: 20px;
+}
+
+.informacion-servicio{
+    background: rgb(221, 223, 240);
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    padding: 10px;
+}
+
+.contenedor-modal-crear {
+    position:fixed;
+    top: 55%;
+    width: 60%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 600ms;
+    z-index: 500;
+}
+
+.contenedor-modal-crear:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.contenedor-modal-crear:target .moda-crear{
+    left: 50%;
+    transform: rotate(0deg) translate(-50%, -50%);
+    visibility: visible;
+}
+
+.moda-crear{
+    position: relative;
+    left: -80%;
+    transform: rotate(98deg) translate(-150%, 230%);
+    transition: all 600ms;
+}
+
+.btn-close-modal-crear {
     position: absolute;
     right: -15px;
     top: -15px;
@@ -798,53 +918,51 @@ h3 {
     border-radius: 50%;
     text-decoration: none;
     z-index: 9005;
-
 }
 
-.contenedor-modal3 {
-    position: fixed;
-    top: 43%;
-    width: 70%;
-    height: 75%;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 600ms;
-    z-index: 500;
-}
-
-.contenedor-modal3:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.contenedor-modal3:target .moda3 {
-    left: 50%;
-    transform: rotate(0deg) translate(-50%, -50%);
-    visibility: visible;
-}
-
-.moda3 {
-    position: relative;
-    left: -80%;
-    transform: rotate(98deg) translate(-150%, 230%);
-    transition: all 600ms;
-}
-
-
-
-.btn-close-modal3 {
-    position: absolute;
-    right: -15px;
-    top: -15px;
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    background: black;
-    color: white;
-    border-radius: 50%;
+.btn-close-modal-crear:hover{
     text-decoration: none;
-    z-index: 9005;
+}
 
+#imagenModal{
+    width: 155px;
+}
+
+.actualizar, .actualizar1, .actualizar2{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.actualizar1 textarea{
+    resize: none;
+    height: 135px !important;
+}
+
+.informacion-crear {
+    background: rgb(221, 223, 240);
+    display: grid;
+    justify-content: stretch;
+    grid-template-columns: 30% 35% 35%;
+    grid-template-rows: 12% 78% 10%;
+}
+
+.informacion-crear > h3{
+    text-align: center;
+    grid-column: 1/4;
+    margin: 20px 0px 0px 0px;
+}
+
+.informacion-crear img {
+    width: 80%;
+    height: 70%;
+    justify-self: center;
+    align-self: center;
+    margin: 15px;
+}
+
+.informacion-crear > button{
+    grid-column: 1/4;
 }
 
 .Eliminar{
@@ -1088,6 +1206,15 @@ h3 {
 .infosepa{
     margin-bottom: 100px;
 }
+
+.btn-donar {
+    margin-left: 50px;
+}
+
+.btn-donar img {
+    width: 250px;
+    height: 100px;
+}
 /*responsive*/
 @media (max-width: 1400px) {
 
@@ -1099,21 +1226,22 @@ h3 {
         margin: 0px;
         width: 75px;
     }
-
     .ultimo {
         margin-left: 0;
     }
-
-    .moda {
+    .moda-adopcion {
         width: 100%;
     }
-
-    .informacion {
-        height: 120%;
+    .titulo-servicio p{
+        font-size: 25px;
     }
-
-    .imaginate {
-        height: 60%;
+    .imagen-servicio {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+    .descripcion-servicio p{
+        font-size: 17px;
     }
 }
 
@@ -1121,10 +1249,17 @@ h3 {
     .form {
         width: 100%;
     }
-
     .register-form-content {
         flex-direction: column;
         gap: 8px;
+    }
+    .imagen-adopcion {
+        width: 240px;
+        height: 240px;
+    }
+    .imagen-encuentrame{
+        width: 250px;
+        height: 250px;
     }
 }
 
@@ -1141,56 +1276,35 @@ h3 {
         width: 100px;
     }
 
-    .imaginate {
-        height: 50%;
-    }
-
-    .descripcion3 {
-        height: 50%;
-    }
-
-    .cont3 p {
+    .cont-adopcion p {
         font-size: 15px;
     }
 
-    .cont2 p {
+    .tener-en-cuenta-adopcion p {
         font-size: 15px;
     }
 
-    .tener-en-cuenta2 p {
-        font-size: 15px;
-    }
-
-    .tener-en-cuenta2 h4 {
+    .tener-en-cuenta-adopcion h4 {
         font-size: 17px;
     }
 
-    .contenedor-modal2 {
-        height: 80%;
+    .contenedor-modal-adopcion {
+        width: 80%;
     }
-
-    .moda2 {
-        height: 80%;
+    .titulo-servicio p{
+        font-size: 25px;
     }
-
-    .cont p {
+    .imagen-servicio {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+    .descripcion-servicio p{
         font-size: 15px;
     }
-
-    .tener-en-cuenta p {
-        font-size: 15px;
-    }
-
-    .tener-en-cuenta h4 {
-        font-size: 17px;
-    }
-
-    .contenedor-modal {
-        height: 80%;
-    }
-
-    .moda {
-        height: 80%;
+    .imagen-encuentrame{
+        width: 200px;
+        height: 200px;
     }
 }
 
@@ -1238,11 +1352,14 @@ h3 {
         width: 100%;
         height: 14.3%;
     }
-
+    .submenu{
+        width: 100% !important;
+    }
     .opciones {
         display: flex;
         padding: 0;
         height: 100%;
+        width: 100%;
     }
 
     #miniaturas {
@@ -1282,56 +1399,37 @@ h3 {
     footer {
         height: 120px;
     }
-
-    .imagina {
-        height: 60%;
+    .btn-donar img {
+        width: 200px;
+        height: 80px;
     }
 }
 
 @media (max-width: 875px) {
-    .tener-en-cuenta p {
-        font-size: 14px;
-    }
-
-    .tener-en-cuenta {
-        padding: 20px;
-        padding-top: 10px;
-    }
-
-    .imaginate {
-        height: 40%;
-    }
-
-    .descripcion3 {
-        height: 40%;
-    }
-
-    .cont3 p {
+    .cont-adopcion p {
         font-size: 12px;
     }
 
-    .cont2 p {
+    .tener-en-cuenta-adopcion p {
         font-size: 12px;
     }
 
-    .tener-en-cuenta2 p {
-        font-size: 12px;
-    }
-
-    .tener-en-cuenta2 h4 {
+    .tener-en-cuenta-adopcion h4 {
         font-size: 15px;
     }
-
-    .cont p {
-        font-size: 12px;
+    .imagen-servicio{
+        grid-column: 1/4;
+        width: 250px;
+        height: 250px;
     }
-
-    .tener-en-cuenta p {
-        font-size: 12px;
+    .imagen-encuentrame{
+        grid-column: 1/4;
+        width: 250px;
+        height: 250px;
     }
-
-    .tener-en-cuenta h4 {
-        font-size: 15px;
+    .descripcion-encuentrame{
+        grid-column: 1/4;
+        justify-self: center;
     }
 }
 
@@ -1354,7 +1452,7 @@ h3 {
         width: 100%;
     }
 
-    .tener-en-cuenta p {
+    .tener-en-cuenta-adopcion p {
         font-size: 12px;
     }
 }
@@ -1378,24 +1476,25 @@ h3 {
             auto;
     }
 
-    .contenedor-modal2 {
-        height: 75%;
-    }
-
-    .moda2 {
-        height: 75%;
-    }
-
-    .contenedor-modal {
-        height: 75%;
-    }
-
-    .moda {
-        height: 75%;
-    }
-
     .redes {
         display: grid;
+    }
+}
+
+@media (max-width: 660px) {
+    .contenedor-modal-adopcion{
+        height: 70%;
+    }
+    .tener-en-cuenta-adopcion{
+        width: 100%;
+    }
+    .imagen-adopcion{
+        grid-column: 1/4;
+    }
+    .descripcion-adopcion{
+        grid-column: 1/4;
+        justify-self: center;
+        padding-top: 10px;
     }
 }
 
@@ -1404,12 +1503,31 @@ h3 {
         display: none;
     }
 
-    .tener-en-cuenta p {
+    .tener-en-cuenta-adopcion p {
         font-size: 11px;
     }
 
-    .cont p {
+    .cont-adopcion p {
         font-size: 12px;
+    }
+    .contenedor-modal-servicio{
+        width: 80%;
+    }
+    .contenedor-modal-encuentrame{
+        width: 80%;
+    }
+    .contenedor-modal-crear{
+        width: 95%;
+    }
+    .actualizar1, .actualizar2 > label, input, select, textarea{
+        font-size: 10px !important;
+    }
+    .actualizar > input{
+        width: 100px !important;
+    }
+    #imagenModal{
+        font-size: 8px !important;
+        width: 95px;
     }
 }
 
@@ -1418,10 +1536,22 @@ h3 {
         width: 350px;
         padding: 2rem;
     }
-
-    .informacion {
-        height: 120%;
+    .imagen-servicio{
+        width: 200px;
+        height: 200px;
     }
+    .imagen-encuentrame{
+        width: 150px;
+        height: 150px;
+    }
+    .btn-donar img {
+        width: 120px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 300px) {
+
 }
 
 .contenedorServicios {
@@ -1535,53 +1665,7 @@ h3 {
     border: solid #e2dfe198 0.5px;
 }
 
-.informacion2 {
-    background: rgb(221, 223, 240);
-    display: grid;
-    justify-content: stretch;
-    grid-template-columns: 30% 35% 35%;
-    grid-template-rows: 12% 78% 10%;
-    height: 100%;
-    width: 100%;
-}
-
-.informacion2>h3 {
-    text-align: center;
-    grid-column: 1/4;
-    margin: 20px 0px 0px 0px;
-}
-
-.informacion2 img {
-    width: 85%;
-    height: 75%;
-    justify-self: center;
-    align-self: center;
-    margin: 15px;
-    object-fit: cover;
-
-}
-
-.informacion2>button {
-    grid-column: 1/4;
-    margin-top: 10px;
-}
-
 .form-group2>input,
 select {
     height: 40px !important;
-}
-
-.actualizar3,
-.actualizar4,
-.actualizar5 {
-    margin-top: 5px;
-}
-
-.btn-donar {
-    margin-left: 50px;
-}
-
-.btn-donar img {
-    width: 250px;
-    height: 100px;
 }

@@ -7,29 +7,29 @@
     </div>
     <div class="more"><a href="#modalsEditMascotas{{ $mascota}}" style="text-decoration: none; color: #fff;">Mas Informacion</a></div>
 </div>
-<div class="contenedor-modal2" id="modalsEditMascotas{{ $mascota }}">
-    <div class="moda2">
-        <div class="informacion3">
-            <img class="imaginate" src="{{ asset("storage/$imagen") }}" alt="Adopta">
-            <div class="descripcion3">
-                <div class="cont2">
-                    <p>Nombre: </p>
+<div class="contenedor-modal-encuentrame" id="modalsEditMascotas{{ $mascota }}">
+    <div class="moda-encuentrame">
+        <div class="informacion-encuentrame">
+            <img class="imagen-encuentrame" src="{{ asset("storage/$imagen") }}" alt="Adopta">
+            <div class="descripcion-encuentrame">
+                <div class="cont-encuentrame">
+                    <p class="negrita">Nombre:</p>
                     <p>{{ $mascota }}</p>
                 </div>
-                <div class="cont2">
-                    <p>Raza: </p>
+                <div class="cont-encuentrame">
+                    <p class="negrita">Raza: </p>
                     <p>{{ $raza }}</p>
                 </div>
-                <div class="cont2">
-                    <p>Color: </p>
+                <div class="cont-encuentrame">
+                    <p class="negrita">Color: </p>
                     <p>{{ $color }}</p>
                 </div>
             </div>
-            <div class="tener-en-cuenta2">
+            <div class="tener-en-cuenta-encuentrame">
                 <h4>Descripcion:</h4>
                 <p>{{ $descripcion }}</p>
             </div>
         </div>
-        <a href="#" class="btn-close-modal2">X</a>
+        <a href="#" class="btn-close-modal-encuentrame">X</a>
     </div>
 </div>

@@ -3,7 +3,11 @@
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h3 class="page__heading">Hogar de perros</h3>
+        @php
+        use App\Models\User;
+        $user = User::where('id', Auth::user()->id)->first();
+        @endphp
+        <h3 class="page__heading">{{ $user->Fundacion->nombre }}</h3>
     </div>
     <div class="section-body">
         <div class="row">
@@ -17,7 +21,7 @@
                                         <h5>Mascotas</h5>
                                         @php
                                         use App\Models\Mascota;
-                                        $cant_mascotas = Mascota::count();
+                                        $cant_mascotas = Mascota::where('id_fundacion', $user->id_fundacion)->count();
                                         @endphp
                                         <h2 class="text-right"><i class="fa fa-solid fa-paw f-left"></i><span>{{ $cant_mascotas }}</span></h2>
                                         <p class="m-b-0 text-right"><a href="/Mascotas" class="text-white">Ver más</a></p>
@@ -30,7 +34,7 @@
                                         <h5>Servicios Veterinarios</h5>
                                         @php
                                         use App\Models\Servicio;
-                                        $cant_servicios = Servicio::count();
+                                        $cant_servicios = Servicio::where('id_fundacion', $user->id_fundacion)->count();
                                         @endphp
                                         <h2 class="text-right"><i class="fa fa-solid fa-ambulance f-left "></i><span>{{ $cant_servicios }}</span></h2>
                                         <p class="m-b-0 text-right"><a href="/Servicios" class="text-white">Ver más</a></p>
@@ -41,13 +45,13 @@
                             <div class="col-md-12 col-xl-12">
                                 <div class="card bg-c-pink orden-card">
                                     <div class="card-blok">
-                                        <h5>Mascotas Perdidas</h5>
+                                        <h5>Servicios Prestados</h5>
                                         @php
-                                        use App\Models\MascotaPerdida;
-                                        $cant_mascotas_perdidas = MascotaPerdida::count();
+                                        use App\Models\ServicioPrestado;
+                                        $cant_servicios_prestados = ServicioPrestado::where('id_fundacion', $user->id_fundacion)->count();
                                         @endphp
-                                        <h2 class="text-right"><i class="fa fa-solid fa-heartbeat f-left"></i><span>{{ $cant_mascotas_perdidas }}</span></h2>
-                                        <p class="m-b-0 text-right"><a href="/MascotasPerdidas" class="text-white">Ver más</a></p>
+                                        <h2 class="text-right"><i class="fa fa-solid fa-list f-left"></i><span>{{ $cant_servicios_prestados }}</span></h2>
+                                        <p class="m-b-0 text-right"><a href="/ServiciosPrestados" class="text-white">Ver más</a></p>
                                     </div>
                                 </div>
                             </div>

@@ -11,13 +11,13 @@
                 <div class="card">
                     <div class="controles Cont_serviciosVeterinarios">
                         <div>
-                            <a class="btn btn-warning" href="{{ route('ServiciosPrestados.create')}}">Nuevo</a>
+                            <a class="btn btn-warning" href="#modalsCreateServiciosPrestados">Nuevo</a>
                         </div>
                     </div>
                 </div>
 
                     <div class="card">
-                        <div class="card-body table-responsive">
+                        <div class="card-body table-responsive Cont_Campanias">
                         <table class="table table-striped mt-2">
                                 <thead style="background-color: #e1986e;">
                                     <th style="display: none;">ID</th>
@@ -36,15 +36,18 @@
                                 <td>{{ $ServiciosPrestado->descripcion }}</td>
                                 <td>{{ $ServiciosPrestado->fecha }}</td>
                                 <td>
-                                    <form action="{{ route('ServiciosPrestados.destroy', $ServiciosPrestado) }}" method="POST">
-                                        <a class="btn btn-info" href="{{ route('ServiciosPrestados.edit', $ServiciosPrestado) }}">Editar</a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" >Borrar</button>
-                                    </form>
+                                <a class="btn btn-info" href="#modalsEditServiciosPrestados{{ $ServiciosPrestado }}">Editar</a>
+                                <a class="btn btn-danger" href="#modalsServiciosPrestadosEliminar{{ $ServiciosPrestado}}">Borrar</a>
+                                    
                                 </td>
                             </tr>
+
+                            @include('HomeFundacion.ServiciosPrestados.Eliminar')
+                            @include('HomeFundacion.ServiciosPrestados.editar')
                             @endforeach
+
+                            @include('HomeFundacion.ServiciosPrestados.crear')
+
                             </tbody>
                         </table>
 

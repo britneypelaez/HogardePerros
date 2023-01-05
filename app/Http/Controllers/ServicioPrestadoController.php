@@ -16,7 +16,8 @@ class ServicioPrestadoController extends Controller
     public function index()
     {
         $ServiciosPrestados = ServicioPrestado::paginate(5);
-        return view('HomeFundacion.ServiciosPrestados.index', compact('ServiciosPrestados'));
+        $usuarios = User::all();
+        return view('HomeFundacion.ServiciosPrestados.index', compact('ServiciosPrestados', 'usuarios'));
     }
 
     /**

@@ -1,3 +1,15 @@
+@if($errors->any())
+<div class="alert alert-dark alert-dismissible fade show" role="alert">
+    <strong>¡Revise los campos!</strong>
+    @foreach($errors->all() as $error)
+    <span class="badge badge-danger">{{$error}}</span>
+    @endforeach
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+
 <div class="contenedor-modal" id="modalsEditMascotas{{ $mascota }}">
     <div class="moda">
 
@@ -16,7 +28,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="">Subir foto</label><br>
-                            <input type="file" name="imagen_mascota" id="imagenModal" accept="image/*" >
+                            <input type="file" name="imagen_mascota" id="imagenModal" accept="image/*">
                             @error('imagen_mascota')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -46,11 +58,12 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="raza">Raza</label>
-                            <select name="raza" id="raza" class="form-control">
-                                @foreach($razas as $raza)
-                                <option value="{{ $raza->raza }}" {{ $raza->raza == $mascota->raza ? 'selected' : '' }}>
-                                    {{ $raza['descripcion']}}</option>
-                                @endforeach
+                            <select name="razaEditar" id="{{ 'raza'.$mascota->id }}" class="form-control">
+                                {{-- @foreach($razas as $raza)
+                                <option value="{{ $raza->raza }}"
+                                {{ $raza->raza == $mascota->raza ? 'selected' : '' }}>
+                                {{ $raza['descripcion']}}</option>
+                                @endforeach --}}
                             </select>
                         </div>
                     </div>
@@ -65,7 +78,8 @@
                             <select name="color" id="color" class="form-control">
                                 @foreach($colores as $color)
                                 <option value="{{ $color->color }}"
-                                    {{ $color->color == $mascota->color ? 'selected' : '' }}>{{ $color['descripcion']}}
+                                    {{ $color->color == $mascota->color ? 'selected' : '' }}>
+                                    {{ $color['descripcion']}}
                                 </option>
                                 @endforeach
                             </select>
@@ -86,11 +100,12 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="especie">Especie</label>
-                            <select name="especie" id="especie" class="form-control">
+                            <select name="especie" id="{{ $mascota->id }}" class="form-control">
                                 @foreach($especies as $especie)
                                 <option value="{{ $especie->especie }}"
                                     {{ $especie->especie == $mascota->especie ? 'selected' : '' }}>
-                                    {{ $especie['descripcion']}}</option>
+                                    {{ $especie['descripcion']}}
+                                </option>
                                 @endforeach
                             </select>
                         </div>

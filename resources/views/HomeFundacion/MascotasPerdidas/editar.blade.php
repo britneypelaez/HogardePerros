@@ -60,7 +60,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="raza">Raza</label>
-                            <select name="raza" id="raza" class="form-control">
+                            <select name="raza" id="{{ 'raza'.$MascotasPerdida->id }}" class="form-control">
                                 @foreach($razas as $key => $raza)
                                 <option value="{{ $raza->raza }}"
                                     {{ $raza->raza == $MascotasPerdida->raza ? 'selected' : '' }}>
@@ -97,7 +97,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="especie">Especie</label>
-                            <select name="especie" id="especie" class="form-control">
+                            <select name="especie" id="{{ $MascotasPerdida->id }}" class="form-control">
                                 @foreach($especies as $especie)
                                 <option value="{{ $especie->especie }}"
                                     {{ $especie->especie == $MascotasPerdida->especie ? 'selected' : '' }}>

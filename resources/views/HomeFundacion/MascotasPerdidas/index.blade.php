@@ -30,7 +30,7 @@
                                     <h1>{{ $MascotasPerdida->nombre_mascota }}</h1>
                                     <a style="display: none;">{{ $MascotasPerdida->id }}</a>
                                     <div class="opcionesAdmin">
-                                        <a href="#modalsEditPerdidas{{ $MascotasPerdida }}"><img
+                                        <a href="#modalsEditPerdidas{{ $MascotasPerdida }}" onclick="buscador({{ $MascotasPerdida->id }},{{ 'raza'.$MascotasPerdida->id }})"><img
                                                 src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
                                         <a href="#modalsPerdidasEliminar{{ $MascotasPerdida }}"><img
                                                 src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
@@ -76,4 +76,41 @@
         </div>
     </div>
 </section>
+<script>
+
+    const rutaEditar = '{{ env('APP_URL') }}' + '/';
+
+
+    const searchRazaEditar = async (especie,idRaza) => {
+        const resultRaza = await fetch(rutaEditar + `api/raza/search?especie=${especie}`)
+            .then(res => res.json())
+            .then(res => {
+                removeAllChildNodes(idRaza);
+                res.forEach((element) => {
+                    let opcion = document.createElement('option');
+                    opcion.value = element.raza;
+                    opcion.text = element.descripcion;
+                    idRaza.add(opcion);
+                })
+            });
+    }
+
+    function removeAllChildNodes(parent) {
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+            }
+        }
+
+    const buscador = (idMascota,idRaza) =>{
+        console.log(idRaza);
+        const especieEditar = document.getElementById(idMascota);
+        searchRazaEditar(especieEditar.value,idRaza);
+
+        especieEditar.addEventListener('change', function(event) {
+        searchRazaEditar(event.target.value,idRaza);
+    });
+    }
+
+
+</script>
 @endsection

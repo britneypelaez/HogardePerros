@@ -10,12 +10,17 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="controles Cont_adopcion">
-                        <div>
-                            <select class="custom-select" id="inputGroupSelect01" style="border:none;">
-                                <option selected>Selecciona la clase de animal por la que quieres filtrar</option>
-                                <option value="1">Perro</option>
-                                <option value="2">Gato</option>
-                            </select>
+                        <div class="filtro">
+                            <form action="{{ route('Filtrar') }}" method="GET">
+                                @csrf
+                                <button type="submit" class="btn btn-secondary">Buscar</button>
+
+                                <select class="custom-select" name="mascota" id="inputGroupSelect01">
+                                    <option value="0">Selecciona la clase de animal que quieres ver</option>
+                                    <option value="1">Perro</option>
+                                    <option value="2">Gato</option>
+                                </select>
+                            </form>
                         </div>
                         <div>
                             <a class="btn btn-warning" href="#modalsCreateMascota">Nuevo</a>
@@ -37,7 +42,7 @@
                                     <h1>{{ $mascota	-> nombre_mascota }}</h1>
                                     <a style="display: none;">{{ $mascota->id }}</a>
                                     <div class="opcionesAdmin">
-                                        <a href="#modalsEditMascotas{{ $mascota}}"><img
+                                        <a href="#modalsEditMascotas{{ $mascota}}" onclick="buscador({{ $mascota->id }},{{ 'raza'.$mascota->id }})"><img
                                                 src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
                                         <a href="#modalsMascotasEliminar{{ $mascota}}"><img
                                                 src="{{ asset('img/Home/delete.png') }}" alt="" /></a>
@@ -67,4 +72,42 @@
 
     </div>
 </section>
+<script>
+
+    const rutaEditar = '{{ env('APP_URL') }}' + '/';
+
+
+    const searchRazaEditar = async (especie,idRaza) => {
+        const resultRaza = await fetch(rutaEditar + `api/raza/search?especie=${especie}`)
+            .then(res => res.json())
+            .then(res => {
+                // let selector = document.getElementByName(idRaza);
+                removeAllChildNodes(idRaza);
+                res.forEach((element) => {
+                    let opcion = document.createElement('option');
+                    opcion.value = element.raza;
+                    opcion.text = element.descripcion;
+                    idRaza.add(opcion);
+                })
+            });
+    }
+
+    function removeAllChildNodes(parent) {
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+            }
+        }
+
+    const buscador = (idMascota,idRaza) =>{
+        console.log(idRaza);
+        const especieEditar = document.getElementById(idMascota);
+        searchRazaEditar(especieEditar.value,idRaza);
+
+        especieEditar.addEventListener('change', function(event) {
+        searchRazaEditar(event.target.value,idRaza);
+    });
+    }
+
+
+</script>
 @endsection

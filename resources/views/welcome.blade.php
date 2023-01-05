@@ -15,18 +15,26 @@
         </div>
 
         <div class="tabla-servicios">
-            <div class="servicio">
-                <a href=""><p>BRINDANOS TU AYUDA</p></a>
-            </div>
-            <div class="servicio">
-                <a href=""><p>SERVICIO VETERINARIO DE BUENA CALIDAD</p></a>
-            </div>
-            <div class="servicio">
-                <a href=""><p>ADOPTA UN PERRO DE LA FUNDACION</p></a>
-            </div>
-            <div class="servicio">
-                <a href=""><p>ANIMALES PERDIDOS</p></a>
-            </div>
+            <a href="{{ route('Donaciones') }}">
+                <div class="servicio">
+                <p>BRINDANOS TU AYUDA</p>
+                </div>
+            </a>
+            <a href="{{ route('servicios') }}">
+                <div class="servicio">
+                <p>SERVICIO VETERINARIO DE BUENA CALIDAD</p>
+                </div>
+            </a>
+            <a href="{{ route('Adopcion') }}">
+                <div class="servicio">
+                <p>ADOPTA UN PERRO DE LA FUNDACION</p>
+                </div>
+            </a>
+            <a href="{{ route('encuentrame') }}">
+                <div class="servicio">
+                <p>ANIMALES PERDIDOS</p>
+                </div>
+            </a>
         </div>
 
         <h2>Buscamos un Hogar</h2>

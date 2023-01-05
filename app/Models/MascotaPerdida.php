@@ -59,4 +59,29 @@ class MascotaPerdida extends Model
     {
         return $this->belongsTo(Estado::class, 'estado', 'estado');
     }
+
+    public function scopeJoinRazaColor($query)
+    {
+        return $query->select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color');
+    }
+
+    public function scopeEspecie($query, $especie){
+        if($especie)
+        return $query->where('mascotas_perdidas.especie', 'like', "%$especie%");
+    }
+
+    public function scopeColor($query, $color){
+        if($color)
+        return $query->where('mascotas_perdidas.color', 'like', "%$color%");
+    }
+
+    public function scopeTamaño($query, $tamaño){
+        if($tamaño)
+        return $query->where('mascotas_perdidas.tamanio', 'like', "%$tamaño%");
+    }
+
+    public function scopeRaza($query, $raza){
+        if($raza)
+        return $query->where('mascotas_perdidas.raza', 'like', "%$raza%");
+    }
 }
