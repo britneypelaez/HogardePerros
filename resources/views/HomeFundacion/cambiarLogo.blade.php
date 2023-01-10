@@ -1,18 +1,17 @@
-@if($errors->any())
-<div class="alert alert-dark alert-dismissible fade show" role="alert">
-    <strong>¡Revise los campos!</strong>
-    @foreach($errors->all() as $error)
-    <span class="badge badge-danger">{{$error}}</span>
-    @endforeach
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-@endif
-
 <div class="contenedor-modal desplazo" id="modalsCambiarLogo" style=" left: -55%; !important">
     <div class="moda">
 
+        @if($errors->any())
+        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+            <strong>¡Revise los campos!</strong>
+            @foreach($errors->all() as $error)
+            <span class="badge badge-danger">{{$error}}</span>
+            @endforeach
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
 
         <form action="{{ route('registrar.logo') }}" method="POST" enctype="multipart/form-data">
             @csrf

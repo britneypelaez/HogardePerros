@@ -44,7 +44,7 @@
                                         <a class="btn btn-danger"
                                             href="#modalsCampaniasEliminar{{ $campania}}">Borrar</a>
 
-                                    </td> <br>
+                                    </td>
 
                                 </tr>
 

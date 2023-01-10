@@ -1,5 +1,6 @@
 <div class="contenedor-modal" id="modalsEditPerdidas{{ $MascotasPerdida }}">
     <div class="moda">
+
         @if($errors->any())
         <div class="alert alert-dark alert-dismissible fade show" role="alert">
             <strong>¡Revise los campos!</strong>
@@ -11,6 +12,7 @@
             </button>
         </div>
         @endif
+        
         <form action="{{ route('MascotasPerdidas.update', $MascotasPerdida->id) }}" method="POST"
             enctype="multipart/form-data">
             @csrf

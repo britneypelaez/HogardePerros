@@ -1,17 +1,18 @@
-@if($errors->any())
-<div class="alert alert-dark alert-dismissible fade show" role="alert">
-    <strong>¡Revise los campos!</strong>
-    @foreach($errors->all() as $error)
-    <span class="badge badge-danger">{{$error}}</span>
-    @endforeach
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-@endif
-
 <div class="contenedor-modal" id="modalsCreateMascota">
     <div class="moda">
+
+        @if($errors->any())
+        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+            <strong>¡Revise los campos!</strong>
+            @foreach($errors->all() as $error)
+            <span class="badge badge-danger">{{$error}}</span>
+            @endforeach
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
+
         <form action="{{ route('Mascotas.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="informacion">
@@ -122,33 +123,34 @@
     </div>
 </div>
 <script>
-    const especie = document.getElementById('especieCrear');
-    let ruta = '{{ env('APP_URL') }}' + '/';
+const especie = document.getElementById('especieCrear');
+let ruta = '{{ env('
+APP_URL ') }}' + '/';
 
-    const searchRazaAgregar = async (especie) => {
-        const resultRaza = await fetch(ruta + `api/raza/search?especie=${especie}`)
-            .then(res => res.json())
-            .then(res => {
-                let selector = document.getElementById('razaCrear');
-                removeAllChildNodes(selector);
-                res.forEach((element) => {
-                    let opcion = document.createElement('option');
-                    opcion.value = element.raza;
-                    opcion.text = element.descripcion;
-                    selector.add(opcion);
-                })
-            });
+const searchRazaAgregar = async (especie) => {
+    const resultRaza = await fetch(ruta + `api/raza/search?especie=${especie}`)
+        .then(res => res.json())
+        .then(res => {
+            let selector = document.getElementById('razaCrear');
+            removeAllChildNodes(selector);
+            res.forEach((element) => {
+                let opcion = document.createElement('option');
+                opcion.value = element.raza;
+                opcion.text = element.descripcion;
+                selector.add(opcion);
+            })
+        });
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
     }
+}
 
-    function removeAllChildNodes(parent) {
-            while (parent.firstChild) {
-                parent.removeChild(parent.firstChild);
-            }
-        }
+searchRazaAgregar(especie.value);
 
-        searchRazaAgregar(especie.value);
-
-    especie.addEventListener('change', function(event) {
-        searchRazaAgregar(event.target.value);
-    });
+especie.addEventListener('change', function(event) {
+    searchRazaAgregar(event.target.value);
+});
 </script>

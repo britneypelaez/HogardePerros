@@ -62,8 +62,9 @@ header {
 
 .logo img {
     width: 22 0px;
-    height: 200px;
+    height: 190px;
     opacity: 0.8;
+    padding-top: 10px;
 }
 
 .stick {
@@ -674,7 +675,7 @@ h3 {
     margin-bottom: 20px;
     text-align: justify;
     background: rgb(24, 90, 99);
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 5px;
     line-height: 100%
 }
@@ -701,6 +702,7 @@ h3 {
     grid-template-columns: 50% 50%;
     width: 100%;
     padding: 10px;
+    border-radius: 6px;
 }
 
 .contenedor-modal-encuentrame {
@@ -711,6 +713,7 @@ h3 {
     opacity: 0;
     transition: all 600ms;
     z-index: 500;
+
 }
 
 .contenedor-modal-encuentrame:target {
@@ -730,6 +733,7 @@ h3 {
     left: -80%;
     transform: rotate(98deg) translate(-150%, 230%);
     transition: all 600ms;
+
 }
 
 .btn-close-modal-encuentrame {
@@ -766,7 +770,7 @@ h3 {
     color: white;
     margin-bottom: 20px;
     background: rgb(24, 90, 99);
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 5px;
 }
 
@@ -792,6 +796,8 @@ h3 {
     grid-template-columns: 50% 50%;
     width: 100%;
     padding: 10px;
+    border-radius: 6px;
+
 }
 
 .contenedor-modal-servicio {
@@ -802,6 +808,7 @@ h3 {
     opacity: 0;
     transition: all 600ms;
     z-index: 500;
+    
 }
 
 .contenedor-modal-servicio:target {
@@ -876,6 +883,7 @@ h3 {
     grid-template-columns: 50% 50%;
     width: 100%;
     padding: 10px;
+    border-radius: 6px;
 }
 
 .contenedor-modal-crear {
@@ -1350,7 +1358,7 @@ h3 {
 
     .lista li {
         width: 100%;
-        height: 14.3%;
+        height: 12.5%;
     }
     .submenu{
         width: 100% !important;
@@ -1454,6 +1462,11 @@ h3 {
 
     .tener-en-cuenta-adopcion p {
         font-size: 12px;
+    }
+
+    .btn-donar img {
+        width: 150px;
+        height: 60px;
     }
 }
 
