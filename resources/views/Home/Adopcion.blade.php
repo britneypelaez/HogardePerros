@@ -70,7 +70,7 @@
         </div>
 
         <h2 class="animate__animated animate__bounce animate__slow">Perros/Gatos en adopcion</h2>
-        
+
         <div class="adopciones" id="result"></div>
         <div id="paginate" class="paginacion"></div>
     </div>
@@ -83,11 +83,6 @@
         const tamaño = document.getElementById('tamaño');
         const edad = document.getElementById('edad');
         let ruta = '{{ env('APP_URL') }}' + '/';
-
-        if (especie.value == '0') {
-            document.getElementById('raza').style.display = 'none';
-            document.getElementById('razaParrafo').style.display = 'none';
-        }
 
         const search = async (especie, raza, color, tamaño, edad, page = 1) => {
             const result = await fetch(ruta +
@@ -161,15 +156,11 @@
                 }
             }
 
+            if (especie.value == '0') {
+            searchRaza(especie.value);
+        }
+
         especie.addEventListener('change', function(event) {
-            if (event.target.value == '0') {
-                document.getElementById('raza').style.display = 'none';
-                document.getElementById('razaParrafo').style.display = 'none';
-            }
-            if (event.target.value != '0') {
-                document.getElementById('raza').style.display = 'block';
-                document.getElementById('razaParrafo').style.display = 'block';
-            }
             raza.value = 0;
             searchRaza(event.target.value);
             updateDate(event.target.value, raza.value, color.value, tamaño.value, edad.value);

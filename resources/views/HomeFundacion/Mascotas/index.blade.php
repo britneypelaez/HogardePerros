@@ -11,11 +11,10 @@
                 <div class="card">
                     <div class="controles Cont_adopcion">
                         <div class="filtro">
-                            <form action="{{ route('Filtrar') }}" method="GET">
-                                @csrf
+                            <form action="{{ route('Mascotas.index') }}" method="GET">
                                 <button type="submit" class="btn btn-secondary">Buscar</button>
 
-                                <select class="custom-select" name="mascota" id="inputGroupSelect01">
+                                <select class="custom-select" name="mascota" value="{{ $mascota }}" id="inputGroupSelect01">
                                     <option value="0">Selecciona la clase de animal que quieres ver</option>
                                     <option value="1">Perro</option>
                                     <option value="2">Gato</option>
