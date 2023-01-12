@@ -20,7 +20,7 @@
 
         <h3>Selecciona la clase de mascota que quieres:</h3>
 
-        <div class="filtro">
+        <div class="filtro2">
             <div class="caja">
                 <p>Especie:</p>
                 <select name="" id="especie">

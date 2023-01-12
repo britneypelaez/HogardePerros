@@ -562,6 +562,18 @@ footer ul li .redes {
 
 .filtro {
     display: grid;
+    justify-content: center;
+    background-color: black;
+    grid-template-columns: repeat(auto-fill, 200px);
+    color: white;
+    width: 900px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    padding: 10;
+}
+
+.filtro2 {
+    display: grid;
     align-items: center;
     justify-content: center;
     background-color: black;
@@ -581,10 +593,14 @@ footer ul li .redes {
 
 .caja p {
     margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .caja select {
     margin-right: 30px;
+    margin-bottom: 0;
+    width: 70px;
 }
 
 h3 {
@@ -1223,6 +1239,8 @@ h3 {
     width: 250px;
     height: 100px;
 }
+
+
 /*responsive*/
 @media (max-width: 1400px) {
 
@@ -1271,7 +1289,7 @@ h3 {
     }
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1097px) {
 
     .nav a img,
     .nav_v a img {
@@ -1316,25 +1334,7 @@ h3 {
     }
 }
 
-@media (max-width: 980px) {
-    .filtro {
-        width: 95%;
-        margin-top: 20px;
-    }
-
-    .caja p {
-        font-size: 75%;
-    }
-
-    .caja select {
-        font-size: 75%;
-    }
-
-    .transicion2 {
-        width: 160px;
-        height: 60px;
-    }
-
+@media (max-width: 1040px) {
     #checke {
         display: none;
     }
@@ -1403,6 +1403,23 @@ h3 {
     .nav li:hover>.sublista {
         display: none;
     }
+}
+
+@media (max-width: 980px) {
+    .filtro {
+        width: 95%;
+        margin-top: 20px;
+    }
+
+    .filtro2 {
+        width: 95%;
+        margin-top: 20px;
+    }
+
+    .transicion2 {
+        width: 160px;
+        height: 60px;
+    }
 
     footer {
         height: 120px;
@@ -1439,6 +1456,9 @@ h3 {
         grid-column: 1/4;
         justify-self: center;
     }
+    .filtro{
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1467,6 +1487,12 @@ h3 {
     .btn-donar img {
         width: 150px;
         height: 60px;
+    }
+    .caja p{
+        font-size: 15px;
+    }
+    .caja select{
+        font-size: 10px;
     }
 }
 
