@@ -1,18 +1,17 @@
-@if($errors->any())
-<div class="alert alert-dark alert-dismissible fade show" role="alert">
-    <strong>¡Revise los campos!</strong>
-    @foreach($errors->all() as $error)
-    <span class="badge badge-danger">{{$error}}</span>
-    @endforeach
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-@endif
-
 <div class="contenedor-modal" id="modalsEditMascotas{{ $mascota }}">
     <div class="moda">
 
+        @if($errors->any())
+        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+            <strong>¡Revise los campos!</strong>
+            @foreach($errors->all() as $error)
+            <span class="badge badge-danger">{{$error}}</span>
+            @endforeach
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
 
         <form action="{{ route('Mascotas.update', $mascota->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -36,8 +35,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="actualizar1">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -58,12 +55,12 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="raza">Raza</label>
-                            <select name="razaEditar" id="{{ 'raza'.$mascota->id }}" class="form-control">
-                                {{-- @foreach($razas as $raza)
+                            <select name="raza" id="{{ 'raza'.$mascota->id }}" class="form-control">
+                                @foreach($razas as $raza)
                                 <option value="{{ $raza->raza }}"
                                 {{ $raza->raza == $mascota->raza ? 'selected' : '' }}>
                                 {{ $raza['descripcion']}}</option>
-                                @endforeach --}}
+                                @endforeach
                             </select>
                         </div>
                     </div>

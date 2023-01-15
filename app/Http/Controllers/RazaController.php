@@ -16,7 +16,11 @@ class RazaController extends Controller
     {
         $especie = $request->especie;
 
-        $result = Raza::where('especie', 'like', "%$especie%")->get();
+        if($especie == 0){
+            $result = Raza::all();
+        }else{
+            $result = Raza::where('especie', 'like', "%$especie%")->get();
+        }
 
         return response()->json($result);
     }

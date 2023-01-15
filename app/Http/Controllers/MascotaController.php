@@ -8,10 +8,11 @@ use App\Models\Estado;
 use App\Models\Fundacion;
 use App\Models\Mascota;
 use App\Models\Raza;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+
 
 class MascotaController extends Controller
 {
@@ -34,14 +35,25 @@ class MascotaController extends Controller
         return view('welcome', compact('Mascotas'));
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $mascota = trim($request->get('mascota'));
+
         $mascotas = Mascota::paginate(6);
+
+        if($mascota == 1){
+            $mascotas = Mascota::where('especie', 'like', "1")->paginate(6);
+        }
+        if($mascota == 2){
+            $mascotas = Mascota::where('especie', 'like', "2")->paginate(6);
+        }
+
         $razas = Raza::all();
         $colores = Color::all();
         $especies = Especie::all();
         $estados = Estado::all();
-        return view('HomeFundacion.Mascotas.index', compact('mascotas', 'razas', 'colores', 'especies', 'estados'));
+        $mascotas->withQueryString();
+        return view('HomeFundacion.Mascotas.index', compact('mascotas', 'mascota', 'razas', 'colores', 'especies', 'estados'));
     }
 
     public function indexFiltro(Request $request)
@@ -235,6 +247,10 @@ class MascotaController extends Controller
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño == '0' && $edad != '0') {
             $result = Mascota::JoinRazaColor()->Edad($edad)->paginate(12);
         }
+        //filtra las mascotas solo por raza
+        if ($especie == '0' && $raza != '0' && $color == '0' && $tamaño == '0' && $edad == '0') {
+            $result = Mascota::JoinRazaColor()->Raza($raza)->paginate(12);
+        }
         //filtra las mascotas por especie y raza
         if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño == '0' && $edad == '0') {
             $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->paginate(12);
@@ -259,9 +275,17 @@ class MascotaController extends Controller
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño == '0' && $edad != '0') {
             $result = Mascota::JoinRazaColor()->Color($color)->Edad($edad)->paginate(12);
         }
+        //filtra las mascotas por color y raza
+        if ($especie == '0' && $raza != '0' && $color != '0' && $tamaño == '0' && $edad == '0') {
+            $result = Mascota::JoinRazaColor()->Color($color)->Raza($raza)->paginate(12);
+        }
         //filtra las mascotas por tamaño y edad
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño != '0' && $edad != '0') {
             $result = Mascota::JoinRazaColor()->Tamaño($tamaño)->Edad($edad)->paginate(12);
+        }
+        //filtra las mascotas por tamaño y raza
+        if ($especie == '0' && $raza != '0' && $color == '0' && $tamaño != '0' && $edad == '0') {
+            $result = Mascota::JoinRazaColor()->Tamaño($tamaño)->Raza($raza)->paginate(12);
         }
         //filtra las mascotas por especie,raza y color
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño == '0' && $edad == '0') {
@@ -291,6 +315,10 @@ class MascotaController extends Controller
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño != '0' && $edad != '0') {
             $result = Mascota::JoinRazaColor()->Color($color)->Tamaño($tamaño)->Edad($edad)->paginate(12);
         }
+        //filtra las mascotas por color,tamaño y raza
+        if ($especie == '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
+            $result = Mascota::JoinRazaColor()->Color($color)->Tamaño($tamaño)->Raza($raza)->paginate(12);
+        }
         //filtra las mascotas por especie,raza,color y tamaño
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
             $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->Color($color)->Tamaño($tamaño)->paginate(12);
@@ -300,8 +328,12 @@ class MascotaController extends Controller
             $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->Color($color)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por especie,raza,tamaño y edad
-        if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad == '0') {
+        if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño != '0' && $edad != '0') {
             $result = Mascota::JoinRazaColor()->Especie($especie)->Raza($raza)->Tamaño($tamaño)->Edad($edad)->paginate(12);
+        }
+        //filtra las mascotas por color,raza,tamaño y edad
+        if ($especie == '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad != '0') {
+            $result = Mascota::JoinRazaColor()->Color($color)->Raza($raza)->Tamaño($tamaño)->Edad($edad)->paginate(12);
         }
         //filtra las mascotas por especie,raza,color,tamaño y edad
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0' && $edad != '0') {

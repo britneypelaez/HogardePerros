@@ -262,6 +262,10 @@ class MascotaPerdidaController extends Controller
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño != '0') {
             $result = MascotaPerdida::JoinRazaColor()->Tamaño($tamaño)->paginate(12);
         }
+        //filtra las Mascotas Perdidas solo por raza
+        if ($especie == '0' && $raza != '0' && $color == '0' && $tamaño == '0') {
+            $result = MascotaPerdida::JoinRazaColor()->Raza($raza)->paginate(12);
+        }
         //filtra las Mascotas Perdidas por especie y raza
         if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño == '0') {
             $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Raza($raza)->paginate(12);
@@ -274,9 +278,17 @@ class MascotaPerdidaController extends Controller
         if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño != '0') {
             $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Tamaño($tamaño)->paginate(12);
         }
+        //filtra las Mascotas Perdidas por raza y tamaño
+        if ($especie == '0' && $raza != '0' && $color == '0' && $tamaño != '0') {
+            $result = MascotaPerdida::JoinRazaColor()->Raza($raza)->Tamaño($tamaño)->paginate(12);
+        }
         //filtra las Mascotas Perdidas por color y tamaño
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño != '0') {
-            $result = MascotaPerdida::JoinRazaColor()->where('color', 'like', "%$raza%")->Tamaño($tamaño)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Color($color)->Tamaño($tamaño)->paginate(12);
+        }
+        //filtra las Mascotas Perdidas por color y raza
+        if ($especie == '0' && $raza != '0' && $color != '0' && $tamaño == '0') {
+            $result = MascotaPerdida::JoinRazaColor()->Color($color)->Tamaño($tamaño)->paginate(12);
         }
         //filtra las Mascotas Perdidas por especie,raza y color
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño == '0') {
@@ -289,6 +301,10 @@ class MascotaPerdidaController extends Controller
         //filtra las Mascotas Perdidas por especie,color y tamaño
         if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño != '0') {
             $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Color($color)->Tamaño($tamaño)->paginate(12);
+        }
+        //filtra las Mascotas Perdidas por raza,color y tamaño
+        if ($especie == '0' && $raza != '0' && $color != '0' && $tamaño != '0') {
+            $result = MascotaPerdida::JoinRazaColor()->Raza($raza)->Color($color)->Tamaño($tamaño)->paginate(12);
         }
         //filtra las Mascotas Perdidas por especie,raza,color y tamaño
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0') {

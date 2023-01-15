@@ -1,17 +1,17 @@
-@if($errors->any())
-<div class="alert alert-dark alert-dismissible fade show" role="alert">
-    <strong>¡Revise los campos!</strong>
-    @foreach($errors->all() as $error)
-    <span class="badge badge-danger">{{$error}}</span>
-    @endforeach
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-@endif
-
 <div class="contenedor-modal" id="modalsEditServiciosPrestados{{ $ServiciosPrestado }}">
     <div class="moda">
+
+        @if($errors->any())
+        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+            <strong>¡Revise los campos!</strong>
+            @foreach($errors->all() as $error)
+            <span class="badge badge-danger">{{$error}}</span>
+            @endforeach
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
 
         <form action="{{ route('ServiciosPrestados.update', $ServiciosPrestado->id) }}" method="POST"
             enctype="multipart/form-data">
