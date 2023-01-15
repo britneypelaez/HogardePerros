@@ -4013,7 +4013,10 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
     background: none;
 }
 .navv{
-    max-width: 1px;
+    max-width: 0px;
+}
+.material-symbols-outlined{
+    color: white;
 }
 .menuu{
     background: rgba(255, 255, 255, 0.644);
