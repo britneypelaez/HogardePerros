@@ -19,6 +19,12 @@ class CampaniaController extends Controller
         return view('HomeFundacion.Campanias.index', compact('campanias'));
     }
 
+    public function indexCliente()
+    {
+        $campanias = Campania::paginate(12);
+        return view('Home.Donaciones', compact('campanias'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -45,14 +45,11 @@ Route::get('/Publicaciones', [App\Http\Controllers\MascotaPerdidaController::cla
 
 Route::get('/Filtrar', [App\Http\Controllers\MascotaController::class, 'indexFiltro'])->name('Filtrar');
 
+Route::get('/Donaciones', [App\Http\Controllers\CampaniaController::class, 'indexCliente'])->name('Donaciones');
 
 Route::get('/QuienesSomos', function () {
     return view('Home.QuienesSomos');
 })->name('QuienesSomos');
-
-Route::get('/Donaciones', function () {
-    return view('Home.Donaciones');
-})->name('Donaciones');
 
 Route::get('/adoptare', function () {
     return view('Home.Adoptare');
