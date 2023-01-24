@@ -13,7 +13,7 @@
         <i class=" fas fa-solid fa-compass"></i><span>Campañas</span>
     </a>
     <br>
-    <a class="nav-link" href="">
+    <a class="nav-link" href="{{url('Certificados')}}">
         <i class=" fas fa-solid fa-file"></i><span>Certificados</span>
     </a>
     <br>

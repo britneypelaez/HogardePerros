@@ -119,6 +119,7 @@ Route::resources([
     'Campanias' => CampaniaController::class,
     'Servicios' => ServicioController::class,
     'ServiciosPrestados' => ServicioPrestadoController::class,
+    'Certificados' => CertificadoController::class
 ]);
 
 Route::post('/Publicaciones/Delete', [MascotaPerdidaController::class, 'destroyUsuario'])->name('publicacion.delete');
@@ -131,7 +132,7 @@ Route::view('/Fundacion/Logo', 'HomeFundacion.cambiarLogo')->name('cambiar.logo'
 
 Route::post('/Fundacion/Logo/Change', [MascotaController::class, 'chageLogo'])->name('registrar.logo');
 
-Route::get('Certificado', [CertificadoController::class, 'index']);
+//Route::get('Certificado', [CertificadoController::class, 'index']);
 
 Route::get('/InicioAdmin', function () {
     return view('HomeAdministrador.InicioAdmin');
