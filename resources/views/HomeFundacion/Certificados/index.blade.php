@@ -36,7 +36,6 @@
                                     <td>
                                         <form action="{{ route('Certificados.destroy', $certificado->certificados) }}" method="POST">
                                             @csrf
-                                            <a class="btn btn-info" href="{{ route('Certificados.edit', $certificado->certificados) }}">Editar</a>
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger" >Borrar</button>
                                         </form>
