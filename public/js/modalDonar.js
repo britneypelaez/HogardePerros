@@ -20,7 +20,7 @@ const exampleModal = document.getElementById('exampleModal')
 
       modalTitle.textContent = `(${recipient})`
       modalDescription.textContent = `${descripcion}`
-      modalMeta.textContent = `${Actual}/${Meta}`
+      modalMeta.textContent = `$${Actual}/$${Meta}`
       modalImagen.src = `storage/${Imagen}`
       modalImagen2.src = `storage/${Imagen}`
 

@@ -3,7 +3,7 @@
 @section('title', 'Donaciones')
 
 @section('content')
-    <div class="requisitos">
+    <div class="requisito">
         <div class="info_bar">
             <h1 class="tituloDon">Donaciones</h1>
             <p>Con ayuda de tus donaciones nos brinda la oportunidad de hacer un cambio efectivo y sostenible
@@ -20,7 +20,11 @@
         @foreach ($campanias as $campania)
             <div class="col">
                 <div class="card border-info">
-                    <img src="{{ asset("storage/$campania->imagen_campania") }}" class="card-img-top" alt="...">
+                    <div class="card-img1">
+                        <div class="card-imgg">
+                            <img src="{{ asset("storage/$campania->imagen_campania") }}" class="card-img-top" alt="...">
+                        </div>
+                    </div>
                     <div class="card-body">
                         <div class="conttex">
                             <h5 class="card-title">({{ $campania->nombre_campania }})</h5>
@@ -40,8 +44,7 @@
                 </div>
             </div>
             <!-- Modal -->
-            <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+            <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -53,13 +56,14 @@
                                 <img class="imgmodal1" src="" alt="..." id="btn-abrir">
                             </div>
                             <div class="modal-right">
-                                <p class="modal-description"></p>
+                                <p class="modal-description">
+                                </p>
                                 <div class="cont-right">
                                     <h5>
                                         Con tu aporte nos ayudas al bienestar de cada uno de nuestras mascotas. Ellos se los
                                         agradecen.
                                     </h5>
-                                    <p class="meta"><br> Meta de donaciones: <br></p>
+                                    <p class="metaa"><br> Meta de donaciones: <br></p>
                                     <p class="meta">
                                     </p>
                                     <div class="progreso">
@@ -81,25 +85,33 @@
                             <div class="redess">
                                 <h5>Comparte en tus redes sociales:</h5>
                                 <ul class="wrapper">
-                                    <li class="icon whatsapp">
-                                        <a href="https://api.whatsapp.com/send?text=www.google.com" target="_blank">
+                                    <a href="">
+                                        <li class="icon share">
+                                        <!-- <span class="tooltip">Whatsapp</span> -->
+                                            <span><i class="fa-solid fa-share-nodes"></i></span>
+                                        </li>
+                                    </a>
+                                </ul>
+                                <!-- <ul class="wrapper">
+                                    <a href="https://api.whatsapp.com/send?text=www.google.com" target="_blank">
+                                        <li class="icon whatsapp">
                                             <span class="tooltip">Whatsapp</span>
                                             <span><i class="fab fa-whatsapp"></i></span>
-                                        </a>
-                                    </li>
-                                    <li class="icon facebook">
-                                        <a href="https://www.facebook.com/sharer.php?u=www.google.com" target="_blank">
+                                        </li>        
+                                    </a>
+                                    <a href="https://www.facebook.com/sharer.php?u=www.google.com" target="_blank">
+                                        <li class="icon facebook">
                                             <span class="tooltip">Facebook</span>
                                             <span><i class="fab fa-facebook-f"></i></span>
-                                        </a>
-                                    </li>
-                                    <li class="icon instagram">
-                                        <a href="">
+                                        </li>
+                                    </a>
+                                    <a href="">
+                                        <li class="icon instagram">
                                             <span class="tooltip">Instagram</span>
-                                        <span><i class="fab fa-instagram"></i></span>
-                                        </a>
-                                    </li>
-                                </ul>
+                                            <span><i class="fab fa-instagram"></i></span>
+                                        </li>
+                                    </a>
+                                </ul> -->
                             </div>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         </div>
@@ -115,12 +127,13 @@
             <!-- fin modal -->
             <!-- Inicio Modal imgaen respons -->
         @endforeach
-        <div class="pagination justify-content-end">
-            {!! $campanias->links() !!}
-        </div>
+         <!-- Fin modal imagen respons -->
     </div>
-
-    <!-- Fin modal imagen respons -->
+    <div class="centrarpagi">
+            <div class="pagination ">
+                {!! $campanias->links() !!}
+            </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
