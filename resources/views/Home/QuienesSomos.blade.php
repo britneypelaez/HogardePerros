@@ -3,6 +3,7 @@
 @section('title', 'Servicios Veterinarios')
 
 @section('content')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <div class="contene">
         <div class="left">
             <h1>
@@ -89,28 +90,53 @@
         <div class="body-form">
             <div class="form-card-container">
                 <div class="form-card">
-                   <form action="" class="form" method="post">
+                   <form action="{{ route('contactanos.store') }}" class="form" method="post">
+                    @csrf
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-outlined">person</span>
                         <input type="text" name="name" id="name" placeholder="Nombre Completo" required>
                     </div>
+                    @error('name')
+                        <p><strong>{{$message}}</strong></p>
+                    @enderror
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-outlined">smartphone</span>
                         <input type="number" name="number" id="number" placeholder="Número Celular" required>
                     </div>
+                    @error('number')
+                        <p><strong>{{$message}}</strong></p>
+                    @enderror
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-outlined">email</span>
                         <input type="email" name="email" id="email" placeholder="Email" required>
                     </div>
+                    @error('email')
+                        <p><strong>{{$message}}</strong></p>
+                    @enderror
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-outlined">feed</span>
-                        <textarea name="comen" id="coment" placeholder="Comentario" required></textarea>
+                        <textarea name="coment" id="coment" placeholder="Comentario" required></textarea>
                     </div>
+                    @error('coment')
+                        <p><strong>{{$message}}</strong></p>
+                    @enderror
                     <button type="submit">Enviar</button>
                    </form>
                 </div>
             </div>
         </div>
+        @if (session('info'))
+            <script>
+                Swal.fire({
+                    title: 'Atención!',
+                    html: 'Se ha enviado el correo exitosamente',
+                    icon: 'success',
+                    customClass: 'swal-wide',
+                    confirmButtonText: 'Aceptar',
+                    showCancelButton: false,
+			    });
+            </script>            
+        @endif
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 @endsection

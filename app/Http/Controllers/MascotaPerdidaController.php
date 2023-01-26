@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EncuentrameMailable;
 use App\Models\Color;
 use App\Models\Especie;
 use App\Models\Estado;
 use App\Models\MascotaPerdida;
 use App\Models\Mascota;
 use App\Models\Raza;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class MascotaPerdidaController extends Controller
@@ -94,6 +97,14 @@ class MascotaPerdidaController extends Controller
         $mascota->imagen_mascota = $profileImage;
         $mascota->id_user = Auth::user()->id;
         $mascota->save();
+        $usuarios = User::all();
+        $correo = new EncuentrameMailable;
+        $contador = 0;
+        foreach ($usuarios as $usuario) {
+            $correos[$contador] = $usuario->email;
+            $contador ++;
+        }
+        Mail::to($correos)->send($correo);
         return redirect()->route('MascotasPerdidas.index');
     }
 
