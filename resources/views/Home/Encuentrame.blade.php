@@ -7,7 +7,7 @@
         @if (Auth::user())
             <div class="botones">
                 <a href="#modalsCreatePerdidas"><button class="transicion2" type="submit"><span>Agregar
-                            Publicacion</span></button></a>
+                            Publicación</span></button></a>
                 <a href="{{ route('Publicaciones') }}"><button class="transicion2" type="submit"><span>Mis
                             Publicaciones</span></button></a>
             </div>
@@ -168,5 +168,8 @@
         window.addEventListener('load', function(event) {
             updateDate(especie.value, raza.value, color.value, tamaño.value, 1);
         })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
 @endsection

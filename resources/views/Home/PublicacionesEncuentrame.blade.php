@@ -9,7 +9,7 @@
     @include('Home.crearPerdido')
 
     <div class="botones">
-        <a href="#modalsCreatePerdidas"><button class="transicion2" type="submit"><span>Agregar Publicacion</span></button></a>
+        <a href="#modalsCreatePerdidas"><button class="transicion2" type="submit"><span>Agregar Publicación</span></button></a>
     </div>
 
     <div class="adopciones">
