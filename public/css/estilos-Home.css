@@ -1697,7 +1697,7 @@ select {
     height: 40px !important;
 }
 
-.requisitos{
+.requisito{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1741,26 +1741,45 @@ select {
 }
 /* estilos modales y card */
 .card-img-top{
-    height: 50%;
+    padding: 10px;
+}
+.card-img1{
+    width: 70%;
     position: absolute;
 }
-.separarpag{
-    margin-top: 20px;
+.card-imgg{
+    position: relative;
+    display: grid;
 }
-.pagination{
+
+.card-imgg img{
+    width: 95%;
+    height: 200px;
+    align-self: center;
+    justify-self: center;
+    object-fit: cover;
+    border-radius: 15px !important;
+}
+.centrarpagi{
+    display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .card{
     background:rgba(28, 134, 134, 0.5) !important;
     transition: all 0.25s;
-    height: 450px !important;
+    height: 450px !important;  
+    position: relative;
+    align-items: center;
+    max-width: 325px !important;
+    margin: auto;
 }
 .card:hover{
     transform: translateY(-15px);
     -webkit-box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
--moz-box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
-box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
+    -moz-box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
+    box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
 }
 .card::before{
     content:"";
@@ -1782,8 +1801,12 @@ box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
     box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.27);
 }
 .card-body{
-    margin-top: 220px;
+    margin-top: 200px;
     height: 250px;
+    width: 300px;
+}
+.card-text{
+    text-align: justify;
 }
 
 .contbtn{
@@ -1792,6 +1815,13 @@ box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
     justify-content: center;
     margin-top: 6px;
     gap: 8px;
+}
+.col{
+    margin-bottom: 15px !important;
+}
+.modal{
+    padding: 0px !important;
+    margin: 0px !important;
 }
 .modal-title{
     text-align: center !important;
@@ -1802,6 +1832,9 @@ box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
     position: relative;
     display: grid;
     grid-template-columns: 50% 50%;
+}
+.modal-description{
+  width: 100% !important;
 }
 
 .modal-left{
@@ -1876,6 +1909,7 @@ box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
     margin-bottom: 0px;
     padding-left: 0px;
 }
+
 .wrapper .icon{
     position: relative;
     background: #e3dddd;
@@ -1892,6 +1926,13 @@ box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.25s;/*=>Para el sahre*/
+}
+.wrapper .icon:hover{
+    transform: translateY(-10px);
+    -webkit-box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
+    -moz-box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);  /* tod=> para share */
+    box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
 }
 .wrapper .tooltip{
     position: absolute;
@@ -1925,6 +1966,10 @@ box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
     background: #1877f2;
     color: #ffffff;
 }
+.wrapper .share:hover{
+    background: black;
+    color: #ffffff;
+}
 .wrapper .instagram:hover,
 .wrapper .instagram:hover .tooltip,
 .wrapper .instagram:hover .tooltip::before{
@@ -1937,6 +1982,9 @@ box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
 .wrapper .whatsapp:hover .tooltip::before{
     background: green;
     color: #ffffff;
+}
+.wrapper a {
+    color: black !important;
 }
 
 #modal-imagen{
@@ -1956,10 +2004,44 @@ box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
     align-items: center;
 }
 
+/* .row>*{
+    margin-top: 0px !important;
+} */
 
 
 #modal-imagen::backdrop{
     background-color: rgba(0, 0, 0, .55);
+}
+@media(max-width:922px){
+    .card-body{
+        width: 245px;
+    } 
+}
+@media(max-width:768px){
+    .card-body{
+        width:290px;
+    } 
+}
+@media(max-width:296px){
+    .card-body{
+        width:260px;
+    } 
+}
+
+@media(max-width:767px){
+    .card-img1{
+        width: 70% !important;
+    } 
+}
+@media(max-width:1033px){
+    .card-img1{
+        width: 85%;
+    } 
+}
+@media(max-width:816px){
+    .card-img1{
+        width: 100%;
+    } 
 }
 @media (min-width: 280px){
     .modal {
@@ -2017,7 +2099,7 @@ box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
     .wrapper .icon{
         width: 30px;
         height: 30px;
-        font-size: 18px;
+        font-size: 30px;
     }
     .wrapper .icon:hover .tooltip{
         top: -34px;
@@ -2033,7 +2115,7 @@ box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
         display: block;
     }
     .wrapper{
-        margin-left:100px;
+        margin-left:130px;
     }
 }
 

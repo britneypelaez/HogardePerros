@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CampaniaMailable;
 use App\Models\Campania;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class CampaniaController extends Controller
@@ -61,6 +64,15 @@ class CampaniaController extends Controller
         $campania->imagen_campania = $profileImage;
         $campania->id_fundacion = 1;
         $campania->save();
+        $usuarios = User::all();
+        $correo = new CampaniaMailable;
+        $contador = 0;
+        foreach ($usuarios as $usuario) {
+            $correos[$contador] = $usuario->email;
+            $contador ++;
+        }
+        //dd($correos);
+        Mail::to($correos)->send($correo);
         return redirect()->route('Campanias.index');
     }
 

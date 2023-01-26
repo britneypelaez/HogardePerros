@@ -1,16 +1,19 @@
 <?php
 
+use App\Models\User;
 use App\Http\Controllers\CampaniaController;
 use App\Http\Controllers\CertificadoController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\MascotaPerdidaController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\ServicioPrestadoController;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use TCG\Voyager\Facades\Voyager;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,6 +122,7 @@ Route::resources([
     'Campanias' => CampaniaController::class,
     'Servicios' => ServicioController::class,
     'ServiciosPrestados' => ServicioPrestadoController::class,
+    'Certificados' => CertificadoController::class
 ]);
 
 Route::post('/Publicaciones/Delete', [MascotaPerdidaController::class, 'destroyUsuario'])->name('publicacion.delete');
@@ -131,8 +135,17 @@ Route::view('/Fundacion/Logo', 'HomeFundacion.cambiarLogo')->name('cambiar.logo'
 
 Route::post('/Fundacion/Logo/Change', [MascotaController::class, 'chageLogo'])->name('registrar.logo');
 
-Route::get('Certificado', [CertificadoController::class, 'index']);
+//Route::get('Certificado', [CertificadoController::class, 'index']);
 
 Route::get('/InicioAdmin', function () {
     return view('HomeAdministrador.InicioAdmin');
 })->name('InicioAdmin');
+
+/**
+ *
+ * Envío de Email's
+ *
+ */
+Route::get('contactanos', [EmailController::class, 'index'] )->name('contactanos.index');
+
+Route::post('contactanos', [EmailController::class, 'store'] )->name('contactanos.store');
