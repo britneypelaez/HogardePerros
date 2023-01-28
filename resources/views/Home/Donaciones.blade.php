@@ -52,10 +52,10 @@
                 @section('metas')
             
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="" />
-                <meta property="og:url" content="" />
-                <meta property="og:description" content="" />
-                <meta property="og:image" content="" />
+                <meta property="og:title" content="Fundacion Hogar de Perro" />
+                <meta property="og:url" content="{{ env('APP_URL')  }}/Donaciones" />
+                <meta property="og:description" content="Ayudano a compartir las Campañas" />
+                <meta property="og:image" content="{{ asset("img/twitter.png") }}" />
                 @endsection
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
