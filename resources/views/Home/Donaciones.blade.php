@@ -23,7 +23,7 @@
     
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ $campania->nombre_campania }}" />
-    <meta property="og:url" content="{{ env('APP_URL') . /Donaciones }}" />
+    <meta property="og:url" content="{{ env('APP_URL')  }}/Donaciones" />
     <meta property="og:description" content="{{ $campania->descripcion }}" />
     <meta property="og:image" content="{{ asset("storage/$campania->imagen_campania") }}" />
     @endsection
