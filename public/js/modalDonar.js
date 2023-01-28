@@ -40,8 +40,8 @@ if (exampleModal) {
             modalPorcentaje.style.width = `${porcentaje}%`
         }
 
-        // const fb = document.querySelector('.facebookc')
-        // fb.href = `https://www.facebook.com/sharer/sharer.php?u=${link}`
+        const fb = document.querySelector('.Facebook')
+        fb.href = `https://www.facebook.com/sharer/sharer.php?u=${link}`
         const ws = document.querySelector('.whatsapp')
         ws.href = "whatsapp://send?text=" + recipient + "%20" + link + "%20" + `http://` + linkGlobal + `/storage/${Imagen}` + "%20" + descripcion
 
