@@ -1,5 +1,3 @@
-const { reduce } = require("lodash")
-
 const exampleModal = document.getElementById('exampleModal')
 if (exampleModal) {
     exampleModal.addEventListener('show.bs.modal', event => {
@@ -16,15 +14,6 @@ if (exampleModal) {
         const msg = encodeURIComponent('Apoya esta campaña')
         const title = encodeURIComponent(recipient)
 
-        var metaTitle = document.querySelector('meta[property="og:title"]');
-        metaTitle.setAttribute('content', recipient);
-        var metaTitle = document.querySelector('meta[property="og:description"]');
-        metaTitle.setAttribute('content', descripcion);
-        var metaTitle = document.querySelector('meta[property="og:image"]');
-        metaTitle.setAttribute('content', `storage/${Imagen}`);
-        var metaTitle = document.querySelector('meta[property="og:url"]');
-        metaTitle.setAttribute('content', link);
-
 
         // Update the modal's content.
         const modalTitle = exampleModal.querySelector('.modal-title')
@@ -39,6 +28,15 @@ if (exampleModal) {
         modalMeta.textContent = `${Actual}/${Meta}`
         modalImagen.src = `storage/${Imagen}`
         modalImagen2.src = `storage/${Imagen}`
+
+        let metaTitle = document.querySelector('meta[property="og:title"]');
+        metaTitle.setAttribute('content', recipient);
+        let metaDescripcion = document.querySelector('meta[property="og:description"]');
+        metaDescripcion.setAttribute('content', descripcion);
+        let metaImagen = document.querySelector('meta[property="og:image"]');
+        metaImagen.setAttribute('content', `storage/${Imagen}`);
+        let metaUrl = document.querySelector('meta[property="og:url"]');
+        metaUrl.setAttribute('content', link);
 
         porcentaje = (Actual / Meta) * 100
 
