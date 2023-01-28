@@ -12,14 +12,18 @@ class CampaniaMailable extends Mailable
     use Queueable, SerializesModels;
 
     public $subject = 'Nueva Campaña!';
+
+    public $nombre_campania = '';
+    public $descripcion = '';
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($nombre_campania, $descripcion)
     {
-        //
+        $this->nombre_campania = $nombre_campania;
+        $this->descripcion = $descripcion;
     }
 
     /**

@@ -98,7 +98,7 @@ class MascotaPerdidaController extends Controller
         $mascota->id_user = Auth::user()->id;
         $mascota->save();
         $usuarios = User::all();
-        $correo = new EncuentrameMailable;
+        $correo = new EncuentrameMailable(request()->nombre_mascota, request()->descripcion);
         $contador = 0;
         foreach ($usuarios as $usuario) {
             $correos[$contador] = $usuario->email;

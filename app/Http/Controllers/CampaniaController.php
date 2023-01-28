@@ -65,7 +65,7 @@ class CampaniaController extends Controller
         $campania->id_fundacion = 1;
         $campania->save();
         $usuarios = User::all();
-        $correo = new CampaniaMailable;
+        $correo = new CampaniaMailable(request()->nombre_campania, request()->descripcion);
         $contador = 0;
         foreach ($usuarios as $usuario) {
             $correos[$contador] = $usuario->email;

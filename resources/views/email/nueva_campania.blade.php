@@ -10,6 +10,8 @@
     <h1>Se ha creado una nueva campañ</h1>
     <br>
     <p><strong>Nueva campaña</strong></p>
+    <p><strong>Nombre: </strong>{{ $nombre_campania }}</p>
+    <p><strong>Descripción: </strong>{{ $descripcion }}</p>
     <br>
     <br>
     <br>

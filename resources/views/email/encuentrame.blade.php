@@ -10,6 +10,8 @@
     <h1>Se ha extraviado una nueva mascota</h1>
     <br>
     <p><strong>Paquita</strong></p>
+    <p><strong>Nombre: </strong>{{ $nombre_mascota }}</p>
+    <p><strong>Descripción: </strong>{{ $descripcion }}</p>
     <br>
     <br>
     <br>

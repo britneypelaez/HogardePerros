@@ -12,14 +12,18 @@ class EncuentrameMailable extends Mailable
     use Queueable, SerializesModels;
 
     public $subject = 'Se ha perdido una nueva mascota!!';
+
+    public $nombre_mascota = '';
+    public $descripcion = '';
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($nombre_mascota, $descripcion)
     {
-        //
+        $this->nombre_mascota = $nombre_mascota;
+        $this->descripcion = $descripcion;
     }
 
     /**
