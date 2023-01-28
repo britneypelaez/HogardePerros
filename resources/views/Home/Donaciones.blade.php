@@ -19,14 +19,7 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach ($campanias as $campania)
 
-    @section('metas')
     
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ $campania->nombre_campania }}" />
-    <meta property="og:url" content="{{ env('APP_URL')  }}/Donaciones" />
-    <meta property="og:description" content="{{ $campania->descripcion }}" />
-    <meta property="og:image" content="{{ asset("storage/$campania->imagen_campania") }}" />
-    @endsection
 
     <div class="col">
         <div class="card border-info">
@@ -56,6 +49,14 @@
     <!-- Modal -->
     <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
+                @section('metas')
+            
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="" />
+                <meta property="og:url" content="" />
+                <meta property="og:description" content="" />
+                <meta property="og:image" content="" />
+                @endsection
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">

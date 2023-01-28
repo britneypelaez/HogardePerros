@@ -1,3 +1,5 @@
+const { reduce } = require("lodash")
+
 const exampleModal = document.getElementById('exampleModal')
 if (exampleModal) {
     exampleModal.addEventListener('show.bs.modal', event => {
@@ -13,6 +15,15 @@ if (exampleModal) {
         const linkGlobal = window.location.host
         const msg = encodeURIComponent('Apoya esta campaña')
         const title = encodeURIComponent(recipient)
+
+        var metaTitle = document.querySelector('meta[property="og:title"]');
+        metaTitle.setAttribute('content', recipient);
+        var metaTitle = document.querySelector('meta[property="og:description"]');
+        metaTitle.setAttribute('content', descripcion);
+        var metaTitle = document.querySelector('meta[property="og:image"]');
+        metaTitle.setAttribute('content', `storage/${Imagen}`);
+        var metaTitle = document.querySelector('meta[property="og:url"]');
+        metaTitle.setAttribute('content', link);
 
 
         // Update the modal's content.
