@@ -22,10 +22,10 @@
     @section('metas')
     
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Example Image" />
-    <meta property="og:url" content="http://hogardeperros.test/Donaciones" />
-    <meta property="og:description" content="This is an example image for a Facebook post." />
-    <meta property="og:image" content="http://hogardeperros.test/storage/1674794346.png" />
+    <meta property="og:title" content="{{ $campania->nombre_campania }}" />
+    <meta property="og:url" content="{{ env('APP_URL') . /Donaciones }}" />
+    <meta property="og:description" content="{{ $campania->descripcion }}" />
+    <meta property="og:image" content="{{ asset("storage/$campania->imagen_campania") }}" />
     @endsection
 
     <div class="col">
@@ -74,7 +74,7 @@
                                 Con tu aporte nos ayudas al bienestar de cada uno de nuestras mascotas. Ellos se los
                                 agradecen.
                             </h5>
-                            <p class="metaa"><br> Meta de donaciones: {{ env('APP_URL') }}<br></p>
+                            <p class="metaa"><br> Meta de donaciones: <br></p>
                             <p class="meta">
                             </p>
                             <div class="progreso">
