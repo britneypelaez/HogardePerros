@@ -24,7 +24,7 @@
         </div>
         <div class="info-donacion">
             <div class="cont-title">
-                <h1>Fundación Hogar De Perros-Donativo Por Payu</h1>
+                <h1>Fundación Hogar De Perros-Donativo Por PayU</h1>
             </div>
             <div class="cont-text">
                 <p>
@@ -32,7 +32,7 @@
                     poder realizar el donativo vía payu, luego de dar clic en "Donar", serás direccionado 
                     a la plataforma de payu para terminar el proceso.    -->
                     A  continuación por favor seleccione la cantidad a donar deseado para poder realizar el 
-                    donativo vía payu, despues de esto serás direccionado a la plataforma de payu para terminar el
+                    donativo vía PayU, después de esto serás direccionado a la plataforma de PayU para terminar el
                     proceso.
                 </p>
             </div>
