@@ -54,6 +54,14 @@ Route::get('/QuienesSomos', function () {
     return view('Home.QuienesSomos');
 })->name('QuienesSomos');
 
+Route::get('/inicioFundaciones', function () {
+    return view('inicioFundaciones');
+})->name('inicioFundaciones');
+
+Route::get('/pagoDonacion', function () {
+    return view('Home.pagoDonacion');
+})->name('pagoDonacion');
+
 Route::get('/adoptare', function () {
     return view('Home.Adoptare');
 })->name('adoptare');
