@@ -29,6 +29,13 @@ if (exampleModal) {
         modalImagen.src = `storage/${Imagen}`
         modalImagen2.src = `storage/${Imagen}`
 
+        if(screen.width <= 500){
+            document.getElementById('otro').style.display = 'none';
+        }
+        if(screen.width > 500){
+            document.getElementById('share').style.display = 'none';
+        }
+
         // let metaTitle = document.querySelector('meta[property="og:title"]');
         // metaTitle.setAttribute('content', recipient);
         // let metaDescripcion = document.querySelector('meta[property="og:description"]');

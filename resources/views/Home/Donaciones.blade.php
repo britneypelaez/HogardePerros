@@ -95,15 +95,15 @@
                 <div class="modal-footer">
                     <div class="redess">
                         <h5>Comparte en tus redes sociales:</h5>
-                        <ul class="wrapper">
+                        <ul class="wrapper-share">
                             <a id="share">
                                 <li class="icon share">
-                                    <span class="tooltip">Whatsapp</span>
+                                    <span class="tooltip">Compartir</span>
                                     <span><i class="fa-solid fa-share-nodes"></i></span>
                                 </li>
                             </a>
                         </ul>
-                        <ul class="wrapper">
+                        <ul class="wrapper" id="otro">
                             <a class="whatsapp" target="_blank">
                                 <li class="icon whatsapp">
                                     <span class="tooltip">Whatsapp</span>
