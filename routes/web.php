@@ -96,7 +96,7 @@ Route::get('/google-callback', function () {
 
     if ($userExiste) {
         Auth::login($userExiste);
-        if ($userExiste->role_id == 3) {
+        if ($userExiste->role_id == 3 && $userExiste->id_fundacion == 1 || $userExiste->id == 1) {
             return redirect('/fundacion/home');
         }
     } else {
@@ -107,6 +107,7 @@ Route::get('/google-callback', function () {
             'avatar' => $user->avatar,
             'external_id' => $user->id,
             'external_auth' => 'google',
+            'id_fundacion' => 1
         ]);
 
         Auth::login($userNew);
