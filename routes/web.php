@@ -54,6 +54,14 @@ Route::get('/QuienesSomos', function () {
     return view('Home.QuienesSomos');
 })->name('QuienesSomos');
 
+Route::get('/inicioFundaciones', function () {
+    return view('inicioFundaciones');
+})->name('inicioFundaciones');
+
+Route::get('/pagoDonacion', function () {
+    return view('Home.pagoDonacion');
+})->name('pagoDonacion');
+
 Route::get('/adoptare', function () {
     return view('Home.Adoptare');
 })->name('adoptare');
@@ -88,7 +96,7 @@ Route::get('/google-callback', function () {
 
     if ($userExiste) {
         Auth::login($userExiste);
-        if ($userExiste->role_id == 3) {
+        if ($userExiste->role_id == 3 && $userExiste->id_fundacion == 1 || $userExiste->id == 1) {
             return redirect('/fundacion/home');
         }
     } else {
@@ -99,6 +107,7 @@ Route::get('/google-callback', function () {
             'avatar' => $user->avatar,
             'external_id' => $user->id,
             'external_auth' => 'google',
+            'id_fundacion' => 1
         ]);
 
         Auth::login($userNew);

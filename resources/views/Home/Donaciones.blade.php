@@ -19,7 +19,7 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach ($campanias as $campania)
 
-    
+
 
     <div class="col">
         <div class="card border-info">
@@ -50,12 +50,11 @@
     <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
                 @section('metas')
-            
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="{{ $campania->nombre_campania }}" />
+                <meta property="og:title" content="Fundacion Hogar de Perro" />
                 <meta property="og:url" content="{{ env('APP_URL')  }}/Donaciones" />
-                <meta property="og:description" content="{{ $campania->descripcion }}" />
-                <meta property="og:image" content="{{ asset("storage/$campania->imagen_campania") }}" />
+                <meta property="og:description" content="Ayudanos a compartir las Campañas" />
+                <meta property="og:image" content="{{ asset('img/Home/LOGO.png') }}" />
                 @endsection
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -96,15 +95,15 @@
                 <div class="modal-footer">
                     <div class="redess">
                         <h5>Comparte en tus redes sociales:</h5>
-                        <!-- <ul class="wrapper">
-                            <a href="">
+                        <ul class="wrapper-share">
+                            <a id="share">
                                 <li class="icon share">
-                                    <span class="tooltip">Whatsapp</span>
+                                    <span class="tooltip">Compartir</span>
                                     <span><i class="fa-solid fa-share-nodes"></i></span>
                                 </li>
                             </a>
-                        </ul> -->
-                        <ul class="wrapper">
+                        </ul>
+                        <ul class="wrapper" id="otro">
                             <a class="whatsapp" target="_blank">
                                 <li class="icon whatsapp">
                                     <span class="tooltip">Whatsapp</span>
@@ -117,12 +116,12 @@
                                     <span><i class="fab fa-facebook-f"></i></span>
                                 </li>
                             </a>
-                            <a href="">
+                            {{-- <a href="">
                                 <li class="icon instagram">
                                     <span class="tooltip">Instagram</span>
                                     <span><i class="fab fa-instagram"></i></span>
                                 </li>
-                            </a>
+                            </a> --}}
                         </ul>
                     </div>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
