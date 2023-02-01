@@ -11,7 +11,7 @@ class EncuentrameMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = 'Se ha perdido una nueva mascota!!';
+    public $subject = 'Se ha perdido una mascota!!';
 
     public $nombre_mascota = '';
     public $descripcion = '';
