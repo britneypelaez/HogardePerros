@@ -141,7 +141,5 @@
             </div>
         </div>
     </div>
-
-    <h6>Adafriend S.A.S</h6>
 </body>
 </html>
