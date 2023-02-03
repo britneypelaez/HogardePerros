@@ -27,7 +27,7 @@
             </a>
             <a href="{{ route('Adopcion') }}">
                 <div class="servicio">
-                <p>ADOPTA UN PERRO DE LA FUNDACION</p>
+                <p>ADOPTA UN PERRO DE LA FUNDACIÓN</p>
                 </div>
             </a>
             <a href="{{ route('encuentrame') }}">

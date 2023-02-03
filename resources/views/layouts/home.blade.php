@@ -134,7 +134,7 @@
                         <div class="opciones">
                             <a href="{{ route('voyager.login') }}">
                                 <img id="miniaturas" src="{{ asset('img/Home/login.png') }}" alt=""
-                                    style="left:50px">Iniciar Sesion
+                                    style="left:50px">Iniciar Sesión
                             </a>
                         </div>
                     </li>
@@ -151,7 +151,7 @@
     <footer>
         <ul>
             <li>
-                <p>Fundacion. Todos los derechos reservados</p>
+                <p>©Fundación Hogar de perros. Todos los derechos reservados</p>
             </li>
             <li class="whatsapp">
                 <a href="https://api.whatsapp.com/message/VCBGJZCG7QHXL1?autoload=1&app_absent=0" target="_blank"><img

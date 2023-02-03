@@ -5,12 +5,12 @@
 @section('content')
     <div class="info">
         <div class="info_bar">
-            <h2>Adopta una mascota de nuestra Fundacion Hogar de Perros</h2>
+            <h2>Adopta una mascota de nuestra Fundación Hogar de Perros</h2>
             <p>
                 ¡Bienvenidos a nuestra sección de mascotas en adopción! Estamos encantados de presentarles a nuestros
                 queridos amigos peludos que están buscando un hogar para siempre.
                 Si estás buscando a tu nuevo compañero de vida, ¡has llegado al lugar correcto! Tenemos una gran variedad de
-                mascotas en adopción, tanto perros como gatos.Todos ellos
+                mascotas en adopción, tanto perros como gatos. Todos ellos
                 están esperando encontrar a alguien que los quiera y los cuide. Si ves a alguien que te interese, no dudes
                 en ponerte en contacto con nosotros para obtener más información
                 y tomar una cita para conocerlos en persona. Juntos, podemos darles a estas mascotas el hogar que merecen.
