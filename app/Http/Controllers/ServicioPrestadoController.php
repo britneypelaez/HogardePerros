@@ -42,18 +42,20 @@ class ServicioPrestadoController extends Controller
         //Validaciendo de los campos enviados desde la vista crear
         request()->validate([
             'nombre_servicio' => 'required',
+            'nombre_cliente' => 'required',
             'id_cliente' => 'required',
             'descripcion' => 'required',
             'fecha' => 'required',
         ]);
 
-        $mascota = new ServicioPrestado();
-        $mascota->nombre_servicio = request()->nombre_servicio;
-        $mascota->id_cliente = request()->id_cliente;
-        $mascota->descripcion = request()->descripcion;
-        $mascota->fecha = request()->fecha;
-        $mascota->id_fundacion = 1;
-        $mascota->save();
+        $servicioPrestado = new ServicioPrestado();
+        $servicioPrestado->nombre_servicio = request()->nombre_servicio;
+        $servicioPrestado->nombre_cliente = request()->nombre_cliente;
+        $servicioPrestado->id_cliente = request()->id_cliente;
+        $servicioPrestado->descripcion = request()->descripcion;
+        $servicioPrestado->fecha = request()->fecha;
+        $servicioPrestado->id_fundacion = 1;
+        $servicioPrestado->save();
         return redirect()->route('ServiciosPrestados.index');
     }
 
@@ -92,11 +94,13 @@ class ServicioPrestadoController extends Controller
         //Validaciendo de los campos enviados desde la vista crear
         request()->validate([
             'nombre_servicio' => 'required',
+            'nombre_cliente' => 'required',
             'id_cliente' => 'required',
             'descripcion' => 'required',
             'fecha' => 'required',
         ]);
         $ServiciosPrestado->nombre_servicio = $request->has('nombre_servicio') ?  $request->nombre_servicio : $ServiciosPrestado->nombre_servicio;
+        $ServiciosPrestado->nombre_cliente = $request->has('nombre_cliente') ?  $request->nombre_cliente : $ServiciosPrestado->nombre_cliente;
         $ServiciosPrestado->id_cliente = $request->has('id_cliente') ?  $request->id_cliente : $ServiciosPrestado->id_cliente;
         $ServiciosPrestado->descripcion = $request->has('descripcion') ?  $request->descripcion : $ServiciosPrestado->descripcion;
         $ServiciosPrestado->fecha = $request->has('fecha') ?  $request->fecha : $ServiciosPrestado->fecha;

@@ -32,13 +32,13 @@
                             <tr>
                                 <td style="display: none;">{{ $ServiciosPrestado->id }}</td>
                                 <td>{{ $ServiciosPrestado->nombre_servicio }}</td>
-                                <td>{{ $ServiciosPrestado->Users->name }}</td>
+                                <td>{{ $ServiciosPrestado->nombre_cliente }}</td>
                                 <td>{{ $ServiciosPrestado->descripcion }}</td>
                                 <td>{{ $ServiciosPrestado->fecha }}</td>
                                 <td>
                                 <a class="btn btn-info" href="#modalsEditServiciosPrestados{{ $ServiciosPrestado }}">Editar</a>
                                 <a class="btn btn-danger" href="#modalsServiciosPrestadosEliminar{{ $ServiciosPrestado}}">Borrar</a>
-                                    
+
                                 </td>
                             </tr>
 

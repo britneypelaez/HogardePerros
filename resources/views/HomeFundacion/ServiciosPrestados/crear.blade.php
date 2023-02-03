@@ -24,20 +24,21 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="nombre_servicio">Nombre del servicio</label>
-                            <input type="text" name="nombre_servicio" class="form-control" required
-                                value="{{ old('nombre_servicio') }}">
+                            <input type="text" name="nombre_servicio" class="form-control" value="{{ old('nombre_servicio') }}">
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <label for="nombre_mascota">Cliente</label>
-                            <select name="id_cliente" id="id_cliente" class="form-control" data-live-search="true"
-                                data-style="form-control" title="-- Select your coffee --">
-                                @foreach($usuarios as $usuario)
-                                <option value="{{ $usuario['id'] }}">{{ $usuario['name'] }}</option>
-                                @endforeach
-                            </select>
+                            <label for="nombre_cliente">Cliente</label>
+                            <input type="text" name="nombre_cliente" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <label for="id_cliente">Identificación cliente</label>
+                            <input type="text" name="id_cliente" class="form-control">
                         </div>
                     </div>
                 </div>
