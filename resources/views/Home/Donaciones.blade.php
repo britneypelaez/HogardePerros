@@ -105,7 +105,7 @@
                         </ul>
                         <ul class="wrapper" id="otro">
                             <a class="whatsapp" target="_blank">
-                                <li class="icon whatsapp">
+                                <li class="icon whatsap">
                                     <span class="tooltip">Whatsapp</span>
                                     <span><i class="fab fa-whatsapp"></i></span>
                                 </li>

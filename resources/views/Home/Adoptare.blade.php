@@ -39,7 +39,9 @@
             Perros $30.000 <br>
             Gatos $20.000 
         </p>
-        <button type="button" class="btn btn-primary" style="margin-bottom:0px; margin-left:0px;">Descargar Formulario De Adopción</button>
+        <a href="{{ asset('storage/document/certifications/formulario.pdf') }}" target="_blank">
+            <button type="button" class="btn btn-primary" style="margin-bottom:0px; margin-left:0px;">Descargar Formulario De Adopción</button> 
+        </a>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

@@ -5,6 +5,7 @@
     font-family: "Poppins", sans-serif;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 a {
@@ -1386,6 +1387,13 @@ select {
         width: 100px;
     }
 }
+.requisitos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
 /* estilos modales y card */
 .card-img-top{
     padding: 10px;
@@ -1450,7 +1458,7 @@ select {
 .card-body{
     margin-top: 200px;
     height: 250px;
-    width: 300px;
+    max-width: 300px;
 }
 .card-text{
     text-align: justify;
@@ -1587,7 +1595,7 @@ select {
 .wrapper .icon:hover{
     transform: translateY(-10px);
     -webkit-box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
-    -moz-box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);  /* tod=> para share */
+    -moz-box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);  /*tod=> para share*/
     box-shadow: 15px 7px 35px 0px rgba(0,0,0,0.56);
 }
 .wrapper .tooltip{
@@ -1671,6 +1679,14 @@ select {
     background: #1877f2;
     color: #ffffff;
 }
+
+.wrapper .whatsap:hover,
+.wrapper .whatsap:hover .tooltip,
+.wrapper .whatsap:hover .tooltip::before{
+    background: green;
+    color: #ffffff;
+}
+
 .wrapper-share .share:hover,
 .wrapper-share .share:hover .tooltip,
 .wrapper-share .share:hover .tooltip::before{
@@ -1684,12 +1700,6 @@ select {
     color: #ffffff;
 }
 
-.wrapper .whatsapp:hover,
-.wrapper .whatsapp:hover .tooltip,
-.wrapper .whatsapp:hover .tooltip::before{
-    background: green;
-    color: #ffffff;
-}
 .wrapper-share a {
     color: black !important;
 }
@@ -2124,12 +2134,7 @@ select {
         width: 95px;
     }
 }
-@media (min-width: 495px){
-    .card{
-        width:400px ;
-        margin: auto ;
-    }
-}
+
 @media (max-width: 400px) {
     .cont-form {
         width: 350px;
