@@ -224,7 +224,7 @@ header {
     margin-top: 40px;
     text-align: center;
     padding: 15px;
-    width: 80%;
+    width: 93%;
     background: rgba(255, 255, 255, 0.226);
     border: 1px solid rgba(255, 255, 255, 0.35);
     position: relative;
@@ -1554,7 +1554,7 @@ select {
     margin: 0 !important;
  }
 .row{
-    margin: 0px !important;
+    margin: 4px !important;
 }
 .redess{
     display: flex;
@@ -2021,6 +2021,11 @@ select {
     .card-img1{
         width: 70% !important;
     } 
+}
+@media(width: 768px){
+    .card-body{
+        width:245px !important;
+    }
 }
 @media (max-width: 768px) {
     .body-form {
