@@ -38,40 +38,40 @@
             </div>
             <div class="cont-form">
                 <p>
-                    <a href="">$10.000</a>
+                    <a href="https://biz.payulatam.com/L0f139b022EA708">$10.000</a>
                 </p>
                 <p>
-                    <a href="">$20.000</a>
+                    <a href="https://biz.payulatam.com/L0f139b6402F45C">$20.000</a>
                 </p>
                 <p>
-                    <a href="">$50.000</a>
+                    <a href="https://biz.payulatam.com/L0f139bA131C805">$50.000</a>
                 </p>
                 <p>
-                    <a href="">$80.000</a>
+                    <a href="https://biz.payulatam.com/L0f139b574A6C09">$80.000</a>
                 </p>
                 <p>
-                    <a href="">$100.000</a>
+                    <a href="https://biz.payulatam.com/L0f139b53674135">$100.000</a>
                 </p>
                 <p>
-                    <a href="">$150.000</a>
+                    <a href="https://biz.payulatam.com/L0f139b9E2ADCFD">$150.000</a>
                 </p>
                 <p>
-                    <a href="">$200.000</a>
+                    <a href="https://biz.payulatam.com/L0f139b39C1AF86">$200.000</a>
                 </p>
                 <p>
-                    <a href="">$250.000</a>
+                    <a href="https://biz.payulatam.com/L0f139b04CA4964">$250.000</a>
                 </p>
                 <p>
-                    <a href="">$300.000</a>
+                    <a href="https://biz.payulatam.com/L0f139b8863E529">$300.000</a>
                 </p>
                 <p>
-                    <a href="">$400.000</a>
+                    <a href="https://biz.payulatam.com/L0f139bFB5DFF99">$400.000</a>
                 </p>
                 <p>
-                    <a href="">$500.000</a>
+                    <a href="https://biz.payulatam.com/L0f139bDBFCA6CE">$500.000</a>
                 </p>
                 <p>
-                    <a href="">$1.000.000</a>
+                    <a href="https://biz.payulatam.com/L0f139b86202E5A">$1.000.000</a>
                 </p>
                 <!-- <form action="">
                     <p class="block1">

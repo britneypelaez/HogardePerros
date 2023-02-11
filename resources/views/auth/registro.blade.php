@@ -73,7 +73,7 @@
             </div>
         </div>
         <div class="register-right">
-            <img src="{{ asset('img/Logo original.png') }}" alt="Logo">
+            <img src="{{ asset('img/Home/Logoriginal2 .png') }}" alt="Logo">
         </div>
     </div>
 </body>

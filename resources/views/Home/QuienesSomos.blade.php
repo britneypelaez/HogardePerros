@@ -82,11 +82,13 @@
         </div>
     </div>
     <div class="info-form">
-        <h1>Contacto</h1>
-        <p>
-            Si quieres participar con nosotros, contáctanos, puedes ayudarnos en algunos de nuestros
-            planes, tu apoyo es esencial para la fundación.
-        </p>
+        <div class="infoQuinesSomos">
+            <h1>Contacto</h1>
+            <p>
+                Si quieres participar con nosotros, contáctanos, puedes ayudarnos en algunos de nuestros
+                planes, tu apoyo es esencial para la fundación.
+            </p>
+        </div>
         <div class="body-form">
             <div class="form-card-container">
                 <div class="form-card">

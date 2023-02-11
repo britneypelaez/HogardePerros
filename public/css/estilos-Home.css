@@ -31,13 +31,10 @@ header {
 
 .conten {
     height: 250px;
-    background-image: linear-gradient(to top,
-            rgba(0, 0, 0, 0.2) 0%,
-            rgba(0, 0, 0, 0.4) 100%),
-        url(../IMG/banner.jpg);
+    background: linear-gradient(rgba(5, 7, 12, 0.4), rgba(5, 7, 12, 0.4)), url(../img/Home/banner4.jpg);
     width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: 460px auto;
     background-position: center;
     background-attachment: fixed;
     position: relative;
@@ -59,10 +56,8 @@ header {
 }
 
 .logo img {
-    width: 22 0px;
-    height: 190px;
-    opacity: 0.8;
-    padding-top: 10px;
+    width: 280px;
+    height: 195px;
 }
 
 .stick {
@@ -1554,7 +1549,7 @@ select {
     margin: 0 !important;
  }
 .row{
-    margin: 4px !important;
+    margin: 20px !important;
 }
 .redess{
     display: flex;
@@ -2182,5 +2177,49 @@ select {
         --bs-modal-box-shadow: 0 0.5rem 1remrgba(var(--bs-body-color-rgb), 0.15);
     }
 }
-
+@media (min-width:376px){
+    .conten {
+        background-size: 239px auto;
+    }
+}
+@media (min-width:414px){
+    .conten {
+        background-size: 385px auto;
+    }
+}
+@media (min-width:390px){
+    .conten {
+        background-size: 360px auto;
+    }
+}
+@media (min-width:394px){
+    .conten {
+        background-size: 364px auto;
+    }
+}
+@media (min-width:360px){
+    .conten {
+        background-size: 260px auto;
+    }
+}
+@media (min-width:412px){
+    .conten {
+        background-size: 300px auto;
+    }
+}
+@media (min-width:912px){
+    .conten {
+        background-size: 372px auto;
+    }
+}
+@media (min-width:540px){
+    .conten {
+        background-size: 323px auto;
+    }
+}
+@media (min-width:1280px){
+    .conten {
+        background-size: 354px auto;
+    }
+}
 /* Fin estilos modales y card */
