@@ -50,6 +50,7 @@ class CertificadoController extends Controller
                 'monto' => 'required|numeric',
             ]);
             $template = storage_path() . '/app/public/template/certificado/formulario_certificado.docx';
+            Log::info($template);
             $directoryDocument = storage_path() . '/app/public/document/certifications/';
             $nomPDF = Carbon::now();
             $nomPDF = str_replace(' ', '', $nomPDF);
@@ -92,7 +93,7 @@ class CertificadoController extends Controller
             return redirect()->route('Certificados.index');
         } catch (\ErrorException $e) {
             Log::error($e->getMessage() . ' - ' . $e->getLine() . ' - ' . $e->getFile());
-            return [false, $e];
+            return [false, $e->getMessage() . ' - ' . $e->getLine() . ' - ' . $e->getFile()];
         }
 
     }
