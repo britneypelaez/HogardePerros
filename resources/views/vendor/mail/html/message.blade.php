@@ -2,7 +2,7 @@
 {{-- Header --}}
 @slot('header')
 @component('mail::header', ['url' => ''])
-Impuestos y rentas
+Adafriend
 @endcomponent
 @endslot
 
@@ -23,7 +23,7 @@ Impuestos y rentas
 {{-- Footer --}}
 @slot('footer')
 @component('mail::footer')
-© {{ date('Y') }} @lang('Impuestos y Rentas') @lang('Todos los derechos reservados.')
+© {{ date('Y') }} @lang('Adafriend') @lang('Todos los derechos reservados.')
 @endcomponent
 @endslot
 
