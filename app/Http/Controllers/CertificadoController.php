@@ -8,6 +8,8 @@ use App\Models\Fundacion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use PhpOffice\PhpWord\IOFactory;
+use PhpOffice\PhpWord\Settings;
 use PhpOffice\PhpWord\TemplateProcessor;
 
 class CertificadoController extends Controller
@@ -49,6 +51,10 @@ class CertificadoController extends Controller
                 'fecha' => 'required',
                 'monto' => 'required|numeric',
             ]);
+            $dompdfPath = realpath('vendor/dompdf/dompdf');
+            Settings::setPdfRendererName(Settings::PDF_RENDERER_DOMPDF);
+            Settings::setPdfRendererPath($dompdfPath);
+
             $template = storage_path() . '/app/public/template/certificado/formulario_certificado.docx';
             Log::info($template);
             $directoryDocument = storage_path() . '/app/public/document/certifications/';
@@ -61,7 +67,7 @@ class CertificadoController extends Controller
             foreach ($templateWord->getVariables() as $variable) {
                 switch ($variable) {
                     case 'nombre_duenio':
-                        $templateWord->setValue($variable, Auth::user()->name);
+                        $templateWord->setValue($variable, 'Guillermo Antonio Salazar Trujillo');
                         break;
                     case 'nombre_fundacion':
                         $templateWord->setValue($variable, $nombre_fundacion->nombre);
@@ -81,7 +87,14 @@ class CertificadoController extends Controller
                 }
             }
             $templateWord->saveAs($directoryDocument . $nomPDF . '.docx');
-            $nombre_documento = $nomPDF . '.docx';
+            // Cargar el archivo .docx
+            $phpWord = IOFactory::load($directoryDocument . $nomPDF . '.docx');
+            // Guardar el archivo como PDF
+            $xmlWriter = IOFactory::createWriter($phpWord, 'PDF');
+            $xmlWriter->save($directoryDocument . $nomPDF . '.pdf');
+            //Recuperamos el nombre del archivo
+            $nombre_documento = $nomPDF . '.pdf';
+
             $certificado = new Certificado();
             $certificado->nombre = request()->nombre;
             $certificado->id_fundacion = Auth::user()->id_fundacion;

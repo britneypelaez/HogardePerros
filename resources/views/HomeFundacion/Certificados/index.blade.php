@@ -29,8 +29,8 @@
                                     <td>{{ $certificado->identificacion }}</td>
                                     <td>{{ $certificado->fecha }}</td>
                                     <td>{{ $certificado->monto }}</td>
-                                    <td><a href="{{env('APP_URL')}}/storage/document/certifications/{{ $certificado->documento }}">
-                                        <img alt="image" src="{{ asset('storage/document/word.png') }}"  width="35px" height="35px">
+                                    <td><a href="{{env('APP_URL')}}/storage/document/certifications/{{ $certificado->documento }}" target="_blank">
+                                        <img alt="image" src="{{ asset('img/icono_pdf.png') }}"  width="35px" height="35px">
                                         </a>
                                     </td>
                                     <td>
@@ -40,7 +40,7 @@
                                             <button type="submit" class="btn btn-danger" >Borrar</button>
                                         </form>
                                     </td>
-    
+
                                 </tr>
                                 @endforeach
 
