@@ -12,7 +12,7 @@ class ContactanosMailable extends Mailable
     use Queueable, SerializesModels;
 
     public $subject = 'Solicitud de Informacion';
-
+    public $subtitle = 'Contactanos';
     public $nombre = '';
     public $celular = '';
     public $email = '';
@@ -37,6 +37,6 @@ class ContactanosMailable extends Mailable
      */
     public function build()
     {
-        return $this->view('email.contactanos');
+        return $this->markdown('email.contactanos');
     }
 }
