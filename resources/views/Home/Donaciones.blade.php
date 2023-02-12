@@ -35,7 +35,7 @@
                 </div>
                 <div class="contbtn">
                     <!-- Los nombres de la campaña se coloca de acuerdo al data-bs-whatever="Campaña1" como se muestra en el javaScript -->
-                    <a href="#exampleModal" class="btn btn-primary">DONAR</a>
+                    <a href="{{ route('pagoDonacion') }}" class="btn btn-primary">DONAR</a>
                     <button type="button" data-bs-whatever="{{ $campania->nombre_campania }}""
                                 data-bs-description=" {{ $campania->descripcion }}"
                         data-bs-meta="{{ $campania->meta_donaciones }}"
@@ -86,9 +86,11 @@
                                 </div>
                                 <img src="{{ asset('img/Home/LOGO.png') }}" alt="" class="imgpro">
                             </div>
-                            <div class="donarr">
-                                <button type="button" class="btn btn-primary">DONAR</button>
-                            </div>
+                            <a href="{{ route('pagoDonacion') }}">
+                                <div class="donarr">
+                                    <button type="button" class="btn btn-primary">DONAR</button>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>

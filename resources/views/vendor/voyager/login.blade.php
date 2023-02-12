@@ -17,7 +17,9 @@
       <h1>Hogar De Perros</h1>
       <div class="logo">
         <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
+        <a href="{{ route('/') }}">
           <img src="{{ asset('img/Home/Logoriginal2 .png') }}" alt="Logo">
+        </a>
       </div>
     </div>
     <div class="center">
