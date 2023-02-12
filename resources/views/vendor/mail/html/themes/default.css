@@ -13,6 +13,12 @@ img[alt="SISOFT"] {
     margin-left: auto;
     margin-right: auto;
     }
+img[alt="MASCOTAS"] {
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
 
 body {
     -webkit-text-size-adjust: none;

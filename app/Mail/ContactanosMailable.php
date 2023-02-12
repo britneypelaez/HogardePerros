@@ -11,8 +11,8 @@ class ContactanosMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = 'Solicitud de Informacion';
-    public $subtitle = 'Contactanos';
+    public $subject = 'Solicitud de Información';
+    public $subtitle = 'Contáctanos';
     public $nombre = '';
     public $celular = '';
     public $email = '';
