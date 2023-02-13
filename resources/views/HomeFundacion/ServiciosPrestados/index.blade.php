@@ -31,7 +31,7 @@
                             @foreach($ServiciosPrestados as $ServiciosPrestado)
                             <tr>
                                 <td style="display: none;">{{ $ServiciosPrestado->id }}</td>
-                                <td>{{ $ServiciosPrestado->nombre_servicio }}</td>
+                                <td style="height: 80px;">{{ $ServiciosPrestado->nombre_servicio }}</td>
                                 <td>{{ $ServiciosPrestado->nombre_cliente }}</td>
                                 <td>{{ $ServiciosPrestado->descripcion }}</td>
                                 <td>{{ $ServiciosPrestado->fecha }}</td>

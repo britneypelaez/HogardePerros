@@ -12,7 +12,7 @@
 
 <div class="contenedor-modal-crear" id="modalsCreatePerdidas">
     <div class="moda-crear">
-        <form action="{{ route('publicacion.create') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('publicacion.create') }}" id="confirmacion-crear" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="informacion-crear">
                 <h3 class="page__heading">Nuevo Animal Perdido</h3>
@@ -98,7 +98,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" id="p1" class="btn btn-primary">Guardar</button>
 
             </div>
 
@@ -107,3 +107,10 @@
 
     </div>
 </div>
+
+<script>
+document.querySelector("#p1").addEventListener("click", function(event) {
+    document.querySelector('#confirmacion-crear').submit();
+    this.disabled = true;
+});
+</script>

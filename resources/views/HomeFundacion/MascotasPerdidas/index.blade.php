@@ -78,7 +78,7 @@
 </section>
 <script>
 
-    const rutaEditar = '{{ env('APP_URL') }}' + '/';
+    const rutaEditar = '{{ env('APP_URL') }}';
 
 
     const searchRazaEditar = async (especie,idRaza) => {
