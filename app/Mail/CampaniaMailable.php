@@ -11,8 +11,8 @@ class CampaniaMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = 'Nueva Campaña!!';
-    public $subtitle = '! Se ha creado una nueva campaña!';
+    public $subject = '¡¡Nueva Campaña!!';
+    public $subtitle = '¡Se ha creado una nueva campaña!';
     public $nombre_campania = '';
     public $descripcion = '';
     /**
