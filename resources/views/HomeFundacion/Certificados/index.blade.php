@@ -25,7 +25,7 @@
                                 @foreach($certificados as $certificado)
                                 <tr>
                                     <td style="display: none;">{{ $certificado->certificado }}</td>
-                                    <td>{{ $certificado->nombre }}</td>
+                                    <td style="height: 80px;">{{ $certificado->nombre }}</td>
                                     <td>{{ $certificado->identificacion }}</td>
                                     <td>{{ $certificado->fecha }}</td>
                                     <td>{{ $certificado->monto }}</td>

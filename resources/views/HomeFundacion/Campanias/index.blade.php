@@ -33,7 +33,7 @@
                                 @foreach($campanias as $campania)
                                 <tr>
                                     <td style="display: none;">{{ $campania->id }}</td>
-                                    <td>{{ $campania->nombre_campania }}</td>
+                                    <td style="height: 80px;">{{ $campania->nombre_campania }}</td>
                                     <td>{{ $campania->descripcion }}</td>
                                     <td>{{ $campania->meta_donaciones }}</td>
                                     <td>{{ $campania->actual_donado }}</td>
