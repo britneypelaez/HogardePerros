@@ -82,7 +82,7 @@
         const color = document.getElementById('color');
         const tamaño = document.getElementById('tamaño');
         const edad = document.getElementById('edad');
-        let ruta = '{{ env('APP_URL') }}' + '/';
+        let ruta = '{{ env('APP_URL') }}';
 
         const search = async (especie, raza, color, tamaño, edad, page = 1) => {
             const result = await fetch(ruta +

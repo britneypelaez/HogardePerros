@@ -8,6 +8,7 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     @yield('metas')
     <title>Hogar de perros</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/Home/Logoriginal2.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('css/estilos-Home.css') }}">
@@ -22,6 +23,12 @@
     @else
     <link rel="shortcut icon" href="{{ Voyager::image($admin_favicon) }}" type="image/png">
     @endif
+    <style>
+        #my-image {
+          max-width: 10%;
+          height: auto;
+        }
+      </style>
 </head>
 
 <body id="body-pre">
@@ -29,7 +36,7 @@
         <div class="conten">
             <div class="logo">
                 <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
-                <img src="{{ asset('img/Home/Logoriginal2 .png') }}" alt="Logo">
+                <img src="{{ asset('img/Home/Logoriginal2.png') }}" alt="Logo">
                 <div class="curva" style="height: 80px; overflow: hidden;"><svg viewBox="0 0 500 150"
                         preserveAspectRatio="none" style="height: 100%; width: 100%;">
                         <path d="M0.00,49.99 C150.00,150.00 349.21,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z"
@@ -48,7 +55,7 @@
                 </label>
                 <a>
                     <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
-                    <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo">
+                    <img src="{{ asset('img/Home/Logoriginal2.png') }}" alt="Logo">
                 </a>
                 <ul class="lista">
                     <li>
@@ -114,11 +121,8 @@
                             </li>
                             @endcan
                             <li>
-                                <a href="">Cambiar Imagen </a>
-                            </li>
-                            <li>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
+                                        document.getElementById('logout-form').submit();" class="text-sm text-gray-700 dark:text-gray-500 underline">
                                     {{ __('Cerrar Sesion') }}
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -140,8 +144,9 @@
                 </ul>
             </div>
         </div>
+        <br>
         <a class="btn-donar" href="{{ route('Donaciones') }}">
-            <img src="{{asset("img/Home/donar.png")}}" alt="">
+            <img id="my-image" src="{{asset("img/donar.png")}}" alt="">
         </a>
     </div>
     @yield('content')

@@ -70,7 +70,6 @@ header {
     font-size: 30px;
     float: right;
     line-height: 80px;
-    margin-right: 40px;
     cursor: pointer;
     display: none;
 }
@@ -98,10 +97,15 @@ header {
     width: 100%;
 }
 
-.nav,
-.nav_v {
+.nav{
     width: 100%;
     height: auto;
+}
+
+.nav_v{
+    width: 93%;
+    height: auto;
+    align-items: center;
 }
 
 .nav a img,
@@ -1729,6 +1733,11 @@ select {
 }
 
 /*responsive*/
+@media (max-width: 1430px) {
+    .nav_v a {
+        display: none;
+    }
+}
 @media (max-width: 1400px) {
 
     .nav a img,
@@ -1773,52 +1782,16 @@ select {
         width: 250px;
         height: 250px;
     }
-}
-@media (max-width: 1097px) {
-
-    .nav a img,
-    .nav_v a img {
-        display: none;
-    }
-
-    .ultimo {
-        margin-left: 0;
-        margin-right: 0;
-        width: 100px;
-    }
-
-    .cont-adopcion p {
-        font-size: 15px;
-    }
-
-    .tener-en-cuenta-adopcion p {
-        font-size: 15px;
-    }
-
-    .tener-en-cuenta-adopcion h4 {
-        font-size: 17px;
-    }
-
-    .contenedor-modal-adopcion {
-        width: 80%;
-    }
-    .titulo-servicio p{
-        font-size: 25px;
-    }
-    .imagen-servicio {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 10px;
-    }
-    .descripcion-servicio p{
-        font-size: 15px;
-    }
-    .imagen-encuentrame{
-        width: 200px;
-        height: 200px;
+    .lista li a{
+        font-size: 80%;
     }
 }
-@media (max-width: 1040px) {
+@media (max-width: 1230px) {
+    .opciones a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 1160px) {
     #checke {
         display: none;
     }
@@ -1887,6 +1860,50 @@ select {
 
     .nav li:hover>.sublista {
         display: none;
+    }
+}
+@media (max-width: 1097px) {
+
+    .nav a img,
+    .nav_v a img {
+        display: none;
+    }
+
+    .ultimo {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100px;
+    }
+
+    .cont-adopcion p {
+        font-size: 15px;
+    }
+
+    .tener-en-cuenta-adopcion p {
+        font-size: 15px;
+    }
+
+    .tener-en-cuenta-adopcion h4 {
+        font-size: 17px;
+    }
+
+    .contenedor-modal-adopcion {
+        width: 80%;
+    }
+    .titulo-servicio p{
+        font-size: 25px;
+    }
+    .imagen-servicio {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+    .descripcion-servicio p{
+        font-size: 15px;
+    }
+    .imagen-encuentrame{
+        width: 200px;
+        height: 200px;
     }
 }
 @media(max-width:1033px){

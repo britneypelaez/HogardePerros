@@ -1,3 +1,4 @@
+@include('HomeFundacion.Mascotas.modalGenerico')
 <div class="contenedor-modal" id="modalsCreateMascota">
     <div class="moda">
 
@@ -13,7 +14,7 @@
         </div>
         @endif
 
-        <form action="{{ route('Mascotas.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('Mascotas.store') }}" id="confirmacion-crear" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="informacion">
 
@@ -116,16 +117,17 @@
                     </div>
 
                 </div>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" data-bs-target="#ModalCenter" id="p1" class="btn btn-primary">Guardar</button>
             </div>
+            
         </form>
         <a href="#" class="btn-close-modal">X</a>
     </div>
 </div>
+
 <script>
 const especie = document.getElementById('especieCrear');
-let ruta = '{{ env('
-APP_URL ') }}' + '/';
+let ruta = '{{ env('APP_URL ') }}';
 
 const searchRazaAgregar = async (especie) => {
     const resultRaza = await fetch(ruta + `api/raza/search?especie=${especie}`)
@@ -153,4 +155,22 @@ searchRazaAgregar(especie.value);
 especie.addEventListener('change', function(event) {
     searchRazaAgregar(event.target.value);
 });
+
+document.querySelector("#si").addEventListener("click", function(event) {
+    document.querySelector('#confirmacion-crear').submit();
+    this.disabled = true;
+});
+
+document.querySelector("#no1").addEventListener("click", function(event) {
+    document.querySelector('#ModalCenter').style.display = "none";
+});
+
+document.querySelector("#no2").addEventListener("click", function(event) {
+    document.querySelector('#ModalCenter').style.display = "none";
+});
+
+document.querySelector("#p1").addEventListener("click", function(event) {
+    document.querySelector('#ModalCenter').style.display = "block";
+});
+
 </script>
