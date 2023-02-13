@@ -170,10 +170,11 @@ header {
     list-style: none;
     background: rgba(0, 0, 0, 0.7);
     padding: 0 !important;
+    width: 200px;
 }
 
 .sublista li {
-    width: 100%;
+    width: 200px;
 }
 
 .sublista li a {

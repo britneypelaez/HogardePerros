@@ -104,7 +104,7 @@
                     <li class="submenu">
                         <input type="checkbox" id="checke">
                         <label for="checke" class="opciones">
-                            <a>{{ auth()->user()->name }}</a>
+                            <a class="text-sm text-gray-700 dark:text-gray-500 underline">{{ auth()->user()->name }}</a>
                             <img class="sesion" src="{{ asset('img/Home/banner.jpg') }}" alt="">
                         </label>
                         <ul class="sublista">
@@ -121,10 +121,8 @@
                             </li>
                             @endcan
                             <li>
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();" class="text-sm text-gray-700 dark:text-gray-500 underline">
-                                    {{ __('Cerrar Sesion') }}
-                                </a>
+                                <a style="width: 100%;" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Cerrar Sesion</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
