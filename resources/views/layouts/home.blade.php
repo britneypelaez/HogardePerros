@@ -121,9 +121,6 @@
                             </li>
                             @endcan
                             <li>
-                                <a href="">Cambiar Imagen </a>
-                            </li>
-                            <li>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                                     {{ __('Cerrar Sesion') }}
