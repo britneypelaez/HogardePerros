@@ -12,7 +12,7 @@ class CampaniaMailable extends Mailable
     use Queueable, SerializesModels;
 
     public $subject = 'Nueva Campaña!!';
-
+    public $subtitle = '! Se ha creado una nueva campaña!';
     public $nombre_campania = '';
     public $descripcion = '';
     /**
@@ -33,6 +33,6 @@ class CampaniaMailable extends Mailable
      */
     public function build()
     {
-        return $this->view('email.nueva_campania');
+        return $this->markdown('email.nueva_campania');
     }
 }
