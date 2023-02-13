@@ -23,6 +23,12 @@
     @else
     <link rel="shortcut icon" href="{{ Voyager::image($admin_favicon) }}" type="image/png">
     @endif
+    <style>
+        #my-image {
+          max-width: 10%;
+          height: auto;
+        }
+      </style>
 </head>
 
 <body id="body-pre">
@@ -141,8 +147,9 @@
                 </ul>
             </div>
         </div>
+        <br>
         <a class="btn-donar" href="{{ route('Donaciones') }}">
-            <img src="{{asset("img/donar.png")}}" alt="">
+            <img id="my-image" src="{{asset("img/donar.png")}}" alt="">
         </a>
     </div>
     @yield('content')
