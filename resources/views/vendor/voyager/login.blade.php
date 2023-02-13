@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/Home/Logoriginal2.png') }}">
     <title>{{ __('Login') }}</title>
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -18,7 +19,7 @@
       <div class="logo">
         <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
         <a href="{{ route('/') }}">
-          <img src="{{ asset('img/Home/Logoriginal2 .png') }}" alt="Logo">
+          <img src="{{ asset('img/Home/Logoriginal2.png') }}" alt="Logo">
         </a>
       </div>
     </div>
@@ -124,7 +125,7 @@
     </div>
   </div>
   @error('email')
-    <dialog id="modal">   
+    <dialog id="modal">
       <p>{{ $message }}</p>
       <button id= "cerrar-modal">Cerrar</button>
     </dialog>
