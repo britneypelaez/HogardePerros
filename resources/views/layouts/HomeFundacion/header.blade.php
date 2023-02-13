@@ -13,7 +13,7 @@
     @if(\Illuminate\Support\Facades\Auth::user())
     <li class="dropdown">
         <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="{{ asset('img/' . $user->Fundacion->logo) }}"
+            <img alt="image" src="{{ asset('storage/' . $user->Fundacion->logo) }}"
                 class="rounded-circle mr-1 thumbnail-rounded user-thumbnail ">
             <div class="d-sm-none d-lg-inline-block">
                 Hola, {{\Illuminate\Support\Facades\Auth::user()->name}}</div>
