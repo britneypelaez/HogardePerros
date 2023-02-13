@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/Home/Logoriginal2.png') }}">
     <title>Registrarse</title>
     <link rel="stylesheet" href="{{ asset('css/estilos-register.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -73,7 +74,7 @@
             </div>
         </div>
         <div class="register-right">
-            <img src="{{ asset('img/Home/Logoriginal2 .png') }}" alt="Logo">
+            <img src="{{ asset('img/Home/Logoriginal2.png') }}" alt="Logo">
         </div>
     </div>
 </body>
