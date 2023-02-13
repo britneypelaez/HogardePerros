@@ -142,7 +142,7 @@
             </div>
         </div>
         <a class="btn-donar" href="{{ route('Donaciones') }}">
-            <img src="{{asset("img/Home/donar.png")}}" alt="">
+            <img src="{{asset("img/donar.png")}}" alt="">
         </a>
     </div>
     @yield('content')
