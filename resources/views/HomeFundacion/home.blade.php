@@ -7,7 +7,9 @@
         use App\Models\User;
         $user = User::where('id', Auth::user()->id)->first();
         @endphp
-        <h3 class="page__heading">{{ $user->Fundacion->nombre }}</h3>
+        @if ($user->id_fundacion != null)
+            <h3 class="page__heading">{{ $user->Fundacion->nombre }}</h3>
+        @endif
     </div>
     <div class="section-body">
         <div class="row">
