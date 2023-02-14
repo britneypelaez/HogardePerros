@@ -23,12 +23,6 @@
     @else
     <link rel="shortcut icon" href="{{ Voyager::image($admin_favicon) }}" type="image/png">
     @endif
-    <style>
-        #my-image {
-          max-width: 10%;
-          height: auto;
-        }
-      </style>
 </head>
 
 <body id="body-pre">

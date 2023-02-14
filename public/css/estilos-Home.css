@@ -1225,8 +1225,8 @@ h3 {
     padding-top: 0;
 }
 
-.btn-donar img {
-    width: 75px;
+#my-image {
+    width: 80px;
 }
 
 .contenedorServicios {
@@ -1985,10 +1985,6 @@ select {
     footer {
         height: 120px;
     }
-    .btn-donar img {
-        width: 200px;
-        height: 80px;
-    }
 }
 @media(max-width:922px){
     .card-body{
@@ -2061,11 +2057,6 @@ select {
 
     .tener-en-cuenta-adopcion p {
         font-size: 12px;
-    }
-
-    .btn-donar img {
-        width: 150px;
-        height: 60px;
     }
     .caja p{
         font-size: 15px;
@@ -2151,6 +2142,9 @@ select {
         font-size: 8px !important;
         width: 95px;
     }
+    #my-image {
+        width: 70px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -2165,10 +2159,6 @@ select {
     .imagen-encuentrame{
         width: 150px;
         height: 150px;
-    }
-    .btn-donar img {
-        width: 120px;
-        height: 50px;
     }
 }
 @media (max-width: 394px){
