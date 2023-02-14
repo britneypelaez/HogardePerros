@@ -221,7 +221,6 @@ header {
 }
 
 .info_bar {
-    margin-top: 40px;
     text-align: center;
     padding: 15px;
     width: 93%;
@@ -1222,11 +1221,12 @@ h3 {
 
 .btn-donar {
     margin-left: 50px;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .btn-donar img {
-    width: 250px;
-    height: 100px;
+    width: 75px;
 }
 
 .contenedorServicios {

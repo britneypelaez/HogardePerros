@@ -5,7 +5,7 @@
 @section('content')
     <div class="info">
         <div class="info_bar">
-            <h2>Fundación Hogar de Perros</h2>
+            <h1>Fundación Hogar de Perros</h1>
             <p>
                 Hogar de perros y gatos es una fundación sin ánimo de lucro, nuestro objetivo principal es la acogida y la
                 restauración de vida de perros y gatos, brindando servicios veterinarios y cuidados que cada animalito

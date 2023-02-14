@@ -5,7 +5,7 @@
 @section('content')
     <div class="info">
         <div class="info_bar">
-            <h2>Adopta una mascota de nuestra Fundación Hogar de Perros</h2>
+            <h1>Adopta una mascota de nuestra Fundación Hogar de Perros</h1>
             <p>
                 ¡Bienvenidos a nuestra sección de mascotas en adopción! Estamos encantados de presentarles a nuestros
                 queridos amigos peludos que están buscando un hogar para siempre.
