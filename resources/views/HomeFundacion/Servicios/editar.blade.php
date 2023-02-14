@@ -47,7 +47,7 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <label for="descripcion">Descripcion del Servicio Veterinario</label>
+                            <label for="descripcion">Descripción del Servicio Veterinario</label>
                             <textarea type="text" name="descripcion" class="form-control" required
                                 value="">{{ old('descripcion', $servicio->descripcion) }}</textarea>
                         </div>

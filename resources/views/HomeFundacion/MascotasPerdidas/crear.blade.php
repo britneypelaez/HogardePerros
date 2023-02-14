@@ -45,7 +45,7 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <label for="descripcion">Descripcion</label>
+                            <label for="descripcion">Descripción</label>
                             <textarea type="text" name="descripcion" class="form-control" required value=""
                                 style="height:230px;"> {{ old('descripcion') }} </textarea>
                         </div>

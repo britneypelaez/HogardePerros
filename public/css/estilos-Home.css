@@ -1066,6 +1066,7 @@ h3 {
 .left .p-text {
     font-weight: 600;
     font-size: 19px;
+    text-align: justify;
 }
 
 .carousel.carousel-dark.slide {
@@ -1094,6 +1095,7 @@ h3 {
 .infoQuinesSomos p {
     font-size: 20px;
     font-weight: 600;
+    text-align: justify;
 }
 
 .carousel-inner {

@@ -7,7 +7,7 @@
     <div class="info_bar">
         <h1 style="margin-bottom: 15px;">SERVICIOS VETERINARIOS</h1>
         <P>¡Bienvenidos a los servicios veterinarios de nuestra fundación! Estamos encantados de poder ofrecer servicios de calidad para su mascota. Nuestro equipo de veterinarios 
-            altamente calificados está dispuesto a brindarle cuidados médicos de alta calidad a su perro o gato. Ofrecemos una amplia gama de servicios, desde chequeos generales hasta 
+            altamente calificados están dispuestos a brindarle cuidados médicos de alta calidad a su perro o gato. Ofrecemos una amplia gama de servicios, desde chequeos generales hasta 
             cirugías y tratamientos médicos especializados. Contáctenos para hacer una cita y comience a cuidar mejor a su mascota hoy mismo.
         </P>
     </div>

@@ -48,7 +48,7 @@
         </button>
     </div>
     <div class="infoQuinesSomos">
-        <h1>QUIÉNES SOMOS</h1>
+        <h1>¿QUIÉNES SOMOS?</h1>
         <p>
             Hogar de perros y gatos es una fundación sin ánimo de lucro, nuestro objetivo principal es la
             acogida y la restauración de vida de perros y gatos, brindando servicios veterinarios y

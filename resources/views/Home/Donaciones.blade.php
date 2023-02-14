@@ -6,7 +6,7 @@
 <div class="requisito">
     <div class="info_bar">
         <h1 class="tituloDon">Donaciones</h1>
-        <p>Con ayuda de tus donaciones nos brinda la oportunidad de hacer un cambio efectivo y sostenible
+        <p>Con ayuda de tus donaciones nos brindas la oportunidad de hacer un cambio efectivo y sostenible
             a nuestras mascotas, donde en todo momento genera un impacto social positivo con el fin de contribuir
             al rescate y el cuidado de cada uno de nuestros animales que está actualmente en el refugio.
         </p>

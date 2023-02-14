@@ -69,7 +69,7 @@
             </div>
         </div>
 
-        <h2 class="animate__animated animate__bounce animate__slow">Perros/Gatos en adopcion</h2>
+        <h2 class="animate__animated animate__bounce animate__slow">Perros/Gatos en adopción</h2>
 
         <div class="adopciones" id="result"></div>
         <div id="paginate" class="paginacion"></div>
