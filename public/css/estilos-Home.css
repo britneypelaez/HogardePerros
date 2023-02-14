@@ -1090,8 +1090,6 @@ h3 {
     margin: auto auto;
 }
 
-
-
 .infoQuinesSomos p {
     font-size: 20px;
     font-weight: 600;
@@ -1229,6 +1227,7 @@ h3 {
 
 #my-image {
     width: 80px;
+    height: auto;
 }
 
 .contenedorServicios {
@@ -2146,6 +2145,7 @@ select {
     }
     #my-image {
         width: 70px;
+        height: auto;
     }
 }
 
