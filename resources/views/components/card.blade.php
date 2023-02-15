@@ -3,6 +3,9 @@
         <img src="{{ asset("storage/$imagen") }}" alt="">
         <div class="descrip">
             <h2>{{ $mascota }}</h2>
+            <p>
+                {{ $descripcion }}
+            </p>
         </div>
     </div>
     <button type="button" class="more" data-bs-toggle="modal" data-bs-target="#exampleModal{{$mascota}}">Más Información</button>

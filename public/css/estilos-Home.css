@@ -381,11 +381,9 @@ h2 {
 .descrip p {
     margin-top: 5px;
     width: 90%;
-    height: 140px;
     text-align: justify;
     justify-self: center;
     align-self: center;
-    font-size: 11px;
 }
 
 .more {
