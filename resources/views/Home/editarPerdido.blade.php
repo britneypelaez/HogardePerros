@@ -18,13 +18,13 @@
 
                 <h3 class="page__heading">Editar Mascota Perdida</h3>
 
-                <div class="actualizar">
+                <div class="actualizar ms-3">
 
                     <img class="imagen-servicio" src="{{ asset("storage/$MascotasPerdida->imagen_mascota") }}" alt="" />
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
                             <label for="">Subir foto</label><br>
-                            <input type="file" name="imagen_mascota" id="" accept="image/*" style="width: 165px;">
+                            <input type="file" name="imagen_mascota" id="" accept="image/*" style="width: 179px;">
                             @error('imagen_mascota')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -34,7 +34,7 @@
                 </div>
 
 
-                <div class="actualizar1">
+                <div class="actualizar1 me-4">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
 
-                <div class="actualizar2">
+                <div class="actualizar2 me-4">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">

@@ -20,12 +20,12 @@
                             <div class="col-md-12 col-xl-12">
                                 <div class="card bg-c-blue orden-card">
                                     <div class="card-blok">
-                                        <h5>Mascotas</h5>
+                                        <h5 style="color:white;">Mascotas</h5>
                                         @php
                                         use App\Models\Mascota;
                                         $cant_mascotas = Mascota::where('id_fundacion', $user->id_fundacion)->count();
                                         @endphp
-                                        <h2 class="text-right"><i class="fa fa-solid fa-paw f-left"></i><span>{{ $cant_mascotas }}</span></h2>
+                                        <h2 class="text-right"><i class="fa fa-solid fa-paw f-left" style="color:white;"></i><span style="color:white;">{{ $cant_mascotas }}</span></h2>
                                         <p class="m-b-0 text-right"><a href="/Mascotas" class="text-white">Ver más</a></p>
                                     </div>
                                 </div>
@@ -33,12 +33,12 @@
                             <div class="col-md-12 col-xl-12">
                                 <div class="card bg-c-green orden-card">
                                     <div class="card-blok">
-                                        <h5>Servicios Veterinarios</h5>
+                                        <h5 style="color:white;">Servicios Veterinarios</h5>
                                         @php
                                         use App\Models\Servicio;
                                         $cant_servicios = Servicio::where('id_fundacion', $user->id_fundacion)->count();
                                         @endphp
-                                        <h2 class="text-right"><i class="fa fa-solid fa-ambulance f-left "></i><span>{{ $cant_servicios }}</span></h2>
+                                        <h2 class="text-right"><i class="fa fa-solid fa-ambulance f-left " style="color:white;"></i><span style="color:white;">{{ $cant_servicios }}</span></h2>
                                         <p class="m-b-0 text-right"><a href="/Servicios" class="text-white">Ver más</a></p>
                                         
                                     </div>
@@ -47,12 +47,12 @@
                             <div class="col-md-12 col-xl-12">
                                 <div class="card bg-c-pink orden-card">
                                     <div class="card-blok">
-                                        <h5>Servicios Prestados</h5>
+                                        <h5 style="color:white;">Servicios Prestados</h5>
                                         @php
                                         use App\Models\ServicioPrestado;
                                         $cant_servicios_prestados = ServicioPrestado::where('id_fundacion', $user->id_fundacion)->count();
                                         @endphp
-                                        <h2 class="text-right"><i class="fa fa-solid fa-list f-left"></i><span>{{ $cant_servicios_prestados }}</span></h2>
+                                        <h2 class="text-right"><i class="fa fa-solid fa-list f-left" style="color:white;"></i><span style="color:white;">{{ $cant_servicios_prestados }}</span></h2>
                                         <p class="m-b-0 text-right"><a href="/ServiciosPrestados" class="text-white">Ver más</a></p>
                                     </div>
                                 </div>

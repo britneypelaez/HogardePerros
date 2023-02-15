@@ -103,9 +103,11 @@ header {
 }
 
 .nav_v{
-    width: 93%;
+    width: 100%;
     height: auto;
     align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .nav a img,
@@ -223,11 +225,12 @@ header {
 .info_bar {
     text-align: center;
     padding: 15px;
-    width: 93%;
+    width: 80%;
     background: rgba(255, 255, 255, 0.226);
     border: 1px solid rgba(255, 255, 255, 0.35);
     position: relative;
     border-radius: 5px;
+    margin-top: 30px;
 }
 
 .info_bar::before {
@@ -384,6 +387,7 @@ h2 {
     text-align: justify;
     justify-self: center;
     align-self: center;
+    font-size: 13px;
 }
 
 .more {
@@ -1012,7 +1016,7 @@ h3 {
     position: relative;
     display: grid;
     grid-template-columns: 50% 50%;
-    margin: 80px auto 30px auto;
+    margin: 10px auto 22px auto;
 }
 
 .contene::before {
@@ -1067,19 +1071,21 @@ h3 {
     text-align: justify;
 }
 
-.carousel.carousel-dark.slide {
+.carousel.carousel-dark {
     max-width: 80%;
     border: 2px solid;
     border-radius: 20px;
-    margin: 100px auto 50px auto;
+    margin: 60px auto 33px auto;
     -webkit-box-shadow: 13px -2px 60px 2px rgba(97, 97, 99, 1);
     -moz-box-shadow: 13px -2px 60px 2px rgba(97, 97, 99, 1);
     box-shadow: 13px -2px 60px 2px rgba(97, 97, 99, 1);
 }
 
-.carousel-inner img{
-    width: 100%;
-    height: 400px;
+.slide{
+    margin-top: 10px;
+}
+.slide img{
+    height: 65vh;
 }
 
 .infoQuinesSomos {
@@ -1107,7 +1113,7 @@ h3 {
 
 .info-form {
     text-align: center;
-    margin: 100px auto;
+    margin: 30px auto;
 }
 
 
@@ -1216,8 +1222,13 @@ h3 {
 .infosepa{
     margin-bottom: 100px;
 }
-
+/* .contene .left h1, .contene .left h3{
+    text-align: justify;
+} */
 .btn-donar {
+    position: sticky;
+    top: 135px;
+    z-index: 100;
     margin-left: 50px;
     margin-top: 0;
     padding-top: 0;
@@ -1502,7 +1513,7 @@ select {
 }
 .modal-left .imgmodal1{
     width: 100%;
-    height: 400px;
+    max-height: 550px;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -1796,9 +1807,20 @@ select {
         display: none;
     }
 
+    .navbar_r {
+        display: flex;
+        
+        justify-content: end;
+    }
+    .nav_v{
+        display: flex;
+        
+        justify-content: end;
+    }
     .checkbtn {
         display: block;
         margin-top: 10px;
+        margin-right: 20px;
     }
 
     .lista {
@@ -2146,7 +2168,11 @@ select {
         height: auto;
     }
 }
-
+@media (max-width: 460px) {
+    .tabla-servicios{
+        width: auto;
+    }
+}
 @media (max-width: 400px) {
     .cont-form {
         width: 350px;
@@ -2230,4 +2256,25 @@ select {
         background-size: 354px auto;
     }
 }
+@media (max-width:912px){
+    .slide img{
+        height: 35vh !important;
+    }
+}
+@media (min-width: 1014px){
+    .row-cols-md-2 >* {
+        flex: 0 0 auto !important;
+    }
+}
+@media(max-width:1013px){
+    .row-cols-1 > *{
+        flex: 0 0 auto !important;
+         width: 100% !important;
+    }
+}
+/* @media (max-width:375px){
+    .slide img{
+        height: 35vh;
+    }
+} */
 /* Fin estilos modales y card */

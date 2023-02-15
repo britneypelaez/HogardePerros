@@ -17,13 +17,13 @@
             <div class="informacion-crear">
                 <h3 class="page__heading">Nuevo Animal Perdido</h3>
 
-                <div class="actualizar">
+                <div class="actualizar ms-3">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
                             <label for="">Subir foto</label><br>
                             <input type="file" name="imagen_mascota" id="" accept="image/*" required
-                                style="width: 165px;">
+                                style="width: 179px;">
                             @error('imagen_mascota')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
@@ -32,7 +32,7 @@
 
                 </div>
 
-                <div class="actualizar1">
+                <div class="actualizar1 me-4">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">
@@ -52,7 +52,7 @@
 
                 </div>
 
-                <div class="actualizar2">
+                <div class="actualizar2 me-4">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group2">

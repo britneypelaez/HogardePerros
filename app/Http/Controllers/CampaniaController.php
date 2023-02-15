@@ -49,7 +49,7 @@ class CampaniaController extends Controller
         //Validaciendo de los campos enviados desde la vista crear
         request()->validate([
             'nombre_campania' => 'required',
-            'descripcion' => 'required',
+            'descripcion' => 'required|max:255',
             'meta_donaciones' => 'required|numeric',
             'actual_donado' => 'required|numeric',
             'imagen_campania' => 'required',
@@ -110,7 +110,7 @@ class CampaniaController extends Controller
         //Validaciendo de los campos enviados desde la vista crear
         request()->validate([
             'nombre_campania' => 'required',
-            'descripcion' => 'required',
+            'descripcion' => 'required|max:255',
             'meta_donaciones' => 'required|numeric',
             'actual_donado' => 'required|numeric',
         ]);
