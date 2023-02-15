@@ -8,15 +8,19 @@
         <h1 class="tituloDon">Donaciones</h1>
         <p>Con ayuda de tus donaciones nos brindas la oportunidad de hacer un cambio efectivo y sostenible
             a nuestras mascotas, donde en todo momento genera un impacto social positivo con el fin de contribuir
-            al rescate y el cuidado de cada uno de nuestros animales que está actualmente en el refugio.
+            al rescate y el cuidado de cada uno de nuestros animales que están actualmente en el refugio.
         </p>
         <p>
             Contribuye para seguir brindando segundas oportunidades. <br>
             Tu donación lo hace posible.
         </p>
+        <p>
+        Las donaciones se podrán realizar mediante la plataforma de pago de PayU, en donde tendrás que darle a 
+        el botón de "Donar" a la campaña la cual quieres brindar tu ayuda.
+        </p>
     </div>
 </div>
-<div class="row row-cols-1 row-cols-md-3 g-3">
+<div class="row row-cols-1 row-cols-md-2 g-3">
     @foreach ($campanias as $campania)
 
 

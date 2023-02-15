@@ -100,7 +100,7 @@ class MascotaController extends Controller
         //Validaciendo de los campos enviados desde la vista crear
         request()->validate([
             'nombre_mascota' => 'required',
-            'descripcion' => 'required',
+            'descripcion' => 'required|max:255',
             'raza' => 'required',
             'color' => 'required',
             'tamanio' => 'required',
@@ -164,7 +164,7 @@ class MascotaController extends Controller
         //Validaciendo de los campos enviados desde la vista crear
         request()->validate([
             'nombre_mascota' => 'required',
-            'descripcion' => 'required',
+            'descripcion' => 'required|max:255',
             'raza' => 'required',
             'color' => 'required',
             'tamanio' => 'required',

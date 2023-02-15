@@ -3,6 +3,9 @@
         <img src="{{ asset("storage/$imagen") }}" alt="">
         <div class="descrip">
             <h2>{{ $mascota }}</h2>
+            <p>
+                 {{ $descripcion }}
+            </p>
         </div>
     </div>
     <button type="button" class="more" data-bs-toggle="modal" data-bs-target="#exampleModal{{$mascota}}">Más Información</button>
@@ -32,14 +35,14 @@
                             <p>{{ $color }}</p>
                         </div>
                         <div class="cont-adopcion-dif">
-                            <p class="negrita">Caracteristicas: </p>
+                            <p class="negrita">Características: </p>
                             <p>  {{ $descripcion }}</p>
                         </div>
                         <div class="cont-adopcion">
                             <p class="negrita">Edad:</p>
                             <p> {{ $edad }} años</p>
                         </div>
-                        <a href="{{ route('adoptare') }}"><button class="transicion2" type="submit"><span>Seguir Adopcion</span></button></a>
+                        <a href="{{ route('adoptare') }}"><button class="transicion2" type="submit"><span>Seguir Adopción</span></button></a>
                     </div>
                     <div class="tener-en-cuenta-adopcion">
                         <h4>Antes de adoptar una mascota, ten en cuenta:</h4>
@@ -50,14 +53,14 @@
                             Vacunados</br>
                             Con collar</br>
                         </p>
-                        <h4>¿Como funciona el proceso de adopcion?:</h4>
+                        <h4>¿Cómo funciona el proceso de adopción?:</h4>
                         <p>
                             Los perros cachorros se entregan desparacitados y con una vacuna Puppy</br>
                         </p>
                         <h4>Requisitos para adoptar:</h4>
                         <p>
                             Ser mayor de edad</br>
-                            Firmar hoja de adopcion con un compromiso de traerlos a esterilazion a los cinco meses sin costo para el adoptante</br>
+                            Firmar hoja de adopción con un compromiso de traerlos a esterilización a los cinco meses sin costo para el adoptante</br>
                         </p>
                     </div>
                 </div>

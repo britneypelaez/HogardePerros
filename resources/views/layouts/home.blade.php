@@ -60,7 +60,7 @@
                     </li>
                     <li>
                         <div class="opciones">
-                            <a href="{{ route('QuienesSomos') }}">Quiénes Somos</a>
+                            <a href="{{ route('QuienesSomos') }}">¿Quiénes Somos?</a>
                             <img src="{{ asset('img/Home/information.png') }}" alt="" id="miniaturas" style="left:60px">
                         </div>
                     </li>
@@ -136,11 +136,10 @@
                 </ul>
             </div>
         </div>
-        <br>
-        <a class="btn-donar" href="{{ route('Donaciones') }}">
+    </div>
+    <a class="btn-donar" href="{{ route('Donaciones') }}">
             <img id="my-image" src="{{asset("img/donar.png")}}" alt="">
         </a>
-    </div>
     @yield('content')
     @yield('scripts')
     <footer>

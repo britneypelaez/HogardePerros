@@ -69,7 +69,7 @@
                     </li>
                     <li>
                         <div class="opciones">
-                            <a href="">Seccion Encuentrame </a>
+                            <a href="">Seccion Encuéntrame </a>
                             <img src="{{ asset('img/Home/findme.png') }}" alt="" id="miniaturas" />
                         </div>
                     </li>

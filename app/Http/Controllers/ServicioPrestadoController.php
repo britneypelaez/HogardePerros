@@ -44,7 +44,7 @@ class ServicioPrestadoController extends Controller
             'nombre_servicio' => 'required',
             'nombre_cliente' => 'required',
             'id_cliente' => 'required',
-            'descripcion' => 'required',
+            'descripcion' => 'required|max:255',
             'fecha' => 'required',
         ]);
 
@@ -96,7 +96,7 @@ class ServicioPrestadoController extends Controller
             'nombre_servicio' => 'required',
             'nombre_cliente' => 'required',
             'id_cliente' => 'required',
-            'descripcion' => 'required',
+            'descripcion' => 'required|max:255',
             'fecha' => 'required',
         ]);
         $ServiciosPrestado->nombre_servicio = $request->has('nombre_servicio') ?  $request->nombre_servicio : $ServiciosPrestado->nombre_servicio;
