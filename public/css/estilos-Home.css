@@ -1513,7 +1513,7 @@ select {
 }
 .modal-left .imgmodal1{
     width: 100%;
-    height: 400px;
+    max-height: 550px;
     border-radius: 10px;
     cursor: pointer;
 }
