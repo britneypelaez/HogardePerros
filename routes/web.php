@@ -91,9 +91,11 @@ Route::get('/login-google', function () {
 
 Route::get('/google-callback', function () {
     $user = Socialite::driver('google')->user();
-
+    
     $userExiste = User::where('external_id', $user->id)->where('external_auth', 'google')->first();
-
+    if ($userExiste == null) {
+        $userExiste = User::where('email', 'iLike', $user->email)->first();
+    }
     if ($userExiste) {
         Auth::login($userExiste);
         if ($userExiste->role_id == 3 && $userExiste->id_fundacion == 1 || $userExiste->id == 1) {
