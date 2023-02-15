@@ -55,7 +55,7 @@ class CertificadoController extends Controller
             Settings::setPdfRendererName(Settings::PDF_RENDERER_DOMPDF);
             Settings::setPdfRendererPath($dompdfPath);
 
-            $template = storage_path() . '/app/public/template/certificado/formulario_certificado.docx';
+            $template = storage_path() . '/app/public/template/certificado/formulario_certificado_bancario.docx';
             Log::info($template);
             $directoryDocument = storage_path() . '/app/public/document/certifications/';
             $nomPDF = Carbon::now();
@@ -69,6 +69,9 @@ class CertificadoController extends Controller
                     case 'nombre_duenio':
                         $templateWord->setValue($variable, 'Guillermo Antonio Salazar Trujillo');
                         break;
+                    case 'nit_empresa':
+                        $templateWord->setValue($variable, '900013193-4');
+                        break;
                     case 'nombre_fundacion':
                         $templateWord->setValue($variable, $nombre_fundacion->nombre);
                         break;
@@ -79,7 +82,7 @@ class CertificadoController extends Controller
                         $templateWord->setValue($variable, request()->identificacion);
                         break;
                     case 'fecha':
-                        $templateWord->setValue($variable, request()->fecha);
+                        $templateWord->setValue($variable, substr(request()->fecha, 8, 10) . ' del mes ' . substr(request()->fecha, 5, -3) . ' del año ' . substr(request()->fecha, 0, 4));
                         break;
                     case 'monto':
                         $templateWord->setValue($variable, request()->monto);
