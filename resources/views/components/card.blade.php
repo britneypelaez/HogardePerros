@@ -4,11 +4,7 @@
         <div class="descrip">
             <h2>{{ $mascota }}</h2>
             <p>
-<<<<<<< HEAD
-                 {{ $descripcion }}
-=======
                 {{ $descripcion }}
->>>>>>> 7ace71afe685a965c9502bc6eff7877e6be30e86
             </p>
         </div>
     </div>

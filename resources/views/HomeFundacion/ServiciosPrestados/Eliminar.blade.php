@@ -1,7 +1,7 @@
 <div class="contenedor-modal Eliminar" id="modalsServiciosPrestadosEliminar{{ $ServiciosPrestado}}">
     <div class="moda">
         <div class="ContenedorEliminar">
-            <h4>¿Esta seguro que desea continuar con esta accion?</h4>
+            <h4>¿Está seguro que desea continuar con esta acción?</h4>
             <a href="#"><button class="btn btn-outline-danger">Cancelar</button></a>
 
             <a>

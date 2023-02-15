@@ -256,10 +256,8 @@
 .actualizar3 {
     grid-column: 1/4;
     margin: 25px;
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: center;
-
 }
 
 .actualizar3 > div > .form-group{
@@ -268,9 +266,8 @@
 }
 
 .actualizar3 img{
-    width: 45% !important;
-    height: 35% !important;
-    margin-left: 28%;
+    width: 20% !important;
+    height: 10% !important;
 }
 
 .actualizar3 input{

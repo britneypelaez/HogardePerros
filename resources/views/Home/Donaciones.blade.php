@@ -68,7 +68,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-left">
-                        <img class="imgmodal1" src="" alt="..." id="btn-abrir">
+                        <img class="imgmodal1" src="" alt="..." id="btn-abrir" >
                     </div>
                     <div class="modal-right">
                         <p class="modal-description">

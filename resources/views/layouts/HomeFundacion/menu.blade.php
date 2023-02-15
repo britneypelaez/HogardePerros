@@ -18,7 +18,7 @@
     </a>
     <br>
     <a class="nav-link" href="{{url('MascotasPerdidas')}}">
-        <i class=" fas fa-solid fa-heartbeat"></i><span>Encuentrame</span>
+        <i class=" fas fa-solid fa-heartbeat"></i><span>Encuéntrame</span>
     </a>
     <br>
     <a class="nav-link" href="{{url('ServiciosPrestados')}}">

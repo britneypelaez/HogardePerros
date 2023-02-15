@@ -18,10 +18,10 @@
 
             <div class="informacion">
 
-                <h3 class="page__heading"> Cambiar Logo de la Fundacion</h3>
+                <h3 class="page__heading"> Cambiar Logo de la Fundación</h3>
 
                 <div class="actualizar3">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12" style="display: flex;flex-direction:column;">
                         <img class="foto" src="{{ asset('storage/' . $user->Fundacion->logo) }}" alt="Adopta">
 
                         <div class="form-group">
