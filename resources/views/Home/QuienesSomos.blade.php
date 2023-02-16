@@ -84,7 +84,7 @@
     <div class="info-form">
         <div class="infoQuinesSomos">
             <h1>Contacto</h1>
-            <p>
+            <p class="centerr">
                 Si quieres participar con nosotros, contáctanos, puedes ayudarnos en algunos de nuestros
                 planes, tu apoyo es esencial para la fundación.
             </p>
