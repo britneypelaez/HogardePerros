@@ -87,9 +87,9 @@
                         <div class="form-group">
                             <label for="tamanio">Tamaño</label>
                             <select name="tamanio" id="tamanio" class="form-control">
-                                @for ($i = 20; $i <=110; $i=$i + 5) <option value="{{ $i }}"
-                                    {{ $i == $mascota->tamanio ? 'selected' : '' }}>{{ $i }} cm</option>
-                                    @endfor
+                                <option value="1">Pequeño</option>
+                                <option value="2">Mediano</option>
+                                <option value="3">Grande</option>
                             </select>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                         <div class="form-group">
                             <label for="edad">Edad</label>
                             <select name="edad" id="edad" class="form-control">
-                                @for ($i = 0; $i <=14; $i++) <option value="{{ $i }}"
+                                @for ($i = 1; $i <=14; $i++) <option value="{{ $i }}"
                                     {{ $i == $mascota->edad ? 'selected' : '' }}>{{ $i }} años</option>
                                     @endfor
                             </select>
