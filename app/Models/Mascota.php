@@ -63,7 +63,7 @@ class Mascota extends Model
 
     public function scopeJoinRazaColor($query)
     {
-        return $query->select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color');
+        return $query->select('mascotas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas.raza', '=', 'raza.raza')->join('color', 'mascotas.color', '=', 'color.color')->where('mascotas.estado', '=', 1);
     }
 
     public function scopeEspecie($query, $especie){

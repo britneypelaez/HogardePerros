@@ -31,7 +31,7 @@ class MascotaController extends Controller
 
     public function indexHome()
     {
-        $Mascotas = Mascota::inRandomOrder()->limit(6)->get();
+        $Mascotas = Mascota::inRandomOrder()->where('mascotas.estado', '=', 1)->limit(6)->get();
         return view('welcome', compact('Mascotas'));
     }
 
