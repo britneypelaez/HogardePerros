@@ -12,7 +12,7 @@
             </button>
         </div>
         @endif
-        
+
         <form action="{{ route('MascotasPerdidas.update', $MascotasPerdida->id) }}" method="POST"
             enctype="multipart/form-data">
             @csrf
@@ -89,9 +89,9 @@
                         <div class="form-group">
                             <label for="tamanio">Tamaño</label>
                             <select name="tamanio" id="tamanio" class="form-control">
-                                @for ($i = 20; $i <=110; $i=$i + 5) <option value="{{ $i }}"
-                                    {{ $i == $MascotasPerdida->tamanio ? 'selected' : '' }}>{{ $i }} cm</option>
-                                    @endfor
+                                <option value="1">Pequeño</option>
+                                <option value="2">Mediano</option>
+                                <option value="3">Grande</option>
                             </select>
                         </div>
                     </div>
