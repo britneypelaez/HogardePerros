@@ -21,7 +21,6 @@ class CreateMascotasTable extends Migration
             $table->string('color');
             $table->string('estado');
             $table->integer('tamanio');
-            $table->string('tipo');
             $table->integer('edad');
             $table->string('imagen_mascota');
             $table->bigInteger('id_fundacion');
