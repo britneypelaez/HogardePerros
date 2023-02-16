@@ -17,6 +17,13 @@
             @csrf
             @method('PUT')
 
+            @section('metas')
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Adoptame ahora!! {{ old( $mascota->nombre_mascota) }}" />
+            <meta property="og:description" content="{{ old( $mascota->descripcion) }}" />
+            <meta property="og:image" content="{{ asset("storage/$mascota->imagen_mascota") }}" />
+            @endsection
+
             <div class="informacion">
                 <h3 class="page__heading">Editar Animal</h3>
 
@@ -131,6 +138,15 @@
                             </select>
                         </div>
                     </div>
+
+                    <ul class="wrapper" id="otro">
+                        <a class="Facebook" target="_blank" href="">
+                            <li class="icon facebook">
+                                <span class="tooltip">Facebook</span>
+                                <span><i class="fab fa-facebook-f"></i></span>
+                            </li>
+                        </a>
+                    </ul>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -141,3 +157,17 @@
 
     </div>
 </div>
+
+<!-- <script>
+    const fbButtons = document.querySelectorAll('.Facebook');
+    for (let i = 0; i < fbButtons.length; i++) {
+    const link = encodeURI(window.location.href);
+    fbButtons[i].href = `https://www.facebook.com/sharer/sharer.php?u=${link}`;
+    fbButtons[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open(this.href, 'Compartir en Facebook', 'width=640,height=320');
+    });
+    }
+
+
+</script> -->

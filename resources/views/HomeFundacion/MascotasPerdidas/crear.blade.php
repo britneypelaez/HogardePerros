@@ -51,6 +51,14 @@
                         </div>
                     </div>
 
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <label for="telefono">Telefono</label>
+                            <input type="number" name="telefono" class="form-control" required
+                                value="{{ old('telefono') }}">
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="actualizar2">

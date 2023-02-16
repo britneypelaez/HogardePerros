@@ -24,4 +24,8 @@
     <a class="nav-link" href="{{url('ServiciosPrestados')}}">
         <i class=" fas fa-solid fa-list"></i><span>Servicios Prestados</span>
     </a>
+    <br>
+    <a class="nav-link" href="{{url('CampañaAdoptame')}}">
+        <i class=" fas fa-solid fa-file"></i><span>Campaña Adoptame</span>
+    </a>
 </li>

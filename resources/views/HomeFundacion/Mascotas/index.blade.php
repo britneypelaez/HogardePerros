@@ -41,6 +41,9 @@
                                     <h1>{{ $mascota	-> nombre_mascota }}</h1>
                                     <a style="display: none;">{{ $mascota->id }}</a>
                                     <div class="opcionesAdmin">
+
+                                        
+
                                         <a href="#modalsEditMascotas{{ $mascota}}" onclick="buscador({{ $mascota->id }},{{ 'raza'.$mascota->id }})"><img
                                                 src="{{ asset('img/Home/edit.png') }}" alt="" /></a>
                                         <a href="#modalsMascotasEliminar{{ $mascota}}"><img
@@ -106,8 +109,17 @@
         searchRazaEditar(event.target.value,idRaza);
     });
     }
-
-
+</script>
+<script>
+    const fbButtons = document.querySelectorAll('.Facebook');
+    for (let i = 0; i < fbButtons.length; i++) {
+    const link = encodeURI(window.location.href);
+    fbButtons[i].href = `https://www.facebook.com/sharer/sharer.php?u=${link}`;
+    fbButtons[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open(this.href, 'Compartir en Facebook', 'width=640,height=320');
+    });
+    }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
