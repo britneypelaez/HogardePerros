@@ -61,9 +61,11 @@
                             @error('logo_fundacion')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
+                            <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        
                     </div>
+                    
                 </div>
                 
 
