@@ -113,7 +113,7 @@
 <script>
     const fbButtons = document.querySelectorAll('.Facebook');
     for (let i = 0; i < fbButtons.length; i++) {
-    const link = encodeURI(window.location.href);
+    const link = encodeURI(window.location.host) + '/Adopcion';
     fbButtons[i].href = `https://www.facebook.com/sharer/sharer.php?u=${link}`;
     fbButtons[i].addEventListener('click', function(e) {
         e.preventDefault();
