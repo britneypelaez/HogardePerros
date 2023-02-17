@@ -155,10 +155,11 @@ Route::group(['middleware' =>['auth']], function(){
         auth()->logout();
         return view('auth.registro');
     })->name('admin/register');
-    
-    Route::group(['prefix' => 'admin'], function () {
-        Voyager::routes();
-    });
+
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
 /**
  *
