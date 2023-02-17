@@ -111,7 +111,7 @@
     }
 </script>
 <script>
-    const fbButtons = document.querySelectorAll('.Facebook');
+    const fbButtons = document.querySelector('.Facebook');
     for (let i = 0; i < fbButtons.length; i++) {
     const link = encodeURI(window.location.host) + '/Adopcion';
     fbButtons[i].href = `https://www.facebook.com/sharer/sharer.php?u=${link}`;
