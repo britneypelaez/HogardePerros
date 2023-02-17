@@ -144,6 +144,7 @@
     @yield('scripts')
     <footer>
         <ul>
+            <a class="btn btn-primary" href="https://sites.google.com/view/adafriend/inicio?authuser=3"  target="_blank" role="button">Manual</a>
             <li>
                 <p>©Fundación Hogar de perros. Todos los derechos reservados</p>
             </li>
