@@ -10,13 +10,31 @@
     </div>
     <button type="button" class="more" data-bs-toggle="modal" data-bs-target="#exampleModal{{$mascota}}">Más Información</button>
 </div>
-
+@section('metas')
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Adoptame ahora!! {{ $mascota }}" />
+            <meta property="og:description" content="{{ $descripcion }}" />
+            <meta property="og:image" content="{{ asset("storage/$imagen") }}" />
+            @endsection
 <div class="modal fade modal-xl" id="exampleModal{{$mascota}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <label for="estado">Compartir en Facebook</label>
+                    <ul class="wrapper" id="otro">
+                        <a class="Facebook" target="_blank" href="">
+                            <li class="icon facebook">
+                                <span class="tooltip">Facebook</span>
+                                <span><i class="fab fa-facebook-f"></i></span>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
             </div>
             <div class="modal-body-dif">
                 <div class="informacion-adopcion">

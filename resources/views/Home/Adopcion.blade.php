@@ -87,7 +87,7 @@
         const search = async (especie, raza, color, tamaño, edad, page = 1) => {
             const result = await fetch(ruta +
                 `api/adopcion/search?especie=${especie}&raza=${raza}&color=${color}&tamaño=${tamaño}&edad=${edad}&page=${page}`
-                );
+            );
 
             const data = result.json();
 
@@ -151,12 +151,12 @@
         }
 
         function removeAllChildNodes(parent) {
-                while (parent.firstChild) {
-                    parent.removeChild(parent.firstChild);
-                }
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
             }
+        }
 
-            if (especie.value == '0') {
+        if (especie.value == '0') {
             searchRaza(especie.value);
         }
 
@@ -185,6 +185,16 @@
         window.addEventListener('load', function(event) {
             updateDate(especie.value, raza.value, color.value, tamaño.value, edad.value, 1);
         })
+
+        const fbButtons = document.querySelectorAll('.Facebook');
+        for (let i = 0; i < fbButtons.length; i++) {
+            const link = encodeURI(window.location.href);
+            fbButtons[i].href = `https://www.facebook.com/sharer/sharer.php?u=${link}`;
+            fbButtons[i].addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(this.href, 'Compartir en Facebook', 'width=640,height=320');
+            });
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
