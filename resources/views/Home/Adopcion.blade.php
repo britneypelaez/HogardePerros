@@ -55,8 +55,13 @@
                 <p>Edad:</p>
                 <select name="" id="edad">
                     <option value="0">Todas</option>
-                    @for ($i = 1; $i <= 14; $i++)
-                        <option value="{{ $i }}">{{ $i }}</option>
+                    @for ($i = 0; $i <= 8; $i += 2)
+                        <option value="{{ $i + 1 }}">{{ $i }} a {{ $i + 2 }} meses</option>
+                    @endfor
+                    <option value="10">10 a 11 meses</option>
+                    <option value="11">1 año</option>
+                    @for ($i = 12; $i <= 23; $i++)
+                        <option value="{{ $i}}">{{ $i-10 }} años</option>
                     @endfor
                 </select>
             </div>
