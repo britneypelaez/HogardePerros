@@ -28,6 +28,11 @@
     <a class="nav-link" href="#modalsCambiarCampaña">
         <i class=" fas fa-solid fa-file"></i><span>Campaña Adoptame</span>
     </a>
+
+    <br>
+    <a class="nav-link" href="https://sites.google.com/view/adafriend/inicio?authuser=3">
+        <i class=" fas fa-solid fa-file"></i><span>Manuales De Uso</span>
+    </a>
 </li>
 
 <div class="contenedor-modal desplazo" id="modalsCambiarCampaña" style=" left: -55%; !important">
@@ -54,7 +59,7 @@
 
                 <div class="actualizar3">
                     <div class="col-xs-12 col-sm-12 col-md-12" style="display: flex;flex-direction:column;">
-                        <img class="foto" src="{{ asset('storage/' . Auth::user()->Fundacion->imagenCampania) }}" alt="Adopta">
+                        <img class="foto" style="height: 65% !important; width: 15% !important; " src="{{ asset('storage/' . Auth::user()->Fundacion->imagenCampania) }}" alt="Adopta">
 
                         <div class="form-group">
                             <input type="file" name="imagen_campaña" id="imagen_campaña" accept="image/*" required>

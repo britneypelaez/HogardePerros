@@ -54,7 +54,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="descripcion">Descripcion</label>
-                            <textarea name="descripcion" class="form-control" required
+                            <textarea name="descripcion" class="form-control" style="height: 200px; !important" required
                                 value="">{{ old('descripcion', $mascota->descripcion) }}</textarea>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                         <div class="form-group">
                             <label for="edad">Edad</label>
                             <select name="edad" id="edad" class="form-control">
-                                @for ($i = 1; $i <=14; $i++) <option value="{{ $i }}"
+                                @for ($i = 0; $i <=14; $i++) <option value="{{ $i }}"
                                     {{ $i == $mascota->edad ? 'selected' : '' }}>{{ $i }} años</option>
                                     @endfor
                             </select>
@@ -155,7 +155,7 @@
                     
                 </div>
 
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" style="margin-top: 15px" class="btn btn-primary">Guardar</button>
             </div>
         </form>
 
