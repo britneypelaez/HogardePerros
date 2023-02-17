@@ -71,14 +71,7 @@ Route::get('/PreguntasFrecuentes', function () {
     return view('Home.PreguntasFrecuentes');
 })->name('PreguntasFrecuentes');
 
-Route::get('admin/register', function () {
-    auth()->logout();
-    return view('auth.registro');
-})->name('admin/register');
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
 
 
 /**
@@ -119,44 +112,54 @@ Route::get('/google-callback', function () {
     return redirect('/admin');
 });
 
-/**
- *
- * Dashboard Fundaciones
- *
- */
-Route::get('/fundacion/home', function () {
-    return view('HomeFundacion.home');
-})->name('fundacion.home');
+Route::group(['middleware' =>['auth']], function(){
+    /**
+     *
+     * Dashboard Fundaciones
+     *
+     */
+    Route::get('/fundacion/home', function () {
+        return view('HomeFundacion.home');
+    })->name('fundacion.home');
 
-Route::resources([
-    'Mascotas' => MascotaController::class,
-    'MascotasPerdidas' => MascotaPerdidaController::class,
-    'Campanias' => CampaniaController::class,
-    'Servicios' => ServicioController::class,
-    'ServiciosPrestados' => ServicioPrestadoController::class,
-    'Certificados' => CertificadoController::class,
+    Route::resources([
+        'Mascotas' => MascotaController::class,
+        'MascotasPerdidas' => MascotaPerdidaController::class,
+        'Campanias' => CampaniaController::class,
+        'Servicios' => ServicioController::class,
+        'ServiciosPrestados' => ServicioPrestadoController::class,
+        'Certificados' => CertificadoController::class,
 
-]);
+    ]);
 
-Route::post('/Publicaciones/Delete', [MascotaPerdidaController::class, 'destroyUsuario'])->name('publicacion.delete');
+    Route::post('/Publicaciones/Delete', [MascotaPerdidaController::class, 'destroyUsuario'])->name('publicacion.delete');
 
-Route::post('/Publicaciones/Update', [MascotaPerdidaController::class, 'updateUsuario'])->name('publicacion.update');
+    Route::post('/Publicaciones/Update', [MascotaPerdidaController::class, 'updateUsuario'])->name('publicacion.update');
 
-Route::post('/Publicaciones/Create', [MascotaPerdidaController::class, 'storeUsuario'])->name('publicacion.create');
+    Route::post('/Publicaciones/Create', [MascotaPerdidaController::class, 'storeUsuario'])->name('publicacion.create');
 
-Route::post('/Confirmacion', [MascotaController::class, 'store'])->name('pruebasizacion');
+    Route::post('/Confirmacion', [MascotaController::class, 'store'])->name('pruebasizacion');
 
-Route::view('/Fundacion/Logo', 'HomeFundacion.cambiarLogo')->name('cambiar.logo');
+    Route::view('/Fundacion/Logo', 'HomeFundacion.cambiarLogo')->name('cambiar.logo');
 
-Route::post('/Fundacion/Logo/Change', [MascotaController::class, 'chageLogo'])->name('registrar.logo');
-Route::post('/Fundacion/Logo/Campaña', [MascotaController::class, 'chageCampaña'])->name('registrar.campaña');
+    Route::post('/Fundacion/Logo/Change', [MascotaController::class, 'chageLogo'])->name('registrar.logo');
+    Route::post('/Fundacion/Logo/Campaña', [MascotaController::class, 'chageCampaña'])->name('registrar.campaña');
 
-//Route::get('Certificado', [CertificadoController::class, 'index']);
+    //Route::get('Certificado', [CertificadoController::class, 'index']);
 
-Route::get('/InicioAdmin', function () {
-    return view('HomeAdministrador.InicioAdmin');
-})->name('InicioAdmin');
+    Route::get('/InicioAdmin', function () {
+        return view('HomeAdministrador.InicioAdmin');
+    })->name('InicioAdmin');
 
+    Route::get('admin/register', function () {
+        auth()->logout();
+        return view('auth.registro');
+    })->name('admin/register');
+    
+    Route::group(['prefix' => 'admin'], function () {
+        Voyager::routes();
+    });
+});
 /**
  *
  * Envío de Email's
