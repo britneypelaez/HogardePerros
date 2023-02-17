@@ -30,7 +30,7 @@
     </a>
 
     <br>
-    <a class="nav-link" href="https://sites.google.com/view/adafriend/inicio?authuser=3">
+    <a class="nav-link" target="_blank" href="https://sites.google.com/view/adafriend/inicio?authuser=3">
         <i class=" fas fa-solid fa-file"></i><span>Manuales De Uso</span>
     </a>
 </li>

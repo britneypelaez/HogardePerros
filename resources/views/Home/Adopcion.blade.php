@@ -18,6 +18,12 @@
             </p>
         </div>
 
+        @if (Auth::user())
+            <div class="botones">
+                <a href="#modalsCreateMascota"><button class="transicion2" type="submit"><span>Publicar Mascota</span></button></a>
+            </div>
+        @endif
+
         <h3>Selecciona la clase de mascota que quieres:</h3>
 
         <div class="filtro2">
@@ -76,6 +82,7 @@
 
         <h2 class="animate__animated animate__bounce animate__slow">Perros/Gatos en adopción</h2>
 
+        @include('Home.crearAdopcion')
         <div class="adopciones" id="result"></div>
         <div id="paginate" class="paginacion"></div>
     </div>
