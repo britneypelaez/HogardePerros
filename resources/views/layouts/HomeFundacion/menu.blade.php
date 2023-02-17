@@ -62,9 +62,10 @@
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                
 
             </div>
         </form>
