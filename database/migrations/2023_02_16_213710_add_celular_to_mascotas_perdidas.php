@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenamecolumMascotasColums extends Migration
+class AddCelularToMascotasPerdidas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class RenamecolumMascotasColums extends Migration
      */
     public function up()
     {
-        Schema::table('mascotas', function (Blueprint $table) {
-            $table->renameColumn('tipo', 'especie')->change();
+        Schema::table('mascotas_perdidas', function (Blueprint $table) {
+            $table->string('celular')->nullable();
         });
     }
 
@@ -25,6 +25,8 @@ class RenamecolumMascotasColums extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('mascotas_perdidas', function (Blueprint $table) {
+            $table->dropColumn('celular');
+        });
     }
 }

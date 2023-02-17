@@ -1099,6 +1099,11 @@ h3 {
     font-weight: 600;
     text-align: justify;
 }
+.infoQuinesSomos p.centerr {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
 
 .carousel-inner {
     border-radius: 20px;
@@ -1405,6 +1410,8 @@ select {
     margin-bottom: 100px;
 }
 /* estilos modales y card */
+
+
 .card-img-top{
     padding: 10px;
 }
@@ -1496,7 +1503,19 @@ select {
     padding: 0.8rem !important;
     position: relative;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 50% 50%;  
+}
+.mod-camp .modal-body{
+    display: flex !important;
+    flex-direction: column !important;
+   align-items: center !important;
+}
+
+.contcamp img{
+   max-width: 100%;
+}
+.contcamp{
+    max-width: 60%;
 }
 .modal-body-dif{
     overflow: auto;
@@ -1559,6 +1578,9 @@ select {
     justify-content: space-between !important;
     padding: 0px !important;
     flex-wrap: none !important;
+}
+.footerr{
+    justify-content: end !important;
 }
 .modal-footer .redess h5{
     margin: 0 !important;
@@ -2072,9 +2094,9 @@ select {
         width: 92%;
     }
 
-    .infoQuinesSomos {
+    /* .infoQuinesSomos {
         width: 100%;
-    }
+    } */
 
     .tener-en-cuenta-adopcion p {
         font-size: 12px;

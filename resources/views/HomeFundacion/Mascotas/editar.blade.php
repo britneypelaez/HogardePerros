@@ -17,6 +17,13 @@
             @csrf
             @method('PUT')
 
+            @section('metas')
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Adoptame ahora!! {{ old( $mascota->nombre_mascota) }}" />
+            <meta property="og:description" content="{{ old( $mascota->descripcion) }}" />
+            <meta property="og:image" content="{{ asset("storage/$mascota->imagen_mascota") }}" />
+            @endsection
+
             <div class="informacion">
                 <h3 class="page__heading">Editar Animal</h3>
 
@@ -65,10 +72,6 @@
                         </div>
                     </div>
 
-                </div>
-
-                <div class="actualizar2">
-
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="color">Color</label>
@@ -83,13 +86,17 @@
                         </div>
                     </div>
 
+                </div>
+
+                <div class="actualizar2">
+
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="tamanio">Tamaño</label>
                             <select name="tamanio" id="tamanio" class="form-control">
-                                @for ($i = 20; $i <=110; $i=$i + 5) <option value="{{ $i }}"
-                                    {{ $i == $mascota->tamanio ? 'selected' : '' }}>{{ $i }} cm</option>
-                                    @endfor
+                                <option value="1">Pequeño</option>
+                                <option value="2">Mediano</option>
+                                <option value="3">Grande</option>
                             </select>
                         </div>
                     </div>
@@ -112,7 +119,7 @@
                         <div class="form-group">
                             <label for="edad">Edad</label>
                             <select name="edad" id="edad" class="form-control">
-                                @for ($i = 0; $i <=14; $i++) <option value="{{ $i }}"
+                                @for ($i = 1; $i <=14; $i++) <option value="{{ $i }}"
                                     {{ $i == $mascota->edad ? 'selected' : '' }}>{{ $i }} años</option>
                                     @endfor
                             </select>
@@ -131,6 +138,21 @@
                             </select>
                         </div>
                     </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <label for="estado">Compartir en Facebook</label>
+                            <ul class="wrapper" id="otro">
+                                <a class="Facebook" target="_blank" href="">
+                                    <li class="icon facebook">
+                                        <span class="tooltip">Facebook</span>
+                                        <span><i class="fab fa-facebook-f"></i></span>
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                    
                 </div>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -141,3 +163,17 @@
 
     </div>
 </div>
+
+<!-- <script>
+    const fbButtons = document.querySelectorAll('.Facebook');
+    for (let i = 0; i < fbButtons.length; i++) {
+    const link = encodeURI(window.location.href);
+    fbButtons[i].href = `https://www.facebook.com/sharer/sharer.php?u=${link}`;
+    fbButtons[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open(this.href, 'Compartir en Facebook', 'width=640,height=320');
+    });
+    }
+
+
+</script> -->

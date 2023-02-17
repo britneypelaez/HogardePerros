@@ -37,10 +37,11 @@
         @endforeach
 
         <!-- Centramos la paginación a la derecha-->
-        <div class="pagination justify-content-end">
+    </div>
+
+    <div class="pagination justify-content-end">
             {!! $MascotasPerdidas->links() !!}
         </div>
-    </div>
 
 </div>
 @endsection

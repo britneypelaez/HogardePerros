@@ -54,6 +54,37 @@
                 @endforeach
             </div>
         </div>
-
         <a href="{{ route('Adopcion') }}"><button class="transicion" type="submit"><span>Más mascotas en adopción</span></button></a>
-    @endsection
+        <!-- modal -->
+        
+        <div class="modal fade modal-xl mod-camp" id="modalcamp" tabindex="-1" aria-labelledby="exampleModalL"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 id="exampleModalL">Apóyanos Con Nuestra Campaña</h1>
+                        <button type="button" id="btn-cerar" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                         <div class="contcamp">
+                            @foreach($Fundacion as $fundacion)
+                                <img src="{{ asset('storage/' . $fundacion->imagenCampania) }}" alt="" class="imgcamp">
+                            @endforeach
+                         </div>
+                    </div>
+                    <div class="modal-footer footerr">
+                        <button type="button" id="btn-cerar2" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <dialog id="modal-imagen">
+                <img class="imgmodal2" src="" alt="...">
+                <div class="btcentrar">
+                    <button type="button" class="btn btn-primary" id="btn-cerrar">Cerrar</button>
+                </div>
+            </dialog> -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script  src="{{ asset('js/modalCamp.js') }}"></script>
+@endsection

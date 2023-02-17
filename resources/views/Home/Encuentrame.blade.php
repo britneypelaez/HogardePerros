@@ -40,9 +40,9 @@
                 <p>Tamaño:</p>
                 <select name="" id="tamaño">
                     <option value="0">Todos</option>
-                    @for ($i = 20; $i <= 110; $i = $i + 5)
-                        <option value="{{ $i }}">{{ $i }}cm</option>
-                    @endfor
+                    <option value="1">Pequeño</option>
+                    <option value="2">Mediano</option>
+                    <option value="3">Grande</option>
                 </select>
             </div>
 
@@ -113,7 +113,7 @@
             search(especie, raza, color, tamaño, page).then(response => {
                 response.data.map(mascota => {
                     saveResult.innerHTML +=
-                        `<x-cardEncuentrame imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" color="${mascota.colorin}" raza="${mascota.rasa}" descripcion="${mascota.descripcion}" id="${mascota.id}" especie="${mascota.especie}" />`
+                        `<x-cardEncuentrame imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" color="${mascota.colorin}" raza="${mascota.rasa}" descripcion="${mascota.descripcion}" id="${mascota.id}" especie="${mascota.especie}" celular="${mascota.celular}"/>`
                 });
                 paginate(response, especie, raza, color, tamaño);
             });

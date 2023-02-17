@@ -62,7 +62,7 @@ class MascotaPerdida extends Model
 
     public function scopeJoinRazaColor($query)
     {
-        return $query->select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color');
+        return $query->select('mascotas_perdidas.*', 'raza.descripcion AS rasa', 'color.descripcion AS colorin')->join('raza', 'mascotas_perdidas.raza', '=', 'raza.raza')->join('color', 'mascotas_perdidas.color', '=', 'color.color')->where('mascotas_perdidas.estado', '=', 4);
     }
 
     public function scopeEspecie($query, $especie){

@@ -50,6 +50,7 @@ Route::get('/Filtrar', [App\Http\Controllers\MascotaController::class, 'indexFil
 
 Route::get('/Donaciones', [App\Http\Controllers\CampaniaController::class, 'indexCliente'])->name('Donaciones');
 
+
 Route::get('/QuienesSomos', function () {
     return view('Home.QuienesSomos');
 })->name('QuienesSomos');
@@ -133,7 +134,8 @@ Route::resources([
     'Campanias' => CampaniaController::class,
     'Servicios' => ServicioController::class,
     'ServiciosPrestados' => ServicioPrestadoController::class,
-    'Certificados' => CertificadoController::class
+    'Certificados' => CertificadoController::class,
+
 ]);
 
 Route::post('/Publicaciones/Delete', [MascotaPerdidaController::class, 'destroyUsuario'])->name('publicacion.delete');
@@ -147,6 +149,7 @@ Route::post('/Confirmacion', [MascotaController::class, 'store'])->name('pruebas
 Route::view('/Fundacion/Logo', 'HomeFundacion.cambiarLogo')->name('cambiar.logo');
 
 Route::post('/Fundacion/Logo/Change', [MascotaController::class, 'chageLogo'])->name('registrar.logo');
+Route::post('/Fundacion/Logo/Campaña', [MascotaController::class, 'chageCampaña'])->name('registrar.campaña');
 
 //Route::get('Certificado', [CertificadoController::class, 'index']);
 
