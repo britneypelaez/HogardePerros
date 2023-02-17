@@ -32,20 +32,21 @@ class MascotaController extends Controller
     public function indexHome()
     {
         $Mascotas = Mascota::inRandomOrder()->where('mascotas.estado', '=', 1)->limit(6)->get();
-        return view('welcome', compact('Mascotas'));
+        $Fundacion = Fundacion::where('id','=',1)->get();
+        return view('welcome', compact('Mascotas','Fundacion'));
     }
 
     public function index(Request $request)
     {
         $mascota = trim($request->get('mascota'));
 
-        $mascotas = Mascota::paginate(6);
+        $mascotas = Mascota::paginate(8);
 
         if($mascota == 1){
-            $mascotas = Mascota::where('especie', 'like', "1")->paginate(6);
+            $mascotas = Mascota::where('especie', 'like', "1")->paginate(8);
         }
         if($mascota == 2){
-            $mascotas = Mascota::where('especie', 'like', "2")->paginate(6);
+            $mascotas = Mascota::where('especie', 'like', "2")->paginate(8);
         }
 
         $razas = Raza::all();
@@ -60,13 +61,13 @@ class MascotaController extends Controller
     {
         $mascotaurl = $request->mascota;
         if($mascotaurl == 0){
-            $mascotas = Mascota::paginate(6);
+            $mascotas = Mascota::paginate(8);
         }
         if($mascotaurl == 1){
-            $mascotas = Mascota::where('especie', 'like', "1")->paginate(6);
+            $mascotas = Mascota::where('especie', 'like', "1")->paginate(8);
         }
         if($mascotaurl == 2){
-            $mascotas = Mascota::where('especie', 'like', "2")->paginate(6);
+            $mascotas = Mascota::where('especie', 'like', "2")->paginate(8);
         }
 
         $razas = Raza::all();
@@ -216,6 +217,15 @@ class MascotaController extends Controller
         $profileImage = time() . '.' . $request->file('logo_fundacion')->getClientOriginalExtension();
         Storage::disk('public')->put($profileImage,file_get_contents($request->file('logo_fundacion')->getPathName()));
         Fundacion::where('id', Auth::user()->id_fundacion)->update(['logo' => $profileImage]);
+
+        return redirect()->route('fundacion.home');
+    }
+
+    public function chageCampaña(Request $request)
+    {
+        $profileImage = time() . '.' . $request->file('imagen_campaña')->getClientOriginalExtension();
+        Storage::disk('public')->put($profileImage,file_get_contents($request->file('imagen_campaña')->getPathName()));
+        Fundacion::where('id', Auth::user()->id_fundacion)->update(['imagenCampania' => $profileImage]);
 
         return redirect()->route('fundacion.home');
     }

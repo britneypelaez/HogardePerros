@@ -149,6 +149,7 @@ Route::post('/Confirmacion', [MascotaController::class, 'store'])->name('pruebas
 Route::view('/Fundacion/Logo', 'HomeFundacion.cambiarLogo')->name('cambiar.logo');
 
 Route::post('/Fundacion/Logo/Change', [MascotaController::class, 'chageLogo'])->name('registrar.logo');
+Route::post('/Fundacion/Logo/Campaña', [MascotaController::class, 'chageCampaña'])->name('registrar.campaña');
 
 //Route::get('Certificado', [CertificadoController::class, 'index']);
 

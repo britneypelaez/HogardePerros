@@ -50,6 +50,14 @@
                         </div>
                     </div>
 
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <label for="celular">Telefono</label>
+                            <input type="text" name="celular" class="form-control" required
+                                value="{{ old('celular') }}">
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="actualizar2 me-4">
@@ -92,6 +100,17 @@
                             <select name="especie" id="especie" class="form-control">
                                 @foreach($especies as $especie)
                                 <option value="{{ $especie['especie'] }}">{{ $especie['descripcion'] }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select name="estado" id="estado" class="form-control">
+                                @foreach ($estados as $estado)
+                                    <option value="{{ $estado->estado }}">{{ $estado['descripcion'] }}</option>
                                 @endforeach
                             </select>
                         </div>

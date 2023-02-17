@@ -45,7 +45,7 @@ class MascotaPerdidaController extends Controller
     public function publicacionUsuario()
     {
         $id_user = auth()->user()->id;
-        $MascotasPerdidas = MascotaPerdida::where('id_user', 'like', "%$id_user%")->paginate(5);
+        $MascotasPerdidas = MascotaPerdida::where('id_user', 'like', "%$id_user%")->paginate(8);
         $colores = Color::all();
         $especies = Especie::all();
         $razas = Raza::all();
@@ -83,6 +83,7 @@ class MascotaPerdidaController extends Controller
             'tamanio' => 'required',
             'especie' => 'required',
             'imagen_mascota' => 'required',
+            'celular' => 'required',
         ]);
         $profileImage = time() . '.' . $request->file('imagen_mascota')->getClientOriginalExtension();
         Storage::disk('public')->put($profileImage,file_get_contents($request->file('imagen_mascota')->getPathName()) );
@@ -95,6 +96,7 @@ class MascotaPerdidaController extends Controller
         $mascota->tamanio = request()->tamanio;
         $mascota->especie = request()->especie;
         $mascota->imagen_mascota = $profileImage;
+        $mascota->celular = request()->celular;
         $mascota->id_user = Auth::user()->id;
         $mascota->save();
         $usuarios = User::all();
@@ -119,6 +121,7 @@ class MascotaPerdidaController extends Controller
             'tamanio' => 'required',
             'especie' => 'required',
             'imagen_mascota' => 'required',
+            'celular' => 'required',
         ]);
         $profileImage = time() . '.' . $request->file('imagen_mascota')->getClientOriginalExtension();
         Storage::disk('public')->put($profileImage,file_get_contents($request->file('imagen_mascota')->getPathName()) );
@@ -131,6 +134,7 @@ class MascotaPerdidaController extends Controller
         $mascota->tamanio = request()->tamanio;
         $mascota->especie = request()->especie;
         $mascota->imagen_mascota = $profileImage;
+        $mascota->celular = request()->celular;
         $mascota->id_user = Auth::user()->id;
         $mascota->save();
         return redirect()->route('Publicaciones');
@@ -180,6 +184,9 @@ class MascotaPerdidaController extends Controller
             'color' => 'required',
             'tamanio' => 'required',
             'especie' => 'required',
+            'celular' => 'required',
+            'estado' => 'required',
+            
         ]);
         //Recibiendo un archivo de tipo imagen y tranformadolo en una ruta para así guardarlo en la base de datos
         if ($request->has('imagen_mascota')){
@@ -195,6 +202,8 @@ class MascotaPerdidaController extends Controller
         $MascotasPerdida->estado = $request->has('estado') ?  $request->estado : $MascotasPerdida->estado;
         $MascotasPerdida->tamanio = $request->has('tamanio') ?  $request->tamanio : $MascotasPerdida->tamanio;
         $MascotasPerdida->especie = $request->has('especie') ?  $request->especie : $MascotasPerdida->especie;
+        $MascotasPerdida->celular = $request->has('celular') ?  $request->celular : $MascotasPerdida->celular;
+        $MascotasPerdida->estado = $request->has('estado') ?  $request->estado : $MascotasPerdida->estado;
         $MascotasPerdida->save();
 
         return redirect()->route('MascotasPerdidas.index');
@@ -211,6 +220,8 @@ class MascotaPerdidaController extends Controller
             'color' => 'required',
             'tamanio' => 'required',
             'especie' => 'required',
+            'celular' => 'required',
+            'estado' => 'required',
         ]);
         //Recibiendo un archivo de tipo imagen y tranformadolo en una ruta para así guardarlo en la base de datos
         if ($request->has('imagen_mascota')){
@@ -226,6 +237,7 @@ class MascotaPerdidaController extends Controller
         $MascotasPerdida->estado = $request->has('estado') ?  $request->estado : $MascotasPerdida->estado;
         $MascotasPerdida->tamanio = $request->has('tamanio') ?  $request->tamanio : $MascotasPerdida->tamanio;
         $MascotasPerdida->especie = $request->has('especie') ?  $request->especie : $MascotasPerdida->especie;
+        $MascotasPerdida->celular = $request->has('celular') ?  $request->celular : $MascotasPerdida->celular;
         $MascotasPerdida->save();
 
         return redirect()->route('Publicaciones');
@@ -259,67 +271,67 @@ class MascotaPerdidaController extends Controller
 
         //trae todas las mascotas
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño == '0') {
-            $result = MascotaPerdida::JoinRazaColor()->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->paginate(8);
         }
         //filtra las Mascotas Perdidas solo por especie
         if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño == '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->paginate(8);
         }
         //filtra las Mascotas Perdidas solo por color
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño == '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Color($color)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Color($color)->paginate(8);
         }
         //filtra las Mascotas Perdidas solo por tamaño
         if ($especie == '0' && $raza == '0' && $color == '0' && $tamaño != '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Tamaño($tamaño)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Tamaño($tamaño)->paginate(8);
         }
         //filtra las Mascotas Perdidas solo por raza
         if ($especie == '0' && $raza != '0' && $color == '0' && $tamaño == '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Raza($raza)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Raza($raza)->paginate(8);
         }
         //filtra las Mascotas Perdidas por especie y raza
         if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño == '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Raza($raza)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Raza($raza)->paginate(8);
         }
         //filtra las Mascotas Perdidas por especie y color
         if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño == '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Color($color)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Color($color)->paginate(8);
         }
         //filtra las Mascotas Perdidas por especie y tamaño
         if ($especie != '0' && $raza == '0' && $color == '0' && $tamaño != '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Tamaño($tamaño)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Tamaño($tamaño)->paginate(8);
         }
         //filtra las Mascotas Perdidas por raza y tamaño
         if ($especie == '0' && $raza != '0' && $color == '0' && $tamaño != '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Raza($raza)->Tamaño($tamaño)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Raza($raza)->Tamaño($tamaño)->paginate(8);
         }
         //filtra las Mascotas Perdidas por color y tamaño
         if ($especie == '0' && $raza == '0' && $color != '0' && $tamaño != '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Color($color)->Tamaño($tamaño)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Color($color)->Tamaño($tamaño)->paginate(8);
         }
         //filtra las Mascotas Perdidas por color y raza
         if ($especie == '0' && $raza != '0' && $color != '0' && $tamaño == '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Color($color)->Tamaño($tamaño)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Color($color)->Tamaño($tamaño)->paginate(8);
         }
         //filtra las Mascotas Perdidas por especie,raza y color
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño == '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Raza($raza)->Color($color)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Raza($raza)->Color($color)->paginate(8);
         }
         //filtra las Mascotas Perdidas por especie,raza y tamaño
         if ($especie != '0' && $raza != '0' && $color == '0' && $tamaño != '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Raza($raza)->Tamaño($tamaño)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Raza($raza)->Tamaño($tamaño)->paginate(8);
         }
         //filtra las Mascotas Perdidas por especie,color y tamaño
         if ($especie != '0' && $raza == '0' && $color != '0' && $tamaño != '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Color($color)->Tamaño($tamaño)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Color($color)->Tamaño($tamaño)->paginate(8);
         }
         //filtra las Mascotas Perdidas por raza,color y tamaño
         if ($especie == '0' && $raza != '0' && $color != '0' && $tamaño != '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Raza($raza)->Color($color)->Tamaño($tamaño)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Raza($raza)->Color($color)->Tamaño($tamaño)->paginate(8);
         }
         //filtra las Mascotas Perdidas por especie,raza,color y tamaño
         if ($especie != '0' && $raza != '0' && $color != '0' && $tamaño != '0') {
-            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Raza($raza)->Color($color)->Tamaño($tamaño)->paginate(12);
+            $result = MascotaPerdida::JoinRazaColor()->Especie($especie)->Raza($raza)->Color($color)->Tamaño($tamaño)->paginate(8);
         }
 
         return response()->json($result);

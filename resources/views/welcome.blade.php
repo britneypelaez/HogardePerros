@@ -67,7 +67,9 @@
                     </div>
                     <div class="modal-body">
                          <div class="contcamp">
-                            <img src="{{ asset('img/Home/campa.jpeg') }}" alt="" class="imgcamp">
+                            @foreach($Fundacion as $fundacion)
+                                <img src="{{ asset('storage/' . $fundacion->imagenCampania) }}" alt="" class="imgcamp">
+                            @endforeach
                          </div>
                     </div>
                     <div class="modal-footer footerr">

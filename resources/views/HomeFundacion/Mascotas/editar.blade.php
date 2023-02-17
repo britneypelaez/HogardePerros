@@ -72,10 +72,6 @@
                         </div>
                     </div>
 
-                </div>
-
-                <div class="actualizar2">
-
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label for="color">Color</label>
@@ -89,6 +85,10 @@
                             </select>
                         </div>
                     </div>
+
+                </div>
+
+                <div class="actualizar2">
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -139,14 +139,20 @@
                         </div>
                     </div>
 
-                    <ul class="wrapper" id="otro">
-                        <a class="Facebook" target="_blank" href="">
-                            <li class="icon facebook">
-                                <span class="tooltip">Facebook</span>
-                                <span><i class="fab fa-facebook-f"></i></span>
-                            </li>
-                        </a>
-                    </ul>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <label for="estado">Compartir en Facebook</label>
+                            <ul class="wrapper" id="otro">
+                                <a class="Facebook" target="_blank" href="">
+                                    <li class="icon facebook">
+                                        <span class="tooltip">Facebook</span>
+                                        <span><i class="fab fa-facebook-f"></i></span>
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                    
                 </div>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>

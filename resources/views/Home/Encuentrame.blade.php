@@ -113,7 +113,7 @@
             search(especie, raza, color, tamaño, page).then(response => {
                 response.data.map(mascota => {
                     saveResult.innerHTML +=
-                        `<x-cardEncuentrame imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" color="${mascota.colorin}" raza="${mascota.rasa}" descripcion="${mascota.descripcion}" id="${mascota.id}" especie="${mascota.especie}" />`
+                        `<x-cardEncuentrame imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" color="${mascota.colorin}" raza="${mascota.rasa}" descripcion="${mascota.descripcion}" id="${mascota.id}" especie="${mascota.especie}" celular="${mascota.celular}"/>`
                 });
                 paginate(response, especie, raza, color, tamaño);
             });
