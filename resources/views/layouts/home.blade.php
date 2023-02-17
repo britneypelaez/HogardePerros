@@ -17,12 +17,6 @@
     <!-- <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/> -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
     <script src="https://kit.fontawesome.com/051df353f9.js" crossorigin="anonymous"></script>
-    <?php $admin_favicon = Voyager::setting('admin.icon_image', ''); ?>
-    @if($admin_favicon == '')
-    <link rel="shortcut icon" href="{{ voyager_asset('images/logo-icon.png') }}" type="image/png">
-    @else
-    <link rel="shortcut icon" href="{{ Voyager::image($admin_favicon) }}" type="image/png">
-    @endif
 </head>
 
 <body id="body-pre">

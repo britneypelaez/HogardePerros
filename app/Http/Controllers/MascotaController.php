@@ -117,7 +117,7 @@ class MascotaController extends Controller
         $mascota->descripcion = request()->descripcion;
         $mascota->raza = request()->raza;
         $mascota->color = request()->color;
-        $mascota->estado = 2;
+        $mascota->estado = 1;
         $mascota->tamanio = request()->tamanio;
         $mascota->especie = request()->especie;
         $mascota->edad = request()->edad;
@@ -147,7 +147,7 @@ class MascotaController extends Controller
         $mascota->descripcion = request()->descripcion;
         $mascota->raza = request()->raza;
         $mascota->color = request()->color;
-        $mascota->estado = 2;
+        $mascota->estado = 1;
         $mascota->tamanio = request()->tamanio;
         $mascota->especie = request()->especie;
         $mascota->edad = request()->edad;
