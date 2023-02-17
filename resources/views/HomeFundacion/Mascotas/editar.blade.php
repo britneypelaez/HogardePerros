@@ -19,8 +19,8 @@
 
             @section('metas')
             <meta property="og:type" content="website" />
-            <meta property="og:title" content="Adoptame ahora!! {{ old( $mascota->nombre_mascota) }}" />
-            <meta property="og:description" content="{{ old( $mascota->descripcion) }}" />
+            <meta property="og:title" content="Adoptame ahora!! {{ $mascota->nombre_mascota }}" />
+            <meta property="og:description" content="{{ $mascota->descripcion }}" />
             <meta property="og:image" content="{{ asset("storage/$mascota->imagen_mascota") }}" />
             @endsection
 

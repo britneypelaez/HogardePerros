@@ -26,7 +26,7 @@
                                         $cant_mascotas = Mascota::where('id_fundacion', $user->id_fundacion)->count();
                                         @endphp
                                         <h2 class="text-right"><i class="fa fa-solid fa-paw f-left" style="color:white;"></i><span style="color:white;">{{ $cant_mascotas }}</span></h2>
-                                        <p class="m-b-0 text-right"><a href="/Mascotas" class="text-white">Ver más</a></p>
+                                        <p class="m-b-0 text-center"><a href="/Mascotas" class="text-white">Ver más</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                                         $cant_servicios = Servicio::where('id_fundacion', $user->id_fundacion)->count();
                                         @endphp
                                         <h2 class="text-right"><i class="fa fa-solid fa-ambulance f-left " style="color:white;"></i><span style="color:white;">{{ $cant_servicios }}</span></h2>
-                                        <p class="m-b-0 text-right"><a href="/Servicios" class="text-white">Ver más</a></p>
+                                        <p class="m-b-0 text-center"><a href="/Servicios" class="text-white">Ver más</a></p>
                                         
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                         $cant_servicios_prestados = ServicioPrestado::where('id_fundacion', $user->id_fundacion)->count();
                                         @endphp
                                         <h2 class="text-right"><i class="fa fa-solid fa-list f-left" style="color:white;"></i><span style="color:white;">{{ $cant_servicios_prestados }}</span></h2>
-                                        <p class="m-b-0 text-right"><a href="/ServiciosPrestados" class="text-white">Ver más</a></p>
+                                        <p class="m-b-0 text-center"><a href="/ServiciosPrestados" class="text-white">Ver más</a></p>
                                     </div>
                                 </div>
                             </div>

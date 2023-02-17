@@ -10,7 +10,6 @@
     </div>
     <button type="button" class="more" data-bs-toggle="modal" data-bs-target="#exampleModal{{$mascota}}">Más Información</button>
 </div>
-
 <div class="modal fade modal-xl" id="exampleModal{{$mascota}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">

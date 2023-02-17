@@ -87,7 +87,7 @@
         const search = async (especie, raza, color, tamaño, edad, page = 1) => {
             const result = await fetch(ruta +
                 `api/adopcion/search?especie=${especie}&raza=${raza}&color=${color}&tamaño=${tamaño}&edad=${edad}&page=${page}`
-                );
+            );
 
             const data = result.json();
 
@@ -151,12 +151,12 @@
         }
 
         function removeAllChildNodes(parent) {
-                while (parent.firstChild) {
-                    parent.removeChild(parent.firstChild);
-                }
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
             }
+        }
 
-            if (especie.value == '0') {
+        if (especie.value == '0') {
             searchRaza(especie.value);
         }
 

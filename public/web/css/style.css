@@ -4032,8 +4032,8 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 
 @media (max-width: 993px){
     .main-content {
-        padding-left: 50px;
-        padding-right: 30px;
+        padding-left: 0px;
+        padding-right: 0px;
         width: 100% !important;
     }
 }

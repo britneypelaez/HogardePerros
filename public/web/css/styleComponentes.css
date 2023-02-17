@@ -414,3 +414,8 @@
         width: 95px;
     }
 }
+@media(max-height:800px){
+    .informacion {
+        max-height: 530px !important;
+    }
+}
