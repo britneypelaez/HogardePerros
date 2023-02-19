@@ -30,6 +30,14 @@ use Illuminate\Support\Facades\Mail;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+Route::get('admin/register', function () {
+    auth()->logout();
+    return view('auth.registro');
+})->name('admin/register');
 
 /**
  *
@@ -150,16 +158,6 @@ Route::group(['middleware' =>['auth']], function(){
     Route::get('/InicioAdmin', function () {
         return view('HomeAdministrador.InicioAdmin');
     })->name('InicioAdmin');
-
-    Route::get('admin/register', function () {
-        auth()->logout();
-        return view('auth.registro');
-    })->name('admin/register');
-
-});
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
 });
 /**
  *
