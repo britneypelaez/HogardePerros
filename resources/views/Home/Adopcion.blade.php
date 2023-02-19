@@ -18,6 +18,12 @@
             </p>
         </div>
 
+        @if (Auth::user())
+            <div class="botones">
+                <a href="#modalsCreateMascota"><button class="transicion2" type="submit"><span>Publicar Mascota</span></button></a>
+            </div>
+        @endif
+
         <h3>Selecciona la clase de mascota que quieres:</h3>
 
         <div class="filtro2">
@@ -55,8 +61,13 @@
                 <p>Edad:</p>
                 <select name="" id="edad">
                     <option value="0">Todas</option>
-                    @for ($i = 1; $i <= 14; $i++)
-                        <option value="{{ $i }}">{{ $i }}</option>
+                    @for ($i = 0; $i <= 8; $i += 2)
+                        <option value="{{ $i + 1 }}">{{ $i }} a {{ $i + 2 }} meses</option>
+                    @endfor
+                    <option value="10">10 a 11 meses</option>
+                    <option value="11">1 año</option>
+                    @for ($i = 12; $i <= 23; $i++)
+                        <option value="{{ $i}}">{{ $i-10 }} años</option>
                     @endfor
                 </select>
             </div>
@@ -71,6 +82,7 @@
 
         <h2 class="animate__animated animate__bounce animate__slow">Perros/Gatos en adopción</h2>
 
+        @include('Home.crearAdopcion')
         <div class="adopciones" id="result"></div>
         <div id="paginate" class="paginacion"></div>
     </div>

@@ -1233,7 +1233,7 @@ h3 {
 .btn-donar {
     position: sticky;
     top: 135px;
-    z-index: 100;
+    z-index: 10;
     margin-left: 50px;
     margin-top: 0;
     padding-top: 0;
@@ -1397,11 +1397,6 @@ select {
     width: 160px;
 }
 
-@media (max-width:700px) {
-    .img-logg img{
-        width: 100px;
-    }
-}
 .requisitos{
     display: flex;
     flex-direction: column;
@@ -2113,6 +2108,11 @@ select {
     .card{
         width:auto;
         margin: auto ;
+    }
+}
+@media (max-width:700px) {
+    .img-logg img{
+        width: 100px;
     }
 }
 @media (max-width: 695px) {

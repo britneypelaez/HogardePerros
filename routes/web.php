@@ -146,6 +146,8 @@ Route::group(['middleware' =>['auth']], function(){
 
     Route::post('/Publicaciones/Create', [MascotaPerdidaController::class, 'storeUsuario'])->name('publicacion.create');
 
+    Route::post('/Adopcion/Create', [MascotaController::class, 'storeUsuario'])->name('adopcion.create');
+
     Route::post('/Confirmacion', [MascotaController::class, 'store'])->name('pruebasizacion');
 
     Route::view('/Fundacion/Logo', 'HomeFundacion.cambiarLogo')->name('cambiar.logo');

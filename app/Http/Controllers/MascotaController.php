@@ -26,7 +26,8 @@ class MascotaController extends Controller
         $Mascotas = Mascota::paginate(12);
         $Colores = Color::all();
         $Especies = Especie::all();
-        return view('Home.Adopcion', compact('Mascotas', 'Colores', 'Especies'));
+        $Razas = Raza::all();
+        return view('Home.Adopcion', compact('Mascotas', 'Colores', 'Especies','Razas'));
     }
 
     public function indexHome()
@@ -116,7 +117,7 @@ class MascotaController extends Controller
         $mascota->descripcion = request()->descripcion;
         $mascota->raza = request()->raza;
         $mascota->color = request()->color;
-        $mascota->estado = 2;
+        $mascota->estado = 1;
         $mascota->tamanio = request()->tamanio;
         $mascota->especie = request()->especie;
         $mascota->edad = request()->edad;
@@ -124,6 +125,36 @@ class MascotaController extends Controller
         $mascota->id_fundacion = 1;
         $mascota->save();
         return redirect()->route('Mascotas.index');
+    }
+
+    public function storeUsuario(Request $request)
+    {
+        //Validaciendo de los campos enviados desde la vista crear
+        request()->validate([
+            'nombre_mascota' => 'required',
+            'descripcion' => 'required|max:255',
+            'raza' => 'required',
+            'color' => 'required',
+            'tamanio' => 'required',
+            'especie' => 'required',
+            'edad' => 'required',
+            'imagen_mascota' => 'required',
+        ]);
+        $profileImage = time() . '.' . $request->file('imagen_mascota')->getClientOriginalExtension();
+        Storage::disk('public')->put($profileImage,file_get_contents($request->file('imagen_mascota')->getPathName()) );
+        $mascota = new Mascota();
+        $mascota->nombre_mascota = request()->nombre_mascota;
+        $mascota->descripcion = request()->descripcion;
+        $mascota->raza = request()->raza;
+        $mascota->color = request()->color;
+        $mascota->estado = 1;
+        $mascota->tamanio = request()->tamanio;
+        $mascota->especie = request()->especie;
+        $mascota->edad = request()->edad;
+        $mascota->imagen_mascota = $profileImage;
+        $mascota->id_fundacion = 1;
+        $mascota->save();
+        return redirect()->route('Adopcion');
     }
 
     /**
