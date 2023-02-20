@@ -83,7 +83,7 @@ class Mascota extends Model
 
     public function scopeEdad($query, $edad){
         if($edad)
-        return $query->where('mascotas.edad', 'like', "%$edad%");
+        return $query->where('mascotas.edad', $edad);
     }
 
     public function scopeRaza($query, $raza){

@@ -39,7 +39,7 @@
                         </div>
                         <div class="cont-adopcion">
                             <p class="negrita">Edad:</p>
-                            <p> {{ $edad }} años</p>
+                            <p> {{ $edad }}</p>
                         </div>
                         <a href="{{ route('adoptare') }}"><button class="transicion2" type="submit"><span>Seguir Adopción</span></button></a>
                     </div>

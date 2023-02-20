@@ -136,6 +136,19 @@
             saveResult.innerHTML = '';
             search(especie, raza, color, tamaño, edad, page).then(response => {
                 response.data.map(mascota => {
+                    if(edad <= 9){
+                        mascota.edad = `${mascota.edad - 1} a ${mascota.edad + 1} meses`
+                    }
+                    if(edad == 10){
+                        mascota.edad = `${mascota.edad} a ${mascota.edad + 1} meses`
+                    }
+                    if(edad == 11){
+                        mascota.edad = `${mascota.edad - 10} año`
+                    }
+                    if(edad > 11){
+                        mascota.edad = `${mascota.edad - 10} años`
+                    }
+                    console.log(mascota.edad)
                     saveResult.innerHTML +=
                         `<x-card imagen="${mascota.imagen_mascota}" mascota="${mascota.nombre_mascota}" color="${mascota.colorin}" raza="${mascota.rasa}" edad="${mascota.edad}" descripcion="${mascota.descripcion}"/>`
                 });
