@@ -186,7 +186,7 @@ header {
 
 .submenu {
     margin: 0 !important;
-    width: 200px !important;    
+    width: 200px !important;
 }
 
 .sublista li:hover {
@@ -814,7 +814,7 @@ h3 {
     opacity: 0;
     transition: all 600ms;
     z-index: 500;
-    
+
 }
 
 .contenedor-modal-servicio:target {
@@ -854,11 +854,14 @@ h3 {
 
 .cont-servicio{
     display: grid;
+    height: 35vh;
+    width: 43vh;
 }
 
 .cont-servicio p{
-    margin-right: 10px;
+    margin-right: 0px;
     text-align: justify;
+
 }
 
 .titulo-servicio{
@@ -867,7 +870,7 @@ h3 {
 }
 
 .titulo-servicio p{
-    font-size: 30px;
+    font-size: 10px;
 }
 
 .imagen-servicio {
@@ -1366,7 +1369,7 @@ select {
     align-items: center;
     justify-content: center;
     margin-bottom: 100px;
-    
+
 }
 .info_requi{
     margin-top: 40px;
@@ -1436,7 +1439,7 @@ select {
 .card{
     background:rgba(28, 134, 134, 0.5) !important;
     transition: all 0.25s;
-    height: 450px !important;  
+    height: 450px !important;
     position: relative;
     align-items: center;
     max-width: 325px !important;
@@ -1498,7 +1501,7 @@ select {
     padding: 0.8rem !important;
     position: relative;
     display: grid;
-    grid-template-columns: 50% 50%;  
+    grid-template-columns: 50% 50%;
 }
 .mod-camp .modal-body{
     display: flex !important;
@@ -1559,7 +1562,7 @@ select {
     display: flex;
    justify-content: space-between;
    align-items: center;
-    
+
 }
 .imgpro{
     width: 20%;
@@ -1826,12 +1829,12 @@ select {
 
     .navbar_r {
         display: flex;
-        
+
         justify-content: end;
     }
     .nav_v{
         display: flex;
-        
+
         justify-content: end;
     }
     .checkbtn {
@@ -1948,7 +1951,7 @@ select {
 @media(max-width:1033px){
     .card-img1{
         width: 85%;
-    } 
+    }
 }
 @media (max-width:993px){
     .modal-left{
@@ -2002,7 +2005,7 @@ select {
     .wrapper-share .tooltip{
         font-size: 15px;
     }
-    
+
 }
 @media (max-width: 980px) {
     .filtro {
@@ -2027,7 +2030,7 @@ select {
 @media(max-width:922px){
     .card-body{
         width: 245px;
-    } 
+    }
 }
 @media (max-width: 875px) {
     .cont-adopcion p {
@@ -2062,12 +2065,12 @@ select {
 @media(max-width:816px){
     .card-img1{
         width: 100%;
-    } 
+    }
 }
 @media(max-width:767px){
     .card-img1{
         width: 70% !important;
-    } 
+    }
 }
 @media(width: 768px){
     .card-body{
@@ -2210,7 +2213,7 @@ select {
     }
 }
 @media (max-width: 394px){
-   
+
     .redess{
         display: block;
     }
@@ -2225,7 +2228,7 @@ select {
 @media(max-width:296px){
     .card-body{
         width:260px;
-    } 
+    }
 }
 @media (min-width: 280px){
     .modal {
